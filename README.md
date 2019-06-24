@@ -1,4 +1,4 @@
-# Synthetic dataset generation code and Evaluation Tools for ILP
+# Synthetic dataset generation code and evaluation tools for ILP
 
 Requirements: Python 3 (TODO any others? check. then create file requirements.txt)
 
