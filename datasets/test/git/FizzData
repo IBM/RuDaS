@@ -1,0 +1,10 @@
+zero,0
+successor,0,1
+successor,1,2
+successor,2,3
+successor,3,4
+successor,4,5
+successor,5,6
+fizz,0
+fizz,3
+fizz,6

@@ -1,0 +1,885 @@
+term16(A,B) :- term7(B,A), term15(A,C), term6(B,D), term0(A,E), term15(C,E), term17(F,E), term3(E,D).
+term16(A,B) :- term8(B,A), term12(B,C), term5(C,A), term17(D,A), term19(E,C).
+term16(A,B) :- term8(B,A), term22(C,B), term12(B,D), term5(D,A), term1(A,E), term7(A,C).
+term16(A,B) :- term8(B,A), term1(B,C), term8(A,C), term22(D,B), term4(B,E), term19(F,A), term3(B,G).
+term16(A,B) :- term7(B,A), term4(C,B), term15(C,A), term14(A,D).
+term16(A,B) :- term8(B,A), term5(A,C), term3(B,D), term11(A,E), term7(C,B), term5(D,A).
+term16(A,B) :- term7(B,A), term4(C,B), term15(C,A), term2(D,C), term0(C,E).
+term16(A,B) :- term8(B,A), term18(B,C), term12(C,A), term7(A,C), term3(D,B).
+term16(A,B) :- term7(B,A), term2(A,C), term2(D,B), term15(C,E), term13(B,E).
+term16(A,B) :- term8(B,A), term22(C,B), term4(D,A), term2(A,E), term13(E,C), term13(E,D).
+term16(A,B) :- term8(B,A), term24(A,C).
+term16(A,B) :- term7(B,A), term2(A,C), term4(A,D), term15(B,D), term11(B,E), term3(A,F), term15(B,F).
+term16(A,B) :- term8(B,A), term5(C,B), term0(D,B), term24(E,C).
+term16(A,B) :- term7(B,A), term4(C,B), term15(C,A), term18(A,D), term2(E,A), term14(F,D), term6(G,B), term15(B,G).
+term16(A,B) :- term8(B,A), term20(C,B), term3(D,C), term12(E,A), term18(B,E), term20(A,F), term14(G,F), term19(H,F), term15(D,E).
+term16(A,B) :- term8(B,A), term17(C,B), term1(A,D), term15(D,C), term15(C,D).
+term16(A,B) :- term7(B,A), term4(C,B), term15(C,A), term11(A,D), term15(D,E), term21(A,F), term21(F,A), term15(B,E).
+term16(A,B) :- term8(B,A), term1(B,C), term8(A,C), term18(B,D), term12(D,A), term2(B,E), term5(F,B), term18(E,F).
+term16(A,B) :- term8(B,A), term22(C,B), term12(C,A), term3(A,C).
+term16(A,B) :- term8(B,A), term0(C,B), term11(A,D), term19(D,B).
+term16(A,B) :- term8(B,A), term20(C,B), term18(A,C), term15(A,D), term8(B,D).
+term16(A,B) :- term7(B,A), term4(C,B), term15(C,A), term18(A,D), term21(A,E), term12(B,F), term11(C,F), term2(G,B), term7(C,E).
+term16(A,B) :- term8(B,A), term13(B,C), term14(D,A), term17(E,A), term15(E,B), term12(A,D).
+term16(A,B) :- term8(B,A), term1(B,C), term8(A,C), term12(D,A), term18(B,E), term12(E,A), term3(A,D).
+term16(A,B) :- term7(B,A), term4(C,B), term13(A,C).
+term16(A,B) :- term8(B,A), term1(C,B), term2(D,A), term0(E,B), term7(E,D), term17(D,F), term8(A,C).
+term16(A,B) :- term7(B,A), term13(B,C), term13(C,B), term21(A,D), term7(D,C), term6(B,D), term12(C,E).
+term16(A,B) :- term7(B,A), term12(A,C), term15(A,D), term18(B,C), term0(E,A), term15(D,E).
+term16(A,B) :- term8(B,A), term14(B,C), term3(D,A), term15(A,C).
+term16(A,B) :- term8(B,A), term12(B,C), term4(D,C), term22(B,E), term17(A,E), term3(F,B), term11(B,D), term5(F,A), term0(C,G).
+term16(A,B) :- term7(B,A), term22(C,A), term13(B,C), term8(C,B), term5(D,B), term7(A,D).
+term16(A,B) :- term7(B,A), term13(B,C), term12(B,D), term6(C,A), term3(B,E), term19(F,D), term1(F,G).
+term16(A,B) :- term8(B,A), term3(C,A), term8(C,B).
+term16(A,B) :- term8(B,A), term5(A,C), term5(C,B).
+term16(A,B) :- term8(B,A), term5(A,C), term1(D,B), term5(C,D).
+term16(A,B) :- term8(B,A), term20(C,A), term12(B,D), term19(C,D).
+term16(A,B) :- term7(B,A), term4(C,B), term15(C,A), term21(B,D), term2(E,A), term3(A,F), term7(F,D).
+term16(A,B) :- term8(B,A), term17(A,C), term12(C,A), term22(B,C), term15(B,D), term11(C,D).
+term16(A,B) :- term7(B,A), term4(C,B), term17(C,A).
+term16(A,B) :- term7(B,A), term4(C,B), term15(C,A), term2(A,D), term3(C,E), term0(A,F), term15(B,G).
+term16(A,B) :- term8(B,A), term12(B,C), term5(A,C), term3(B,D), term17(B,E), term14(A,F).
+term16(A,B) :- term7(B,A), term15(C,A), term13(D,B), term21(D,E), term17(C,E), term12(D,F), term22(A,D).
+term16(A,B) :- term8(B,A), term11(A,C), term3(D,C), term21(E,B), term18(E,A), term4(F,B), term13(A,G), term7(A,D).
+term16(A,B) :- term7(B,A), term5(A,C), term21(D,A), term20(C,B), term14(E,B), term15(B,D), term7(E,D).
+term16(A,B) :- term8(B,A), term14(C,A), term5(B,D), term9(A,E), term0(B,F), term22(B,G), term8(A,F).
+term16(A,B) :- term7(B,A), term5(C,B), term6(C,A).
+term16(A,B) :- term8(B,A), term14(C,A), term5(B,D), term5(D,A).
+term16(A,B) :- term7(B,A), term4(B,C), term13(A,C).
+term16(A,B) :- term8(B,A), term25(C,A), term11(A,D), term12(B,E), term24(E,F).
+term16(A,B) :- term8(B,A), term9(C,B), term5(A,C).
+term16(A,B) :- term7(B,A), term20(C,B), term3(A,C).
+term16(A,B) :- term8(B,A), term9(C,B), term21(D,A).
+term16(A,B) :- term7(B,A), term5(A,C), term20(C,B), term14(D,B), term15(A,D), term14(E,C).
+term16(A,B) :- term8(B,A), term12(C,B), term18(C,A), term24(C,D).
+term16(A,B) :- term7(B,A), term22(C,A), term2(D,C), term6(B,C).
+term16(A,B) :- term8(B,A), term1(C,B), term3(D,B), term22(C,D), term19(E,A).
+term16(A,B) :- term7(B,A), term1(C,B), term6(A,C).
+term16(A,B) :- term7(B,A), term22(C,A), term12(D,B), term15(D,A), term2(E,A), term6(C,E), term8(E,B), term1(C,D).
+term16(A,B) :- term8(B,A), term5(A,C), term4(B,C), term21(B,D), term20(A,E), term3(E,F), term17(G,E), term3(H,E), term7(B,F), term0(I,B), term18(A,D).
+term16(A,B) :- term8(B,A), term18(B,C), term0(A,C).
+term16(A,B) :- term7(B,A), term9(A,C), term14(D,C), term12(A,D), term5(B,D), term17(D,A).
+term16(A,B) :- term8(B,A), term20(B,C), term2(D,B), term4(C,A).
+term16(A,B) :- term8(B,A), term1(B,C), term13(A,D), term19(E,B), term0(A,E), term19(F,E), term15(D,F), term10(C,G).
+term16(A,B) :- term25(C,A), term6(B,D), term1(C,D).
+term16(A,B) :- term8(B,A), term4(A,C), term6(D,B), term15(B,C), term0(C,D).
+term16(A,B) :- term7(B,A), term2(B,C), term6(A,D), term3(B,D), term21(E,D), term1(D,F).
+term16(A,B) :- term7(B,A), term14(B,C), term15(C,A), term12(A,D), term4(B,E), term13(A,F), term18(B,D), term8(D,E).
+term16(A,B) :- term8(B,A), term14(C,B), term6(A,D), term11(D,A).
+term16(A,B) :- term8(B,A), term12(B,C), term5(C,A), term13(A,D), term8(D,A), term14(E,A), term16(C,E).
+term16(A,B) :- term8(B,A), term25(C,A), term21(B,D), term16(D,C), term22(B,E).
+term16(A,B) :- term8(B,A), term12(B,C), term5(A,C), term6(A,D), term25(E,A), term3(B,F), term16(D,E).
+term16(A,B) :- term7(B,A), term4(C,B), term15(C,A), term13(D,B), term3(B,E), term15(A,F), term18(G,B), term15(A,D), term16(C,G).
+term15(A,B) :- term5(B,A), term9(B,C), term5(C,A), term2(A,D).
+term15(A,B) :- term6(B,A), term18(B,C), term2(A,D), term13(C,E), term17(E,C).
+term15(A,B) :- term6(B,A), term2(C,B), term18(A,D), term2(A,E), term0(A,F).
+term15(A,B) :- term5(B,A), term17(C,A), term0(B,D), term6(A,E), term10(D,F), term16(C,B), term6(A,F), term18(E,G).
+term15(A,B) :- term6(B,A), term11(A,C), term2(D,B), term12(A,E), term12(D,F), term6(B,C).
+term15(A,B) :- term6(B,A), term12(B,C), term0(D,A), term22(D,E), term7(C,A).
+term15(A,B) :- term5(B,A), term11(A,C), term11(B,D), term4(E,A), term11(C,E).
+term15(A,B) :- term5(B,A), term17(C,A), term0(A,D), term5(D,B), term2(E,A).
+term15(A,B) :- term6(B,A), term11(A,C), term21(B,D), term2(E,B), term4(D,F), term16(A,D), term7(D,C).
+term15(A,B) :- term5(B,A), term13(B,C), term24(A,D).
+term15(A,B) :- term5(B,A), term1(C,A), term22(B,C).
+term15(A,B) :- term6(B,A), term2(B,C), term0(D,B), term2(A,E).
+term15(A,B) :- term5(B,A), term24(C,A).
+term15(A,B) :- term5(B,A), term5(C,B), term2(A,D), term11(B,E).
+term15(A,B) :- term6(B,A), term9(C,B), term13(B,D), term18(E,A), term7(D,C).
+term15(A,B) :- term5(B,A), term14(C,B), term8(D,C).
+term15(A,B) :- term5(B,A), term3(B,C), term3(A,D), term8(D,B).
+term15(A,B) :- term6(B,A), term7(B,C), term3(B,D), term10(C,D).
+term15(A,B) :- term5(B,A), term3(B,C), term22(B,D), term1(A,E), term8(D,C).
+term15(A,B) :- term6(B,A), term4(C,B), term3(A,D), term16(C,A), term2(E,A), term7(B,D).
+term15(A,B) :- term5(B,A), term21(C,A), term8(D,B).
+term15(A,B) :- term5(B,A), term3(B,C), term3(A,D), term22(E,D), term16(A,C), term11(C,E).
+term15(A,B) :- term5(B,A), term0(C,A), term5(B,C), term19(A,E).
+term15(A,B) :- term6(B,A), term4(A,C), term2(D,C), term2(C,E).
+term15(A,B) :- term5(B,A), term11(B,C), term24(A,C).
+term15(A,B) :- term5(B,A), term25(C,B), term4(A,D), term11(E,D).
+term15(A,B) :- term6(B,A), term12(B,C), term12(A,D), term21(E,B), term16(E,A).
+term15(A,B) :- term5(B,A), term14(A,C), term8(C,A).
+term15(A,B) :- term6(B,A), term19(C,B), term21(A,D), term4(A,E).
+term15(A,B) :- term5(B,A), term17(B,C), term20(A,C).
+term15(A,B) :- term5(B,A), term17(C,A), term14(C,D).
+term15(A,B) :- term5(B,A), term9(C,B), term16(A,C).
+term15(A,B) :- term5(B,C), term9(A,C), term5(D,A), term10(C,D).
+term15(A,B) :- term18(B,A), term24(C,B), term11(A,C).
+term15(A,B) :- term5(B,C), term9(A,C), term8(D,B), term1(D,C).
+term15(A,B) :- term5(B,C), term9(A,C), term25(A,D).
+term15(A,B) :- term5(B,C), term11(C,A), term14(A,D), term5(C,B).
+term15(A,B) :- term18(B,A), term22(A,C), term16(B,C).
+term15(A,B) :- term3(C,A), term16(B,C), term5(B,D), term5(D,C).
+term15(A,B) :- term22(B,A), term24(A,C), term12(B,D), term4(B,E).
+term15(A,B) :- term6(B,A), term3(A,C), term17(D,A), term11(B,C).
+term15(A,B) :- term25(C,A), term3(A,D), term22(D,E), term7(A,E), term8(E,A), term11(F,B), term5(F,A).
+term15(A,B) :- term22(B,A), term2(A,C), term3(B,D), term11(D,C).
+term15(A,B) :- term6(B,C), term9(C,A), term2(D,C), term8(C,D).
+term15(A,B) :- term6(B,A), term14(A,C), term15(C,D).
+term7(A,B) :- term16(B,A), term22(B,C), term9(A,D), term0(A,E), term13(A,C), term20(F,A), term12(D,G).
+term7(A,B) :- term16(B,A), term22(B,C), term13(A,D), term22(A,E), term2(C,D).
+term7(A,B) :- term16(B,A), term10(C,B), term4(D,A), term9(B,E), term15(D,B), term6(D,F), term16(A,F), term15(E,D).
+term7(A,B) :- term16(B,A), term6(C,B), term15(A,D), term2(A,E), term4(D,B).
+term7(A,B) :- term16(B,A), term6(C,B), term0(A,D), term19(E,A), term18(C,E).
+term7(A,B) :- term16(B,A), term10(C,B), term16(C,A), term9(A,D), term13(E,B), term0(C,F), term2(E,G), term21(E,H), term16(H,D).
+term7(A,B) :- term16(B,A), term22(B,C), term0(A,D), term21(E,B), term13(C,A), term6(A,E).
+term7(A,B) :- term16(B,A), term6(C,B), term15(A,D), term4(A,E), term0(D,E).
+term7(A,B) :- term16(B,A), term6(C,B), term2(D,C), term2(C,E), term20(E,F), term18(G,A), term16(E,G).
+term7(A,B) :- term13(B,A), term22(C,B), term11(A,D), term14(E,A).
+term7(A,B) :- term16(B,A), term22(B,C), term13(A,D), term1(E,D), term0(D,E).
+term7(A,B) :- term13(B,A), term22(C,B), term4(A,D), term13(D,A), term18(E,A), term8(B,E), term1(E,F).
+term7(A,B) :- term16(B,A), term13(A,C), term13(C,A), term18(A,D), term22(B,C).
+term7(A,B) :- term16(B,A), term6(C,B), term9(B,D), term5(D,E), term4(E,A), term19(F,A).
+term7(A,B) :- term16(B,A), term22(B,C), term8(A,D), term3(E,A), term10(B,F), term3(C,A), term21(B,G), term10(E,C), term18(C,D).
+term7(A,B) :- term12(B,A), term2(A,C), term14(A,D), term10(E,B).
+term7(A,B) :- term22(C,B), term12(D,A), term2(D,C), term17(C,A), term4(B,E), term16(D,E), term18(E,A).
+term7(A,B) :- term12(B,A), term3(B,C), term11(A,C), term6(D,B), term2(A,E), term0(C,F), term2(G,F).
+term7(A,B) :- term13(B,A), term9(A,C), term13(C,B), term14(D,C), term10(D,B), term4(D,E), term1(C,E), term12(A,D).
+term7(A,B) :- term22(C,B), term12(D,A), term6(D,B), term2(E,B), term13(A,C), term11(D,F), term12(F,A), term11(C,D).
+term7(A,B) :- term12(B,A), term2(C,B), term21(D,B), term16(A,C).
+term7(A,B) :- term16(B,A), term6(C,B), term13(D,A), term15(B,D), term15(A,E), term21(A,F), term22(G,E), term17(D,H).
+term7(A,B) :- term13(B,A), term22(C,B), term15(A,D), term20(C,D).
+term7(A,B) :- term21(B,C), term24(B,A).
+term7(A,B) :- term6(C,B), term11(D,B), term16(D,A), term4(A,D).
+term7(A,B) :- term8(B,A), term21(C,B), term0(D,B), term2(E,B), term20(B,F), term1(A,G).
+term7(A,B) :- term22(B,C), term25(D,A), term3(A,E), term6(F,C), term6(F,E), term11(D,E).
+term7(A,B) :- term16(B,A), term6(C,B), term11(D,B), term21(D,A).
+term7(A,B) :- term16(B,A), term6(C,B), term11(D,B), term16(D,A), term4(A,E), term16(D,E).
+term7(A,B) :- term16(B,A), term6(C,B), term9(B,D), term17(D,A).
+term7(A,B) :- term16(B,A), term11(C,B), term14(C,A).
+term7(A,B) :- term13(B,A), term12(B,C), term14(D,C), term22(E,A), term8(E,D), term21(A,F), term10(F,B).
+term7(A,B) :- term16(B,A), term22(B,C), term13(B,D), term2(E,D), term17(B,F), term15(E,A), term5(G,A).
+term7(A,B) :- term13(B,A), term13(C,B), term0(A,D), term0(E,A), term18(E,C).
+term7(A,B) :- term21(B,A), term17(B,C), term14(D,C), term9(A,C), term12(A,D), term13(A,E), term16(E,C).
+term7(A,B) :- term10(C,B), term16(C,A), term15(A,C).
+term7(A,B) :- term8(B,A), term10(C,B), term24(D,A), term0(E,B), term16(A,E).
+term7(A,B) :- term8(B,A), term10(C,B), term17(B,D), term1(A,C).
+term7(A,B) :- term10(C,B), term12(A,D), term12(D,A), term2(C,E), term8(A,C), term22(B,F), term10(D,F).
+term7(A,B) :- term22(B,C), term13(A,C), term4(A,D), term1(A,E), term0(F,A), term22(G,A), term13(G,B), term13(B,G), term15(D,B), term17(B,H).
+term7(A,B) :- term16(B,A), term6(C,B), term13(D,A), term1(E,B), term9(E,D).
+term7(A,B) :- term16(B,A), term13(C,B), term3(B,D), term13(D,A).
+term7(A,B) :- term13(C,B), term15(A,C), term9(C,A).
+term7(A,B) :- term13(C,B), term11(A,C), term2(A,D), term15(D,C).
+term7(A,B) :- term21(B,C), term2(D,C), term22(E,A), term21(B,E), term15(E,D).
+term7(A,B) :- term22(C,B), term3(C,A), term12(D,A), term11(B,E), term8(A,D), term2(F,B), term10(E,F).
+term7(A,B) :- term16(B,A), term13(C,B), term4(D,B), term17(B,D).
+term7(A,B) :- term13(B,A), term13(C,B), term15(A,D), term9(B,D).
+term7(A,B) :- term21(B,A), term20(A,C), term11(C,B).
+term7(A,B) :- term13(B,A), term13(C,B), term14(D,B), term2(A,E), term7(C,D).
+term7(A,B) :- term16(B,A), term13(C,B), term3(B,D), term2(E,A), term7(E,B), term18(D,A).
+term8(A,B) :- term16(B,A), term9(C,B), term13(A,D), term17(E,B), term21(C,D).
+term8(A,B) :- term16(B,A), term20(C,B), term0(D,A), term2(B,E), term10(D,F), term15(C,F).
+term8(A,B) :- term16(B,A), term20(C,B), term12(D,A), term2(D,E), term0(F,D), term15(B,E).
+term8(A,B) :- term16(B,A), term13(C,A), term1(A,D), term14(E,B), term19(F,B).
+term8(A,B) :- term16(B,A), term20(C,B), term12(A,D), term11(B,E), term5(A,C), term1(A,F), term2(G,B), term1(B,G).
+term8(A,B) :- term16(B,A), term5(C,B), term13(D,A), term16(D,C).
+term8(A,B) :- term16(B,A), term20(C,B), term0(B,D), term24(E,D).
+term8(A,B) :- term20(C,B), term19(B,A).
+term8(A,B) :- term16(B,A), term20(C,B), term4(D,B), term0(B,E), term11(A,D).
+term8(A,B) :- term16(B,A), term9(C,B), term22(D,A), term3(B,E), term13(B,D).
+term8(A,B) :- term16(B,A), term17(C,B), term12(A,D), term14(E,B), term12(B,E).
+term8(A,B) :- term12(C,B), term15(C,A), term17(A,D), term3(E,A), term5(D,B), term9(B,F), term25(G,B), term12(E,H).
+term8(A,B) :- term12(C,B), term15(C,A), term17(A,D), term21(A,E), term5(D,B), term12(B,C).
+term8(A,B) :- term16(B,A), term5(C,B), term15(C,D), term21(A,E), term0(A,F), term5(E,B).
+term8(A,B) :- term12(C,B), term15(C,A), term10(A,D), term14(B,E), term21(A,F), term1(G,B).
+term8(A,B) :- term13(B,A), term20(C,B), term3(D,A), term14(C,D).
+term8(A,B) :- term16(B,A), term20(C,B), term2(B,D), term1(E,A), term0(A,F).
+term8(A,B) :- term16(B,A), term20(C,B), term1(D,B), term2(A,E), term17(A,F), term0(A,G).
+term8(A,B) :- term12(C,B), term15(C,A), term14(D,A), term18(D,B), term19(E,A), term17(F,A).
+term8(A,B) :- term13(B,A), term20(C,B), term3(B,D), term2(A,D), term11(D,E).
+term8(A,B) :- term13(B,A), term20(C,B), term2(A,D), term15(D,E), term16(E,B), term14(F,B).
+term8(A,B) :- term12(C,B), term15(C,A), term5(B,D), term2(E,A), term7(B,E), term2(F,C), term4(A,D), term18(A,F).
+term8(A,B) :- term13(B,A), term3(C,A), term1(D,A), term17(C,D), term12(D,B), term20(B,E), term2(D,F).
+term8(A,B) :- term12(C,B), term15(C,A), term5(B,D), term24(E,D), term1(F,B), term16(A,F).
+term8(A,B) :- term16(B,A), term5(C,B), term17(A,D), term11(D,C), term3(E,B), term13(B,F), term2(F,E), term16(C,E), term17(G,B), term1(C,H).
+term8(A,B) :- term16(B,A), term5(C,B), term15(A,D), term13(E,A), term4(D,C).
+term8(A,B) :- term16(A,C), term12(D,A), term14(A,E), term14(F,B), term2(C,B).
+term8(A,B) :- term16(B,A), term5(C,B), term17(D,B), term17(E,A), term19(F,A).
+term8(A,B) :- term20(C,B), term21(B,A).
+term8(A,B) :- term16(B,A), term5(C,B), term13(D,B).
+term8(A,B) :- term16(B,A), term5(C,B), term21(B,D).
+term8(A,B) :- term16(B,A), term12(C,B), term14(A,D).
+term8(A,B) :- term16(B,A), term5(C,B), term24(A,D).
+term8(A,B) :- term16(B,A), term5(C,B), term17(D,B), term4(B,D).
+term8(A,B) :- term16(B,A), term5(C,B), term17(D,B), term17(A,E), term2(F,E), term14(G,A), term17(G,H), term16(D,G).
+term8(A,B) :- term13(B,A), term20(C,B), term3(D,C), term4(A,E), term12(D,E).
+term8(A,B) :- term12(C,B), term15(C,A), term14(D,B), term10(A,E), term17(B,C), term2(C,F).
+term8(A,B) :- term12(C,B), term15(C,A), term14(D,B), term20(B,A).
+term8(A,B) :- term12(C,B), term15(C,A), term14(D,A), term19(A,E).
+term8(A,B) :- term12(C,B), term1(B,D), term16(A,D), term7(A,E), term13(E,D).
+term8(A,B) :- term20(C,B), term5(A,C), term14(D,A), term18(D,B), term14(E,A), term10(D,E).
+term8(A,B) :- term7(B,A), term5(C,B), term24(D,B), term4(A,E).
+term8(A,B) :- term13(B,A), term12(C,B), term3(D,B), term2(A,E), term1(A,F), term20(E,G), term13(G,A), term4(H,A).
+term8(A,B) :- term12(B,A), term20(C,B), term2(B,D), term3(A,E), term2(D,E).
+term8(A,B) :- term12(B,A), term19(C,B), term1(C,D), term1(A,E), term18(A,D), term13(D,F), term0(A,G).
+term8(A,B) :- term16(B,A), term17(C,B), term17(D,A), term17(B,C), term5(D,B), term18(E,A), term2(F,D), term6(A,C).
+term8(A,B) :- term12(C,B), term1(B,D), term5(C,A), term20(D,A).
+term8(A,B) :- term12(C,B), term1(B,D), term16(A,D), term19(D,A).
+term8(A,B) :- term12(C,B), term1(B,D), term15(C,A), term18(E,C), term18(E,A).
+term8(A,B) :- term13(B,A), term12(C,B), term15(A,D), term4(A,E), term1(E,D).
+term8(A,B) :- term13(B,A), term20(C,B), term14(D,A), term0(E,B).
+term8(A,B) :- term12(C,B), term15(C,A), term0(A,D), term12(B,D).
+term8(A,B) :- term12(C,B), term18(A,C), term19(D,A), term7(B,C).
+term8(A,B) :- term9(C,B), term16(C,A), term19(A,C).
+term8(A,B) :- term12(C,B), term12(B,D), term4(E,A), term2(F,A), term7(B,F), term0(G,A), term15(E,B), term16(C,E).
+term8(A,B) :- term12(C,B), term3(D,A), term25(D,C).
+term8(A,B) :- term7(B,A), term5(C,B), term1(B,D), term1(E,B), term12(A,F), term4(F,A).
+term8(A,B) :- term3(B,A), term12(C,B), term9(B,C).
+term8(A,B) :- term16(B,A), term20(C,B), term20(C,A).
+term8(A,B) :- term13(B,A), term12(C,B), term2(A,D), term0(A,E), term3(B,F), term6(G,D), term16(B,G).
+term8(A,B) :- term12(C,B), term2(A,D), term6(A,E), term12(B,F), term0(A,G), term13(B,D), term16(C,G).
+term8(A,B) :- term16(B,A), term20(C,B), term9(A,D), term15(C,D), term24(E,B), term8(B,D).
+term11(A,B) :- term10(B,A), term3(B,C), term21(D,A), term3(B,D), term8(E,C).
+term11(A,B) :- term9(B,A), term2(A,C), term0(D,B), term3(E,B), term3(B,E).
+term11(A,B) :- term10(B,A), term15(A,C), term15(C,D), term13(B,E), term19(E,F).
+term11(A,B) :- term10(B,A), term15(A,C), term15(C,D), term13(B,E), term21(B,F), term7(A,E), term16(E,C).
+term11(A,B) :- term10(B,A), term15(A,C), term12(D,B), term15(C,B), term0(C,E), term15(B,E).
+term11(A,B) :- term9(B,A), term19(C,B), term0(A,D).
+term11(A,B) :- term9(B,A), term4(C,A), term20(A,C).
+term11(A,B) :- term10(B,A), term3(C,B), term17(C,D), term2(A,D), term10(D,B).
+term11(A,B) :- term10(B,A), term22(B,C), term2(D,B), term21(A,E), term13(B,E), term0(E,F), term15(B,G).
+term11(A,B) :- term9(B,A), term4(C,A), term0(D,A), term12(E,B), term19(C,F).
+term11(A,B) :- term10(B,A), term4(B,C), term13(D,B), term0(A,E), term13(D,E).
+term11(A,B) :- term9(B,A), term2(A,C), term14(D,A), term4(D,E), term0(B,E).
+term11(A,B) :- term10(B,A), term15(A,C), term2(D,C), term15(D,B), term21(E,B), term22(C,B), term0(E,F), term16(E,D).
+term11(A,B) :- term9(B,A), term3(B,C), term0(B,D), term21(C,D).
+term11(A,B) :- term9(B,A), term1(C,A), term3(A,D), term17(B,D), term8(E,C).
+term11(A,B) :- term10(B,A), term3(C,A), term14(A,C).
+term11(A,B) :- term9(B,A), term3(B,C), term0(A,D), term8(C,A), term21(E,C), term10(D,E).
+term11(A,B) :- term10(B,A), term4(C,B), term5(A,C).
+term11(A,B) :- term9(B,A), term1(A,C), term2(B,C), term21(E,A).
+term11(A,B) :- term10(B,A), term3(C,A), term0(D,B), term0(C,D).
+term11(A,B) :- term9(B,A), term2(C,A), term22(D,C), term3(A,E), term17(E,A).
+term11(A,B) :- term10(B,A), term4(C,B), term6(B,C).
+term11(A,B) :- term10(B,A), term20(C,B), term15(C,A).
+term11(A,B) :- term9(B,A), term20(C,A), term3(C,B), term14(D,A), term2(E,B), term9(E,A).
+term11(A,B) :- term10(B,A), term1(C,A), term19(D,B), term19(C,D).
+term11(A,B) :- term9(B,A), term2(C,A), term3(B,D), term14(D,C).
+term11(A,B) :- term10(B,A), term0(B,C), term2(B,D), term15(E,B), term21(A,F), term16(F,E).
+term11(A,B) :- term9(B,A), term2(C,A), term5(C,D), term2(E,B), term22(C,F), term17(C,G), term16(G,F).
+term11(A,B) :- term10(B,A), term4(B,C), term2(D,B), term16(C,D).
+term11(A,B) :- term10(B,A), term21(C,B), term9(B,D), term15(B,E), term2(F,C), term1(A,D), term4(B,G), term5(E,D).
+term11(A,B) :- term9(B,A), term13(C,B), term13(C,A).
+term11(A,B) :- term9(B,A), term20(B,C), term14(A,D), term2(E,C).
+term11(A,B) :- term10(B,A), term15(A,C), term14(D,B), term8(C,D), term13(B,E), term12(A,F), term18(C,B).
+term11(A,B) :- term9(B,A), term17(A,C), term13(C,B), term7(B,C), term15(C,D), term16(B,D), term17(C,A), term0(A,E).
+term11(A,B) :- term9(B,A), term3(C,A), term3(B,D), term4(E,B), term14(F,B), term4(A,E), term1(C,E).
+term11(A,B) :- term10(B,A), term1(C,B), term20(D,B), term17(B,E), term2(A,C), term15(C,F), term12(G,F), term15(B,F).
+term11(A,B) :- term10(B,A), term1(C,B), term20(D,B), term1(A,C), term20(B,D), term3(A,D), term3(D,A).
+term11(A,B) :- term10(B,A), term3(C,B), term0(A,D), term0(D,B), term2(A,E).
+term11(A,B) :- term9(B,A), term20(B,C), term2(B,D), term4(A,C).
+term11(A,B) :- term10(B,A), term22(A,C), term13(C,B).
+term11(A,B) :- term9(B,A), term13(B,C), term6(D,B), term0(A,E), term12(B,F), term14(G,F), term9(E,G), term13(A,H).
+term11(A,B) :- term10(B,A), term22(C,B), term22(C,A), term10(B,C).
+term11(A,B) :- term9(B,A), term12(C,B), term14(B,D), term2(E,B), term16(A,F).
+term11(A,B) :- term9(B,A), term2(C,A), term20(D,B), term12(B,E), term3(B,F), term3(F,A).
+term11(A,B) :- term9(B,A), term2(C,A), term16(A,D), term0(B,C), term13(E,B), term16(C,D).
+term11(A,B) :- term10(B,A), term2(A,C), term0(B,C), term12(D,B), term0(C,B).
+term11(A,B) :- term9(B,A), term17(B,C), term20(D,A), term17(E,A), term14(F,A), term17(A,F), term20(C,A), term15(D,E).
+term11(A,B) :- term10(B,A), term7(C,B), term20(B,D), term12(A,C).
+term11(A,B) :- term9(B,A), term3(B,C), term3(A,D), term8(D,C).
+term11(A,B) :- term10(B,A), term4(C,B), term3(D,B), term6(C,A).
+term11(A,B) :- term9(B,A), term19(C,A), term10(C,D), term6(D,E), term4(E,F), term3(A,G), term10(F,B).
+term11(A,B) :- term10(B,A), term4(C,B), term3(D,A), term21(D,C).
+term11(A,B) :- term10(B,A), term4(C,B), term2(A,D), term3(C,A), term0(B,E), term13(B,F), term14(G,B).
+term11(A,B) :- term9(B,A), term13(C,A), term21(B,D).
+term11(A,B) :- term10(B,A), term6(C,B), term0(A,D), term22(C,D).
+term11(A,B) :- term10(B,A), term4(B,C), term21(B,D), term4(A,C), term3(A,E).
+term11(A,B) :- term14(C,B), term2(D,A), term12(D,E), term12(A,C), term12(B,C), term10(B,D).
+term11(A,B) :- term9(B,A), term20(B,C), term5(A,C).
+term11(A,B) :- term9(B,A), term3(B,C), term3(D,A), term7(A,C).
+term11(A,B) :- term15(C,B), term15(C,A), term21(A,D), term4(E,D), term4(D,B), term12(B,F), term16(A,E).
+term11(A,B) :- term10(B,A), term12(A,C), term22(B,D), term25(C,E).
+term11(A,B) :- term5(B,C), term5(A,C), term6(B,A).
+term11(A,B) :- term9(B,A), term2(C,B), term1(A,C), term25(D,B).
+term11(A,B) :- term5(B,C), term14(D,A), term2(A,E), term12(B,D), term7(F,B).
+term11(A,B) :- term5(B,C), term5(A,C), term3(B,A).
+term11(A,B) :- term9(B,A), term13(B,C), term17(A,C), term20(B,D), term4(E,C), term0(F,C).
+term11(A,B) :- term5(B,C), term5(A,C), term12(B,D), term18(B,A).
+term11(A,B) :- term9(B,A), term25(A,C), term11(C,D).
+term11(A,B) :- term9(B,A), term17(A,C), term17(B,D), term14(A,E), term3(B,F), term11(C,F).
+term11(A,B) :- term1(B,A), term12(C,A), term3(A,D), term1(D,C), term3(C,B), term7(A,C), term11(B,E).
+term18(A,B) :- term1(C,B), term15(A,C), term1(A,D), term3(C,D).
+term18(A,B) :- term1(B,C), term15(C,A), term2(D,A), term19(E,A), term10(E,F), term6(F,G), term15(B,G).
+term18(A,B) :- term1(C,B), term8(D,B), term14(E,C), term16(A,E), term0(B,F), term0(A,G), term13(C,E), term2(B,C).
+term18(A,B) :- term14(C,A), term12(A,C), term12(B,D), term16(C,B), term12(C,E), term5(C,D).
+term18(A,B) :- term12(C,B), term16(A,C), term2(D,A), term1(D,E), term13(B,C), term10(E,A), term9(B,F).
+term18(A,B) :- term1(C,B), term15(A,C), term8(D,B), term1(A,E), term0(E,B).
+term18(A,B) :- term1(C,A), term15(B,C), term1(C,D), term14(E,A), term16(E,B), term0(F,B), term15(C,F), term5(C,B), term11(A,D).
+term18(A,B) :- term12(C,B), term22(A,D), term13(E,B), term10(A,E), term22(D,E).
+term18(A,B) :- term12(C,A), term16(C,B), term14(A,D), term14(B,E), term0(B,F), term20(G,E).
+term18(A,B) :- term1(B,C), term15(C,A), term19(D,B), term4(A,D), term14(C,E).
+term18(A,B) :- term16(B,C), term2(D,B), term22(B,E), term20(F,A), term15(D,A), term12(D,G), term3(A,H), term16(H,D), term13(A,C).
+term18(A,B) :- term2(A,C), term15(B,C), term20(D,B), term11(B,D).
+term18(A,B) :- term2(A,C), term15(B,C), term14(D,A), term4(B,E), term13(B,F), term1(A,G), term16(D,B), term10(G,C).
+term18(A,B) :- term12(C,B), term16(A,C), term2(A,D), term0(B,E), term22(E,A), term2(F,E), term1(B,F).
+term18(A,B) :- term12(C,B), term16(A,C), term2(D,A), term21(A,E), term10(E,C).
+term18(A,B) :- term2(A,C), term5(D,B), term3(E,A), term16(B,E), term24(B,F), term16(D,E).
+term18(A,B) :- term1(C,A), term15(B,C), term24(D,A), term20(B,E), term7(E,A), term15(D,E).
+term18(A,B) :- term12(C,A), term16(C,B), term2(A,D), term2(B,E), term0(F,A), term0(G,C), term8(B,G).
+term18(A,B) :- term12(C,A), term2(D,B), term13(E,A), term10(E,B).
+term18(A,B) :- term12(C,A), term16(B,C), term3(D,A), term15(C,D).
+term18(A,B) :- term1(C,B), term15(A,C), term0(B,D), term1(E,A), term15(E,B), term14(F,C), term9(E,G).
+term18(A,B) :- term12(C,A), term1(D,A), term14(A,E), term10(F,B), term16(E,B), term15(D,B), term0(E,G).
+term18(A,B) :- term12(C,B), term16(C,A), term1(D,B), term8(B,D).
+term18(A,B) :- term12(C,B), term16(C,A), term15(A,C).
+term18(A,B) :- term12(C,B), term16(A,C), term2(D,A), term15(D,B), term2(B,E), term10(F,A), term11(A,G), term11(H,E).
+term18(A,B) :- term12(C,A), term13(D,B), term24(B,E), term1(F,A), term13(A,G), term15(B,F).
+term18(A,B) :- term9(C,B), term15(A,C), term21(D,B), term3(D,A).
+term18(A,B) :- term12(C,B), term16(A,C), term2(D,A), term15(D,B), term4(A,E), term12(E,D), term20(B,F), term15(G,D).
+term18(A,B) :- term2(B,C), term15(A,C), term20(A,D), term24(E,B), term2(A,F), term15(E,D).
+term18(A,B) :- term9(C,B), term15(A,C), term1(D,B), term2(C,E), term6(C,A), term17(A,F), term2(A,G), term5(H,E), term2(G,I), term5(I,D).
+term18(A,B) :- term12(C,A), term13(B,A).
+term18(A,B) :- term12(C,A), term16(B,C), term2(D,B), term4(A,D).
+term18(A,B) :- term12(C,A), term16(B,C), term2(D,B), term2(B,E), term17(A,C), term13(A,F), term10(E,B).
+term18(A,B) :- term12(C,B), term16(C,A), term0(C,D), term2(E,A), term1(F,A), term15(F,B), term15(G,F), term14(H,F), term16(B,H).
+term18(A,B) :- term15(B,C), term14(D,B), term25(E,A), term16(B,E).
+term18(A,B) :- term9(C,A), term15(B,C), term2(B,D), term15(A,D), term2(E,C), term2(D,F), term22(B,G), term21(H,B), term16(H,G), term9(E,A).
+term18(A,B) :- term12(C,A), term1(D,A), term17(B,E), term12(B,F), term15(D,B), term4(D,G), term14(H,D), term16(G,B), term8(F,D).
+term18(A,B) :- term5(C,A), term24(D,A), term10(D,B).
+term18(A,B) :- term9(C,B), term1(D,B), term24(A,E), term12(D,F), term16(A,F), term11(D,C).
+term18(A,B) :- term17(C,B), term25(D,C), term16(A,C), term19(E,A), term2(B,F), term1(B,D), term15(A,F).
+term18(A,B) :- term1(C,B), term25(D,B), term7(A,D).
+term18(A,B) :- term5(C,A), term1(C,B), term25(D,B), term1(A,E), term1(B,F), term2(G,E), term17(H,B), term6(F,I), term16(H,I), term7(A,H).
+term18(A,B) :- term0(A,C), term19(D,A), term3(B,D), term2(B,E).
+term18(A,B) :- term14(A,C), term8(B,C), term12(D,B), term2(E,A), term2(F,B), term15(E,B), term5(F,G).
+term18(A,B) :- term1(C,A), term15(B,C), term8(D,A), term3(E,A), term16(B,E), term14(F,C), term4(F,A), term18(B,A).
+term18(A,B) :- term12(C,A), term22(D,B), term2(B,E), term0(B,F), term15(A,F), term18(D,E).
+term18(A,B) :- term1(C,A), term15(B,C), term9(D,A), term21(E,A), term18(B,A).
+term18(A,B) :- term12(C,B), term13(D,A), term4(A,E), term16(E,B), term14(B,F), term18(B,A), term1(B,G).
+term18(A,B) :- term12(C,B), term16(C,A), term2(B,D), term2(A,E), term15(D,E), term18(E,B).
+term18(A,B) :- term12(C,A), term16(B,C), term13(D,B), term4(B,E), term16(E,A), term13(E,B), term13(A,F), term8(D,A), term2(G,C), term18(B,A).
+term18(A,B) :- term9(C,A), term15(B,C), term22(D,B), term2(B,E), term25(F,A), term0(G,D), term18(C,E).
+term18(A,B) :- term12(C,B), term16(C,A), term2(B,D), term22(A,E), term0(B,E), term18(B,A).
+term18(A,B) :- term12(C,B), term16(C,A), term19(D,B), term21(E,A), term16(B,E), term2(A,F), term18(B,A).
+term5(A,B) :- term15(B,A), term20(C,B), term12(A,D), term0(C,E), term6(F,A), term15(A,F).
+term5(A,B) :- term15(B,A), term20(C,B), term25(C,D).
+term5(A,B) :- term15(B,A), term9(C,B), term0(D,B), term15(A,D), term15(D,E).
+term5(A,B) :- term15(B,A), term20(C,B), term12(A,D), term14(E,A), term16(B,D).
+term5(A,B) :- term15(B,A), term9(C,B), term21(A,D), term17(A,E), term7(E,C).
+term5(A,B) :- term15(B,A), term8(C,B), term13(A,D), term14(B,E), term16(E,A).
+term5(A,B) :- term15(B,A), term20(C,B), term19(D,A).
+term5(A,B) :- term15(B,A), term9(C,B), term7(A,D), term14(D,B).
+term5(A,B) :- term15(B,A), term20(C,B), term3(B,C).
+term5(A,B) :- term15(B,A), term20(C,B), term14(D,A), term15(D,C).
+term5(A,B) :- term15(B,A), term12(C,B), term13(B,D), term24(E,D).
+term5(A,B) :- term15(B,A), term8(C,B), term0(B,D), term9(D,E), term22(A,F), term1(E,G).
+term5(A,B) :- term15(B,A), term8(C,B), term3(B,D), term24(E,A), term15(F,D).
+term5(A,B) :- term15(B,A), term20(C,B), term12(D,B), term8(D,C).
+term5(A,B) :- term15(B,A), term8(C,B), term14(B,D), term16(A,D), term9(D,E).
+term5(A,B) :- term12(C,B), term16(C,A), term21(A,D), term14(A,E), term14(B,F).
+term5(A,B) :- term12(C,B), term16(C,A), term4(A,D), term3(A,E), term9(C,E).
+term5(A,B) :- term12(C,B), term24(B,A).
+term5(A,B) :- term15(B,A), term8(C,B), term15(A,C).
+term5(A,B) :- term6(B,A), term2(C,A), term17(B,D), term22(D,E), term21(A,F), term16(B,E), term7(C,F).
+term5(A,B) :- term12(C,B), term16(C,A), term25(D,B), term19(E,B), term5(C,E).
+term5(A,B) :- term12(C,B), term25(D,A), term16(D,B), term11(A,E), term5(B,E).
+term10(A,B) :- term11(B,A), term6(C,B), term15(A,D), term1(A,E), term1(E,B), term6(F,E).
+term10(A,B) :- term11(B,A), term6(C,B), term2(A,D), term4(E,A), term2(E,F).
+term10(A,B) :- term11(B,A), term6(C,B), term17(A,D), term2(B,E), term0(D,F), term3(D,G).
+term10(A,B) :- term11(B,A), term7(C,B), term9(A,D), term14(E,D), term19(F,D), term12(E,G).
+term10(A,B) :- term9(B,A), term6(A,C), term25(D,A), term2(B,E).
+term10(A,B) :- term9(B,A), term22(C,B), term0(D,C), term5(C,A), term16(C,D).
+term10(A,B) :- term11(B,A), term7(C,B), term0(B,D), term17(C,A).
+term10(A,B) :- term11(B,A), term7(C,B), term17(B,D), term4(A,E), term0(C,E).
+term10(A,B) :- term22(C,B), term9(D,A), term2(E,D), term12(E,F), term6(C,E), term6(E,G), term11(D,B), term15(B,H).
+term10(A,B) :- term11(B,A), term7(C,B), term9(A,D), term13(A,E), term21(B,F), term6(C,F), term3(D,F).
+term10(A,B) :- term9(B,A), term21(B,C), term12(A,D), term14(E,D), term9(B,E), term4(B,F), term11(D,G).
+term10(A,B) :- term11(B,A), term7(C,B), term5(B,D), term0(A,E), term4(C,A).
+term10(A,B) :- term11(B,A), term7(C,B), term5(B,D), term0(E,A), term17(A,F), term22(G,A), term15(B,G).
+term10(A,B) :- term22(B,C), term22(C,A), term2(D,B), term17(B,E), term12(A,F), term3(B,F), term17(A,G), term1(A,D).
+term10(A,B) :- term9(B,A), term21(B,C), term9(A,D), term3(A,E), term11(C,D).
+term10(A,B) :- term22(B,C), term6(A,C), term12(A,D), term2(A,E), term17(B,D), term12(E,D).
+term10(A,B) :- term11(B,A), term0(C,A), term22(D,B), term18(A,D).
+term10(A,B) :- term7(C,B), term16(C,A), term12(B,D), term14(E,D), term9(A,E), term13(F,A), term12(E,G).
+term10(A,B) :- term11(B,A), term21(C,B), term20(D,A), term0(C,D).
+term10(A,B) :- term9(B,A), term21(B,C), term13(A,D), term17(B,E), term13(A,C), term0(F,A), term12(A,G), term12(A,E), term13(D,B), term11(C,G).
+term10(A,B) :- term22(B,C), term22(C,A), term21(D,A), term13(D,B), term12(B,E), term3(F,E), term14(G,E), term11(G,A), term11(A,F).
+term10(A,B) :- term7(C,B), term16(C,A), term21(B,A).
+term10(A,B) :- term11(B,A), term13(C,B), term16(A,C).
+term10(A,B) :- term6(C,B), term15(A,C), term12(B,A).
+term10(A,B) :- term9(B,A), term21(C,B), term9(A,D), term25(E,A), term16(C,D).
+term10(A,B) :- term11(B,A), term21(C,B), term4(D,A), term3(A,C), term17(D,B).
+term10(A,B) :- term2(B,A), term21(B,C), term21(A,C), term1(B,D), term6(E,A), term6(D,F).
+term10(A,B) :- term6(C,B), term15(A,C), term2(B,D), term17(B,E), term25(E,A).
+term10(A,B) :- term21(C,B), term24(A,C).
+term10(A,B) :- term1(B,A), term21(C,B), term6(A,D), term13(B,C), term4(A,C), term17(E,A), term15(F,A).
+term10(A,B) :- term9(B,A), term21(C,B), term9(A,D), term20(C,D).
+term10(A,B) :- term6(C,B), term15(A,C), term2(B,D), term6(B,C).
+term10(A,B) :- term9(B,A), term19(C,A), term10(C,D), term6(D,E), term2(F,A), term11(B,E).
+term10(A,B) :- term13(C,B), term12(A,C), term12(B,D), term9(A,E), term9(E,A), term2(F,E), term0(D,G), term13(G,B), term10(B,F).
+term4(A,B) :- term0(C,A), term20(C,B), term2(D,A), term1(E,A), term0(C,D).
+term4(A,B) :- term0(A,C), term20(C,B), term24(C,D).
+term4(A,B) :- term0(B,C), term20(C,A), term12(B,D), term13(E,A).
+term4(A,B) :- term0(A,C), term20(C,B), term14(D,A), term2(C,E), term9(D,B).
+term4(A,B) :- term0(B,C), term20(C,A), term9(A,D), term24(D,E).
+term4(A,B) :- term0(B,C), term20(C,A), term14(D,B), term2(E,B), term17(E,A).
+term4(A,B) :- term0(A,C), term12(B,C), term5(D,A), term14(E,B), term12(B,E), term12(E,F).
+term4(A,B) :- term0(C,B), term17(C,A), term9(C,D), term14(E,A), term13(A,F), term9(E,B).
+term4(A,B) :- term0(B,C), term12(A,C), term5(D,B), term14(E,A), term12(A,E), term12(E,F).
+term4(A,B) :- term0(A,C), term20(C,B), term0(B,D), term20(D,A).
+term4(A,B) :- term0(A,C), term20(C,B), term0(D,B), term19(B,E).
+term4(A,B) :- term0(A,C), term13(C,B), term1(C,D), term18(E,C), term5(D,F), term18(C,F), term16(A,E).
+term4(A,B) :- term0(B,C), term13(C,A), term19(D,B), term2(E,A), term18(F,A), term16(F,B).
+term4(A,B) :- term0(A,C), term13(C,B), term1(C,D), term6(D,E), term8(B,C), term17(F,A), term21(G,A).
+term4(A,B) :- term0(A,C), term20(C,B), term21(C,D), term18(C,E), term15(A,E), term6(A,F), term9(B,G), term9(G,H), term9(H,I).
+term4(A,B) :- term0(A,C), term3(B,C), term10(D,C), term5(E,B), term16(D,A).
+term4(A,B) :- term2(B,C), term13(A,C), term14(D,A), term21(C,E), term3(C,A).
+term4(A,B) :- term0(C,A), term13(C,B), term19(D,A), term2(E,B), term11(E,C).
+term4(A,B) :- term0(B,C), term13(C,A), term7(A,C), term5(D,B), term12(C,E), term9(A,E).
+term4(A,B) :- term0(C,A), term2(B,D), term13(D,A), term15(D,E), term7(A,D), term1(F,C), term16(C,E), term5(E,B).
+term4(A,B) :- term0(C,A), term13(C,B), term18(C,D), term8(A,D).
+term4(A,B) :- term0(A,C), term12(C,B), term0(B,D), term22(E,A), term2(A,F), term17(D,G).
+term4(A,B) :- term13(B,A), term6(C,B), term2(D,A), term19(C,D).
+term4(A,B) :- term1(A,C), term13(C,B), term15(B,D), term22(A,E), term0(C,A), term0(B,F).
+term4(A,B) :- term0(A,C), term12(C,B), term14(B,D), term8(E,A).
+term4(A,B) :- term5(C,A), term16(C,B), term5(B,D), term1(E,A), term21(B,E), term14(F,A), term0(B,G), term8(F,C).
+term4(A,B) :- term0(A,C), term1(A,D), term13(B,D), term1(E,A), term5(F,B), term16(F,A), term12(B,G), term8(C,B), term14(H,E), term8(F,G), term17(D,I).
+term4(A,B) :- term19(C,B), term18(A,C), term19(D,A).
+term4(A,B) :- term7(A,C), term1(A,D), term25(B,D).
+term4(A,B) :- term0(A,C), term6(D,B), term16(D,A), term2(E,A), term14(F,A), term11(B,F), term18(G,B), term0(G,H), term0(I,D), term8(H,A).
+term4(A,B) :- term3(C,A), term11(C,B), term21(A,D), term2(B,E), term20(B,F), term2(G,A), term15(C,E).
+term4(A,B) :- term15(A,C), term5(B,D), term14(D,E), term5(E,A), term16(C,E).
+term4(A,B) :- term3(C,A), term11(C,B), term0(D,B), term18(D,C).
+term4(A,B) :- term3(C,A), term10(B,C), term15(A,C).
+term4(A,B) :- term3(C,A), term10(B,C), term1(A,D), term5(D,E), term6(E,A), term21(F,B), term2(B,G), term3(G,A), term6(B,H).
+term4(A,B) :- term14(C,A), term14(D,B), term1(A,D), term1(E,A), term16(C,D).
+term4(A,B) :- term3(C,B), term11(C,A), term1(A,D), term14(E,B), term14(F,A), term13(B,D), term1(G,B).
+term4(A,B) :- term3(C,B), term10(A,C), term0(A,D), term0(C,E), term24(A,F).
+term4(A,B) :- term15(B,C), term16(C,A), term6(A,D), term2(C,D).
+term4(A,B) :- term3(C,B), term10(A,C), term0(A,D), term0(C,E), term1(A,E), term7(C,F), term13(F,C), term1(B,G).
+term4(A,B) :- term3(B,A), term12(A,C), term22(B,D), term17(B,E), term18(D,E).
+term4(A,B) :- term9(C,B), term7(A,D), term2(E,D), term1(F,B), term12(A,F), term18(F,D), term17(G,B), term16(C,E).
+term4(A,B) :- term15(B,C), term16(C,A), term6(A,D), term24(E,B), term3(F,E), term8(A,F), term17(A,G), term11(A,H).
+term4(A,B) :- term17(B,C), term5(D,A), term1(A,E), term7(B,E), term2(F,B), term0(F,G), term3(G,A).
+term4(A,B) :- term11(A,C), term20(C,B), term15(D,A), term11(B,E), term14(E,D).
+term4(A,B) :- term3(B,A), term25(C,A), term11(C,B), term11(A,D), term20(C,D).
+term4(A,B) :- term0(A,C), term17(C,B), term14(D,B), term9(D,A), term2(E,B), term4(C,E).
+term4(A,B) :- term0(A,C), term13(C,B), term5(D,A), term9(B,E), term6(E,F), term7(B,C), term4(C,E).
+term4(A,B) :- term5(C,A), term16(C,B), term2(A,D), term14(E,B), term13(B,E), term4(B,A).
+term4(A,B) :- term13(C,B), term2(D,C), term5(E,A), term2(A,D), term20(C,F), term4(B,A), term16(B,E).
+term4(A,B) :- term0(A,C), term13(B,C), term25(A,D), term4(B,E).
+term4(A,B) :- term1(A,C), term17(B,C), term3(D,B), term1(B,E), term2(F,E), term21(E,A), term4(B,A).
+term4(A,B) :- term0(A,C), term17(B,C), term19(A,D), term19(E,B), term4(C,F).
+term4(A,B) :- term15(A,C), term16(C,B), term15(D,B), term16(A,D), term2(C,E), term20(A,F), term16(B,E), term20(E,G), term18(A,H), term1(C,H), term4(B,A).
+term4(A,B) :- term3(C,A), term11(C,B), term0(B,D), term2(A,E), term10(C,D), term4(B,A), term6(A,F).
+term4(A,B) :- term3(C,A), term11(C,B), term24(D,A), term0(B,E), term2(F,B), term4(B,A).
+term1(A,B) :- term2(B,A), term0(B,C), term0(D,B), term9(C,D).
+term1(A,B) :- term2(B,A), term9(C,B), term20(A,D).
+term1(A,B) :- term2(B,A), term3(A,C), term4(B,D), term17(C,A).
+term1(A,B) :- term2(B,A), term22(C,B), term22(B,D), term8(E,A), term10(D,C).
+term1(A,B) :- term2(B,A), term20(C,A), term3(D,A), term9(A,E).
+term1(A,B) :- term2(C,A), term11(B,C), term18(A,D), term15(B,D), term19(E,A).
+term1(A,B) :- term18(B,C), term15(C,A), term2(D,A), term9(D,B), term25(E,B), term5(F,A).
+term1(A,B) :- term21(C,A), term4(B,C), term18(B,D), term22(E,A), term3(D,E).
+term1(A,B) :- term2(B,A), term14(C,B).
+term1(A,B) :- term21(C,A), term18(B,D), term15(D,A), term20(B,E), term7(A,C), term0(B,F), term17(A,G).
+term1(A,B) :- term21(A,C), term4(B,C), term21(D,B), term0(A,E), term17(A,F), term6(C,G), term4(B,F).
+term1(A,B) :- term18(C,B), term15(A,C), term19(D,B), term16(A,D), term20(E,C), term22(F,A), term13(G,C).
+term1(A,B) :- term21(A,C), term18(D,B), term20(A,E), term6(E,F), term4(D,F).
+term1(A,B) :- term21(A,C), term4(B,C), term12(C,D), term22(E,B), term0(C,F), term3(A,F), term16(C,E).
+term1(A,B) :- term2(B,A), term9(C,B), term0(D,A).
+term1(A,B) :- term2(C,A), term11(B,C), term18(A,D), term3(B,E), term2(E,D).
+term1(A,B) :- term18(C,B), term15(C,A), term0(B,D), term14(E,A), term4(B,E), term19(F,A), term17(G,A).
+term1(A,B) :- term21(A,C), term12(C,B), term2(D,C), term18(A,E), term17(B,F), term14(G,B), term13(A,G).
+term1(A,B) :- term18(C,B), term15(A,C), term14(D,A), term25(C,E).
+term1(A,B) :- term2(C,A), term9(C,B), term12(A,D), term20(B,D), term17(D,A), term4(A,E), term20(E,B).
+term1(A,B) :- term21(B,C), term4(A,C), term5(A,D), term9(C,D).
+term1(A,B) :- term2(C,B), term11(C,A), term14(D,A), term21(E,B), term4(E,A), term11(F,C), term3(B,E), term9(C,G), term9(G,H).
+term1(A,B) :- term2(B,A), term20(B,C), term16(A,C).
+term1(A,B) :- term18(C,B), term15(A,C), term19(D,B), term16(A,D), term3(B,E), term21(F,A), term2(G,B).
+term1(A,B) :- term4(A,C), term17(B,C), term3(D,B), term3(E,A), term17(A,F), term25(G,B).
+term1(A,B) :- term21(A,C), term3(C,B), term3(B,C), term2(D,A), term20(A,E).
+term1(A,B) :- term21(A,C), term3(C,B), term21(B,D), term2(E,D), term4(A,D), term0(C,F).
+term1(A,B) :- term6(B,C), term18(C,A), term10(A,C).
+term1(A,B) :- term6(B,C), term18(C,A), term22(D,B), term2(E,D), term21(F,B), term13(B,F), term10(E,G), term5(B,E), term22(G,H), term11(A,H), term2(I,B).
+term1(A,B) :- term22(A,C), term15(B,C), term14(B,D), term13(A,D), term3(D,E), term6(E,F), term22(F,A).
+term1(A,B) :- term12(A,C), term4(C,B), term22(D,A), term21(E,C).
+term1(A,B) :- term2(B,A), term20(B,C), term13(A,D), term16(D,C).
+term1(A,B) :- term12(A,C), term4(C,B), term0(B,D), term16(D,C).
+term1(A,B) :- term12(A,C), term4(C,B), term20(C,A), term3(B,D), term3(E,B), term10(E,F).
+term1(A,B) :- term12(A,C), term17(C,B), term14(D,C), term22(B,E), term15(E,D), term6(E,F), term3(A,G), term0(F,A).
+term1(A,B) :- term4(A,C), term17(C,B), term13(D,A), term4(B,D), term11(A,E), term21(B,F), term3(F,E), term3(G,C), term12(F,H), term13(E,D).
+term1(A,B) :- term14(C,A), term2(C,D), term3(E,A), term18(F,E), term3(G,F), term19(H,B), term11(A,D), term15(G,B).
+term1(A,B) :- term2(C,B), term11(A,C), term18(B,D), term4(A,D).
+term1(A,B) :- term2(B,A), term22(A,C), term2(D,C), term6(E,B), term1(E,C).
+term1(A,B) :- term18(B,C), term15(A,C), term25(D,A), term21(E,A), term1(B,A).
+term1(A,B) :- term18(C,B), term15(C,A), term18(D,A), term6(C,E), term0(A,E), term3(B,F), term15(D,E), term1(B,A).
+term1(A,B) :- term21(B,C), term12(C,A), term22(B,D), term21(D,E), term14(F,A), term17(A,F), term1(B,A).
+term1(A,B) :- term4(A,C), term17(B,C), term2(D,A), term14(E,A), term3(B,E), term6(B,F), term1(G,A).
+term1(A,B) :- term21(A,C), term12(C,B), term3(A,D), term8(D,B), term18(A,E), term21(E,F), term1(B,A).
+term9(A,B) :- term11(B,A), term20(C,B), term15(A,D), term17(A,E), term15(B,D), term14(F,C), term16(D,E).
+term9(A,B) :- term11(B,A), term20(C,B), term1(D,A), term1(D,B), term6(E,D).
+term9(A,B) :- term11(B,A), term17(B,C), term7(A,C).
+term9(A,B) :- term10(B,A), term12(C,B), term5(A,D), term4(A,E), term2(F,D), term17(G,B), term8(E,F).
+term9(A,B) :- term11(B,A), term20(C,B), term17(D,B), term13(A,D), term4(D,E), term17(B,D).
+term9(A,B) :- term11(B,A), term20(C,B), term8(A,C).
+term9(A,B) :- term10(B,A), term10(A,C), term25(D,B), term4(A,D), term12(C,E).
+term9(A,B) :- term12(C,B), term12(A,C), term15(B,D), term22(E,D), term18(A,D), term19(F,A).
+term9(A,B) :- term11(B,A), term10(A,C), term18(C,B).
+term9(A,B) :- term11(B,A), term20(C,B), term3(A,D), term19(E,A).
+term9(A,B) :- term12(C,B), term12(C,A), term12(A,D), term15(A,E), term12(A,C), term13(A,F), term17(B,F), term14(G,C), term11(D,C).
+term9(A,B) :- term10(B,A), term20(B,C), term13(A,C).
+term9(A,B) :- term10(B,A), term10(A,C), term17(A,D), term19(E,B), term16(D,C).
+term9(A,B) :- term10(B,A), term20(B,C), term21(A,D), term3(B,D), term17(B,E), term16(D,C).
+term9(A,B) :- term11(B,A), term8(C,B), term3(B,D), term1(C,D).
+term9(A,B) :- term10(B,A), term20(C,B), term5(A,D), term11(B,E), term11(E,A), term20(F,E), term3(B,G), term16(D,F).
+term9(A,B) :- term20(C,B), term20(C,A), term5(A,D), term2(E,C), term12(B,C), term18(B,D).
+term9(A,B) :- term20(C,A), term14(D,A), term4(D,B), term20(E,B), term12(A,E).
+term9(A,B) :- term11(B,A), term5(C,B), term6(D,A), term4(B,E), term0(F,B), term15(F,G), term16(E,D).
+term9(A,B) :- term11(B,A), term20(C,B), term14(A,D).
+term9(A,B) :- term11(B,A), term20(C,B), term3(A,D), term16(D,B).
+term9(A,B) :- term11(B,A), term20(C,B), term20(C,A), term12(C,D).
+term9(A,B) :- term20(C,B), term20(C,A), term1(C,D), term12(A,C), term20(B,C), term0(A,E).
+term9(A,B) :- term10(B,A), term20(C,B), term2(D,A), term0(E,B), term10(A,F), term2(F,G), term10(F,A).
+term9(A,B) :- term5(C,B), term15(A,C), term10(A,D), term24(E,B), term11(B,D).
+term9(A,B) :- term5(C,B), term15(A,C), term12(B,D), term24(E,A), term5(B,E).
+term9(A,B) :- term5(C,B), term15(A,C), term12(B,D), term15(E,A), term20(A,D), term16(B,F), term16(F,A), term17(G,B), term13(A,H), term11(G,D).
+term9(A,B) :- term5(C,B), term15(A,C), term17(D,A), term12(B,A).
+term9(A,B) :- term12(C,B), term12(A,C), term7(A,D), term10(A,E), term22(F,A), term19(G,B), term10(G,H), term6(H,I), term4(I,B), term9(D,G).
+term6(A,B) :- term15(B,A), term10(C,B), term4(D,B), term4(B,E), term16(A,E), term11(E,D).
+term6(A,B) :- term15(B,A), term10(C,B), term15(C,A), term22(D,A), term0(B,E).
+term6(A,B) :- term15(B,A), term10(C,B), term2(D,A), term5(B,E), term1(D,F).
+term6(A,B) :- term15(B,A), term10(C,B), term15(C,A), term7(B,D), term21(C,D).
+term6(A,B) :- term15(B,A), term21(B,C), term5(D,A), term1(B,E), term1(D,B), term16(C,A).
+term6(A,B) :- term15(B,A), term10(C,B), term5(B,D), term3(E,B), term22(F,E), term12(B,G), term8(A,G).
+term6(A,B) :- term15(B,A), term10(C,B), term0(A,D), term22(C,D).
+term6(A,B) :- term15(B,A), term7(B,C), term17(D,A), term9(D,C).
+term6(A,B) :- term21(B,C), term16(C,A), term0(D,A), term15(D,B), term15(B,A).
+term6(A,B) :- term15(B,A), term10(C,B), term2(B,C), term10(A,D), term15(C,D).
+term6(A,B) :- term15(B,A), term13(C,B), term14(A,D), term2(E,A).
+term6(A,B) :- term21(B,C), term16(C,A), term5(A,D), term0(E,A), term13(C,D).
+term6(A,B) :- term15(B,A), term13(C,B), term13(B,D), term4(E,A), term12(A,F), term5(E,G), term16(G,A), term2(H,F), term1(E,H), term18(C,F).
+term6(A,B) :- term21(B,C), term16(C,A), term21(A,D), term0(A,E), term15(E,B), term13(F,A), term1(E,G), term0(G,H), term16(C,H).
+term6(A,B) :- term21(C,B), term7(A,C), term11(C,A).
+term6(A,B) :- term21(C,B), term7(A,C), term3(D,B), term2(B,E), term22(A,F), term22(E,G), term3(B,C), term16(D,A).
+term6(A,B) :- term5(B,A), term21(B,C), term15(D,A), term2(B,E), term7(C,D).
+term13(A,B) :- term7(B,A), term6(C,B), term16(A,C), term22(A,D), term2(E,A), term12(E,F), term6(B,G).
+term13(A,B) :- term7(B,A), term6(C,B), term16(A,C), term3(D,A), term10(D,E), term2(F,D), term15(B,C), term18(C,D).
+term13(A,B) :- term7(B,A), term22(C,B), term16(C,A), term12(A,D), term18(E,A).
+term13(A,B) :- term22(B,C), term16(A,C), term6(A,D), term11(D,A).
+term13(A,B) :- term12(B,A), term7(A,C), term2(D,C), term9(B,E), term2(F,E), term22(C,B), term8(C,A).
+term13(A,B) :- term8(B,A), term6(C,B), term17(D,A), term21(E,B), term16(A,C), term12(B,F), term0(E,G).
+term13(A,B) :- term22(B,C), term16(A,C), term22(A,D), term2(A,E), term0(A,F), term3(G,C), term7(F,C), term11(F,H), term15(F,G).
+term13(A,B) :- term22(B,C), term16(A,C), term22(A,D), term16(B,D), term3(C,E), term7(C,D), term21(D,F), term2(G,A).
+term13(A,B) :- term22(B,C), term16(A,C), term6(A,D), term14(C,D).
+term13(A,B) :- term7(C,B), term15(A,C), term6(A,D), term12(A,E), term16(B,C), term0(F,B), term8(C,F), term2(A,G), term0(H,A), term15(C,H).
+term13(A,B) :- term21(B,A), term2(C,A), term0(B,D), term2(D,B).
+term13(A,B) :- term22(B,C), term16(A,C), term2(D,A), term5(B,E), term7(C,A), term12(D,F), term17(A,F), term7(C,D).
+term13(A,B) :- term8(B,A), term6(C,B), term8(C,A), term12(B,D), term10(E,B), term12(A,E).
+term13(A,B) :- term22(B,C), term16(A,C), term2(D,A), term14(B,E), term17(D,B), term12(A,F).
+term13(A,B) :- term8(B,A), term6(C,B), term16(A,C), term0(D,B), term3(E,A), term15(C,D).
+term13(A,B) :- term12(B,A), term12(A,C), term19(D,A), term11(A,E), term22(F,B).
+term13(A,B) :- term22(A,C), term14(B,A).
+term13(A,B) :- term22(B,C), term16(C,A), term12(A,D), term12(B,E), term22(A,F), term1(B,G), term11(B,D), term4(B,H), term8(F,D), term9(A,E), term17(I,H).
+term13(A,B) :- term21(B,C), term14(B,D), term17(B,E), term11(D,A), term9(E,A).
+term13(A,B) :- term22(B,C), term16(A,C), term22(A,D), term2(A,E), term7(B,E), term6(D,E).
+term13(A,B) :- term7(C,B), term15(A,C), term12(A,D), term22(A,E), term24(F,D).
+term13(A,B) :- term22(B,C), term16(A,C), term10(A,D), term2(E,D), term21(B,D), term6(A,F), term7(E,C), term2(B,G), term15(F,D), term16(F,G), term21(A,H), term21(G,D).
+term13(A,B) :- term4(B,A), term6(C,A), term22(B,D), term0(A,E), term1(E,A), term9(A,F).
+term13(A,B) :- term12(B,A), term22(B,C), term10(A,D), term16(B,D).
+term13(A,B) :- term12(B,A), term22(B,C), term4(A,D), term2(E,B), term15(D,C), term12(A,F), term11(B,F), term1(G,A).
+term13(A,B) :- term22(B,C), term5(A,D), term14(A,E), term11(B,E), term8(B,D), term6(D,F), term8(E,D), term3(F,B).
+term13(A,B) :- term7(C,B), term15(A,C), term12(A,D), term6(D,E), term21(F,A), term19(G,D), term1(A,H), term1(I,A), term4(I,B).
+term13(A,B) :- term12(A,C), term6(C,D), term6(B,D), term21(E,A), term4(A,F), term7(F,B).
+term13(A,B) :- term8(B,A), term6(C,B), term16(C,A), term3(A,D), term2(D,B).
+term13(A,B) :- term7(C,B), term15(A,C), term12(A,D), term14(E,D), term9(A,E), term16(B,C), term1(F,A), term9(B,G), term12(F,H), term16(C,H).
+term13(A,B) :- term21(B,C), term10(A,C), term22(A,D), term14(B,E), term21(C,D).
+term13(A,B) :- term7(C,B), term15(A,C), term12(A,D), term22(A,E), term4(D,A).
+term13(A,B) :- term7(B,A), term6(C,B), term16(C,A), term2(D,B), term10(D,E).
+term13(A,B) :- term6(C,B), term16(A,C), term6(A,D), term2(E,A), term7(B,D), term12(E,F), term1(D,G), term7(B,E), term0(H,D).
+term13(A,B) :- term22(B,C), term16(C,A), term2(D,A), term2(E,B), term9(C,D).
+term13(A,B) :- term22(B,C), term16(C,A), term6(D,C), term12(D,A), term16(B,A).
+term13(A,B) :- term22(B,C), term7(A,C), term1(A,D), term6(D,C).
+term13(A,B) :- term16(A,C), term12(A,D), term14(E,D), term11(B,F), term21(B,G), term12(B,E), term11(E,A), term11(D,F).
+term13(A,B) :- term4(B,A), term6(C,A), term22(B,D), term14(D,E).
+term13(A,B) :- term7(B,A), term6(C,B), term9(A,C).
+term13(A,B) :- term7(C,B), term6(C,A), term0(D,B), term2(A,D).
+term13(A,B) :- term21(B,C), term10(A,C), term2(D,C), term6(E,A), term6(D,E).
+term13(A,B) :- term7(C,B), term15(A,C), term2(D,A), term4(B,D), term3(B,E), term17(C,F), term6(F,B), term4(G,A).
+term13(A,B) :- term22(B,C), term7(A,C), term2(D,A), term2(E,B), term14(B,F), term2(G,D).
+term13(A,B) :- term21(B,A), term2(C,A), term0(D,B), term20(A,D).
+term13(A,B) :- term12(B,A), term24(A,C), term16(B,C).
+term13(A,B) :- term21(B,C), term10(A,C), term2(D,C), term18(B,E), term17(D,A).
+term13(A,B) :- term4(B,A), term6(C,A), term21(B,D), term1(A,E), term2(A,D).
+term13(A,B) :- term12(A,C), term11(C,B), term18(D,B), term0(A,E), term22(F,E), term21(B,G), term0(H,A), term7(D,A).
+term13(A,B) :- term7(C,B), term18(A,C), term2(D,A), term18(B,E), term20(C,A).
+term13(A,B) :- term22(B,C), term16(A,C), term2(D,A), term22(E,A), term7(B,F), term14(A,G), term13(D,H).
+term13(A,B) :- term22(B,C), term16(A,C), term2(D,A), term12(D,E), term2(E,B), term17(A,E), term13(D,F).
+term13(A,B) :- term12(B,A), term22(B,C), term12(A,D), term2(E,A), term13(E,F), term10(D,F).
+term13(A,B) :- term7(B,A), term22(C,B), term16(A,C), term2(D,C), term13(D,E).
+term13(A,B) :- term2(C,A), term12(B,D), term19(E,D), term19(F,E), term22(A,G), term13(C,B).
+term13(A,B) :- term22(B,C), term16(C,A), term2(D,A), term5(D,E), term10(C,B), term13(D,B).
+term17(A,B) :- term3(B,A), term20(C,A), term5(B,D), term1(A,E), term0(F,B), term12(B,G), term16(D,A).
+term17(A,B) :- term3(B,A), term5(C,A), term5(B,D), term4(E,A), term12(B,F), term8(A,D), term11(B,E).
+term17(A,B) :- term3(B,A), term20(C,A), term15(C,B).
+term17(A,B) :- term9(C,A), term22(D,B), term14(A,E), term2(E,B).
+term17(A,B) :- term3(B,A), term20(A,C), term4(B,D), term16(D,C).
+term17(A,B) :- term12(B,A), term22(C,B), term2(D,C), term15(A,D).
+term17(A,B) :- term21(A,C), term9(C,B), term2(C,D), term14(D,E).
+term17(A,B) :- term21(B,C), term9(C,A), term1(A,D), term5(B,E), term4(B,D), term2(F,E).
+term17(A,B) :- term9(A,C), term20(C,B), term2(D,B), term4(D,A), term21(E,A), term10(C,F), term11(F,A).
+term17(A,B) :- term5(C,A), term1(A,D), term13(D,B), term13(B,E), term3(E,F), term18(D,C), term11(B,F), term4(G,E), term13(E,G), term16(B,C).
+term17(A,B) :- term5(C,A), term1(A,D), term13(D,B), term24(B,E), term15(C,F).
+term17(A,B) :- term22(B,C), term10(B,D), term0(E,B), term9(A,F), term12(D,A), term16(D,F).
+term17(A,B) :- term3(B,A), term5(C,B), term4(A,D), term13(D,C).
+term17(A,B) :- term12(B,A), term22(C,B), term2(D,C), term3(B,E), term21(E,B), term16(E,D), term18(F,E).
+term17(A,B) :- term21(B,C), term14(D,A), term1(E,A), term1(E,C), term0(F,B), term7(D,C), term3(G,A).
+term17(A,B) :- term15(B,C), term16(A,C), term20(D,B), term7(C,A), term14(E,A), term15(F,A).
+term17(A,B) :- term9(B,C), term20(A,C), term22(B,D), term14(E,C), term9(A,E), term12(E,F).
+term17(A,B) :- term9(B,C), term20(A,C), term22(B,D), term21(B,E), term9(E,A), term16(E,D), term12(F,A), term2(C,B).
+term17(A,B) :- term12(B,A), term6(C,B), term13(D,A).
+term17(A,B) :- term5(C,A), term13(D,B), term1(D,A), term13(C,D).
+term17(A,B) :- term5(C,A), term7(C,B), term13(D,B), term12(A,D).
+term17(A,B) :- term22(C,A), term8(C,B), term20(B,D), term2(A,E), term21(A,F), term11(B,F), term18(G,F), term14(H,E), term9(H,B), term13(E,H).
+term17(A,B) :- term5(C,A), term11(D,B), term2(E,A), term3(B,E), term15(A,F), term12(D,E), term8(B,F), term7(F,B), term1(G,A).
+term17(A,B) :- term12(B,A), term24(A,C), term0(D,B).
+term17(A,B) :- term22(C,A), term8(C,B), term14(B,D), term13(D,C).
+term17(A,B) :- term21(C,B), term9(C,A), term6(B,D), term0(C,E), term25(F,A), term18(G,C).
+term17(A,B) :- term9(B,C), term20(C,A), term21(D,B), term12(D,A).
+term17(A,B) :- term9(B,C), term20(A,C), term22(B,D), term18(D,A).
+term17(A,B) :- term9(B,C), term20(A,C), term19(D,C), term16(D,B), term10(D,E), term19(F,D), term6(E,G), term15(H,C), term13(G,B), term12(F,A).
+term17(A,B) :- term14(B,C), term1(A,C), term15(A,D), term22(D,A).
+term17(A,B) :- term20(C,A), term22(B,D), term0(B,E), term4(A,E), term21(B,F), term13(G,A), term18(B,H).
+term17(A,B) :- term12(B,A), term21(C,B), term5(A,D), term15(B,E), term18(A,E).
+term17(A,B) :- term20(C,A), term7(D,B), term2(A,E), term12(B,F), term19(G,F), term10(G,H), term6(H,I), term0(A,I).
+term17(A,B) :- term5(C,B), term7(C,A), term4(A,D), term20(C,D).
+term17(A,B) :- term9(B,C), term12(A,C), term22(A,D), term5(E,B), term12(B,F), term16(D,B), term8(D,C), term13(C,A), term11(A,G), term12(G,C), term15(F,D).
+term17(A,B) :- term20(B,C), term1(A,C), term7(D,A), term2(E,C), term14(F,B), term10(A,F).
+term17(A,B) :- term12(B,A), term21(C,B), term25(D,A), term14(E,C).
+term17(A,B) :- term20(C,A), term22(B,D), term16(A,D), term1(A,E), term21(E,F), term13(E,B), term14(B,G), term17(C,E).
+term17(A,B) :- term5(C,A), term7(C,B), term13(D,B), term14(E,B), term0(A,F), term17(G,F).
+term17(A,B) :- term3(B,A), term2(A,C), term20(D,B), term2(C,E), term20(E,F), term6(A,G), term17(C,B).
+term17(A,B) :- term22(C,A), term8(C,B), term14(B,D), term10(A,E), term17(B,A), term13(B,F), term0(G,A).
+term17(A,B) :- term22(C,A), term8(C,B), term14(B,D), term3(B,E), term10(A,E), term17(B,A), term15(F,B).
+term3(A,B) :- term6(C,A), term1(D,A), term13(B,D), term0(B,E), term18(F,B), term10(F,G), term16(A,E).
+term3(A,B) :- term6(C,B), term0(A,D), term14(E,A), term1(B,F), term13(A,E), term1(E,B), term17(E,G).
+term3(A,B) :- term6(C,A), term16(B,C), term2(A,D), term24(E,B), term8(F,B).
+term3(A,B) :- term0(C,A), term19(A,D), term10(A,E), term21(E,B).
+term3(A,B) :- term6(C,A), term1(D,A), term2(D,E), term4(E,B), term12(B,E).
+term3(A,B) :- term6(C,B), term16(A,C), term24(D,A), term16(B,D).
+term3(A,B) :- term6(C,A), term16(B,C), term4(B,D), term24(E,A), term13(D,E).
+term3(A,B) :- term6(C,B), term2(B,D), term5(A,E), term16(B,E), term14(A,F), term13(E,G), term2(H,E).
+term3(A,B) :- term21(B,A), term6(C,A), term18(B,D), term10(A,E), term21(B,E), term16(A,D), term0(F,E), term7(B,C).
+term3(A,B) :- term17(B,A), term15(C,A), term0(D,B), term13(D,A), term2(E,C), term16(B,E).
+term3(A,B) :- term6(C,B), term16(C,A), term25(C,D).
+term3(A,B) :- term17(B,A), term1(C,B), term2(B,D), term2(E,A), term14(C,A).
+term3(A,B) :- term6(C,A), term16(C,B), term0(B,D), term13(E,B), term20(E,F), term1(A,E), term16(D,C), term17(E,G), term16(C,D).
+term3(A,B) :- term17(B,A), term18(B,C), term19(D,B), term12(A,E), term9(E,F), term14(G,F), term10(G,H), term5(E,C).
+term3(A,B) :- term6(C,A), term1(D,A), term2(E,B), term14(E,F), term12(A,E), term20(G,B), term4(H,D).
+term3(A,B) :- term6(C,B), term16(C,A), term1(D,B), term0(A,E), term13(D,A), term8(A,D), term0(B,F), term16(A,C).
+term3(A,B) :- term17(B,A), term11(C,A), term18(A,C).
+term3(A,B) :- term6(C,B), term16(C,A), term2(B,D), term5(A,E), term16(B,E), term6(C,D), term13(A,D), term7(D,A).
+term3(A,B) :- term6(C,B), term16(C,A), term6(D,C), term5(A,D), term16(B,D).
+term3(A,B) :- term17(B,A), term4(A,C), term15(C,A).
+term3(A,B) :- term2(B,C), term15(C,D), term17(B,E), term7(F,A), term11(E,A), term2(G,A), term8(B,G).
+term3(A,B) :- term7(C,B), term15(A,C), term24(D,B), term20(A,E), term1(F,C), term18(C,G).
+term3(A,B) :- term17(B,A), term2(A,C), term25(B,D), term18(E,C).
+term3(A,B) :- term7(C,B), term15(C,A), term16(B,C), term18(D,B), term18(D,C).
+term3(A,B) :- term7(C,B), term15(A,C), term0(D,B), term20(B,E), term1(E,A), term16(C,F).
+term3(A,B) :- term17(B,A), term2(C,A), term21(D,A), term6(D,C).
+term3(A,B) :- term1(C,A), term14(B,D), term6(E,A), term0(D,A), term18(F,C).
+term3(A,B) :- term24(C,A), term8(B,C), term6(D,B), term15(D,E).
+term3(A,B) :- term17(B,A), term2(A,C), term20(A,D), term15(D,C).
+term3(A,B) :- term7(C,B), term15(C,A), term11(A,D), term18(E,B), term14(F,A), term0(B,F), term13(B,D).
+term3(A,B) :- term7(C,A), term14(D,B), term0(D,A), term2(E,B).
+term3(A,B) :- term6(C,A), term16(C,B), term1(D,A), term6(A,E), term7(D,B), term12(B,F), term1(C,E), term15(E,F).
+term3(A,B) :- term6(C,B), term1(D,B), term12(D,A), term2(E,A), term17(E,D), term12(B,F), term7(A,D).
+term3(A,B) :- term21(C,A), term10(B,C), term13(C,D), term25(E,B), term15(A,F), term9(C,B), term17(C,E), term17(F,G).
+term3(A,B) :- term21(B,A), term19(A,C), term0(D,B), term22(B,E).
+term3(A,B) :- term21(B,A), term5(B,C), term10(C,B).
+term3(A,B) :- term22(B,C), term16(A,C), term24(D,A), term11(B,E), term2(F,E), term16(D,F).
+term3(A,B) :- term6(C,A), term16(B,C), term19(B,D), term2(A,E), term1(A,F), term16(C,D).
+term3(A,B) :- term7(C,B), term15(C,A), term11(A,D), term21(E,A), term0(B,F), term17(F,A), term13(A,E), term10(E,B), term11(D,G), term9(G,D), term13(D,E), term5(C,H).
+term3(A,B) :- term6(C,A), term16(B,C), term14(A,D), term19(E,B), term2(F,B).
+term3(A,B) :- term22(B,C), term16(A,C), term6(D,B), term20(D,A).
+term3(A,B) :- term22(B,C), term16(A,C), term2(D,A), term2(E,C), term16(D,C), term6(E,B).
+term3(A,B) :- term1(C,A), term13(B,C), term11(A,D), term19(E,B), term18(A,E).
+term3(A,B) :- term22(B,C), term16(A,C), term1(D,A), term22(D,B).
+term3(A,B) :- term22(B,C), term16(A,C), term16(A,D), term15(D,B), term2(C,E), term2(E,F), term10(A,G), term2(C,F), term21(H,C), term6(H,I), term16(I,D), term16(A,F).
+term3(A,B) :- term6(C,A), term16(C,B), term2(D,B), term19(C,D).
+term3(A,B) :- term6(C,A), term16(B,C), term0(A,D), term12(E,D), term14(D,F), term17(F,A), term7(C,B), term1(G,B), term18(D,C), term1(G,E), term4(I,G).
+term3(A,B) :- term1(C,A), term13(B,C), term6(D,A), term5(B,E), term13(C,B), term6(F,C), term2(C,G), term15(F,G), term16(C,E).
+term3(A,B) :- term17(B,A), term2(B,C), term19(A,D).
+term3(A,B) :- term1(C,A), term13(B,C), term22(B,D), term22(E,A), term0(A,F), term12(B,F), term16(A,D), term18(G,C), term8(D,F).
+term3(A,B) :- term6(C,B), term16(C,A), term5(A,D), term10(D,A).
+term3(A,B) :- term1(C,A), term12(C,B), term0(C,D), term0(B,E), term21(A,F), term1(A,C), term2(G,C).
+term3(A,B) :- term25(C,A), term1(B,D), term7(E,C), term10(C,B).
+term3(A,B) :- term20(B,A), term19(C,A), term19(D,C), term18(B,E), term4(F,A), term15(F,D).
+term3(A,B) :- term1(C,A), term21(D,B), term1(D,A), term4(A,C).
+term3(A,B) :- term21(C,B), term1(C,A), term11(A,C), term2(A,D), term21(B,E).
+term3(A,B) :- term0(C,A), term20(C,B), term22(D,A), term2(E,B), term4(D,E).
+term3(A,B) :- term1(A,C), term12(C,B), term18(B,A).
+term3(A,B) :- term4(B,A), term6(C,B), term14(D,B).
+term3(A,B) :- term21(C,B), term10(A,C), term24(D,A), term11(B,E), term7(C,E).
+term3(A,B) :- term13(B,A), term25(C,B), term19(A,D).
+term3(A,B) :- term17(B,A), term21(C,A), term0(D,A), term8(B,D).
+term3(A,B) :- term6(C,A), term16(B,C), term0(D,B), term11(D,E), term14(D,F), term11(E,B), term9(A,G), term5(A,H), term3(B,G), term11(G,A).
+term3(A,B) :- term7(C,B), term15(A,C), term1(D,A), term6(C,A), term13(D,B), term0(B,E), term4(A,E), term3(B,A).
+term3(A,B) :- term6(C,A), term16(B,C), term0(A,D), term14(D,E), term2(B,F), term12(A,G), term3(A,F).
+term3(A,B) :- term6(C,A), term16(C,B), term14(B,D), term6(A,E), term11(D,A), term12(E,F), term4(E,G), term2(A,H), term3(H,B).
+term3(A,B) :- term1(C,A), term13(C,B), term14(A,D), term3(B,A), term11(D,B), term7(E,C).
+term3(A,B) :- term17(B,A), term14(A,C), term10(C,B), term3(B,D), term1(E,A), term9(A,F), term11(E,G).
+term12(A,B) :- term13(B,A), term8(C,B), term15(D,A), term14(E,B), term3(C,D).
+term12(A,B) :- term9(C,B), term13(A,C), term9(D,A), term17(E,A), term10(B,E), term9(A,D), term20(D,F), term17(C,A).
+term12(A,B) :- term9(C,B), term13(A,C), term14(D,A), term9(C,D), term10(D,C), term11(B,E).
+term12(A,B) :- term7(B,A), term9(C,B), term1(A,D), term20(B,D), term3(C,D).
+term12(A,B) :- term13(B,A), term5(C,B), term15(D,A), term15(A,D).
+term12(A,B) :- term8(C,B), term14(B,D), term11(A,D), term0(E,A), term8(E,D).
+term12(A,B) :- term8(B,A), term20(C,B), term1(A,C), term17(B,D), term18(A,E).
+term12(A,B) :- term13(B,A), term5(C,B), term15(D,A), term0(E,B), term4(D,E).
+term12(A,B) :- term8(C,B), term15(A,C), term6(A,D), term14(E,A), term25(E,F), term0(G,D), term8(G,B), term11(C,G).
+term12(A,B) :- term14(C,A), term9(B,C), term9(C,B).
+term12(A,B) :- term8(C,B), term24(B,D), term7(D,A).
+term12(A,B) :- term8(C,B), term14(B,A).
+term12(A,B) :- term8(C,B), term18(C,A), term9(B,D), term16(B,C), term19(E,C), term3(A,E), term17(A,D), term13(B,F).
+term12(A,B) :- term8(C,B), term2(D,A), term2(A,E), term20(E,F), term5(G,A), term2(F,B).
+term12(A,B) :- term13(B,A), term8(C,B), term4(B,D), term2(E,B), term8(A,D).
+term12(A,B) :- term8(C,B), term15(A,C), term10(A,D), term2(E,C), term13(B,D), term25(F,A), term5(B,G), term25(H,G), term15(F,G), term5(C,A).
+term12(A,B) :- term0(B,C), term2(D,B), term5(E,B), term21(A,D), term13(D,A).
+term12(A,B) :- term9(C,B), term13(A,C), term6(B,D), term17(A,D).
+term12(A,B) :- term9(C,B), term13(A,C), term6(B,D), term7(A,D), term4(D,B).
+term12(A,B) :- term9(C,B), term6(B,D), term16(D,A), term0(E,A), term14(F,A), term4(G,D), term6(A,G).
+term12(A,B) :- term17(B,A), term22(C,A), term2(D,C), term17(B,E), term16(B,C), term11(A,E), term16(D,A).
+term12(A,B) :- term9(C,B), term13(A,C), term5(B,D), term14(E,B), term9(A,E), term10(B,C), term9(A,F), term8(A,D), term11(E,F), term9(F,A).
+term12(A,B) :- term13(B,A), term8(C,B), term6(A,D), term0(D,A).
+term12(A,B) :- term7(B,A), term2(B,C), term3(A,D), term11(B,D), term20(B,E), term15(F,D).
+term12(A,B) :- term8(B,A), term9(C,B), term3(B,D), term2(A,D).
+term12(A,B) :- term13(B,A), term22(A,C), term2(D,C), term21(E,A), term16(E,D), term8(C,B), term11(B,F), term12(G,D).
+term12(A,B) :- term13(B,A), term8(C,B), term13(A,D), term2(E,B), term12(D,E).
+term12(A,B) :- term8(C,B), term15(A,C), term6(A,D), term2(E,D), term13(F,B), term12(F,E).
+term20(A,B) :- term5(C,B), term8(C,A), term15(A,D), term16(B,D), term0(D,A).
+term20(A,B) :- term5(C,A), term8(C,B), term16(B,C), term24(D,A).
+term20(A,B) :- term5(C,B), term8(C,A), term15(A,D), term16(B,D), term21(B,E).
+term20(A,B) :- term5(C,B), term8(C,A), term15(A,D), term16(B,D), term21(A,E), term17(F,B).
+term20(A,B) :- term5(C,B), term8(C,A), term15(A,D), term16(A,C), term2(E,A), term15(C,D), term13(E,F).
+term20(A,B) :- term8(C,B), term5(C,A), term15(B,D), term0(B,E), term4(E,A), term2(F,B), term3(A,G), term17(G,A), term17(C,H).
+term20(A,B) :- term8(C,B), term1(D,A), term0(B,E), term17(F,B), term2(G,B), term8(G,A), term1(D,F).
+term20(A,B) :- term8(C,B), term5(C,A), term1(A,D), term16(C,D).
+term20(A,B) :- term8(C,B), term5(C,A), term24(D,B), term3(E,A), term16(A,D).
+term20(A,B) :- term9(C,B), term1(B,D), term12(D,A), term2(D,B), term1(A,E).
+term20(A,B) :- term25(B,A).
+term20(A,B) :- term1(C,B), term12(C,A), term17(D,A), term7(A,C), term9(D,B), term10(B,D).
+term20(A,B) :- term8(C,B), term5(C,A), term1(D,B), term12(D,A), term24(E,C).
+term20(A,B) :- term8(C,B), term1(D,B), term12(D,A), term2(E,D), term7(A,D), term1(B,F), term9(F,G).
+term20(A,B) :- term8(C,B), term1(D,B), term4(D,A), term3(E,A), term2(F,A), term14(G,A), term1(G,D).
+term20(A,B) :- term8(C,B), term16(A,D), term1(E,B), term12(E,A), term21(F,B), term12(A,G).
+term20(A,B) :- term12(C,B), term9(C,A), term2(D,A), term10(A,E), term9(E,A), term13(B,D), term10(D,F).
+term20(A,B) :- term12(C,B), term11(C,A), term19(A,D), term14(B,C).
+term20(A,B) :- term8(C,B), term5(C,A), term18(D,A), term16(D,B), term13(E,B), term4(D,F), term6(B,F).
+term20(A,B) :- term8(C,B), term5(C,A), term1(D,A), term9(B,D).
+term20(A,B) :- term8(C,B), term12(D,A), term2(B,E), term14(A,F), term9(B,F), term9(F,G), term1(F,E).
+term20(A,B) :- term9(C,B), term17(C,A), term8(D,A), term2(E,B), term13(E,F), term9(B,G), term0(E,G).
+term20(A,B) :- term17(C,A), term8(D,A), term11(B,C), term19(E,B), term10(E,F), term6(F,G), term1(A,G).
+term20(A,B) :- term9(C,B), term17(C,A), term13(D,C), term2(A,E), term9(E,A).
+term20(A,B) :- term9(C,B), term12(C,A), term3(D,B), term2(E,D), term15(E,A).
+term20(A,B) :- term14(C,A), term9(C,B), term3(B,A).
+term20(A,B) :- term5(C,A), term1(A,D), term21(E,A), term12(F,B), term12(D,B), term0(B,G), term3(B,H), term20(F,I).
+term20(A,B) :- term8(C,B), term5(C,A), term2(B,D), term12(D,A), term20(B,A), term2(E,A).
+term20(A,B) :- term12(C,B), term11(C,A), term2(A,D), term14(B,E), term20(B,A), term11(F,B).
+term20(A,B) :- term8(C,B), term5(C,A), term5(D,B), term8(D,A), term17(A,E), term21(C,F), term6(A,C), term20(B,A).
+term2(A,B) :- term1(B,A), term15(A,C), term3(B,D), term3(C,D).
+term2(A,B) :- term1(B,A), term25(A,C), term9(B,D).
+term2(A,B) :- term1(B,A), term6(B,C), term22(A,D), term0(E,B), term12(D,F), term16(E,F), term16(C,F).
+term2(A,B) :- term1(B,A), term7(A,C), term22(B,D), term6(D,A), term13(B,C), term10(C,E).
+term2(A,B) :- term1(B,A), term7(A,C), term17(A,D), term4(C,D).
+term2(A,B) :- term1(B,A), term7(A,C), term12(C,D), term6(E,A), term4(C,E), term15(A,D), term16(B,C).
+term2(A,B) :- term1(B,A), term5(C,A), term15(B,D), term12(C,E), term16(E,A), term16(B,E), term14(F,B), term0(A,G), term16(D,F).
+term2(A,B) :- term1(B,A), term6(B,C), term13(A,C).
+term2(A,B) :- term1(B,A), term22(C,A), term0(B,D), term10(A,E), term11(D,A), term6(C,D), term17(E,F).
+term2(A,B) :- term1(B,A), term6(B,C), term11(D,A), term1(D,E), term15(E,D).
+term2(A,B) :- term1(B,A), term15(A,C), term4(C,A).
+term2(A,B) :- term1(B,A), term15(A,C), term13(D,A), term20(B,C).
+term2(A,B) :- term1(B,A), term13(C,B), term11(A,C).
+term2(A,B) :- term1(B,A), term15(C,B), term13(D,A), term17(A,E), term4(B,E), term0(F,A), term13(D,B), term7(E,C).
+term2(A,B) :- term1(B,A), term5(C,A), term3(A,D), term18(E,B), term13(D,B), term20(D,F).
+term2(A,B) :- term1(B,A), term7(A,C), term8(D,C).
+term2(A,B) :- term1(B,A), term6(B,C), term8(D,B), term1(A,D).
+term2(A,B) :- term1(B,A), term4(B,C), term6(C,A).
+term2(A,B) :- term1(B,A), term6(B,C), term17(D,A), term12(A,E), term0(F,A), term14(G,B), term11(D,E).
+term2(A,B) :- term1(B,A), term5(C,A), term7(A,D), term13(D,B), term18(B,E), term3(A,F), term16(D,E).
+term2(A,B) :- term1(C,A), term11(B,C), term6(D,A), term14(E,B), term0(F,A), term1(F,B), term15(G,A).
+term2(A,B) :- term1(B,A), term25(A,C), term15(D,A).
+term2(A,B) :- term1(C,A), term21(D,B), term11(C,B), term8(B,A).
+term2(A,B) :- term10(B,A), term0(C,B), term21(D,B), term20(B,E), term13(E,A).
+term2(A,B) :- term1(B,A), term6(B,C), term1(C,D), term8(C,A).
+term2(A,B) :- term1(B,A), term5(C,A), term9(A,D), term19(E,B), term19(F,E), term2(A,F).
+term0(A,B) :- term20(B,C), term5(D,B), term12(E,C), term1(A,E), term1(E,B), term4(C,A), term15(D,A).
+term0(A,B) :- term4(A,C), term12(C,B), term4(B,D), term4(E,B), term21(C,F), term20(E,A), term3(B,G), term11(D,C).
+term0(A,B) :- term4(A,C), term20(B,C), term21(B,D), term3(A,E), term4(B,F), term13(A,G), term17(H,A).
+term0(A,B) :- term3(C,A), term13(B,C), term13(A,D), term12(D,B), term14(B,E), term2(F,C).
+term0(A,B) :- term4(B,C), term17(A,C), term5(A,D), term5(D,B), term14(E,C), term11(B,E), term16(C,D).
+term0(A,B) :- term3(C,A), term13(B,C), term1(D,C), term6(A,E), term15(B,E), term2(F,D), term7(E,D), term16(E,C).
+term0(A,B) :- term3(C,B), term12(C,A), term22(B,D), term14(E,C), term12(E,F), term2(G,D).
+term0(A,B) :- term4(B,C), term4(D,A), term8(C,A), term13(D,B), term2(E,C).
+term0(A,B) :- term4(B,C), term13(C,A), term4(A,D), term14(E,C), term9(E,B), term19(F,C), term8(D,F).
+term0(A,B) :- term3(C,A), term4(B,C), term6(B,D), term2(E,D), term20(C,E).
+term0(A,B) :- term3(C,A), term4(B,C), term15(B,D), term6(E,C), term12(C,F), term18(G,B), term15(D,A), term10(G,D).
+term0(A,B) :- term2(C,A), term1(C,B), term14(B,D).
+term0(A,B) :- term3(C,A), term3(C,B), term12(D,A), term14(A,E), term3(B,D), term18(B,F), term11(D,C).
+term0(A,B) :- term4(B,C), term12(C,A), term19(B,D), term10(B,E), term6(E,F), term4(F,G), term19(H,G), term20(A,H).
+term0(A,B) :- term3(C,A), term12(C,B), term22(A,D), term14(E,C), term2(F,D), term12(E,G).
+term0(A,B) :- term3(C,A), term3(B,C), term12(D,B), term3(A,E), term14(B,F), term10(A,G), term7(G,C).
+term0(A,B) :- term2(C,B), term11(A,C), term13(D,C), term20(E,A), term14(A,F).
+term0(A,B) :- term4(B,C), term17(A,C), term2(D,A), term2(E,D), term20(F,B), term20(A,G).
+term0(A,B) :- term3(B,C), term3(A,C), term12(C,D), term2(D,A), term6(A,E), term15(B,E), term18(B,F), term2(G,E), term1(F,H).
+term0(A,B) :- term4(B,C), term2(D,B), term11(A,D), term2(A,C).
+term0(A,B) :- term2(C,A), term11(D,B), term2(B,C), term11(D,A).
+term0(A,B) :- term3(C,A), term4(C,B), term2(C,D), term13(E,B), term3(F,C), term7(A,E), term16(E,F).
+term0(A,B) :- term3(C,A), term21(B,C), term6(A,D), term1(B,D).
+term0(A,B) :- term4(B,C), term6(B,D), term5(D,A), term13(A,E), term20(C,A), term7(C,D), term0(B,A), term16(D,C).
+term0(A,B) :- term3(C,A), term13(B,C), term5(B,D), term15(A,D), term12(A,E), term17(B,F), term3(B,E), term0(C,E).
+term0(A,B) :- term2(C,B), term11(A,C), term9(A,D), term2(D,C), term10(D,E), term0(B,A).
+term0(A,B) :- term2(C,B), term1(C,A), term5(D,A), term1(A,E), term15(D,F), term0(G,C).
+term22(A,B) :- term21(C,B), term7(C,A), term2(D,A), term15(D,B), term12(D,E), term3(B,F), term18(C,G), term4(H,E), term9(E,I).
+term22(A,B) :- term13(C,B), term7(C,A), term0(A,D), term0(E,B), term15(D,B), term18(E,A), term12(D,F), term18(C,F), term16(E,F).
+term22(A,B) :- term13(C,A), term7(C,B), term18(D,B), term17(A,E), term16(E,F), term15(A,F), term11(F,G), term14(H,D), term0(F,B).
+term22(A,B) :- term21(C,B), term7(C,A), term1(A,D), term15(D,B), term18(B,E), term14(F,E), term11(A,E), term0(F,G).
+term22(A,B) :- term13(C,B), term7(C,A), term18(D,A), term11(D,B), term14(E,D), term2(F,D), term4(E,G), term17(B,E), term15(A,G).
+term22(A,B) :- term13(C,B), term7(C,A), term21(D,A), term7(A,D), term18(B,E), term17(D,E), term17(C,F), term12(B,C).
+term22(A,B) :- term13(C,B), term7(C,A), term17(B,D), term18(A,D).
+term22(A,B) :- term10(B,A), term21(C,B), term16(A,C), term13(A,D).
+term22(A,B) :- term7(C,A), term17(B,D), term19(A,D).
+term22(A,B) :- term13(C,B), term7(C,A), term17(B,D), term6(E,B), term16(A,D), term17(B,C), term10(A,F), term19(G,E).
+term22(A,B) :- term13(C,A), term7(C,B), term9(B,D), term6(D,E), term2(F,A), term18(D,A), term14(G,D), term12(G,H), term13(A,C).
+term22(A,B) :- term13(C,A), term7(C,B), term2(D,B), term15(D,A), term7(A,C), term19(B,E).
+term22(A,B) :- term13(C,A), term13(D,B), term7(D,A), term4(B,E), term12(A,F), term7(B,D), term15(E,F), term17(B,G), term8(A,G), term15(G,F), term10(F,C).
+term22(A,B) :- term13(C,A), term7(C,B), term10(B,D), term6(D,A), term4(A,E), term1(C,E), term18(A,F), term16(B,C), term16(C,D), term16(E,F).
+term22(A,B) :- term7(C,B), term13(C,A), term3(A,D), term18(D,B).
+term22(A,B) :- term7(C,B), term13(C,A), term4(C,D), term2(E,B), term7(A,C), term16(A,D).
+term22(A,B) :- term7(C,B), term13(C,A), term18(D,A), term14(E,B), term8(E,D).
+term22(A,B) :- term13(C,A), term7(C,B), term17(A,D), term18(B,D).
+term22(A,B) :- term13(C,B), term13(D,A), term2(E,B), term6(A,E), term2(F,E), term4(A,G), term14(H,D).
+term22(A,B) :- term10(C,B), term6(C,A), term17(A,D), term21(B,E), term16(B,D), term14(D,F), term13(D,A).
+term22(A,B) :- term21(C,A), term7(C,B), term2(D,B), term15(D,A), term12(D,E), term14(B,F), term22(B,A).
+term22(A,B) :- term13(C,A), term7(C,B), term18(D,B), term0(B,E), term0(F,A), term14(G,D), term15(E,A), term18(F,B), term22(B,A).
+term22(A,B) :- term13(C,B), term7(C,A), term24(B,D), term22(B,A).
+term21(A,B) :- term22(B,C), term16(C,A), term7(D,A), term2(E,C), term12(E,F), term16(B,F), term17(G,F), term15(F,A), term22(B,G).
+term21(A,B) :- term6(C,A), term7(C,B), term1(D,B), term1(A,E), term4(A,D), term5(E,F), term15(A,F), term3(B,E).
+term21(A,B) :- term13(C,A), term10(C,B), term1(D,A), term4(B,D), term11(C,E), term1(B,E), term22(F,A), term12(A,G), term18(A,H).
+term21(A,B) :- term22(C,B), term6(D,A), term13(C,D), term22(D,E), term7(B,E), term2(F,B), term4(A,F).
+term21(A,B) :- term6(C,A), term7(C,B), term17(B,D), term22(E,A), term12(B,F), term19(G,F), term2(H,A), term8(I,H).
+term21(A,B) :- term7(C,B), term17(B,D), term18(E,B), term16(A,E), term2(F,A), term9(A,F).
+term21(A,B) :- term13(C,A), term22(D,B), term24(A,E), term11(C,B).
+term21(A,B) :- term13(C,A), term2(B,D), term12(A,D), term19(B,E), term2(F,A).
+term21(A,B) :- term6(C,A), term7(C,B), term24(B,D), term0(E,A), term11(D,A).
+term21(A,B) :- term13(C,A), term22(D,B), term7(D,A), term6(E,B), term6(C,D), term7(A,C), term11(C,B), term0(F,D).
+term21(A,B) :- term6(C,B), term7(C,A), term2(A,D), term6(D,C).
+term21(A,B) :- term3(B,A), term10(C,B), term7(D,A), term1(A,E), term5(E,F), term12(B,G), term7(G,B), term4(E,B), term16(C,F).
+term21(A,B) :- term6(C,A), term7(C,B), term17(B,D), term16(B,C), term18(C,D), term4(A,E), term1(D,A), term19(F,D), term10(F,G), term6(G,H), term22(I,A), term16(H,G).
+term21(A,B) :- term13(C,A), term10(C,B), term4(D,A), term17(A,E), term9(B,E), term7(A,C), term2(E,F), term11(D,B).
+term21(A,B) :- term6(C,A), term7(C,B), term4(D,A), term1(B,E), term1(B,D), term10(A,F), term2(B,G), term20(G,H), term2(H,B), term21(E,F).
+term21(A,B) :- term22(C,B), term1(A,D), term12(B,D), term2(B,E), term4(D,F), term1(B,F), term21(A,E).
+term14(A,B) :- term12(B,A), term19(C,B), term19(D,C), term11(B,D), term2(E,A), term16(C,E).
+term14(A,B) :- term12(B,A), term9(C,B), term4(A,D), term25(C,E).
+term14(A,B) :- term12(B,A), term19(C,B), term25(A,D).
+term14(A,B) :- term13(B,A), term20(A,C), term9(D,B), term12(A,D).
+term14(A,B) :- term13(B,A), term24(A,C), term20(D,B), term19(D,E).
+term14(A,B) :- term12(B,A), term3(A,C), term10(B,C), term20(D,B), term3(B,E), term11(A,D).
+term14(A,B) :- term25(C,B), term2(C,A), term4(D,A), term18(D,E), term8(B,E).
+term14(A,B) :- term20(B,C), term2(D,A), term1(A,C), term12(D,E), term16(A,E), term8(D,B).
+term14(A,B) :- term12(B,A), term5(C,B), term2(A,D), term1(B,E), term14(D,F).
+term14(A,B) :- term12(B,A), term19(C,B), term19(D,C), term14(A,D), term5(E,B), term16(A,E).
+term19(A,B) :- term8(B,A), term21(A,C), term12(D,B), term11(E,B).
+term19(A,B) :- term8(B,A), term0(C,A), term20(D,B), term15(A,D), term1(A,E), term14(F,D), term9(C,E).
+term25(A,B) :- term20(B,A), term7(C,A), term6(B,D), term1(D,E).
+term25(A,B) :- term20(B,A), term14(C,B), term11(A,C), term3(D,A), term4(A,E), term10(D,F).

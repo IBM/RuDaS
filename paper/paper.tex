@@ -1,0 +1,116 @@
+%%%% ijcai19-multiauthor.tex
+
+\typeout{IJCAI-19 Multiple authors example}
+
+% These are the instructions for authors for IJCAI-19.
+
+\documentclass{article}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+% The file ijcai19.sty is NOT the same than previous years'
+\usepackage{ijcai19}
+
+% Use the postscript times font!
+\usepackage{times}
+\renewcommand*\ttdefault{txtt}
+\usepackage{soul}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[small]{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\urlstyle{same}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OUR PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{times}
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{todonotes}
+\usepackage{tikz}
+\newcommand{\veronika}[1]{\todo[inline,author=Veronika,color=lightgray]{#1}}
+\newcommand{\cristina}[1]{\todo[inline,author=Cristina,color=cyan]{#1}}
+
+\newcommand{\support}{\text{support}\xspace}
+\newcommand{\tool}{\text{RuDa}\xspace}
+\newcommand{\nowa}{\ensuremath{n_{\text{OW}}}\xspace}
+\newcommand{\nnoise}{\ensuremath{n_{\text{Noise}}}\xspace}
+\newcommand{\ndag}{\ensuremath{n_{\text{DG}}}\xspace}
+\newcommand{\nnskip}{\ensuremath{n_{\text{Skip}}}\xspace}
+\newcommand{\db}{\ensuremath{\mathbb{D}}\xspace}%_{\text{CW}}
+\newcommand{\dbowa}{\ensuremath{\db_{\text{OW}}}\xspace}
+\newcommand{\dbowan}{\ensuremath{\db_{\text{OW+Noise}}}\xspace}
+\newcommand{\dbn}{\ensuremath{\db_{\text{Noise}}}\xspace}
+\newcommand{\sfacts}{\ensuremath{\mathbb{S}}\xspace}
+\newcommand{\cfacts}{\ensuremath{\mathbb{C}}\xspace}
+\newcommand{\tfacts}{\ensuremath{\mathbb{T}}\xspace}
+%\newcommand{\fi}[1]{\textit{#1}}
+\newcommand{\ass}{\text{ :- }}
+\newcommand{\expred}[1]{\textrm{#1}\xspace}
+\newcommand{\exconst}[1]{\textrm{#1}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TODO DELETE IN FINAL VERSION
+%https://www.overleaf.com/learn/latex/Questions/What_does_%22%5Cpdfendlink_ended_up_in_different_nesting_level_than_%5Cpdfstartlink%22_mean%3F
+\hypersetup{draft}
+
+
+\title{RuLeS: Synthetic Datasets for Rule Learning}% and evaluation tool?}
+%\tool: Rule Learning Dataset Generation and Evaluation}
+
+\author{
+Submission \# 2728
+%First Author$^1$\footnote{Contact Author}\and
+%Second Author$^2$\and
+%Third Author$^{2,3}$\And
+%Fourth Author$^4$\\
+%\affiliations
+%$^1$First Affiliation\\
+%$^2$Second Affiliation\\
+%$^3$Third Affiliation\\
+%$^4$Fourth Affiliation\\
+%\emails
+%\{first, second\}@example.com,
+%third@other.example.com,
+%fourth@example.com
+}
+
+
+
+\begin{document}
+
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%IJCAI: six pages for the main text of the paper% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{abstract.tex}
+\input{intro.tex}
+\input{motivation.tex}
+%\input{background.tex} VERONIKA: is split now...
+\input{description.tex}
+\input{generation.tex}
+\input{evaluation.tex}
+\input{experiments.tex}
+\input{conclusions.tex}
+
+\bibliographystyle{named}
+\bibliography{references}
+
+\veronika{change style in example predicate and constant macro}
+\veronika{remove option hypersetup draft in the end}
+\veronika{we still can shorten the bib by replacing the proceeding names with abbreviations: In NIPS 17, .... and maybe also make the rule graph pic more compact (but I don't know how to do that) - I already deleted or nodes}
+\end{document}

@@ -1,0 +1,31 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+
+Relation p1
+
+Relation p0
+
+----------
+p1:
+
+***  Warning: the following definition
+***  does not cover 28 tuples in the relation
+
+p1(A,B) :- p0(A,B).
+
+Time 0.0 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 22 tuples in the relation
+
+p0(A,B) :- p1(A,B), p1(B,A).
+
+Time 1.7 secs
+

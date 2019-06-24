@@ -1,0 +1,43 @@
+Epoch 1 mode train Loss 8.1090 In top 0.8421. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode valid Loss 3.2548 In top 0.8500. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode test Loss 3.3878 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode train Loss 8.0158 In top 0.8947. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode valid Loss 3.2316 In top 0.8500. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode test Loss 3.3473 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode train Loss 7.9404 In top 0.8947. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode valid Loss 3.2184 In top 0.8500. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode test Loss 3.3150 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode train Loss 7.8779 In top 0.8421. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode valid Loss 3.2120 In top 0.9000. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode test Loss 3.2870 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode train Loss 7.8236 In top 0.8421. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode valid Loss 3.2093 In top 0.9000. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode test Loss 3.2603 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 6 mode train Loss 7.7748 In top 0.8421. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 6 mode valid Loss 3.2091 In top 0.8500. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 6 mode test Loss 3.2336 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 7 mode train Loss 7.7313 In top 0.8421. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 7 mode valid Loss 3.2113 In top 0.8500. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 7 mode test Loss 3.2069 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Best test in top: 0.8333 at epoch 1.
+Test in top 0.8333
+Test predictions written. Time elapsed 0.00 hrs (0.0 mins)
+Attentions collected. Time elapsed 0.00 hrs (0.0 mins)
+
+Rules listed and printed. Time elapsed 0.00 hrs (0.0 mins)
+.0 mins)
+Model saved at ./../output/Neural-LP/DRDG-XS-3/ckpt/model-6
+1/1	Epoch 7 mode train Loss 7.7313 In top 0.8421. Time elapsed 0.00 hrs (0.0 mins)
+1/1	Epoch 7 mode valid Loss 3.2113 In top 0.8500. Time elapsed 0.00 hrs (0.0 mins)
+1/1	Epoch 7 mode test Loss 3.2069 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Model saved at ./../output/Neural-LP/DRDG-XS-3/ckpt/model-7
+Early stopped at epoch 7
+Best test in top: 0.8333 at epoch 1.
+Start getting test predictions...
+1/1	Test in top 0.8333
+Test predictions written. Time elapsed 0.00 hrs (0.0 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.00 hrs (0.0 mins)
+1/14	3/14	5/14	7/14	9/14	11/14	13/14	
+Rules listed and printed. Time elapsed 0.00 hrs (0.0 mins)
+====================================Finish====================================

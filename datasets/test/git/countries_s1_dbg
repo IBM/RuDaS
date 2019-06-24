@@ -1,0 +1,7 @@
+locatedIn,netherlands,western_europe
+locatedIn,germany,western_europe
+locatedIn,germany,europe
+locatedIn,western_europe,europe
+locatedIn,netherlands,europe
+neighborOf,netherlands,germany
+neighborOf,germany,netherlands

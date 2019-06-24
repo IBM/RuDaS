@@ -1,0 +1,39 @@
+p10(B, A) :- p8(B, A).
+p10(B, A) :- p8(B, A).
+p10(C, A) :- p8(B, A), p8(C, B).
+p2(C, A) :- p4(B, A), p4(C, B).
+p2(B, A) :- p4(B, A).
+p2(B, A) :- p4(B, A).
+p8(B, A) :- inv_p10(B, A).
+p8(B, A) :- inv_p10(B, A).
+p8(B, A) :- p10(B, A).
+p8(B, A) :- p8(B, A).
+p8(B, A) :- inv_p6(B, A).
+p4(B, A) :- p2(B, A).
+p4(B, A) :- p2(B, A).
+p4(C, A) :- p2(B, A), p2(C, B).
+p5(B, A) :- p8(B, A).
+p5(B, A) :- p8(B, A).
+p6(B, A) :- p8(B, A).
+p6(B, A) :- p8(B, A).
+p6(C, A) :- p8(B, A), p8(C, B).
+p6(B, A) :- p10(B, A).
+p9(B, A) :- p8(B, A).
+p9(B, A) :- p8(B, A).
+p9(B, A) :- p10(B, A).
+inv_p10(B, A) :- p8(B, A).
+inv_p10(B, A) :- p8(B, A).
+inv_p10(C, A) :- p8(B, A), p8(C, B).
+inv_p2(B, A) :- inv_p4(B, A).
+inv_p2(B, A) :- inv_p4(B, A).
+inv_p2(C, A) :- inv_p4(B, A), inv_p4(C, B).
+inv_p8(B, A) :- inv_p10(B, A).
+inv_p8(B, A) :- inv_p10(B, A).
+inv_p8(B, A) :- p10(B, A).
+inv_p4(B, A) :- p8(B, A).
+inv_p4(B, A) :- p8(B, A).
+inv_p6(B, A) :- p8(B, A).
+inv_p6(B, A) :- p8(B, A).
+inv_p6(C, A) :- p8(B, A), p8(C, B).
+inv_p6(B, A) :- p10(B, A).
+inv_p9(B, A) :- p8(B, A).

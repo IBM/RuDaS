@@ -1,0 +1,7 @@
+p0(A,B) :- p1(B,A), p2(B,A), p2(B,C), p1(C,D).
+p0(A,B) :- p1(B,A), p2(B,A), p1(C,A), p1(D,C).
+p1(A,B) :- p0(B,A), p2(C,B), p0(B,C), p2(D,C), p2(E,D).
+p1(A,B) :- p0(B,A), p2(A,B), p2(C,A), p0(A,D), p1(D,E).
+p2(A,B) :- p0(B,A), p1(B,C), p1(D,A), p0(E,C).
+p2(A,B) :- p0(B,A), p1(A,B), p1(B,C), p1(C,D), p0(C,B).
+p2(A,B) :- p0(B,A), p1(A,B), p1(B,C), p2(D,A), p2(E,D).

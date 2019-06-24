@@ -1,0 +1,57 @@
+p10(B, A) :- inv_p5(B, A).
+p10(B, A) :- inv_p5(B, A).
+p10(C, A) :- inv_p5(B, A), inv_p5(C, B).
+p5(B, A) :- p10(B, A).
+p5(C, A) :- p10(B, A), p10(C, B).
+p5(B, A) :- p10(B, A).
+p5(C, A) :- p9(B, A), p10(C, B).
+p5(B, A) :- p9(B, A).
+p5(C, A) :- p7(B, A), p10(C, B).
+p5(B, A) :- p9(B, A).
+p5(B, A) :- p7(B, A).
+p5(B, A) :- p7(B, A).
+p5(C, A) :- p10(B, A), p9(C, B).
+p7(B, A) :- inv_p5(B, A).
+p7(B, A) :- p10(B, A).
+p7(B, A) :- inv_p5(B, A).
+p7(B, A) :- inv_p7(B, A).
+p7(C, A) :- inv_p5(B, A), inv_p5(C, B).
+p7(B, A) :- p10(B, A).
+p7(B, A) :- inv_p7(B, A).
+p7(B, A) :- p9(B, A).
+p7(C, A) :- p10(B, A), inv_p5(C, B).
+p7(C, A) :- inv_p7(B, A), inv_p5(C, B).
+p7(B, A) :- p9(B, A).
+p7(C, A) :- p9(B, A), inv_p5(C, B).
+p7(B, A) :- inv_p0(B, A).
+p7(B, A) :- p5(B, A).
+p7(B, A) :- p8(B, A).
+p7(C, A) :- inv_p5(B, A), p10(C, B).
+p7(C, A) :- inv_p0(B, A), inv_p5(C, B).
+p2(B, A) :- p5(B, A).
+p2(B, A) :- p5(B, A).
+inv_p10(B, A) :- p5(B, A).
+inv_p10(B, A) :- p5(B, A).
+inv_p9(B, A) :- inv_p5(B, A).
+inv_p5(B, A) :- inv_p10(B, A).
+inv_p5(B, A) :- inv_p7(B, A).
+inv_p5(B, A) :- inv_p10(B, A).
+inv_p5(B, A) :- p10(B, A).
+inv_p5(B, A) :- inv_p7(B, A).
+inv_p5(B, A) :- p10(B, A).
+inv_p5(B, A) :- p1(B, A).
+inv_p7(B, A) :- p5(B, A).
+inv_p7(C, A) :- p5(B, A), p5(C, B).
+inv_p7(B, A) :- p7(B, A).
+inv_p7(C, A) :- p7(B, A), p5(C, B).
+inv_p7(C, A) :- inv_p5(B, A), p5(C, B).
+inv_p7(C, A) :- p5(B, A), p7(C, B).
+inv_p7(B, A) :- p5(B, A).
+inv_p7(B, A) :- inv_p5(B, A).
+inv_p7(C, A) :- p7(B, A), p7(C, B).
+inv_p7(B, A) :- p7(B, A).
+inv_p7(C, A) :- p3(B, A), p5(C, B).
+inv_p7(C, A) :- inv_p8(B, A), p5(C, B).
+inv_p7(C, A) :- p1(B, A), p5(C, B).
+inv_p7(C, A) :- inv_p5(B, A), p7(C, B).
+inv_p7(B, A) :- inv_p5(B, A).

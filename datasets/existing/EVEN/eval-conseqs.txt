@@ -1,0 +1,8 @@
+even(14).
+even(16).
+even(18).
+even(20).
+even(22).
+even(24).
+even(26).
+even(28).

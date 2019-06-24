@@ -1,0 +1,210 @@
+FOIL 6.4
+--------
+
+FOIL6 is a fairly comprehensive (and overdue) rewrite of FOIL5.2.
+The code is now more compact, better documented, and faster for most
+tasks.  The language has changed to ANSI C.
+
+In the process of rewriting, several small changes have been made to
+the algorithm.  Some of these correct minor glitches (such as
+restoring the number of weak literals after search is restarted).
+Others change the behaviour of FOIL: for instance, the checks before
+literal evaluation have been strengthened and more pruning heuristics
+introduced.  You are therefore advised not to discard FOIL5.2 until
+you are satisfied that FOIL6 behaves properly on your tasks.
+
+Here is a quick summary of notable intentional changes.  Of course,
+others (aka bugs) might have crept in during the rewrite -- please
+report any that you find.
+
+  * Pruning heuristics strengthened.  Even though these are risk-free,
+    the behavious of FOIL6 can differ from that of FOIL5.2, which
+    sometimes evaluated literals that could not be used in the
+    definition.  Generally, FOIL6 prunes more than FOIL5.2 but this
+    is not uniformly the case.
+
+  * Encoding cost of clauses changed.  FOIL5.2 did not `charge' for
+    determinate literals, but included them in the reordering credit.
+    FOIL6 still does not charge for determinate literals, but excludes
+    them when calculating reordering credit.
+
+  * Calculation of encoding cost of continuous literals altered.  The
+    calculation is approximate, using the number of tuples rather than
+    the number of distinct values as in FOIL5.2.
+
+  * Number of variables changeable with -V option and default value
+    (52) lower than previous built-in value (104).
+
+  * Allowable number of weak literals now changeable with -w option
+    with default value (3) same as previous built-in value.
+
+  * Sampling option renamed -s.
+
+  * Sampling corrected to generate the right number of negative tuples.
+
+  * New option -N to allow A<>B, A<>constant while still excluding
+    negated literals on user-defined relations.
+
+  * Continuous types declared as "X: continuous." rather than the
+    cryptic "X:@ ."  This change has also been made in c4tofoil.
+
+  * Variables of the same continuous type can be compared with =, <>.
+
+  * Output verbosity levels changed.  The old default level 1 contained
+    more information that the current default (also level 1); the new
+    level 2 is similar to the old level 1 and so on.  Some verbose
+    output has been reformatted.
+
+  * Number of weak literals in succession correctly recovered after
+    a backup.
+
+  * Options for uniform coding, booting with determinate literals from
+    previous clause, and recursive checking of test cases suspended
+    pending some rethinking.  Look for their replacements (and others)
+    in later releases (we hope).
+
+  * Theory constants applicable only to their own type, rather than to
+    any compatible type.
+
+  * Only highest-gain thresholds of continuous attributes considered for
+    saving as best clause encountered during search.  FOIL5.2 monitored
+    all literals in this respect, even though only the best threshold
+    was considered for saving as a backup.
+
+
+GENERAL
+-------
+
+The file "MANUAL" contains an explanation of the form of the input and
+the options.
+
+The executable version of the program, foil6, may be made with the command
+"make foilgt" (or "make foil" for the slower version for debugging).
+
+A small example input file, "member.d", is provided to demonstrate the
+program, and may be used with the command "foil6 -n -v3 < member.d". The
+file member.explain discusses the input and output for this small task.
+
+Several other example files (*.d) are also provided for your use. The
+names of these should be sufficiently mnemonic to enable recognition from
+the literature.
+
+In addition to the example input files, the program c4tofoil.c for
+converting files from the format used by C4.5 to that used by FOIL is also 
+included.  An example file (the credit data) has been provided, with a
+names file augmented as required to demonstrate the use of this additional
+program.  For further details on use of the program, see its header.
+
+FOIL has a mixed authorship.  The original versions were produced by
+Ross Quinlan; Mike Cameron-Jones then generated versions 3 to 5.2.
+FOIL6 was produced by Ross, incorporating many of the algorithms and
+routines developed by Mike (and with Mike identifying numerous glitches
+in the recoding).  The utility c4tofoil was produced entirely by Mike.
+
+We would appreciate it if you could mail Mike when you have ftp'ed a
+copy of FOIL6 so that we can keep track of its whereabouts.  Comments
+and bug reports are most welcome.
+
+
+		Ross Quinlan (quinlan@cs.su.oz.au)
+                Mike Cameron-Jones (mcj@cs.su.oz.au)
+
+
+Subsidiary notes for release 6.1
+--------------------------------
+
+Principal changes for this release are:
+
+  *  A special constant to denote "out of closed world" has been introduced.
+     See MANUAL for the explanatory reference.
+
+  *  A time limit (default 100 seconds) has been set for evaluation of
+     all possible literals for one relation.  The idea is to truncate some
+     very long (and often pointless) searches.
+
+  *  Potential literals are screened to rule out those requiring the
+     same value for different arguments when the corresponding relation
+     never has equal arguments in those positions.
+
+  *  Relations are ordered differently.  This may cause problems on some
+     datasets.
+
+  *  Pruning has been weakened to allow more complete search for saveable
+     literals.
+
+  *  The meaning of the maximum alternatives option (-l) has been changed
+     by one; -l 4 now means "best plus four alternatives".
+
+  *  When deciding whether to replace a clause with the best saved clause,
+     the criterion is clause coding length rather than number of literals.
+
+  *  The problems encountered with some Sun compilers should have been fixed.
+     (The difficulty was caused by a statement of the form A[x++] = B; where
+     some compilers increment x before evaluating B.)
+
+  *  Time is now measured by getrusage() rather than clock().  This has the
+     advantage of eliminating wraparound on long runs, but might require
+     the addition of BSD libraries if you do not run BSD Unix.
+
+  *  Various minor errors/omissions have been rectified.
+
+
+Subsidiary notes for release 6.1a
+---------------------------------
+
+Changes for this additional release are:
+
+  *  The program to convert from c4.5 to FOIL format has been corrected
+     and modified.
+
+  *  A bug in the printing of simplified clauses has been fixed.
+
+  *  There are now limits on the total number of backups per clause (equal
+     to the maximum number of checkpoints, -t option, default 20).
+
+  *  The Quicksort routine has been modified to divide on the middle
+     element rather than the last.
+
+
+Subsidiary notes for release 6.2
+--------------------------------
+
+Changes for this release are:
+
+  *  Repetitious literals excluded.  A literal that would repeat a literal
+     that already appears in the clause, with perhaps a change of free
+     variables, is excluded.
+
+  *  Better clause simplification.  Implicit equalities are Vi=Vj or Vi=c
+     established by the relations are now placed into the clause before
+     pruning.
+
+  *  The MDL coding was changed to take account of sampling, if used;
+     the coding now behaves as if all - tuples (not just a sample) were
+     defined.
+
+  *  Several small bugs have been fixed (e.g. don't try to recover if a
+     saved clause is available; check for duplicated constants in a type).
+
+
+Subsidiary notes for release 6.3
+--------------------------------
+
+Changes for this release are:
+
+  *  When simplified clauses are printed at the end of a run, unbound
+     variables in negated literals are now printed as '_n' where n is
+     a small integer.  (This also fixed a bug in the printing, but not
+     the interpretation, of simplified clauses.)
+
+  *  A few more small bugs have been identified and fixed.
+
+
+Subsidiary notes for release 6.4
+--------------------------------
+
+Changes for this release are:
+
+  *  Minor efficiency improvements and a couple of bug fixes.  The most
+     noticeable bug was that literals with bound continuous variables were
+     not being considered.

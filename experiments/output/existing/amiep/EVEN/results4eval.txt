@@ -1,0 +1,11 @@
+even(A,B) :- even(B,A).
+even(A,B) :- succ(A,F),succ(B,F).
+even(A,B) :- even(F,A),even(B,F).
+even(A,B) :- even(A,F),even(B,F).
+succ(A,B) :- even(A,F),succ(F,B).
+even(A,B) :- even(F,B),even(A,F).
+even(A,B) :- succ(E,A),succ(E,B).
+even(A,B) :- even(E,A),even(E,B).
+succ(A,B) :- even(E,A),succ(E,B).
+succ(A,B) :- even(E,B),succ(A,E).
+succ(A,B) :- even(B,F),succ(A,F).

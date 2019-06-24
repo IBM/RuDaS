@@ -1,0 +1,14 @@
+p7(B, A) :- p9(B, A).
+p7(B, A) :- p9(B, A).
+p7(C, A) :- p9(B, A), p9(C, B).
+p7(B, A) :- inv_p9(B, A).
+p3(B, A) :- p7(B, A).
+p4(B, A) :- inv_p4(B, A).
+p4(B, A) :- inv_p7(B, A).
+inv_p7(B, A) :- inv_p7(B, A).
+inv_p7(B, A) :- inv_p7(B, A).
+inv_p7(B, A) :- p9(B, A).
+inv_p7(B, A) :- inv_p9(B, A).
+inv_p4(B, A) :- p4(B, A).
+inv_p4(B, A) :- p4(B, A).
+inv_p4(B, A) :- inv_p9(B, A).

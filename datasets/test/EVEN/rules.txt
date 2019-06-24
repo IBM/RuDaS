@@ -1,0 +1,2 @@
+even(X) :- zero(X).
+even(X) :- even(Z), succ(Z,Y),succ(Y,X).

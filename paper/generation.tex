@@ -1,0 +1,187 @@
+\section{Dataset Generation}\label{sec:generation}
+%\veronika{describe how we generated the different configurations }
+% \veronika{list the cases we exclude in the generation (e.g., rules with only constants in head) to show that the generation is not that easy?}
+%what we need/have is safety etc. not only constants in head
+% or are this properties of the datasets rather?
+
+\tool contains an easy-to-use generator of ILP datasets 
+as %the ones 
+presented in Section~\ref{sec:description}. 
+It is written in Python. In this section, we describe the generation of the rules and facts in detail.
+%It first determines the arity of the predicates considered randomly and then generates the rules and corresponding facts. Note that, in addition to the set of facts generated under the open-world assumption, it also generates a closed-world version of the fact set.
+% It produces a 
+
+\textbf{Configuration.} \tool is parameterizable in many dimensions, most important are the following:
+\begin{itemize}
+\item maximal number of predicates and constants
+\item maximal arity of predicates
+\item dataset size: XS, S, M, L, XL
+%  XS = (50, 100, 3)
+%     S = (101, 1000, 5)
+%     M = (1001,10000, 10)
+%     L = (10001, 100000, 20)
+%     XL = (100001, 500000, 50)
+\item open-world degree \nowa (percentage) % $n_O$)
+\item amount of noise in the data \nnoise (percentage) % $n_N$)
+\item minimal and maximal number of DGs in the rule set
+\item category of DGs: Chain, R-DG, DR-DG, Mixed
+\item number and maximal length of rules
+\item maximal depth of rule graphs
+\end{itemize}
+Observe that the latter is a bound for the number of inference steps, and that the number of available predicates and constants influences the variability and number of generated facts, rules, and noise.
+An XS dataset contains about 50-100 facts, 
+an S dataset about 101-1,000, 
+an M dataset about 1,001-10,000,
+an L dataset about 10,001-100,000,
+and an XL dataset about 100,001-500,000. Note that \tool can easily be extended to allow for new sizes like XXL, etc.
+The open-world degree specifies how many of the consequences from a basic set of {\support facts} are missing in the dataset,
+and the amount of noise determines how many \support facts are missing and how many facts irrelevant for deriving the target facts are contained in the dataset.
+By number of DGs in a rule set, we mean the number of connected components in the graph of a rule set, where the rules are considered as nodes in a graph and the edges represent the dependencies between them (see Figure~\ref{fig:datasets}).
+Category mixed specifies that these connected components may be of different categories.
+% In the following, we describe 
+The implementation of a given configuration is described in detail in the following.
+% A more detailed description of these two degrees is 
+%Specifically, we divide the set of consequences into target facts and remaining consequences and remove $n_{OWA}$\% of both from the dataset.
+%The amount of noise determines the amount of data that is removed from the \support facts and replaced by arbitrary facts that are irrelevant for the derivation of the target facts. We also add a corresponding number of noise to the set of target facts (i.e., ).
+
+\textbf{Preprocessing.}
+The number of DGs that is being generated and their depths are determined randomly; though, we ensure that at least one graph is of the given maximal depth.
+Note that all random selections we mention are within the bounds given in the configuration under consideration.
+% Then, if not specified in the configuration, 
+% the necessary numbers of predicates and constants are computed based on the other parameters in the configuration (e.g., requested dataset size, \nowa, etc.).
+Also the arities of the predicates are selected at arbitrarily. 
+Predicates are named ${p_0},p_1,\dots$ and constants $c_0,c_1,\dots$.
+%and the number and size.
+%It first determines the arity of the predicates considered randomly and then generates the rules and corresponding facts. Note that, in addition to the set of facts generated under the open-world assumption, it also generates a closed-world version of the fact set.
+% It produces a 
+
+\textbf{Rule generation.}
+According to the rule set category specified and graph depths determined, rules (nodes in the graph) of form (\ref{eq:rule}) are generated top down breadth first, for each of the rule graphs to be constructed. 
+The generation is largely at random, that is, w.r.t.
+the number of child nodes of a node and which body atom they relate to, respectively; 
+the number of atoms in a rule; and the predicates within the latter, including the choice of the target predicate in the very first step. Though, \tool also offers the option that all graphs have the same target predicate.
+% 
+In order to allow for more derivations, we currently only consider variables as terms in head atoms; the choice of the remaining terms is based on probabilities as described in the following. 
+% as follows. 
+Given the atoms to be considered (in terms of their number and predicates) and an arbitrary choice of head variables, we first determine a position for each of the latter in the former. Then we populate the other positions one after the other: a head variable is chosen with probability $0.2$ ($[1/5]$); for one of the variables introduced so far, we have probability $0.6$ ($[4/5] * [3/4]$); for a constant, $0.02$ ($[4/5] * [1/4] * [1/10]$); and, for a fresh variable, $0.18$ ($[4/5] * [1/4] * [9/10]$); note that the probabilities can be changed easily.
+
+\textbf{Fact generation.}
+The fact generation is done in three phases: we first construct a set \db of relevant facts in a closed-world setting, consisting of {\support facts} \sfacts and their {consequences} \cfacts, and then adapt it according to \nowa and \nnoise.
+% then delete some consequences according to \nowa, %the specified open-world degree, 
+% and lastly create noise by deleting \support facts and adding arbitrary facts according to~\nnoise.
+% Based on the assumption that ILP systems need positive examples for a rule to learn that rule, we consider, for each rule of form (\ref{eq:rule}), $n_B$ different variable assignments and, for each assignment $\sigma$, generate the facts $\sigma(\alpha_0),\sigma(\alpha_1),\dots,\sigma(\alpha_m)$.
+% We call the resulting set \emph{base facts}. $n_B$ depends on the dataset size specified: we set $n_B=3$ for small datasets, $n_B=X$ for medium datasets, and $n_B=Y$ for large datasets.
+
+The (natural) idea is to generate facts by instantiating the rule graphs multiple times,
+based on the assumption that ILP systems need positive examples for a rule to learn that rule, and to stop the generation when the requested number of facts has been generated. Though, we actually stop later because we need to account for the fact that we subsequently will delete some of them % consequences 
+according to \nowa. 
+%TODO Also note that recursive rules cannot lead to an unexpectedly large dataset because the variables in the rule heads occur in the body. 
+%\veronika{more proof needed! see comments file}
+% and, more importantly, we do not have existential - VERONIKA don't think we do have to mention this since we do not consider existentials at all in the paper
+%Specifically, for each rule of form (\ref{eq:rule}), $n_B$ different variable assignments and, for each assignment $\sigma$, generate the facts $\sigma(\alpha_0),\sigma(\alpha_1),\dots,\sigma(\alpha_m)$.
+%In detail, the process is as follows. We 
+More specifically, we continuously iterate over all rule graphs, for each, select an arbitrary but fresh variable assignment $\sigma$, and then iterate over the graph nodes as described in the following, in a bottom-up way. 
+% 
+% The remaining relevant facts, \emph{support facts} and \emph{consequences}, are constructed as follows.
+% We consider $n_S$ different variable assignments and, for each assignment $\sigma$,
+% iterate over the nodes in the rule graph in a bottom-up way. %, maintaining a list of processed nodes.
+First, we consider each leaf $n$ and corresponding rule of form (\ref{eq:rule}) %add $n$ to the processed nodes, 
+and generate support facts $\sigma(\alpha_1),\dots,\sigma(\alpha_m)$.
+Then, we infer the consequences based on the rules and all facts generated so far. %(i.e., including the base facts).
+For every node $n$ on the next level and corresponding rule of form (\ref{eq:rule}), we only generate those of the facts $\sigma(\alpha_1),\dots,\sigma(\alpha_m)$ as support facts which are not among the consequences inferred previously. We then again apply inference, possibly obtaining new consequences, and continue iterating over all nodes in the graph in this way.
+%$n_S$ ...
+%TODO consider node only in 60% probab  ie ignore with30
+We further diversify the process based on two integer parameters, \ndag and \nnskip: in every \ndag-th iteration the graph is instantiated exactly in the way  described; in the other iterations, we skip the instantiation of a node with probability 1/\nnskip and, in the case of DR-DGs, only instantiate a single branch below disjunctive nodes. %in the imokementation actually 1/(n+1)
+
+In the open-world setting, we subsequently construct a set \dbowa by randomly deleting consequences from \db according to the open-world degree given: 
+assuming $\tfacts\subseteq\cfacts$ to be the set of target facts, 
+we remove $\nowa\%$ from $\cfacts\setminus\tfacts$, and similarly $\nowa\%$ from \tfacts.
+In this way, we ensure that the open-world degree is reflected in the target facts. Though, note that there is the option to have it more arbitrary by removing $\nowa\%$ from $\cfacts$ instead of splitting the deletion into two parts.
+% $\cfacts_{\text{R}}$
+% % assuming \db to be the set of generated facts and $\targets\subseteq\db$ to be the set of target facts, 
+% we remove $\nowa\%$ from $\db\setminus\targets$, but only consequences, and similarly $\nowa\%$ from \targets.
+
+The noise generation is split similarly and focuses on two kinds of noise, missing and irrelevant facts. %
+Specifically, we construct a set \dbowan based on \dbowa by arbitrarily removing $\nnoise\%$ from \sfacts, and by adding arbitrary fresh facts that are neither in \cfacts (i.e., we do not add facts which we have removed in the previous step) nor contain the target predicate
+such that $\dbowan\setminus\tfacts$ contains $\nnoise\%$ of noise.
+% The number of the latter facts we remove %and add 
+% amounts to $\nnoise\%$ of \sfacts; we %$\nnoise\%$ of $\dbowa\setminus\tfacts$, respectively.
+In addition, we add arbitrary fresh facts containing the target predicate and that are neither in \tfacts %ie also not removed in owa part
+such that the set of facts within \dbowan on that predicate finally contains $\nnoise\%$ of noise.
+
+ 
+% For the first, some of the relevant facts are removed randomly. We however must not remove facts that were added in the inference steps before in the closed-world setting to maintain the closed-world assumption (i.e., there, we do not delete consequences), and never delete base facts.
+% % (i.e., we do not delete consequences, which include all target atoms).
+% Regarding the second kind of noise, arbitrary facts are added. Note that we also add facts on predicates that occur in rule heads as negative examples in both the open- and the closed-world setting.
+% In the latter, we again apply inference afterwards such that the resulting fact set also contains the consequences of the added noise to satisfy the closed-world assumption.
+% As a result, the generator produces a dataset that contains the amount of noise specified %$n_N$\% noise 
+% in both the facts on $p_0$ and in the remaining facts.
+
+
+\textbf{Output.}
+The dataset generation produces the following:
+\begin{itemize}
+\item The rules and a \emph{training} set (\dbowan) which, is of the requested size, and fulfills \nowa and \nnoise.
+\item A \emph{validation} and a \emph{test} set as required by most of the current systems containing the consequences which were removed from the original, closed-world version \db using a split of 1:2. 
+% \item Files containing the predicates and constants occurring in \db.
+%For these systems \GER also provides the predicates and constants occurring in \db.
+%\item \db, an adaptation of that set which contains noise (but all of \cfacts), \sfacts, and 
+%\cfacts~ -- for further experiments.
+\item %Finally, for evaluation purposes in our generator, we generate a set of facts  
+% A set $\db'$ of facts generated in the same way as \db and use the \support facts of that set as a custom 
+A custom \emph{evaluation} set $\sfacts'$ for our evaluation tools that is
+generated in the same way as \sfacts.
+\veronika{still open if we need it for our evaluation, if not remove here}
+% \item 
+% For further experiments, \tool actually 
+% also outputs 
+% \db, an adaptation of that set which contains noise (but all of \cfacts), \dbowa, \sfacts, \cfacts, and files containing the predicates and constants occurring in \db.
+\end{itemize}
+For further experiments, \tool actually 
+also writes out
+\db, an adaptation of that set which contains noise (but all of \cfacts), \dbowa, \sfacts, \cfacts, and files containing the predicates and constants occurring in \db.
+%is in previous section already: All files are in Prolog syntax.
+% a set of rules and a \emph{training} set, which contains the set \dbowan, is of the requested size, and fulfills \nowa and \nnoise. The consequences which were removed from the original, closed-world version \db are used to produce a \emph{validation} and a \emph{test} set as required by most of the current systems using a split of 1:2. %\footnote{Traditionally, the rules are not available for evaluation } 
+% For further experiments, \tool also provides %the original, closed-world version of 
+% \db, an adaptation of that set which contains noise (but all of \cfacts), \sfacts, and 
+% \cfacts.
+% %
+% Finally, for evaluation purposes in our generator, we generate a set of facts $\db'$ in the same way as \db and use the \support facts of that set as a custom \emph{evaluation} set for our evaluation tools. 
+
+%\veronika{should we directly output a set of negative examples too? it can be easily constructed though, from \tfacts using all constants occurring in \db. maybe yes because we talk about ILP datasets in the beginning of the section -- or delete ILP there?}
+
+% files in Prolog syntax:
+% \begin{itemize}
+% \item \fi{rules}: the rule set
+% \item \fi{train}: the dataset of 
+% \end{itemize}
+
+% \veronika{need to think about how we describe parts as the one in the comment below. can you call this "conditioning"? I guess I have to calculate the percentages from that}
+%   args = [ hvs[hvps.index((j,p.name, i))] if (j,p.name, i) in hvps 
+%else hvs[random.randint(0, len(hvs)-1)] if random.randint(0, 5) == 0
+%else allvars[random.randint(0, len(allvars)-1)] if allvars != [] and random.randint(0, 2) == 0
+% else constants[random.randint(0, len(constants)-1)] if random.randint(0, 1) == 0
+%              else self.get_new_var() 
+%              for i in range(p.arity)]
+%  \veronika{we also plan to do sometimes depth first rule generation. can we describe here already that we have done it mixed and implement it for camera ready? not sure}
+%  \veronika{currently, I do a category check in the end and if it's a chain but we want an RDG I regenerate. but that's not so nice so maybe just drop this here?}
+
+
+% \veronika{decide about $n_B$. makes sense in dependence of size, no? (latter is better than making it a parameter, no? ) best would be if it also depends on max reasoning depth mabybe? what do you think? and how?}
+% \veronika{I do not understand the following: \\predicate invention: we don't want them in the dataset and rules:
+% we don't want to have auxiliary predicates in the dataset
+% having them would imply that the theory can be expressed using binary rules and so we will not need predicate invention in our system
+% we could just eliminate them from the facts but since the dataset is automatically generated, we can not distinguish them from the name compared to normal predicate 
+% }
+% \cristina{This is for the evaluation, and not for the generation}
+% \veronika{number of reasoning steps - we cannot control that since rules can be applied recursively sometimes or iteratively in loops. therefore I used max grpah depth}
+% \veronika{}
+% \veronika{I added size of fact set since nbr of facts is hardly controllable because of inference. (ok, we could always delete consequences but I am not sure, what do you think? or use max num facts?) we also have to think about how to make sure the generated datasets is corresponding. maybe check after generation and otherwise regenerate. eg in case inference surprisingly lead to 1000 more facts}
+
+% \veronika{in intro: variable assignment}
+% \veronika{in cwa we can hardly control dataset size. should we say that it applies to owa? or do you have an idea?}
+% \veronika{one might make a figure with the generation of the the relevant facts but I am not sure if this is necessary or the text is understandable. or/and better add an example?}
+
+
+% \textbf{Test Set.}
+% \cristina{Describe random generation of testing set and homogeneous generation}

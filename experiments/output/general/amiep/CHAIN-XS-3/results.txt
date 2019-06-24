@@ -1,0 +1,57 @@
+Loading files... 
+  Starting train.txt
+  Finished train.txt, still running: 0
+Loaded 64 facts in 11 ms using -1 MB
+Using HeadCoverage as pruning metric with minimum threshold 0.01
+Using recursivity limit 3
+Default mining assistant that defines support by counting support on both head variables
+No minimum threshold on standard confidence
+Filtering on PCA confidence with minimum threshold 0.25
+Constants in the arguments of relations are disabled
+Lossless (query refinement) heuristics enabled
+Starting the mining phase... Using 8 threads
+Rule	Head Coverage	Std Confidence	PCA Confidence	Positive Examples	Body size	PCA Body size	Functional variable	Std. Lower Bound	PCA Lower Bound	PCA Conf estimation
+?a  p9  ?b   => ?a  p10  ?b	1	0.571428571	1	4	7	4	?a	0.0	0.0	0.0
+?b  p9  ?a   => ?a  p7  ?b	0.03125	0.142857143	1	1	7	1	?a	0.0	0.0	0.0
+?b  p1  ?a   => ?a  p7  ?b	0.03125	0.166666667	0.5	1	6	2	?a	0.0	0.0	0.0
+?a  p1  ?b   => ?a  p4  ?b	0.571428571	0.666666667	1	4	6	4	?a	0.0	0.0	0.0
+?a  p10  ?b   => ?a  p9  ?b	0.571428571	1	1	4	4	4	?a	0.0	0.0	0.0
+?b  p3  ?a   => ?a  p3  ?b	1	1	1	5	5	5	?a	0.0	0.0	0.0
+?a  p4  ?b   => ?a  p1  ?b	0.666666667	0.571428571	1	4	7	4	?a	0.0	0.0	0.0
+?b  p1  ?f  ?f  p3  ?a   => ?a  p7  ?b	0.03125	1	1	1	1	1	?a	0.0	0.0	0.0
+?b  p1  ?f  ?a  p3  ?f   => ?a  p7  ?b	0.03125	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p3  ?f  ?f  p7  ?b   => ?a  p7  ?b	0.6875	1	1	22	22	22	?a	0.0	0.0	0.0
+?e  p1  ?a  ?e  p1  ?b   => ?a  p7  ?b	0.03125	0.166666667	0.5	1	6	2	?a	0.0	0.0	0.0
+?e  p1  ?b  ?e  p4  ?a   => ?a  p7  ?b	0.03125	0.25	1	1	4	1	?a	0.0	0.0	0.0
+?e  p1  ?a  ?e  p4  ?b   => ?a  p7  ?b	0.03125	0.25	1	1	4	1	?a	0.0	0.0	0.0
+?e  p4  ?a  ?e  p4  ?b   => ?a  p7  ?b	0.03125	0.142857143	1	1	7	1	?a	0.0	0.0	0.0
+?e  p3  ?a  ?e  p7  ?b   => ?a  p7  ?b	0.6875	1	1	22	22	22	?a	0.0	0.0	0.0
+?a  p1  ?f  ?f  p7  ?b   => ?a  p4  ?b	0.142857143	0.25	1	1	4	1	?a	0.0	0.0	0.0
+?a  p3  ?f  ?f  p4  ?b   => ?a  p4  ?b	0.142857143	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p1  ?f  ?b  p7  ?f   => ?a  p4  ?b	0.142857143	0.166666667	1	1	6	1	?a	0.0	0.0	0.0
+?a  p4  ?f  ?b  p7  ?f   => ?a  p4  ?b	0.142857143	1	1	1	1	1	?a	0.0	0.0	0.0
+?b  p1  ?f  ?a  p4  ?f   => ?a  p3  ?b	0.2	0.25	1	1	4	1	?a	0.0	0.0	0.0
+?e  p3  ?a  ?e  p4  ?b   => ?a  p4  ?b	0.142857143	1	1	1	1	1	?a	0.0	0.0	0.0
+?f  p1  ?b  ?a  p3  ?f   => ?a  p4  ?b	0.142857143	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p4  ?f  ?f  p7  ?b   => ?a  p4  ?b	0.142857143	1	1	1	1	1	?a	0.0	0.0	0.0
+?e  p1  ?b  ?e  p3  ?a   => ?a  p4  ?b	0.142857143	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p1  ?f  ?b  p4  ?f   => ?a  p3  ?b	0.2	0.25	1	1	4	1	?a	0.0	0.0	0.0
+?a  p4  ?f  ?b  p4  ?f   => ?a  p3  ?b	0.2	0.142857143	1	1	7	1	?a	0.0	0.0	0.0
+?a  p1  ?f  ?b  p1  ?f   => ?a  p3  ?b	0.2	0.166666667	1	1	6	1	?a	0.0	0.0	0.0
+?f  p3  ?a  ?b  p3  ?f   => ?a  p3  ?b	1	1	1	5	5	5	?a	0.0	0.0	0.0
+?a  p1  ?f  ?f  p7  ?b   => ?a  p1  ?b	0.166666667	0.25	0.25	1	4	4	?a	0.0	0.0	0.0
+?a  p3  ?f  ?b  p3  ?f   => ?a  p3  ?b	1	1	1	5	5	5	?a	0.0	0.0	0.0
+?e  p1  ?a  ?e  p1  ?b   => ?a  p3  ?b	0.2	0.166666667	1	1	6	1	?a	0.0	0.0	0.0
+?e  p3  ?a  ?e  p3  ?b   => ?a  p3  ?b	1	1	1	5	5	5	?a	0.0	0.0	0.0
+?e  p3  ?b  ?a  p3  ?e   => ?a  p3  ?b	1	1	1	5	5	5	?a	0.0	0.0	0.0
+?a  p1  ?f  ?f  p3  ?b   => ?a  p1  ?b	0.166666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p1  ?f  ?b  p3  ?f   => ?a  p1  ?b	0.166666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p4  ?f  ?b  p7  ?f   => ?a  p1  ?b	0.166666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?e  p3  ?a  ?e  p4  ?b   => ?a  p1  ?b	0.166666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?f  p1  ?b  ?a  p3  ?f   => ?a  p1  ?b	0.166666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p3  ?f  ?f  p4  ?b   => ?a  p1  ?b	0.166666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p4  ?f  ?f  p7  ?b   => ?a  p1  ?b	0.166666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?e  p1  ?b  ?e  p3  ?a   => ?a  p1  ?b	0.166666667	1	1	1	1	1	?a	0.0	0.0	0.0
+Mining done in 93 ms
+Total time 0.11 s
+41 rules mined.

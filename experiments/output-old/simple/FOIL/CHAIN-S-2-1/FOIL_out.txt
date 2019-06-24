@@ -1,0 +1,56 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+
+Relation p0
+
+Relation p2
+
+Relation p1
+
+----------
+p1:
+
+***  Warning: the following definition
+***  matches 2 tuples not in the relation
+***  does not cover 63 tuples in the relation
+
+p1(A,B) :- p0(B,A), p2(A,B).
+p1(A,B) :- p0(B,A), p0(C,B), p2(B,D), p2(E,A).
+p1(A,B) :- p0(B,A), p0(C,B), p2(D,B).
+p1(A,B) :- p0(B,A), p0(C,B), p2(B,D), p0(E,C).
+p1(A,B) :- p2(A,B), p0(A,C), p0(D,A).
+p1(A,B) :- p0(B,A), p2(A,C), p0(C,D), p2(E,B), p0(F,E), p1(G,D).
+p1(A,B) :- p0(B,A), p0(B,C), p0(D,A), p0(D,E), p2(A,F), p0(F,G), p2(H,F), p0(I,F), p2(F,J), p2(K,I), p1(L,E).
+p1(A,B) :- p0(B,A), p0(B,C), p2(C,B), p1(D,C).
+
+Time 56.7 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  matches 2 tuples not in the relation
+***  does not cover 93 tuples in the relation
+
+p0(A,B) :- p1(B,A), p2(B,C), p1(D,B), p1(C,E).
+p0(A,B) :- p1(B,A), p2(B,A), p1(C,B), p1(C,D), p1(E,D), p2(F,E).
+p0(A,B) :- p1(B,A), p2(B,A), p2(A,C), p2(C,D).
+
+Time 427.6 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  matches 2 tuples not in the relation
+***  does not cover 90 tuples in the relation
+
+p2(A,B) :- p0(B,A), p0(B,C), p1(B,D), p1(E,C), p0(F,D).
+p2(A,B) :- p1(A,B), p0(B,A), p1(C,A), p2(D,C).
+
+Time 596.9 secs
+

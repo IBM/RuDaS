@@ -1,0 +1,197 @@
+dataset: DRDG-S-3
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  792
+generatablesize:  1584
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  792
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p6(X0,X1) :- p10(X1,X0).
+	|- [1] p10(X1,X0) :- p8(X2,X1),p2(X1,X0).
+		|- [2] OR
+			|- [3] p2(X1,X0) :- p0(X1,X0).
+			|- [4] p2(X1,X0) :- p8(X1,X0).
+				|- [5] p8(X2,X1) :- p4(X2,X1).
+		|- [5] 
+1 : 7
+2 : 14
+3 : 21
+4 : 28
+5 : 33
+6 : 40
+7 : 47
+8 : 54
+9 : 61
+10 : 68
+11 : 75
+12 : 81
+13 : 88
+14 : 95
+15 : 102
+16 : 109
+17 : 116
+18 : 123
+19 : 130
+20 : 137
+21 : 143
+22 : 150
+23 : 157
+24 : 162
+25 : 169
+26 : 176
+27 : 182
+28 : 189
+29 : 196
+30 : 203
+31 : 210
+32 : 217
+33 : 222
+34 : 229
+35 : 236
+36 : 245
+37 : 252
+38 : 259
+39 : 265
+40 : 272
+41 : 278
+42 : 282
+43 : 289
+44 : 295
+45 : 302
+46 : 309
+47 : 317
+48 : 323
+49 : 332
+50 : 343
+51 : 350
+52 : 359
+53 : 366
+54 : 369
+55 : 376
+56 : 383
+57 : 390
+58 : 401
+59 : 408
+60 : 415
+61 : 422
+62 : 429
+63 : 438
+64 : 447
+65 : 454
+66 : 462
+67 : 469
+68 : 478
+69 : 485
+70 : 492
+71 : 499
+72 : 505
+73 : 512
+74 : 518
+75 : 527
+76 : 538
+77 : 545
+78 : 552
+79 : 559
+80 : 566
+81 : 573
+82 : 580
+83 : 589
+84 : 596
+85 : 605
+86 : 614
+87 : 626
+88 : 633
+89 : 642
+90 : 649
+91 : 656
+92 : 662
+93 : 671
+94 : 678
+95 : 687
+96 : 694
+97 : 703
+98 : 710
+99 : 719
+100 : 726
+101 : 733
+102 : 740
+103 : 747
+104 : 758
+105 : 765
+106 : 774
+107 : 783
+108 : 790
+109 : 797
+stopped support generation after 109 steps
+generated 797 facts
+1 : 2
+2 : 4
+3 : 6
+4 : 8
+5 : 10
+6 : 12
+7 : 14
+8 : 16
+9 : 18
+10 : 20
+11 : 22
+12 : 24
+13 : 26
+14 : 28
+15 : 30
+16 : 32
+17 : 34
+18 : 36
+19 : 38
+20 : 40
+21 : 42
+22 : 44
+23 : 46
+24 : 48
+25 : 50
+26 : 52
+27 : 54
+28 : 56
+29 : 58
+30 : 60
+31 : 62
+32 : 64
+33 : 66
+34 : 68
+35 : 70
+36 : 72
+37 : 74
+38 : 76
+39 : 78
+40 : 80
+41 : 82
+42 : 84
+43 : 86
+44 : 88
+45 : 90
+46 : 92
+47 : 94
+48 : 96
+49 : 98
+50 : 100
+stopped support generation after 50 steps
+generated 100 facts
+owa: removed 132 from 442  consequences
+owa: removed 41 from 138  consequences
+noise:  43 of 217 support facts removed
+noise:  121 facts added
+noise (target): 24 facts added to 97 original target facts
+size, S
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 6
+trainsupport: size, 217 , predicates, 5 , constants, 267
+trainconseqs: size, 580
+train: size, 726 , predicates, 11 , constants, 442
+train-cwa: size, 778 , predicates, 6 , constants, 303
+evalsupport: size, 100 , predicates, 5 , constants, 134
+evalconseqs: size, 239
+eval-cwa: size, 339 , predicates, 6 , constants, 134
+test: size, 115
+valid: size, 115

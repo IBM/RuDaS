@@ -1,0 +1,16 @@
+succ(B, A) :- inv_succ(B, A).
+succ(B, A) :- inv_even(B, A).
+succ(B, A) :- succ(B, A).
+succ(B, A) :- even(B, A).
+even(B, A) :- inv_even(B, A).
+even(B, A) :- even(B, A).
+even(B, A) :- succ(B, A).
+even(B, A) :- inv_succ(B, A).
+inv_succ(B, A) :- inv_succ(B, A).
+inv_succ(B, A) :- even(B, A).
+inv_succ(B, A) :- inv_even(B, A).
+inv_succ(B, A) :- succ(B, A).
+inv_even(B, A) :- succ(B, A).
+inv_even(B, A) :- even(B, A).
+inv_even(B, A) :- inv_even(B, A).
+inv_even(B, A) :- inv_succ(B, A).

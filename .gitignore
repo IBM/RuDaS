@@ -1,0 +1,47 @@
+# all eclipse runtime and config folders
+.classpath
+.project
+.settings
+**/.classpath
+**/.project
+**/.settings
+*/target/**
+*/target/*
+/runtime/
+
+#python
+*.pyc
+__pycache__
+
+# mac
+.DS_Store
+**/.DS_Store
+
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Pycharm and vscode 
+*.vscode
+*.idea
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/target/
+
+# LaTex
+*.aux
+*.log
+*.fdb_latexmk
+*.fls
+*.gz
+*.lb
+*.bbl
+*.blg
+*.out

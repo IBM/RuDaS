@@ -1,0 +1,2 @@
+locatedIn(X,Y) :- locatedIn(X,Z), locatedIn(Z,Y).
+neighborOf(X,Y) :- neighborOf(Y,X).

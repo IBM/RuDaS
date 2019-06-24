@@ -1,0 +1,11 @@
+p0(B, A) :- p1(B, A).
+p0(B, A) :- p1(B, A).
+p0(B, A) :- p0(B, A).
+p1(B, A) :- p0(B, A).
+p1(B, A) :- p0(B, A).
+inv_p0(B, A) :- inv_p1(B, A).
+inv_p0(B, A) :- p2(B, A).
+inv_p0(B, A) :- inv_p0(B, A).
+inv_p0(B, A) :- inv_p1(B, A).
+inv_p1(B, A) :- inv_p0(B, A).
+inv_p1(B, A) :- inv_p0(B, A).

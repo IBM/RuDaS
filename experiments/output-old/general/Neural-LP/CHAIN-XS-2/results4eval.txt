@@ -1,0 +1,15 @@
+p10(B, A) :- inv_p9(B, A).
+p10(B, A) :- inv_p9(B, A).
+p10(C, A) :- inv_p9(B, A), inv_p9(C, B).
+p3(B, A) :- inv_p10(B, A).
+p3(B, A) :- inv_p10(B, A).
+p1(B, A) :- p9(B, A).
+p1(B, A) :- p9(B, A).
+inv_p10(B, A) :- inv_p1(B, A).
+inv_p10(B, A) :- inv_p1(B, A).
+inv_p10(B, A) :- p3(B, A).
+inv_p10(B, A) :- p3(B, A).
+inv_p3(B, A) :- p9(B, A).
+inv_p1(B, A) :- p3(B, A).
+inv_p1(B, A) :- p3(B, A).
+inv_p1(B, A) :- inv_p10(B, A).

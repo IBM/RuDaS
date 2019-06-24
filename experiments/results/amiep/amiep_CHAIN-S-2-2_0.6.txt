@@ -1,0 +1,7 @@
+Herbrant distance: 36.0
+size union: 126
+size inf_origin: 90
+size inf_toeval: 126
+Herbrant accuracy (classic normalization): 0.9987072680264292
+Herbrant accuracy (new normalization): 0.7142857142857143
+Standard accuracy : 0

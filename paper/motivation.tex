@@ -1,0 +1,248 @@
+\section{Rule Learning}\label{sec:motivation}
+
+In this section, we describe the task of rule learning in more detail and motivate our work by showing the difficulties and problems with current rule learning evaluations.
+We assume the reader to be familiar with first-order logic (FOL). 
+% \veronika{see my slack notes: I would\\
+% 1 describe ILP neural ILP and existing approaches in intro (existing does not have to be that detailed but short overview - is not directly related work for dataset generation, no? we can describe the ones we evaluate in some more detail maybe with experiments?)\\
+% 2 then introduce inference with Evans example\\
+% - put theory necessary for evaluator in evaluator section and leave rule explanation in dataset section? not sure about the latter\\
+% 3 then describe datasets as related work
+% - existing evaluation approaches are also related work but I am not sure where to describe this best\\
+% or make very long intro including 1 \& 2 (maybe as subsections) and make extra section related work as section 2?
+% }
+
+\subsection{Preliminaries}
+
+We consider standard datalog \emph{rules} of the form 
+\begin{equation}\label{eq:rule}
+    \alpha_0\ass\alpha_1,\dots,\alpha_m .
+\end{equation}
+of \emph{length} $m\ge1$ where all \emph{atoms} $\alpha_j$, $0\le j\le m$, are of the form $p(t_1,\dots,t_n)$ with a {predicate} $p$ of arity $n\ge1$ and terms $t_k$, $1\le k\le n$.
+A \emph{term} is either a constant or a variable. 
+$\alpha_0$ is called the \emph{head} and the conjunction $\alpha_1,\dots,\alpha_m$ the \emph{body} of the rule. All variables that occur in the head must occur in the body. A \emph{fact} is an atom that does not contain variables.
+
+Note that several classical ILP systems also consider more complex function-free Horn rules, which allow for existential quantification in the rule head or negation in the body, but most recent systems focus on datalog rules or restrictions of those \cite{Galarraga+-VLDBJ15:amiep,EGre-jair18:learning-explanatory-rules,RoR-NIPS17}. In particular, reasoning systems for knowledge graphs \cite{YaYaCo-NIPS17:neurallp,OWaWa-IJCAI18:scalable-rule-learning}
+often consider only binary predicates and \emph{chain rules} %, which are 
+of the form
+$p_0(X_1,X_{m+1}):-p_1(X_1,X_2),\dots,p_{m}(X_{m},X_{m+1})$.
+
+We define the problem of rule learning in the most general way:
+Given a \emph{target predicate} $p$ and background knowledge in the form of facts, including facts on $p$, called \emph{positive examples}, the goal is to learn rules that can be used to infer the positive examples from the background knowledge, based on standard FOL semantics.
+
+% the goal is to learn rules that derive the positive examples from the background knowledge.
+% As outlined in the Introduction and described in \cite{SteGaHo-RR18:overview}, the rule learning problem is considered from different viewpoints. We do not 
+% Note that there are various ways to define the problem of rule learning \cite{SteGaHo-RR18:overview}. While In ILP, the problem is similar to a classification problem,
+% Generally, we are given background knowledge
+% We consider the rule learning to be a problem as follows
+
+% the following definition is nice, but I am not sure what is the difference between I and T
+% Definition 8 (Inductive Learning from Interpretations [60]).
+% Given:
+% • An interpretation I, i.e., a set of facts over various relations
+% • Background knowledge T, i.e., a set facts and possibly rules
+% • Syntactic restrictions on the form of rules to be induced
+% Find:
+% • A hypothesis Hyp, such that I is a minimal Herbrand model of Hyp ∪ T .
+% 
+% A Herbrand interpretation over a first order alphabet is a set of ground facts constructed
+% with the predicate and functor symbols in the alphabet. 
+
+% vs here rather classification task
+% The goal  classical ILP system expects three kinds of input: 
+
+%motivating example mentioning categories to show capabilities of the ILP system:
+
+% \veronika{as preliminaries, go through an ILP example here. mention difficulties etc. like predicate invention}
+% \veronika{explain closed path , consequence, inference, OWA , needed in sec 3}
+
+% Our datasets are domain independent, which means that we consider synthetic names $p_i$ for %\emph #VERONIKA: introduce in previous section!
+% {predicates}, $c_i$ for {constants}, and $X_i$ for {variables} with $i\ge0$. %$p_0$ is the \textit{target predicate}.
+% 
+%TOdo mention what we consider as KG, KB
+% \begin{figure*}[t!]
+% \begin{verbatim}
+% benzene(Drug,Ring_list) :-
+%   atoms(Drug,6,Atom_list,[c,c,c,c,c,c]), ring6(Drug,Atom_list,Ring_list, [7,7,7,7,7,7]).
+% atoms(Drug,1,[Atom],[T]) :- 
+%   atm(Drug,Atom,T,_,_), T \== h.
+% atoms(Drug,N1,[Atom1|[Atom2|List_a]],[T1|[T2|List_t]]) :- 
+%   N1 > 1, N2 is N1 - 1, atoms(Drug,N2,[Atom2|List_a],[T2|List_t]), atm(Drug,Atom1,T1,_,_),
+%   Atom1 @> Atom2, T1 \== h.
+%  ring6(Drug,[Atom1|List],[Atom1,Atom2,Atom4,Atom6,Atom5,Atom3],
+%  [Type1,Type2,Type3,Type4,Type5,Type6]) :-
+%   bondd(Drug,Atom1,Atom2,Type1), memberchk(Atom2,[Atom1|List]), bondd(Drug,Atom1,Atom3,Type2), 
+%   memberchk(Atom3,[Atom1|List]), Atom3 @> Atom2, bondd(Drug,Atom2,Atom4,Type3), Atom4 \== Atom1, 
+%   memberchk(Atom4,[Atom1|List]), bondd(Drug,Atom3,Atom5,Type4), Atom5 \== Atom1,
+%   memberchk(Atom5,[Atom1|List]), bondd(Drug,Atom4,Atom6,Type5), Atom6 \== Atom2,
+%   memberchk(Atom6,[Atom1|List]), bondd(Drug,Atom5,Atom6,Type6), Atom6 \== Atom3.
+% \end{verbatim} 
+% \label{fig:ex-mutagenesis}
+% \caption{Example rules defining ring structures from the mutagenesis dataset.}
+% \end{figure*}
+
+
+% \veronika{I am not sure if I missed definitions we need in the next two sections. need to go over it at some point again}
+
+
+\subsection{On the Evaluation}%Related Work
+% maybe not necessary:
+% \veronika{mention somewhere why we do not consider/describe KG completion works and cite some}
+% \veronika{mention: some existing datasets like UMLS are big but do not discern background facts }
+\veronika{~\\
+- maybe extend this section?\\
+- eg, for existing datasets list dataset category, size, and other (what?) interesting parameters - if we are lucky this shows that the existing data is not variable/exhaustive. %list datasets here: alchemy examples, those from sebastian's paper, evans paper, wordnet, collect all!
+maybe also check the facts, for kinds of noise they contain}
+%TODO check other papers (traditional ilp, tensor, workshop) for datasets
+% larger ILP datasets, such as Mutagenesis, WebKB, or IMDB?
+% daria's paper and references?
+
+
+%EVANS 
+% 20 ILP tasks, taken from four domains: arithmetic, lists, group-theory, and family tree relations. Some of the arithmetic examples appeared in the work of Cropper and Muggleton (2016). The list examples are used by Feser, Chaudhuri, and Dillig (2015). The family tree dataset comes from Wang, Mazaitis, and Cohen (2015) and is also used by Yang, Yang, and Cohen (2016).
+% the 20 tasks we used have the following common feature: in each case, the program can be learned from a small amount of training data. ∂ilp is a memory- expensive solution to ILP (see Appendix E), so only problems with small training sets have been tested. This is why we have not tested ∂ilp on the larger ILP datasets, such as Mutagenesis, WebKB, or IMDB. Although the 20 tasks we use are all quite small in the amount of training data needed to learn them, the programs needing to be synthesised in order to solve them are often complex, involving multiple recursive predicates and invented auxiliary predicates.
+%%%%%%%%
+%traditional ILP problem format
+% predicate num in evans tables, mini: once 3 all others <=2
+%but some require predicate invention (mark in table?)
+%NO NOISE? - probably because does not work for trasitional ilp systems
+%-> new datsets for neural ilp should make use of noise to be more real
+%
+% Predecessor
+% Even-Odd
+% Even-succ2
+% Less than
+% Fizz CW
+% Buzz CW
+% Member
+% Length
+% Son Grandparent Relatedeness Father Undirected Edge Adjacent to Red Two Children Graph Colouring Connectedness Cyclic
+%We only skip the Husband and Uncle tasks which require the datasets from (Wang, Mazaitis, and Cohen 2015).
+
+% \textbf{Countries}.
+%- countries S1-S3, 
+%shortly describe kinds of constants, facts, overall dataset struct eg that neighbors... transitive but not all neughbors in same region...
+%- learn only one rule - transitivity
+%- s1 just from background facts, 
+%- s2 same but less background facts and new trans rule does not hold for all corresp bodies (A KIND OF NOISE)
+%- s3 same as s2, but rule must have more than 2 atoms 
+%DATASET NOT ORIGINAL ILP STRUCTURE, facts = background facts + positive samples
+%ie mixture - well can extract positive from target fact, take all rest locatedIN on constant cross product as negative
+%ALDO is this viewpoint correct? eg that an algo might make this internally?
+%so dataset ig more realistic 
+%BUT THEN WE HERE HAVE CLOSED WORLD which is rather unrealistic
+%well ok in a database setting maybe not, so depends on data
+%but not in KGs or Semantic Web
+%near closed world eg 463 locatedIn facts in S1 (on subregions with either countries or regions) 467 would be closed world, and similarly exhaustive the neighbor relations
+% only 2 predicates
+%usually only relevant facts, only in G9 sister of
+
+% \textbf{Kinship}, \textbf{Nations}, \textbf{UMLS}.
+%Kinship, Nations & UMLS
+%RULES DO NOT COME WITH DATA, (check if there are some retrieved using foil or similar)
+% all example rules given in riedel either only 1 body atom or model transitivity where add head predictae already occurs in body
+% do not depend on each other, so no more complex multihop
+%describe domains, maybe summarized form, WHAT KIND OF NOISE
+%%%%%
+%animals?
+%the way you evaluate there is that you get a random split of your facts, then you train on the training dataset, and then, using the rules you learn, you can evaluate the truth value of the test set, and based on those true values you can compute an accuracy
+%
+%wordnet
+% use the WordNet used by Socher
+% et al. (2013) for their experiments. This dataset is significantly
+% larger than the other datasets used by Rocktäschel
+% and Riedel (2017) – it is composed by 38.696 entities, 11
+% relations, and the training set is composed by 112,581 facts.
+% In WordNet, the accuracies on the validation and test sets
+% were 65.29% and 65.72%, respectively – which is on par
+% with the Distance Model, a Neural Link Predictor discussed
+% by Socher et al. (2013), which achieves a test accuracy of
+% 68.3%. H
+%RULES found only 1 body atmo
+%
+%NELL?
+%
+%DARIA
+% FB15K [4]: a subset of Freebase with 592K binary facts over 15K entities and 1345
+% relations commonly used for evaluating KG embedding models [36].
+% – Wiki44K: a dataset with 250K binary facts over 44K entities and 100 relations, which
+% is a subset of Wikidata dataset from December 2014 used in [12].
+%propose an approach for rule learning guided by external
+% sources that allows to learn high-quality rules from incomplete KGs. In particular, our
+% method extends rule learning by exploiting probabilistic representations of missing facts
+% computed by embedding models of KGs and possibly other external information sources.
+% We iteratively construct rules over a KG and collect feedback from a precomputed
+%eval: facts are taken awayr from kg rules learned, compared to rules learned over ull KG?
+%by allowing
+% non-monotonic rules with negated atoms as well as partially grounded atoms.
+
+%best would be if we had an example real worl dataset from which we could induce complex reasoning structs , maybe also just by hand. - look at wikidata?
+
+% \textbf{Mutagenesis}, \textbf{Golem}, etc.
+%mutagenesis
+%about 20-30 predicates
+%shows that real rules are a lot more complex than above ones
+%higher arities
+%predict the mutagenicity of a set of 230 aromatic and heteroaromatic nitro compounds. Mutagenicity is measured using the Ames test using S. typhimurium TA98. This data is based on the results in [Debnath et al (1991)]. The prediction of mutagenesis is important as it is relevant to the understanding and prediction of carcinogenesis. Not all compounds can be empirically tested for mutagenesis, e.g. antibiotics.
+
+
+%golem
+% Introduction to secondary structure prediction
+% Predicting the three-dimensional shape of proteins from their amino acid sequence is widely believed to be one of the hardest unsolved problems in molecular biology. It is also of considerable interest to pharmaceutical companies since a protein's shape generally determines its function as an enzyme. This is what a protein looks l
+% The task is to learn rules to identify whether a position in a protein is in an alpha-helix.
+%NO RULES, same for chess
+
+%maybe we can say that these larger datasets are still not neural dimension? and our eval shows that neural approache sstiull struhggle with scalability
+
+% \textbf{Wordnet}. %Nell?
+
+Together with the learning approaches the evaluation of rule learning has changed over time.
+While the classical ILP approaches often focused on tricky problems in complex domains \cite{ilpdatasets,Quinlan-ML90:foil} and proved to be effective in practical applications \cite{...}, 
+current evaluations can be divided into two categories. 
+Some consider very small example problems with usually less than 50 facts and only few rules to be learned \cite{EGre-jair18:learning-explanatory-rules,Dong+-ICLR19:nlms}. Often, these problems are completely defined, in the sense that all facts are classified as either true or false, or that there are at least some negative examples given.
+Hence, the systems can be thoroughly evaluated based on classical measures such as accuracy.
+The others regard (subsets of) real KGs such as Wikidata\footnote{\url{https://www.wikidata.org/wiki/Wikidata:Main_Page}}
+or DBpedia\footnote{\url{https://wiki.dbpedia.org/}}, 
+recently also really large ones with millions of facts \cite{Galarraga+-VLDBJ15:amiep,OWaWa-IJCAI18:scalable-rule-learning,Ho+-ISWC18:guided-by-embedding}. Since there are no rules over these KGs, the rule suggestions of the systems are usually evaluated using metrics capturing the precision and coverage of rules \cite{Galarraga+-VLDBJ15:amiep}
+based on the facts in the KG.
+However, since the KGs are generally incomplete, the quality of the rule suggestions is not fully captured in this way. For instance, \cite{OWaWa-IJCAI18:scalable-rule-learning} present an illustrative example rule, 
+$\expred{gender}(X,\exconst{male})\ass\expred{isCEO}(X,Y),\expred{isCompany}(Y)$,
+which might well capture the facts in many existing KGs but which is heavily biased and does not extend to the entirety of valid facts beyond them.
+Furthermore, we cannot assume that the few KGs considered completely capture the variety of existing domains and especially the rules in them. For example, \cite{Minervini+-NAMPI18:ntp-at-scale} propose rules over WordNet\footnote{\url{https://wordnet.princeton.edu/}} that are of very simple nature -- together, they contain only a small number of the predicates used in WordNet and all have only a single body atom -- and very different from the ones suggested in \cite{Galarraga+-VLDBJ15:amiep} for other KGs.
+
+In summary, we claim that the existing rather small number of exemplary datasets is not sufficient to cover the rules that could be mined from arbitrary data and the possible variety of that data. We therefore propose to complement the existing evaluations based on real KGs by considering synthetic, automatically generated datasets that may model different practical scenarios by varying, for example, in the number and kinds of symbols considered, in the structure of rules (e.g., only simple rules such as in WordNet, or only chain rules), and in the ways the rules depend on each other (i.e., the head of one rule can be part of the body of one or multiple other rules).
+
+% approaches: %with an evaluation based on synthetic
+
+% the \tool tool for generating datasets addressing the above items.
+% 
+
+% However, the existing datasets represent examples for a rather small number of domains and we expect other data to lead to different kinds of rules.
+% %evans examples too small
+% %For instance, the rules mined from WordNet in ... are all very simple.
+% More specifically, the examples in \cite{Evans-examples} are variable, but too small to contain complex dependencies between rules; and the rules mined for larger datasets such as WordNet in \cite{Sebastian} are too simple.
+% In contrast, the definition rules in the Mutagenesis dataset \cite{mutagenesis} (i.e., these rules are part of the input and not to be learned), some are depicted in Figure~\ref{fig:ex-mutagenesis}, show that real rule sets can be much more complex.
+% \veronika{we need a smaller example than the mutagenesis one I commented out}
+% % The example rules in Figure~\ref{fig:ex-mutagenesis} are complex.
+% % The problem here is to predict the mutagenicity of nitro compounds, which is important for predicting carcinogenesis because not all compounds can be empirically tested for mutagenesis.
+% Here, we have:
+% \begin{itemize}
+% \item several predicates of varying arity
+% \item different and sometimes large numbers of atoms per rule
+% \item several rules that depend on each other
+% \item alternative rules to derive one atom (e.g., `atoms')
+% % \item anonymous variables (`\_'), mathematical and list expressions
+% \end{itemize}
+% Furthermore
+% \veronika{mention different kinds of noise, maybe number the items}
+
+
+% In this paper, we therefore propose the following:% contributions:
+% \begin{itemize}
+% \item A tool for generating ILP datasets of variable size and complexity. In particular we address the above mentioned items (but the last one, which is planned as extension) w.r.t.\ rule generation. Further, 
+% \item \cristina{Evaluation approaches\dots}
+% \end{itemize}
+
+% The generation and evaluation tool as well as the experiment data are available at  $<$link-in-final-version$>$.
+
+
+\veronika{I am not sure if I missed definitions we need in the next two sections. need to go over it at some point again}
