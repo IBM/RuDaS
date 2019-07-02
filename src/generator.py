@@ -50,9 +50,9 @@ class DatasetSize(Enum):
 
 SIZE_EVAL_SUPPORT = 100
 
-TRAIN = "train-valid"
-TRAIN1 = "train"
-TRAIN2 = "valid"
+TRAIN = "train"
+# TRAIN1 = "train"
+# TRAIN2 = "valid"
 EVAL = "eval"
 
 CW = "-cw"
@@ -65,19 +65,19 @@ F_EXT = ".txt"
 
 ## EVAL
 # CWA = support + consequences
-F_EVAL_CW = EVAL + CW + F_EXT
-F_EVAL_SUPPORT = EVAL + SUPPORT + F_EXT
-F_EVAL_CONSEQS = EVAL + CONSEQS + F_EXT
+F_EVAL_CW = EVAL + CW
+F_EVAL_SUPPORT = EVAL + SUPPORT
+F_EVAL_CONSEQS = EVAL + CONSEQS
 ## FULL TRAIN (= train+valid in one file)
-F_TRAIN_CW = TRAIN + CW + F_EXT
+F_TRAIN_CW = TRAIN + CW
 # closed-world data split into
-F_TRAIN_SUPPORT = TRAIN + SUPPORT + F_EXT
-F_TRAIN_CONSEQS = TRAIN + CONSEQS + F_EXT
+F_TRAIN_SUPPORT = TRAIN + SUPPORT
+F_TRAIN_CONSEQS = TRAIN + CONSEQS
 # OWA: SOME MISSING CONSEQUENCES, ACCORDING TO owa_factor PARAMETER
-F_TRAIN_OW = TRAIN + OW + F_EXT
+F_TRAIN_OW = TRAIN + OW
 # NOISE: ACCORDING TO noise_factor PARAMETERS
-F_TRAIN_CW_N = TRAIN + CW + NOISE + F_EXT
-F_TRAIN_OW_N = TRAIN + F_EXT
+F_TRAIN_CW_N = TRAIN + CW + NOISE
+F_TRAIN_OW_N = TRAIN
 ## files where above train is split into train and valid
 # F_TRAIN1_CW = TRAIN + CW + F_EXT
 # F_TRAIN1_OW = TRAIN + OW + F_EXT
@@ -88,10 +88,10 @@ F_TRAIN_OW_N = TRAIN + F_EXT
 # F_TRAIN2_CW_N = TRAIN + CW + NOISE + F_EXT
 # F_TRAIN2_OW_N = TRAIN + F_EXT
 ## the consequences that are not in F_TRAIN are provided as test data
-F_TEST = "test" + F_EXT
+F_TEST = "test"
 ## below refer to F_TRAIN_CWA (so that every entity etc. in test is also in entities)
-F_RELATIONS = "relations" + F_EXT
-F_ENTITIES = "entities" + F_EXT
+F_RELATIONS = "relations"
+F_ENTITIES = "entities"
 
 STDOUT = sys.stdout
 
