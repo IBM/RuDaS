@@ -50,25 +50,48 @@ class DatasetSize(Enum):
 
 SIZE_EVAL_SUPPORT = 100
 
-F_EXT = '.txt'
+TRAIN = "train-valid"
+TRAIN1 = "train"
+TRAIN2 = "valid"
+EVAL = "eval"
+
+CW = "-cw"
+OW = "-ow"
+NOISE = "-n"
+SUPPORT = "-support"
+CONSEQS = "-conseqs"
+
+F_EXT = ".txt"
+
+## EVAL
 # CWA = support + consequences
-F_EVAL_CW = 'eval-cwa'
-F_EVAL_SUPPORT = 'eval-support'
-F_EVAL_CONSEQS = 'eval-conseqs'
-F_TRAIN_CW = 'train-cwa'
-F_TRAIN_SUPPORT = 'train-support'
-F_TRAIN_CONSEQS = 'train-conseqs'
+F_EVAL_CW = EVAL + CW + F_EXT
+F_EVAL_SUPPORT = EVAL + SUPPORT + F_EXT
+F_EVAL_CONSEQS = EVAL + CONSEQS + F_EXT
+## FULL TRAIN (= train+valid in one file)
+F_TRAIN_CW = TRAIN + CW + F_EXT
+# closed-world data split into
+F_TRAIN_SUPPORT = TRAIN + SUPPORT + F_EXT
+F_TRAIN_CONSEQS = TRAIN + CONSEQS + F_EXT
 # OWA: SOME MISSING CONSEQUENCES, ACCORDING TO owa_factor PARAMETER
-F_TRAIN_OW = 'train-owa'
-# NOISE: ACCORDING TO noise_factor PARAMETER
-F_TRAIN_CW_N = 'train-cwa-n'
-F_TRAIN_OW_N = 'train'
-# the consequences that are not in F_TRAIN are split into test and valid
-F_TEST = 'test'
-F_VALID = 'valid'
-# below refer to F_TRAIN_CWA (so that every entity etc. in test is also in entities)
-F_RELATIONS = 'relations'
-F_ENTITIES = 'entities'
+F_TRAIN_OW = TRAIN + OW + F_EXT
+# NOISE: ACCORDING TO noise_factor PARAMETERS
+F_TRAIN_CW_N = TRAIN + CW + NOISE + F_EXT
+F_TRAIN_OW_N = TRAIN + F_EXT
+## files where above train is split into train and valid
+# F_TRAIN1_CW = TRAIN + CW + F_EXT
+# F_TRAIN1_OW = TRAIN + OW + F_EXT
+# F_TRAIN1_CW_N = TRAIN + CW + NOISE + F_EXT
+# F_TRAIN1_OW_N = TRAIN + F_EXT
+# F_TRAIN2_CW = TRAIN + CW + F_EXT
+# F_TRAIN2_OW = TRAIN + OW + F_EXT
+# F_TRAIN2_CW_N = TRAIN + CW + NOISE + F_EXT
+# F_TRAIN2_OW_N = TRAIN + F_EXT
+## the consequences that are not in F_TRAIN are provided as test data
+F_TEST = "test" + F_EXT
+## below refer to F_TRAIN_CWA (so that every entity etc. in test is also in entities)
+F_RELATIONS = "relations" + F_EXT
+F_ENTITIES = "entities" + F_EXT
 
 STDOUT = sys.stdout
 
@@ -76,12 +99,12 @@ STDOUT = sys.stdout
 # with several dags we vary size. first is of maxdepth and others varying randomly within max bound
 # overlap true might "destroy" chains or individual structs
 # for given constant and predicate number the test if they are sufficient is not very exact
-def generate_dataset(name=None, path='../datasets/', size=DatasetSize.S, category=DatasetCategory.MIXED, overlap=False, \
+def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, category=DatasetCategory.MIXED, overlap=False, \
                      singletarget=False, mindags=1, maxdags=1, maxdepth=3, nodesupport=None, dagsupport=3, skipnode=5, \
-                     owafactor=.3, noisefactor=.2, targetsextra=True, maxorchild=2, maxatoms=2, minarity=2, maxarity=2, \
-                     numpreds=None, numconstants=None):
+                     owafactor=.3, noisefactor=.2, missfactor=.15, targetsextra=True, maxorchild=2, maxatoms=2, minarity=2, maxarity=2, \
+                     numpreds=None, numconstants=None, test=.3): #, valid=.2):
 
-    '''
+    '''TODO in the end: update these descriptions
     :param name: the name of the dataset directory that is created
     :param path: the system path where to create the dataset directory
     :param size: value of enum DatasetSize; requested size of test dataset for owa, train dataset and cwa versions will be larger.
@@ -109,18 +132,27 @@ def generate_dataset(name=None, path='../datasets/', size=DatasetSize.S, categor
     :return: nothing; generates different versions of a dataset in the directory requested
     '''
     ## initialize basic parameters
-    # TODO test all params
+    # TODO in the end: test all params eg >=0 ...
 
+    if maxdags < mindags:
+        raise ValueError("Parameter maxdags must not be less than parameter mindags.")
 
-    if name is None or name == '':
+    if maxarity < minarity:
+        raise ValueError("Parameter maxarity must not be less than parameter minarity.")
+
+    # TODO not sure about this
+    if owafactor < test:
+        raise ValueError("Parameter owafactor must not be less than parameter test.")
+
+    if name is None or name == "":
         if category == DatasetCategory.CHAIN or category == DatasetCategory.CHAIN_RECURSIVE:
-            name = 'CHAIN'
+            name = "CHAIN"
         elif category == DatasetCategory.ROOTED_DAG or category == DatasetCategory.ROOTED_DAG_RECURSIVE:
-            name = 'RDG'
+            name = "RDG"
         elif category == DatasetCategory.DISJUNCTIVE_ROOTED_DAG or category == DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE:
-            name = 'DRDG'
+            name = "DRDG"
         elif category == DatasetCategory.MIXED:
-            name = 'MIXED'
+            name = "MIXED"
 
         name += '-' + str(size.name) + '-' + str(maxdepth)
         if os.path.exists(path + name + '/'):
@@ -132,28 +164,26 @@ def generate_dataset(name=None, path='../datasets/', size=DatasetSize.S, categor
     path = path + name + '/'
     if os.path.exists(path):
         shutil.rmtree(path, ignore_errors=True)
-    os.mkdir(path, )
+    os.makedirs(path, )
     sys.stdout = STDOUT
-    print('generating dataset', name)
+    print("generating dataset", name)
 
-    sys.stdout = open(path+'log.txt', 'a')
-    print('dataset:', name)
+    sys.stdout = open(path+"log.txt", 'a')
+    print("dataset:", name)
 
     # ignore that parameter if no disjunctive DAG
     if category not in [DatasetCategory.DISJUNCTIVE_ROOTED_DAG, DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE, DatasetCategory.MIXED]:
         maxorchild = 1
     elif maxorchild < 2:
-        raise ValueError('Parameter maxorchild must not be less than two.')
+        raise ValueError("Parameter maxorchild must not be less than two.")
 
     maxchild = max(maxatoms, maxorchild)
 
     if nodesupport is None:
         nodesupport = size.nsupport
     elif nodesupport < 0:
-        raise ValueError('Parameter nodesupport must not be less than zero.')
+        raise ValueError("Parameter nodesupport must not be less than zero.")
 
-    if maxdags < mindags:
-        raise ValueError('Parameter maxdags must not be less than parameter mindags.')
 
     numdags = random.randint(mindags, maxdags)
     # NOTE the below numbers are approximations because maxdepth varies for all dags
@@ -170,18 +200,23 @@ def generate_dataset(name=None, path='../datasets/', size=DatasetSize.S, categor
     if numpreds is not None:
         # we require more than one predicate for at least one DAG
         if numpreds <= 2:
-            raise ValueError('Parameter numpreds must be greater than two.')
+            raise ValueError("Parameter numpreds must be greater than two.")
         if not overlap and numpreds//numdags <= 1:
-            raise ValueError('Parameter numdags too large for given number of predicates.')
-    # 5 is just an offset to have some more
+            raise ValueError("Parameter numdags too large for given number of predicates.")
+    # 5 is just an offset to have some more, loops are not considered here (i.e., just look at maxatoms)
     numpreds = numpreds if numpreds is not None and numpreds > 0 else numdags * maxnumdagatoms + 5
 
-    # arity 1 less often!
-    target0arity = 1 if maxarity == 1 or (random.randint(0, 9) == 0 and minarity == 1) else random.randint(minarity, maxarity)
+    # arity 1 less often for predicates (only in m1% of cases, with m1 <= 10 for first target and m1<=25 for others)
+    m1 = max(maxarity - minarity, 9)
+    m2 = max(maxarity - minarity, 3)
+    m3 = 2 if minarity == 1 and maxarity > 1 else minarity
+    # TODO think about extending this to other targets
+    target0arity = random.randint(m3, maxarity) if minarity > 1 or random.randint(0, m1) > 0 else 1
+    # other predicates
     predicates = [log.Predicate(i, target0arity if i == 0 else
-                                                   1 if maxarity == 1 or random.randint(0, 4) == 0 and minarity == 1 else
-                                                   random.randint(minarity, maxarity) if minarity > 1 else
-                                                   random.randint(2, maxarity)) for i in range(numpreds)]
+                                                   random.randint(m3, maxarity) if minarity > 1
+                                                                                   or random.randint(0, m2) > 0 else 1)
+                  for i in range(numpreds)]
     random.shuffle(predicates)
 
     # we use /2 because we apply the factor to entire size but it actually only refers to consequences
@@ -196,7 +231,7 @@ def generate_dataset(name=None, path='../datasets/', size=DatasetSize.S, categor
 
     if numconstants is not None and \
             size_dag_grounding(numdags, minnumdagatoms, minnumdagleafatoms, numconstants, overlap) < mingeneratablesize:
-        raise ValueError('Parameter numconstants is most likely too small to generate dataset of requested size.')
+        raise ValueError("Parameter numconstants is most likely too small to generate dataset of requested size.")
 
     if numconstants is None:
         # minimum
@@ -210,13 +245,13 @@ def generate_dataset(name=None, path='../datasets/', size=DatasetSize.S, categor
 
     constants = [log.Constant(i) for i in range(numconstants)]
 
-    print('sizefactor1: ', sizefactor1)
-    print('sizefactor2: ', sizefactor2)
-    print('fixedsize: ', fixedsize)
-    print('generatablesize: ', generatablesize)
-    print('mingeneratablesize: ', mingeneratablesize)
-    print('numpredicates: ',len(predicates))
-    print('numconstants: ',len(constants))
+    print("sizefactor1: ", sizefactor1)
+    print("sizefactor2: ", sizefactor2)
+    print("fixedsize: ", fixedsize)
+    print("generatablesize: ", generatablesize)
+    print("mingeneratablesize: ", mingeneratablesize)
+    print("numpredicates: ",len(predicates))
+    print("numconstants: ",len(constants))
     #######################################
 
     dags = []
@@ -265,30 +300,38 @@ def generate_dataset(name=None, path='../datasets/', size=DatasetSize.S, categor
 
     ## owa: remove some consequences
     train = copy.deepcopy(train_cwa)
+    # valid = []
     test = []
-    valid = []
+    # train_conseqs = train_conseqs1 + train_conseqs2
+    # train_conseqs.shuffle()
     if owafactor:
         if targetsextra:
             rem1 = remove_consequences(train, train_conseqs1, owafactor)
             rem2 = remove_consequences(train, train_conseqs2, owafactor)
             rem = rem1 + rem2
         else:
-            rem = remove_consequences(train, train_conseqs1+train_conseqs2, owafactor)
+            rem = remove_consequences(train, train_conseqs1 + train_conseqs2, owafactor)
 
-        test = rem[:len(rem)*2//3]
-        valid = test #rem[len(rem)//2:]
+        # m1 = min(len(train)*valid, len(train_conseqs))
+        # valid = train_conseqs[:m1]
+        # m1 = min(len(train) * valid, len(train_conseqs))
+        test = rem #[:len(rem)*(len(test)//owafactor)]
+
         write_fact_file(train, path, F_TRAIN_OW)
         write_fact_file(test, path, F_TEST)
-        write_fact_file(valid, path, F_VALID)
+
+    # TODO how to get a test set if we have no owa factor? or zero? or just assume we need to have it?
+    # I opt for the latter since we anyway have the eval set in addition
+    # ie if you had owa=0, you'd have to use that as evaluation
 
     ## noise
     if noisefactor:
 
         if targetsextra:
-            add1, rem1 = add_noise(train, train_support, rem, targets, predicates, constants, noisefactor)
+            add1, rem1 = add_noise(train, train_support, rem, targets, predicates, constants, noisefactor, missfactor)
             add2 = add_target_noise(train, rem, targets, predicates, constants, noisefactor)
         else:
-            add1, rem1 = add_noise(train, train_support, rem, [], predicates, constants, noisefactor)
+            add1, rem1 = add_noise(train, train_support, rem, [], predicates, constants, noisefactor, missfactor)
             add2 = []
 
         write_fact_file(train, path, F_TRAIN_OW_N)
@@ -316,7 +359,9 @@ def generate_dataset(name=None, path='../datasets/', size=DatasetSize.S, categor
     write_list_file([p for p in predicates if train_cwa[p.name] or train[p.name]], path, F_RELATIONS)
     write_list_file(cs, path, F_ENTITIES)
 
-    print_stats(size, category, dags, targets, train_support, train_conseqs1+train_conseqs2, train, train_cwa, eval_support, eval_conseqs, eval_cwa, test, valid, path)
+    # TODO in the end: maybe adapt this
+    # TODO do we need statistics like noise etc for later evaluation tables if we have many datasets? then
+    print_stats(size, category, dags, targets, train_support, train_conseqs1+train_conseqs2, train, train_cwa, eval_support, eval_conseqs, eval_cwa, test, path)
 
 
 # TODO CHECK that! got confused totally
@@ -352,10 +397,10 @@ def generate_inference_structure(category, target, predicates, constants, max_at
         dag = graph.RootedDAG(target, predicates, constants, max_atoms, steps, True, max_or_degree)
 
     if not strict or check_category(dag, category):
-        print('generated DAG after ' + str(strict) + ' steps, maxdepth ',steps,':\n', str(dag))
+        print("generated DAG after " + str(strict) + " steps, maxdepth ",steps,":\n", str(dag))
         old = sys.stdout
         sys.stdout = STDOUT
-        print('generated DAG after ' + str(strict) + ' steps, maxdepth ', steps, ':\n', str(dag))
+        print("generated DAG after " + str(strict) + " steps, maxdepth ", steps, ":\n", str(dag))
         sys.stdout = old
         return dag
 
@@ -398,7 +443,7 @@ def generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode
     leaves = [dag.get_alternative_leaves(dag.root) for dag in dags]
     old = sys.stdout
     sys.stdout = STDOUT
-    print('started')
+    print("started")
     sys.stdout = old
 
     # a minimal set of body facts necessary to derive targets (w/o inferred consequences)
@@ -442,7 +487,7 @@ def generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode
 
     # THE COMMENTED BELOW IS A NICER BUT LESS EFFICIENT VERSION WITH WHICH I GOT TROUBLE FOR SIZES LARGER THAN 1000
     # assignments = [product(list(doms.values())) for doms in var_doms]
-    # print('numassignments:',','.join([str(len(a)) for a in assignments]))
+    # print("numassignments:",",".join([str(len(a)) for a in assignments]))
     # # TODO not sure if loop works with all assignments in memory, ie test for size L etc
     #
     # i0 = 0
@@ -473,11 +518,11 @@ def generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode
     #     if s > olds:
     #         print(str(i0),":",str(s))
 
-    print('stopped support generation after', i0, 'steps')
+    print("stopped support generation after", i0, "steps")
     if i0 == maxi0:
         print(str(i0), ":", str(s))
-        print('because maximal number of assignments reached.')
-    print('generated', s, 'facts')#, size.min is', size.min)
+        print("because maximal number of assignments reached.")
+    print("generated", s, "facts")#, size.min is", size.min)
     # print(len(list(itertools.chain(*testfacts_cwa.values()))))
     return facts, support
 
@@ -489,10 +534,10 @@ def generate_support(node, assignment, facts, support, processed, skip):
 #    if isinstance(node, OrNode):
 #        print("!! ornode in generate support "+str(node.nid))
 #        return node.parent
-    
+
     if node.nid in processed:  # processed through path of other child already
         return None
-    
+
     cs = [c for c in node.children if c.parent.nid == node.nid]
     cs = [c for c in cs if isinstance(c, graph.RuleNode) and c.nid not in processed]
     if cs:  # not yet processable
@@ -532,7 +577,7 @@ def extract_consequences(facts, support, targets=[]):
 
 def remove_consequences(facts, consequences, owa_factor):
     s = int(len(consequences) * owa_factor)
-    print('owa: removed', s, "from", len(consequences), " consequences", )
+    print("owa: removed", s, "from", len(consequences), " consequences", )
     for f in consequences[0:s]:
         facts[f.predicate.name].remove(f)
     return consequences[0:s]
@@ -540,11 +585,11 @@ def remove_consequences(facts, consequences, owa_factor):
 
 # NOTE that we only REMOVE support atoms (i.e., no consequences), but the share is computed based on all atoms
 # we may ADD atoms whose predicate occurs in rule heads, if it is no target predicate
-def add_noise(facts, support, removed, targets, predicates, constants, noise_factor):
+def add_noise(facts, support, removed, targets, predicates, constants, noise_factor, miss_factor):
     # remove n1 "correct" facts
     n0 = sum([len(support[p]) for p in support if p not in targets]) #support in one dag may contain target of other if overlap=True
-    n1 = int(n0 * noise_factor)
-    print('noise: ', n1, 'of', n0, 'support facts removed')#, len(consequences), 'consequences)')
+    n1 = int(n0 * miss_factor)
+    print("noise: ", n1, "of", n0, "support facts removed")#, len(consequences), "consequences)")
 
     rem = []
     ps = [p for p in support if len(support[p]) and p not in targets]
@@ -562,14 +607,14 @@ def add_noise(facts, support, removed, targets, predicates, constants, noise_fac
     # add n1 "irrelevant" facts
     n0 = sum([len(facts[p]) for p in facts if p not in targets])
     n1 = int(n0 * noise_factor // (1 - noise_factor))
-    print('noise: ', n1, 'facts added')#, len(consequences)+len(support), 'facts')
+    print("noise: ", n1, "facts added")#, len(consequences)+len(support), "facts")
 
     add = []
     ps = [p for p in predicates if p.name not in targets]
     for _ in range(n1):
         p = ps[random.randint(0,len(ps)-1)]
         f = log.Atom(p, [constants[random.randint(0,len(constants)-1)] for _ in range(p.arity)])
-        while f in rem or f in removed or f in facts[p.name]:
+        while f in rem or f in removed or f in facts[p.name]: #TODO can we ensure that this terminates?
             p = ps[random.randint(0, len(ps) - 1)]
             f = log.Atom(p, [constants[random.randint(0, len(constants) - 1)] for _ in range(p.arity)])
         facts[p.name].append(f)
@@ -581,7 +626,7 @@ def add_noise(facts, support, removed, targets, predicates, constants, noise_fac
 def add_target_noise(facts, removed, targets, predicates, constants, noise_factor):
     n0 = sum([len(facts[p]) for p in facts if p in targets])
     n1 = int(n0 * noise_factor // (1 - noise_factor))
-    print('noise (target):',n1,'facts added to',n0,'original target facts')
+    print("noise (target):",n1,"facts added to",n0,"original target facts")
     # rem = []
     # ps = [p for p in facts if len(facts[p]) and p in targets]
     # for _ in range(n1):
@@ -607,22 +652,22 @@ def add_target_noise(facts, removed, targets, predicates, constants, noise_facto
 
 def write_list_file(list, path, name):
     with open(path + name + F_EXT, "w") as f:
-        f.write('\n'.join([str(o) for o in list]))
+        f.write("\n".join([str(o) for o in list]))
 
 def write_rule_file(rules, path):
     rules1 = [ str(r) for r in rules]
-    with open(path + 'rules' + F_EXT, "w") as f:
-        f.write('\n'.join(rules1))
+    with open(path + "rules" + F_EXT, "w") as f:
+        f.write("\n".join(rules1))
 
 
 def write_fact_file(facts, path, name):
     facts1 = [ str(f) for f in list(itertools.chain(*facts.values()))] if isinstance(facts,dict) else [ str(f) for f in facts]
     random.shuffle(facts1)
-    with open(path + name + F_EXT, "w") as f: #+ name + 'facts' + ext , "w") as f:
-        f.write('.\n'.join(facts1) + '.')
+    with open(path + name + F_EXT, "w") as f: #+ name + "facts" + ext , "w") as f:
+        f.write(".\n".join(facts1) + '.')
 
 
-def print_stats(size, category, dags, targets, train_support, train_conseqs, train, train_cwa, eval_support, eval_conseqs, eval_cwa, test, valid, path):
+def print_stats(size, category, dags, targets, train_support, train_conseqs, train, train_cwa, eval_support, eval_conseqs, eval_cwa, test, path):
 
     # np = sum([0 if not facts[p] else 1 for p in facts])
     # nc = len(set(c.name for p in facts for f in facts[p] for c in f.arguments))
@@ -668,8 +713,8 @@ def print_stats(size, category, dags, targets, train_support, train_conseqs, tra
     facts = test
     print('test: size,',len(facts))#list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
           # len(set(c.name for p in facts for f in facts[p] for c in f.arguments)))
-    facts = valid
-    print('valid: size,',len(facts))#list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
+    # facts = valid
+    # print('valid: size,',len(facts))#list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
           # len(set(c.name for p in facts for f in facts[p] for c in f.arguments)))
 
 
@@ -704,16 +749,16 @@ if __name__ == '__main__':
     # cs = [DatasetCategory.CHAIN_RECURSIVE]#,DatasetCategory.ROOTED_DAG_RECURSIVE]#
     #
     cs = [#DatasetCategory.CHAIN, #.DISJUNCTIVE_ROOTED_DAG_RECURSIVE]#,
-    DatasetCategory.ROOTED_DAG_RECURSIVE,
-       DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE] #
-    ss = [DatasetSize.S]#,DatasetCategory.CHAIN_RECURSIVE]#DatasetSize.XS,
+    DatasetCategory.ROOTED_DAG_RECURSIVE]
+       # DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE] #
+    ss = [DatasetSize.XS]#,DatasetCategory.CHAIN_RECURSIVE]#DatasetSize.XS,
     for i in range(len(cs)):
         for j in range(len(ss)):
             # generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=2)
             # generate_dataset(size=ss[j], category=cs[i], nodesupport=0)#, mindags=3, maxdags=3)
             # generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=2, numpreds=3, path='../datasets/simple/')#DatasetSize.XS,
             generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=3, #numpreds=3,
-                             path='../datasets/binary/')  # DatasetSize.XS,
+                             path='../datasets/new/')  # DatasetSize.XS,
 
     # cs = [DatasetCategory.MIXED]
     # ss = [DatasetSize.M, DatasetSize.L]
