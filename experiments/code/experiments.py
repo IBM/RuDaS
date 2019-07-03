@@ -43,7 +43,7 @@ def extract_validation_data(path, ext, split, valid=VALID):
 
 def setup_experiments():
     print("setting up experiments")
-    print('datasets (copy and paste into run.sh): ', " ".join(DATASETS))
+    # print('datasets (copy and paste into run.sh): ', " ".join(DATASETS))
 
     for s in SYSTEMS:
         for dir in [DATA_DIR, OUTPUT_DIR]:
