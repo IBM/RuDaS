@@ -14,6 +14,8 @@ import logic as log
 import graph
 import operator
 import functools
+import inspect
+import argparse
 
 class DatasetCategory(Enum):
     '''
@@ -169,7 +171,17 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     print("generating dataset", name)
 
     sys.stdout = open(path+"log.txt", 'a')
-    print("dataset:", name)
+    # print("dataset:", name) is in parameters so printed below
+
+
+    f = inspect.currentframe()
+    v = inspect.getargvalues(f)
+
+    for arg in v.args:
+        if arg == "path": continue
+        var_value = v.locals[arg]
+        if var_value:
+            print( arg+':', var_value)
 
     # ignore that parameter if no disjunctive DAG
     if category not in [DatasetCategory.DISJUNCTIVE_ROOTED_DAG, DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE, DatasetCategory.MIXED]:
@@ -744,21 +756,77 @@ def product(args):
     return result
 
 if __name__ == '__main__':
-    print("testing dataset generation")
+    SIZES = [DatasetSize.XS, DatasetSize.S, DatasetSize.M, DatasetSize.L, DatasetSize.XL]
+
+    parser = argparse.ArgumentParser(description='RuDaS Dataset Generator.')
+
+    parser.add_argument('--name', default=None, type=str, help="...")
+    parser.add_argument('--path', default="../datasets/", type=str, help="...")
+    parser.add_argument('--size', default=1, type=int, choices=[0,1,2,3,4], help="...")
+    parser.add_argument('--category', default=0, type=int, choices=[0,1,2,3,4,5,6], help="...")
+    parser.add_argument('--overlap', type=int, default=0, choices=[0,1], help="...")
+    parser.add_argument('--singletarget', type=int, default=0, choices=[0,1], help="...")
+    parser.add_argument('--mindags', default=1, type=int, help="...")
+    parser.add_argument('--maxdags', default=1, type=int, help="...")
+    parser.add_argument('--maxdepth', default=3, type=int, help="...")
+    parser.add_argument('--nodesupport', type=int, default=None, help="...")
+    parser.add_argument('--dagsupport', default=3, type=int, help="...")
+    parser.add_argument('--skipnode', default=5, type=int, help="...")
+    parser.add_argument('--owa', default=.3, type=float, help="...")
+    parser.add_argument('--noise', default=.2, type=float, help="...")
+    parser.add_argument('--missing', default=.15, type=float, help="...")
+    parser.add_argument('--targetsextra', default=1, type=int, choices=[0,1], help="...")
+    parser.add_argument('--maxorchild', default=2, type=int, help="...")
+    parser.add_argument('--maxatoms', default=2, type=int, help="...")
+    parser.add_argument('--minarity', default=2, type=int, help="...")
+    parser.add_argument('--maxarity', default=2, type=int, help="...")
+    parser.add_argument('--numpreds', default=None, type=int, help="...")
+    parser.add_argument('--numconstants', default=None, type=int, help="...")
+    parser.add_argument('--test', default=.3, type=float, help="...")
+    # TODO explanations
+
+
+    args = parser.parse_args()
+    generate_dataset(name=args.name,
+                     path=args.path,
+                     size=SIZES[args.size],
+                     category=DatasetCategory(args.category),
+                     overlap=bool(args.overlap),
+                     singletarget=bool(args.singletarget),
+                     mindags=args.mindags,
+                     maxdags=args.maxdags,
+                     maxdepth=args.maxdepth,
+                     nodesupport=args.nodesupport,
+                     dagsupport=args.dagsupport,
+                     skipnode=args.skipnode,
+                     owafactor=args.owa,
+                     noisefactor=args.noise,
+                     missfactor=args.missing,
+                     targetsextra=bool(args.targetsextra),
+                     maxorchild=args.maxorchild,
+                     maxatoms=args.maxatoms,
+                     minarity=args.minarity,
+                     maxarity=args.maxarity,
+                     numpreds=args.numpreds,
+                     numconstants=args.numconstants,
+                     test=args.test)
+
 #
-    # cs = [DatasetCategory.CHAIN_RECURSIVE]#,DatasetCategory.ROOTED_DAG_RECURSIVE]#
-    #
-    cs = [#DatasetCategory.CHAIN, #.DISJUNCTIVE_ROOTED_DAG_RECURSIVE]#,
-    DatasetCategory.ROOTED_DAG_RECURSIVE]
-       # DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE] #
-    ss = [DatasetSize.XS]#,DatasetCategory.CHAIN_RECURSIVE]#DatasetSize.XS,
-    for i in range(len(cs)):
-        for j in range(len(ss)):
-            # generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=2)
-            # generate_dataset(size=ss[j], category=cs[i], nodesupport=0)#, mindags=3, maxdags=3)
-            # generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=2, numpreds=3, path='../datasets/simple/')#DatasetSize.XS,
-            generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=3, #numpreds=3,
-                             path='../datasets/new/')  # DatasetSize.XS,
+#     print("testing dataset generation")
+# #
+#     # cs = [DatasetCategory.CHAIN_RECURSIVE]#,DatasetCategory.ROOTED_DAG_RECURSIVE]#
+#     #
+#     cs = [#DatasetCategory.CHAIN, #.DISJUNCTIVE_ROOTED_DAG_RECURSIVE]#,
+#     DatasetCategory.ROOTED_DAG_RECURSIVE]
+#        # DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE] #
+#     ss = [DatasetSize.XS]#,DatasetCategory.CHAIN_RECURSIVE]#DatasetSize.XS,
+#     for i in range(len(cs)):
+#         for j in range(len(ss)):
+#             # generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=2)
+#             # generate_dataset(size=ss[j], category=cs[i], nodesupport=0)#, mindags=3, maxdags=3)
+#             # generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=2, numpreds=3, path='../datasets/simple/')#DatasetSize.XS,
+#             generate_dataset(size=ss[j], category=cs[i], nodesupport=0, maxdepth=3, #numpreds=3,
+#                              path='../datasets/new/')  # DatasetSize.XS,
 
     # cs = [DatasetCategory.MIXED]
     # ss = [DatasetSize.M, DatasetSize.L]
