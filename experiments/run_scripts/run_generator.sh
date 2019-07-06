@@ -3,9 +3,8 @@
 # bash should halt the script in case any of them returns a non-true exit code. = error
 set -e
 
-#conda activate rudas
-#cd /~/RuDaS/src/
-cd /Users/veronika.thost/Desktop/git/RuDaS/src/
+conda activate rudas
+cd /home/veronika/RuDaS/src/
 
 SIZES=(0 1 2)
 CATEGORIES=(2 4 6)
