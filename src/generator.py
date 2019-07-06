@@ -318,6 +318,7 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     test = []
     # train_conseqs = train_conseqs1 + train_conseqs2
     # train_conseqs.shuffle()
+    rem = [] # must exist also if owa is 0
     if owafactor:
         if targetsextra:
             rem1 = remove_consequences(train, train_conseqs1, owafactor)

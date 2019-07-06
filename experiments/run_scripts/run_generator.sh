@@ -13,6 +13,9 @@ set -e
 #conda activate rudas
 cd /home/veronika/RuDaS/src/
 
+DATASETSDIR='../datasets/new/'
+rm -rf $DATASETSDIR
+
 SIZES=(0 1 2)
 CATEGORIES=(2 4 6)
 MAXDEPTHS=(1 2 3)
@@ -26,7 +29,7 @@ for SIZE in ${SIZES[*]}; do
             for OWA in ${OWAS[*]}; do
                 for NOISE in ${NOISES[*]}; do
                     for MISSING in ${MISSINGS[*]}; do
-                        python generator.py --path='../datasets/new/' --size=$SIZE --category=$CATEGORY \
+                        python generator.py --path=$DATASETSDIR --size=$SIZE --category=$CATEGORY \
                         --maxdepth=$MAXDEPTH --owa=$OWA --noise=$NOISE --missing=$MISSING --test=$OWA
                     done
                 done
