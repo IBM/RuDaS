@@ -1,9 +1,16 @@
 #!/bin/bash
 
+# 1. BEFORE RUNNING
+# ACTIVATE conda env
+# SET your path below, also datasets path
+# 2. CALL with ./run_generator.sh
+# (you might have to call before: chmod +x run_generator.sh)
+
+
 # bash should halt the script in case any of them returns a non-true exit code. = error
 set -e
 
-#conda activate rudas 
+#conda activate rudas
 cd /home/veronika/RuDaS/src/
 
 SIZES=(0 1 2)
