@@ -16,6 +16,7 @@ import operator
 import functools
 import inspect
 import argparse
+import time
 
 class DatasetCategory(Enum):
     '''
@@ -171,6 +172,7 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     print("generating dataset", name)
 
     sys.stdout = open(path+"log.txt", 'a')
+    time.sleep(2) # wait two seconds to get switch
     # print("dataset:", name) is in parameters so printed below
 
 
