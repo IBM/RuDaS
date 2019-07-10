@@ -61,3 +61,11 @@ FOIL = 'FOIL'
 
 SYSTEMS = [NTP, NEURAL_LP, AMIE_PLUS, FOIL]
 SYSTEMS2 = [FOIL]
+
+SIMPLE = 'simple/'
+SIMPLE_OWA ='simple-owa/'
+SIMPLE_CWA ='simple-cwa/'
+EXISTING = 'existing/'
+BINARY = 'binary/'
+GENERAL = 'general/'
+NEW = 'new/'

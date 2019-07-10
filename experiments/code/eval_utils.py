@@ -196,7 +196,7 @@ def convert_comma_separated(format, facts_file, rules_file=None):
 
 def preprocess_FOIL(factsFile, validationFile, preprocessingFolder):
     _, filename = os.path.split(factsFile)
-    filename= "train"
+    filename = "train"
     [facts_dict, predicates, constants] = parseFacts_general(factsFile)
     if validationFile:
         [facts_dict_val, predicates_val, constants_val] = parseFacts_general(validationFile)
@@ -209,6 +209,8 @@ def preprocess_FOIL(factsFile, validationFile, preprocessingFolder):
                 constants.append(const)
     convert_input_FOIL(facts_dict, predicates, constants, filename, preprocessingFolder)
 
+def post_process_FOIL(factsFile, validationFile, preprocessingFolder):
+    pass
 
 
 def convert(format, facts_file, rules_file=None):
@@ -275,8 +277,22 @@ def convert_input_ProGol(facts, rules, predicates, constants, path, filename):
     #TODO
     pass
 
+def convert_out_FOIL(results_file):
+    rules = []
+    path, filename = os.path.split(results_file)
 
-
+    output_file = path + "/FOIL_out.txt"
+    with open(results_file, 'r') as file:
+        lines = file.readlines()
+    file.close()
+    for line in lines:
+        if ":-" in line:
+            rules.append(line)
+    output_file = path+"/results4eval.txt"
+    file = open(output_file, "w")
+    for rule in rules:
+        file.write(rule+"\n")
+    file.close()
 
 def convert_out_AMIE_plus(results_file,parameter=AMIEP_PARAMETER):
     rules=[]
@@ -424,7 +440,8 @@ def convert_out_ntp(log_file, parameter=NTP_PARAMETER):
     for rule in rules:
         file.write(rule + "\n")
     file.close()
-
+'''
+# REFORMATTED
 def run_FOIL_test(facts_file):
     path, filename = os.path.split(facts_file)
     #convert_comma_separated("FOIL",facts_file)
@@ -445,6 +462,7 @@ def run_FOIL_test(facts_file):
 
 def run_FOIL(facts_file, validationFile, preprocessingFolder, output_file):
     preprocess_FOIL(facts_file, validationFile, preprocessingFolder)
+
     path, filename = os.path.split(facts_file)
     filename= "train"
     rules = []
@@ -467,7 +485,7 @@ def run_FOIL(facts_file, validationFile, preprocessingFolder, output_file):
         file.write(rule+"\n")
     file.close()
 
-
+'''
 
 def run_ProGol(facts_file, rules_file=None):
     #TODO
@@ -475,7 +493,7 @@ def run_ProGol(facts_file, rules_file=None):
 
 if __name__ == '__main__':
 
-    print("Testing Converter")
+    #print("Testing Converter")
     #factsFile = "../../datasets/test/even-facts-ext"
     #validationFile = "../../datasets/test/even-facts-ext-validation"
     #output_file = "../../datasets/test/even-facts-ext_FOIL_RESULT"
@@ -489,5 +507,6 @@ if __name__ == '__main__':
     #print("Testing Neural-LP Converter")
     #convert_out_neural_lp("../output/existing/Neural-LP/EVEN/rules.txt")
 
-    print("Testing NTP Converter")
-    convert_out_ntp("../output/simple/ntp/CHAIN-S-2-2/log.txt")
+    #print("Testing NTP Converter")
+    #convert_out_ntp("../output/simple/ntp/CHAIN-S-2-2/log.txt")
+    pass

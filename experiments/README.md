@@ -1,20 +1,22 @@
 # Experiments
 
 Installation requirements: git, anaconda, wget
-1. Run setup/setup_systems.sh to download and set up the systems.
-2. Run experiments/setup_experiments.py to set up the experiments.
-3. Run experiments/run.sh to run the experiments.
-4. For evaluation, run ???
+1. Run experiments/setup_systems_scripts/setup_systems.sh to download and set up the systems.
+2. Run experiments/code/experiments.py to set up the experiments.
+3. Run experiments/run_scripts/run_new.sh to run the experiments.
+4. For evaluation, run experiments/code/evaluator.py
 
 The following systems are evaluated.
 
+
 TODO include the following two into the above script!
 
+<!--
 ## ProGol
 
 * *Version:* 5.0
 * *Source Code:* <https://www.doc.ic.ac.uk/~shm/Software/progol5.0/>
-
+-->
 ## FOIL
 
 * *Version:* 6
