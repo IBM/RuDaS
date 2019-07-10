@@ -6,7 +6,7 @@ Installation requirements: git, anaconda, wget
 3. Run experiments/run_scripts/run_new.sh to run the experiments.
 4. For evaluation, run experiments/code/evaluator.py
 
-The following systems are evaluated.
+The following systems are evaluated: FOIL, Amie+, Neural-LP, ntp
 
 
 TODO include the following two into the above script!
