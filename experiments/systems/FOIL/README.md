@@ -1,3 +1,7 @@
+# How to obtain FOIL
+
+* Source code downloadable at <https://www.rulequest.com/Personal/>
+
 # How to run FOIL script
 
 ./foil6 -n -v0 < even.d
