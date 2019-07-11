@@ -19,7 +19,7 @@ TODO include the following two into the above script!
 -->
 ## FOIL
 
-* *Version:* 6
+* *Version:* 6.4
 * *Source Code:* <http://www.rulequest.com/Personal/>
  
 ## Amie+
