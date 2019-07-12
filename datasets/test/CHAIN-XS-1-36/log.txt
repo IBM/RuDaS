@@ -1,0 +1,127 @@
+name: CHAIN-XS-1-36
+size: DatasetSize.XS
+category: DatasetCategory.CHAIN_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 1
+dagsupport: 3
+skipnode: 5
+owafactor: 0.4
+missfactor: 0.15
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.4
+sizefactor1:  1.25
+sizefactor2:  1.1333333333333333
+fixedsize:  108
+generatablesize:  216
+mingeneratablesize:  70
+numpredicates:  7
+numconstants:  216
+generated DAG after 1 steps, maxdepth  1 :
+ |- [0] p0(X0,X1) :- p2(X0,X1),p5(X0,X1).
+nsupport size: 6
+1 : 12
+2 : 15
+3 : 18
+4 : 21
+5 : 24
+6 : 27
+7 : 30
+8 : 33
+9 : 36
+10 : 39
+11 : 42
+12 : 45
+13 : 48
+14 : 51
+15 : 54
+16 : 57
+17 : 60
+18 : 63
+19 : 66
+21 : 69
+22 : 72
+23 : 75
+24 : 78
+25 : 81
+26 : 84
+28 : 87
+29 : 90
+30 : 93
+31 : 96
+32 : 99
+33 : 102
+34 : 105
+35 : 108
+stopped support generation after 35 steps
+generated 108 facts
+1 : 2
+2 : 4
+3 : 6
+4 : 8
+5 : 10
+7 : 12
+8 : 14
+9 : 16
+10 : 18
+11 : 20
+13 : 22
+14 : 24
+16 : 26
+17 : 28
+18 : 30
+19 : 32
+20 : 34
+21 : 36
+22 : 38
+24 : 40
+25 : 42
+26 : 44
+27 : 46
+28 : 48
+29 : 50
+30 : 52
+31 : 54
+32 : 56
+33 : 58
+34 : 60
+35 : 62
+36 : 64
+37 : 66
+38 : 68
+39 : 70
+40 : 72
+41 : 74
+43 : 76
+44 : 78
+45 : 80
+46 : 82
+47 : 84
+48 : 86
+49 : 88
+50 : 90
+51 : 92
+52 : 94
+53 : 96
+55 : 98
+56 : 100
+stopped support generation after 56 steps
+generated 100 facts
+owa: removed 0 from 0  consequences
+owa: removed 14 from 36  consequences
+size, XS
+category, CHAIN_RECURSIVE
+numdags, 1
+targets, 0
+trainsupport: size, 72 , predicates, 2 , constants, 59
+trainconseqs: size, 36
+train: size, 94 , predicates, 3 , constants, 59
+train-cwa: size, 108 , predicates, 3 , constants, 59
+evalsupport: size, 100 , predicates, 2 , constants, 83
+evalconseqs: size, 50
+eval-cwa: size, 150 , predicates, 3 , constants, 83
+test: size, 14
