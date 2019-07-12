@@ -1,7 +1,7 @@
 #!/bin/bash
 
-NAMES=(VAR-NAMES)
-TESTS=VAR-TESTS
+NAMES=(NNCWA-XS-1 )
+TESTS=simple-cwa
 
 DIR=`dirname $0`
 SYSDIR=$DIR/../systems
@@ -10,11 +10,11 @@ DATA=$DIR/../data/$TESTS/
 for NAME in ${NAMES[@]}
 do
 
-SYSTEM=Neural-LP
-echo "Running Neural-LP..."
-source activate $SYSTEM
-python $SYSDIR/$SYSTEM/src/main.py --datadir=$DATA/$SYSTEM/$NAME --exps_dir=$DIR/../output/$TESTS/$SYSTEM --exp_name=$NAME > $DIR/../output/$TESTS/$SYSTEM/$NAME/log.txt 2> $DIR/../output/$TESTS/$SYSTEM/$NAME/err.txt
-echo "done."
+#SYSTEM=Neural-LP
+#echo "Running Neural-LP..."
+#source activate $SYSTEM
+#python $SYSDIR/$SYSTEM/src/main.py --datadir=$DATA/$SYSTEM/$NAME --exps_dir=$DIR/../output/$TESTS/$SYSTEM --exp_name=$NAME > $DIR/../output/$TESTS/$SYSTEM/$NAME/log.txt
+#echo "done."
 
 SYSTEM=ntp
 echo "Running ntp..."

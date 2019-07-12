@@ -2,7 +2,7 @@
 
 Installation requirements: git, anaconda, wget
 1. Run experiments/setup_systems_scripts/setup_systems.sh to download and set up the systems.
-2. Run experiments/code/experiments.py to set up the experiments.
+2. Run experiments/src/experiments.py to set up the experiments.
 3. Run experiments/run_scripts/run_new.sh to run the experiments.
 4. For evaluation, run experiments/code/evaluator.py
 

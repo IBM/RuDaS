@@ -140,7 +140,7 @@ def setup_experiments():
         dstpath_FOIL = DATA_DIR + FOIL + '/' + ds + '/'
         trpath_FOIL = srcpath_FOIL + TRAIN + '.txt'
         # vpath_FOIL = srcpath_FOIL + VALID + '.txt'
-        vpath_FOIL = None  # TODO check this is from other file
+        vpath_FOIL = None
         outFile_FOIL = OUTPUT_DIR + FOIL + '/' + ds + "/results4eval.txt"
         eval_utils.preprocess_FOIL(trpath_FOIL, vpath_FOIL, dstpath_FOIL)
 
