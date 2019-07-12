@@ -30,6 +30,7 @@ for SIZE in ${SIZES[*]}; do
             for I in {1..10}; do
                  python generator.py --path=$DATASETSDIR --size=$SIZE --category=$CATEGORY \
                  --maxdepth=$MAXDEPTH --owa=$OWA --noise=$NOISE --missing=$MISSING --test=$OWA
+            done
         done
     done
 done
