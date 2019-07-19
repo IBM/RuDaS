@@ -12,8 +12,6 @@ NEURAL_LP_PARAMETER = 0.6
 NTP_PARAMETER = 0.0
 
 
-
-
 def preprocess_FOIL(factsFile, validationFile, preprocessingFolder):
     _, filename = os.path.split(factsFile)
     filename = "train"
@@ -30,14 +28,13 @@ def preprocess_FOIL(factsFile, validationFile, preprocessingFolder):
     convert_input_FOIL(facts_dict, predicates, constants, filename, preprocessingFolder)
 
 
-
 def convert(format, facts_file, rules_file=None):
     '''
     Parameters
     ----------
-    factsFile   :   string
+    facts_file   :   string
         name of the file that stores the original facts
-    rulesFile   :   string
+    rules_file   :   string
         name of the file that stores the original rules
     format      :   string
         'FOIL', 'ProGol'
@@ -49,30 +46,28 @@ def convert(format, facts_file, rules_file=None):
     #filename, file_extension = os.path.splitext(filename_w_ext)
     path, filename = os.path.split(facts_file)
     [facts, rules, predicates, constants] = parseFiles_general(facts_file, rules_file)
-    if format=='FOIL':
+    if format == 'FOIL':
         convert_input_FOIL(facts, predicates, constants, filename)
     else:
         print("Unknown format: choose between FOIL and ProGol")
 
 
-
 def convert_input_FOIL(facts, predicates, constants, filename, preprocessingFolder):
-
     file = open(preprocessingFolder+filename+"_FOIL.d", "w")
-    #writing constants
+    # writing constants
     const_string = ""
     for i in range(len(constants)):
         if i>0:
-            const_string+=", "
-        const_string+=constants[i]
+            const_string += ", "
+        const_string += constants[i]
         if i == len(constants)-1:
-            const_string+="."
+            const_string += "."
     file.write("E: "+const_string)
     file.write("\n\n")
-    #writing facts
+    # writing facts
     for predicate in predicates:
-        predicate_string=predicate+"("
-        predicate_arity=facts[predicate][0].predicate.arity
+        predicate_string = predicate+"("
+        predicate_arity = facts[predicate][0].predicate.arity
         for i in range(predicate_arity):
             if i != 0:
                 predicate_string += ","
@@ -80,7 +75,7 @@ def convert_input_FOIL(facts, predicates, constants, filename, preprocessingFold
         predicate_string += ")"
         file.write(predicate_string+"\n")
         for fact in facts[predicate]:
-            fact_string=""
+            fact_string = ""
             for j in range(predicate_arity):
                 if j != 0:
                     fact_string += ","
@@ -93,8 +88,6 @@ def convert_input_FOIL(facts, predicates, constants, filename, preprocessingFold
 def convert_out_FOIL(results_file):
     rules = []
     path, filename = os.path.split(results_file)
-
-    output_file = path + "/FOIL_out.txt"
     with open(results_file, 'r') as file:
         lines = file.readlines()
     file.close()
@@ -107,10 +100,11 @@ def convert_out_FOIL(results_file):
         file.write(rule+"\n")
     file.close()
 
-def convert_out_AMIE_plus(results_file,parameter=AMIEP_PARAMETER):
-    rules=[]
+
+def convert_out_AMIE_plus(results_file, parameter=AMIEP_PARAMETER):
+    rules = []
     path, filename = os.path.split(results_file)
-    output_file = path + "/" +"results4eval.txt"
+    output_file = path + "/" + "results4eval.txt"
     with open(results_file, 'r') as file:
         file_lines = file.readlines()
     file.close()
@@ -118,36 +112,36 @@ def convert_out_AMIE_plus(results_file,parameter=AMIEP_PARAMETER):
         if "=>" in line:
             rules.append(line)
     file_lines = copy.deepcopy(rules)
-    rules=[]
-    confidence=[]
+    rules = []
+    confidence = []
     for line in file_lines:
-        line=line.split('\t')
+        line = line.split('\t')
         if float(line[3]) >= parameter:
             rules.append(line[0])
             confidence.append(float(line[3]))
-    final_rules=[]
+    final_rules = []
     for rule in rules:
         rule = rule.split('   => ')
         head = rule[1]
         body = rule[0]
-        rule_string=""
-        head=head.split('  ')
-        body=body.split('  ')
-        rule_string+=head[1]
-        rule_string+="("
-        rule_string+=((head[0].replace(" ","")).replace("?","")).capitalize()
-        rule_string+=","
-        rule_string+=(head[2].replace("?","")).capitalize()
-        rule_string+=") :- "
-        num_bodies=int(len(body)/3)
+        rule_string = ""
+        head = head.split('  ')
+        body = body.split('  ')
+        rule_string += head[1]
+        rule_string += "("
+        rule_string += ((head[0].replace(" ","")).replace("?","")).capitalize()
+        rule_string += ","
+        rule_string += (head[2].replace("?","")).capitalize()
+        rule_string += ") :- "
+        num_bodies = int(len(body)/3)
         for i in range(num_bodies):
             rule_string += body[3*i+1]
             rule_string += "("
             rule_string += ((body[3*i].replace(" ", "")).replace("?", "")).capitalize()
             rule_string += ","
             rule_string += (body[3*i+2].replace("?", "")).capitalize()
-            rule_string+=")"
-            if i<num_bodies-1:
+            rule_string += ")"
+            if i < num_bodies-1:
                 rule_string += ","
         rule_string += "."
         final_rules.append(rule_string)
@@ -167,7 +161,7 @@ def convert_out_neural_lp(results_file, parameter=NEURAL_LP_PARAMETER):
     rules = []
     confidence = []
     for line in file_lines:
-        line = line.replace('\n','')
+        line = line.replace('\n', '')
         line = line.split('\t')
         '''
         the first number is the weight of the rule
@@ -176,11 +170,11 @@ def convert_out_neural_lp(results_file, parameter=NEURAL_LP_PARAMETER):
         to use the non-normalized weight replace the following line with
         confidence_value = float(line[0].split(' ')[0])
         '''
-        confidence_value = float(line[0].split(' ')[1].replace(")","").replace("(",""))
+        confidence_value = float(line[0].split(' ')[1].replace(")", "").replace("(", ""))
         rules.append(line[1])
         confidence.append(confidence_value)
     final_rules = []
-    final_confidence=[]
+    final_confidence = []
     prev_head_pred = []
     index = -1
     for i in range(len(rules)):
@@ -206,8 +200,7 @@ def convert_out_neural_lp(results_file, parameter=NEURAL_LP_PARAMETER):
             final_rules[index].append(rule_string)
             final_confidence[index].append(confidence[i])
         prev_head_pred = head_pred
-    #ri-normalize
-    asd=1
+    # ri-normalize
     for index in range(len(final_rules)):
         if final_confidence[index][0] < 1.0:
             norm_factor = final_confidence[index][0]
@@ -219,9 +212,10 @@ def convert_out_neural_lp(results_file, parameter=NEURAL_LP_PARAMETER):
             if final_confidence[index][i]>=parameter:
                 rules_to_print.append(final_rules[index][i])
     file = open(output_file, "w")
-    for rule in rules_to_print:
-        file.write(rule + "\n")
+    for r in rules_to_print:
+        file.write(r + "\n")
     file.close()
+
 
 def convert_out_ntp(log_file, parameter=NTP_PARAMETER):
     path, filename = os.path.split(log_file)
@@ -232,16 +226,16 @@ def convert_out_ntp(log_file, parameter=NTP_PARAMETER):
     results_file = None
     for line in log_lines:
         if "Writing induced logic program to" in line:
-            results_file=line.split(' ')[-1].replace("\n","")
-            results_file=".."+results_file.split("experiments")[1]
-    rules=[]
+            results_file = line.split(' ')[-1].replace("\n","")
+            results_file = ".."+results_file.split("experiments")[1]
+    rules = []
     if results_file:
         with open(results_file, 'r') as file:
             file_lines = file.readlines()
         file.close()
         confidence = []
         for line in file_lines:
-            if len(line)>1 and line[1]==".":
+            if len(line) > 1 and line[1] == ".":
                 line = line.replace('\n', '')
                 line = line.split('\t')
                 confidence_value = float(line[0])
@@ -249,10 +243,9 @@ def convert_out_ntp(log_file, parameter=NTP_PARAMETER):
                     rules.append(line[1])
                     confidence.append(confidence_value)
     file = open(output_file, "w")
-    for rule in rules:
-        file.write(rule + "\n")
+    for r in rules:
+        file.write(r + "\n")
     file.close()
-
 
 
 def find_parameters(sys):
@@ -299,6 +292,7 @@ def find_parameters(sys):
             print("done", sys, ds)
         print("done", ds)
 
+
 def tune_parameters(sys):
     '''grid search for tuning parameters specific for the evaluated systems'''
     # sys must be in [AMIE_PLUS, NEURAL_LP, NTP]
@@ -323,12 +317,12 @@ def tune_parameters(sys):
             with open(file_name, "r") as f:
                 for line in f:
                     if 'Herbrant accuracy (new normalization):' in line:
-                        val=float(line.split(':')[1])
+                        val = float(line.split(':')[1])
                         avarege_values[index] += val
                         break
-        avarege_values[index]=avarege_values[index]/len(DATASETS)
-    max_accuracy=max(avarege_values)
-    max_val_index=avarege_values.index(max_accuracy)
+        avarege_values[index] = avarege_values[index]/len(DATASETS)
+    max_accuracy = max(avarege_values)
+    max_val_index = avarege_values.index(max_accuracy)
     max_parameter = parameter_list[max_val_index] # in case of ties, we use the lowest index
     print("optimal value for ", sys, "=", max_parameter)
 
@@ -346,13 +340,16 @@ def convert_systems_output():
         convert_output_FOIL(ds)
     print("done converting systems outputs.")
 
+
 def convert_output_amiep(ds):
     output_directory = OUTPUT_DIR + AMIE_PLUS + '/' + ds + "/"
     convert_out_AMIE_plus(output_directory + "results.txt")
 
+
 def convert_output_neural_lp(ds):
     output_directory = OUTPUT_DIR + NEURAL_LP + '/' + ds + "/"
     convert_out_neural_lp(output_directory + "rules.txt")
+
 
 def convert_output_ntp(ds):
     output_directory = OUTPUT_DIR + NTP + '/' + ds + "/"
@@ -362,9 +359,6 @@ def convert_output_ntp(ds):
 def convert_output_FOIL(ds):
     output_directory = OUTPUT_DIR + FOIL + '/' + ds + "/"
     convert_out_FOIL(output_directory + "FOIL_out.txt")
-
-
-
 
 
 def converter_test():
@@ -379,7 +373,6 @@ def converter_test():
 
     print("Testing NTP Converter")
     convert_out_ntp("../output/simple/ntp/CHAIN-S-2-2/log.txt")
-
 
 
 if __name__ == '__main__':

@@ -6,21 +6,23 @@ import copy
 import sys
 
 def count_facts_dict(dict):
-    num_facts=0
+    num_facts = 0
     for key, value in dict.items():
         num_facts += len([item for item in value if item])
     return num_facts
 
+
 def remove_aux_pred(facts, predicates_list):
-    #origin = copy.deepcopy(facts)
-    pred= [str(p) for p in predicates_list]
-    key2pop=[]
+    # origin = copy.deepcopy(facts)
+    pred = [str(p) for p in predicates_list]
+    key2pop = []
     for key in facts:
         if key not in pred:
             key2pop.append(key)
     for key in set(key2pop):
         facts.pop(key, None)
     return facts
+
 
 def remove_aux_pred_NLP(facts):
     origin = copy.deepcopy(facts)
@@ -31,6 +33,7 @@ def remove_aux_pred_NLP(facts):
     for key in set(key2pop):
         origin.pop(key, None)
     return origin
+
 
 def union_dict(dict1, dict2):
     keys = set(dict1).union(dict2)
@@ -73,23 +76,22 @@ def delta_dict(dict1, dict2):
     return delta
 
 
-
 class LogicProgram(object):
-    #we assume the num of predicates and constants are from 0 to num_predicates/num_constants
+    # we assume the num of predicates and constants are from 0 to num_predicates/num_constants
     def __init__(self, facts={}, rules=[], num_predicates=-1, num_constants=-1, grounded=False):
         self.num_predicates = num_predicates
         self.num_constants = num_constants
         self.rules = rules
         self.original_facts = facts
-        #self.grounded_facts = []
+        # self.grounded_facts = []
         self.inferred_facts = {}
         self.grounded = grounded
         if rules == []:
-            #self.grounded_facts = copy.deepcopy(self.original_facts)
+            # self.grounded_facts = copy.deepcopy(self.original_facts)
             self.grounded = True
         self.num_original_facts = 0
-        self.num_original_facts= count_facts_dict(self.original_fact)
-        self.num_grounded_facts=None # currently not used
+        self.num_original_facts = count_facts_dict(self.original_fact)
+        self.num_grounded_facts = None  # currently not used
 
     def add_inferred_facts(self, inferred_facts):
         self.inferred_facts = copy.deepcopy(inferred_facts)
@@ -99,8 +101,8 @@ class LogicProgram(object):
         self.original_facts=union_dict(self.original_facts, facts)
 
     def ground_program(self):
-        if self.grounded == False:
-            if self.rules!=[]:
+        if not self.grounded:
+            if self.rules != []:
                 grounded_facts = forward_inference(copy.deepcopy(self.original_facts), self.rules)
                 # extract inferred facts
                 self.inferred_facts = delta_dict(grounded_facts, self.original_facts)
@@ -132,7 +134,7 @@ class Rule(object):
         return [self.head.predicate] + [a.predicate for a in self.body]
 
 
-class Predicate():
+class Predicate:
     '''
     Parameters
     ----------
@@ -146,7 +148,7 @@ class Predicate():
     def __eq__(self, other):
         if isinstance(other, Predicate):
             return self.name == other.name and self.arity == other.arity
-        return self is other #super(Predicate, self).__eq__(other) #TODO
+        return self is other  #super(Predicate, self).__eq__(other) #TODO
 
     def __str__(self):
         return 'p'+ str(self.name) if isinstance(self.name, int) else str(self.name)
@@ -161,24 +163,21 @@ class Atom(object):
     '''
     def __init__(self, predicate, arguments):
         if not len(arguments) == predicate.arity:
-            raise Exception("Error: number of arguments "+str(predicate)+" is not "+str(len(arguments))+" but "+ str(predicate.arity))
+            raise Exception("Error: number of arguments "+str(predicate)+" is not "+str(len(arguments))+" but " + str(predicate.arity))
         self.predicate = predicate
         self.arguments = arguments
 
     def __eq__(self, other):
         if isinstance(other, Atom):
-            return self.predicate == other.predicate and self.predicate.arity == sum([1 if other.arguments[i] == a else 0 for i,a in enumerate(self.arguments) ]) #self.arguments == other.arguments
+            return self.predicate == other.predicate and self.predicate.arity == sum([1 if other.arguments[i] == a else 0 for i,a in enumerate(self.arguments)])  #self.arguments == other.arguments
         return super(Atom, self).__eq__(other)
-
-
 
     def __str__(self):
         return str(self.predicate) + '(' + ','.join([str(a) for a in self.arguments]) + ')'
 
 
-
 class Term(object):
-    #temp needed since only python 3 raises no error when it's missing and addressed
+    # temp needed since only python 3 raises no error when it's missing and addressed
     def __eq__(self, other):
         if self is other:
             return True
@@ -192,13 +191,13 @@ class Variable(Term):
     name
     '''
     def __init__(self, name):
-        #super().__init__()
+        # super().__init__()
         self.name = name
 
     def __eq__(self, other):
         if isinstance(other, Variable):
             return self.name == other.name
-        #return super(Variable, self).__eq__(other)
+        # return super(Variable, self).__eq__(other)
 
     def __str__(self):
         return 'X'+ str(self.name) if isinstance(self.name, int) else str(self.name)
@@ -216,13 +215,13 @@ class Constant(Term):
     def __eq__(self, other):
         if isinstance(other, Constant):
             return self.name == other.name
-        #return super(Constant, self).__eq__(other)
+        # return super(Constant, self).__eq__(other)
 
     def __hash__(self):
         return self.name
 
     def __str__(self):
-        return 'c'+ str(self.name) if isinstance(self.name, int) else str(self.name)
+        return 'c' + str(self.name) if isinstance(self.name, int) else str(self.name)
 
 
 #TODO update comments
@@ -234,31 +233,29 @@ def forward_inference(facts, rules):
     rules   :   Rule list
     '''
     sys.setrecursionlimit(1000000)
-    if rules==[]:
+    if rules == []:
         return facts
     updated = True;
-    while(updated):
+    while updated:
         updated = False
         for r in rules:
-#           print(r)
-#           list of unifiers
-#           each unifier is a list of constants
+            # print(r)
+            # list of unifiers
+            # each unifier is a list of constants
             allus = [{}]
-
             for a in r.body:
                 allustmp = []
                 for u in allus:
-                    #added these to lines to handle invented predicates
+                    # added these to lines to handle invented predicates
                     if not a.predicate.name in facts.keys():
-                        facts[a.predicate.name]=[]
-                    ##
+                        facts[a.predicate.name] = []
                     for f in facts[a.predicate.name]:
-#                        print(f)
-#                       extend a copy of the current unifier u
+                        # print(f)
+                        # extend a copy of the current unifier u
                         u1 = unify(f, a, copy.deepcopy(u))
                         if u1 is None:
                             continue
-#                        print(dict_tostr(u1))
+                        # print(dict_tostr(u1))
                         allustmp.append(u1)
                 allus = allustmp
             for u in allus:
@@ -269,7 +266,7 @@ def forward_inference(facts, rules):
                         facts[r.head.predicate.name].append(f)
     #                    print(facts)
                 else:
-                    facts[r.head.predicate.name]=[f]
+                    facts[r.head.predicate.name] = [f]
     return facts
 
 
@@ -295,26 +292,24 @@ def unify(fact, atom, unifier):
     corresponds to element at index 2 in list
     we extend unifier to ['a','b','c','a','d','c','a','e','c']
     '''
-#    print('got '+dict_tostr(unifier))
-#    print(atom)
+    # print('got '+dict_tostr(unifier))
+    # print(atom)
     for i in range(0, atom.predicate.arity):
-#        print(str(atom.arguments[i].name))
+        # print(str(atom.arguments[i].name))
         if isinstance(atom.arguments[i], Constant):
             if fact.arguments[i].name != atom.arguments[i].name:
                 return None
             continue
         elif atom.arguments[i].name in unifier:
-#            print('in ')
+            # print('in ')
             if fact.arguments[i].name != unifier[atom.arguments[i].name]:
-#                print('bad '+str(atom.arguments[i]) + " "+str(fact.arguments[i]) + " "+str(unifier[atom.arguments[i].name]))
+                # print('bad '+str(atom.arguments[i]) + " "+str(fact.arguments[i]) + " "+str(unifier[atom.arguments[i].name]))
                 return None
-#else var can match any constant
-#        print('... ')
-        #print('a '+str(atom.arguments[i]) + " "+str(fact.arguments[i]) )#+ " "+str(unifier[atom.arguments[i].name]))
-
+        #else var can match any constant
+        # print('... ')
+        # print('a '+str(atom.arguments[i]) + " "+str(fact.arguments[i]) )#+ " "+str(unifier[atom.arguments[i].name]))
         unifier[atom.arguments[i].name]=fact.arguments[i].name
-#        print('now '+dict_tostr(unifier))
-
+        # print('now '+dict_tostr(unifier))
     return unifier
 
 
@@ -333,15 +328,15 @@ def create_consequence(head, unifier):
     return p6('a','e')
 
     '''
-#    print('u '+dict_tostr(unifier))
-    args = [head.arguments[i] if isinstance(head.arguments[i], Constant) \
-            else Constant(unifier[head.arguments[i].name]) \
+    # print('u '+dict_tostr(unifier))
+    args = [head.arguments[i] if isinstance(head.arguments[i], Constant)
+            else Constant(unifier[head.arguments[i].name])
             for i in range(0, head.predicate.arity)]
     return Atom(head.predicate, args)
 
 
 def dict_tostr(dic):
-    return ",".join([str(k)+":"+(strlist(v)+'\n' if isinstance(v,list) else str(v)) for k,v in dic.items() if v])#TODO change for python 3
+    return ",".join([str(k)+":"+(strlist(v)+'\n' if isinstance(v, list) else str(v)) for k, v in dic.items() if v])#TODO change for python 3
 
 
 def test_consistency(facts, rules):
@@ -452,14 +447,14 @@ if __name__ == '__main__':
     '''
 
 # #   test inference -- Cristina
-    even = Predicate('even',1)
-    succ = Predicate('succ',2)
-    fact1 = Atom(succ,[Constant('0'),Constant('1')]) #succ(0,1)
-    fact2 = Atom(succ,[Constant('1'),Constant('2')] ) #succ(1,2)
-    fact3 = Atom(even,[Constant('0')] ) #even(0)
-    head = Atom(even,[Variable('C')] )
-    body = [Atom(succ,[Variable('A'),Variable('B')]), Atom(even,[Variable('A')]), Atom(succ,[Variable('B'),Variable('C')])]
-    rule = Rule(body,head)  # even(C) :- succ(A,B), even(A), succ(B,C).
-    dict = {'even':[fact3],'succ':[fact1,fact2]}
-    a = forward_inference(dict,[rule])
+    even = Predicate('even', 1)
+    succ = Predicate('succ', 2)
+    fact1 = Atom(succ, [Constant('0'), Constant('1')])  # succ(0,1)
+    fact2 = Atom(succ, [Constant('1'), Constant('2')] )  # succ(1,2)
+    fact3 = Atom(even, [Constant('0')])  # even(0)
+    head = Atom(even, [Variable('C')])
+    body = [Atom(succ, [Variable('A'), Variable('B')]), Atom(even, [Variable('A')]), Atom(succ, [Variable('B'), Variable('C')])]
+    rule = Rule(body, head)  # even(C) :- succ(A,B), even(A), succ(B,C).
+    dict = {'even': [fact3], 'succ':[fact1, fact2]}
+    a = forward_inference(dict, [rule])
     print(atoms_tostr(a))

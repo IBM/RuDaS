@@ -129,7 +129,7 @@ class Evaluator(object):
         file.close()
 
     def compute_fpfntptn(self, predicates):
-        if self.fpfntptn == False:
+        if not self.fpfntptn:
             self.fpfntptn = True
             self.to_evaluate_logic_program.ground_program()
             self.original_logic_program.ground_program()
@@ -234,7 +234,6 @@ def testing():
     original_factsFile = "train.txt"
     original_rulesFile = "rules.txt"
     '''
-
     # TEST1
     # comparison without test set
     '''
@@ -259,7 +258,6 @@ def testing():
     eval.compute_Herbrand()
     eval.print_results_terminal()
     '''
-
     # TEST2
     # comparison with test set
     '''
@@ -286,14 +284,12 @@ def testing():
     eval.compute_Herbrand()
     eval.print_results_terminal()
     '''
-
     # TEST3
     # comparison with example from AMIE PLUS (with test set)
     print("\n")
     print("+++++++++++++++++++++++")
     print("++TEST 3 with AMIEplus+")
     print("+++++++++++++++++++++++")
-
     original_factsFile = "../../datasets/CHAIN-XS-3/train.txt"
     original_rulesFile = "../../datasets/CHAIN-XS-3/rules.txt"
     original_testFile = "../../datasets/CHAIN-XS-3/test.txt"
@@ -306,6 +302,7 @@ def testing():
     eval = Evaluator(original_factsFile, original_rulesFile, original_testFile, toEvaluate_factsFile, toEvaluate_rulesFile)
     eval.compute_Herbrand()
     eval.print_results_terminal()
+
 
 def evaluate_systems():
     for ds in DATASETS:
@@ -330,16 +327,15 @@ def evaluate_systems():
         print("----------done", ds)
 
 
-
 def grid_search():
     for sys in [AMIE_PLUS, NEURAL_LP, NTP]:
         find_parameters(sys)
         tune_parameters(sys)
 
+
 def experiments_evaluation():
     tests = [SIMPLE_CWA]
     # [SIMPLE, SIMPLE_OWA, SIMPLE_CWA, EXISTING, BINARY, GENERAL, NEW]
-
     for test in tests:
         DATASETS_DIR = DATASETS_BASE_DIR + test
         DATA_DIR = DATA_BASE_DIR + test
@@ -349,7 +345,6 @@ def experiments_evaluation():
                         'test') and not str(f).startswith('README')]
         convert_systems_output()
         evaluate_systems()
-
 
 
 if __name__ == '__main__':
