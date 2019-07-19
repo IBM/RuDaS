@@ -180,8 +180,8 @@ def run_experiments_FOIL():
 
 if __name__ == '__main__':
     print(os.getcwd())
-    tests = [SIMPLE_CWA]
-        #[SIMPLE, SIMPLE_OWA, SIMPLE_CWA, EXISTING, BINARY, GENERAL, NEW]
+    tests = [TEST]
+        #[SIMPLE, SIMPLE_OWA, SIMPLE_CWA, EXISTING, BINARY, GENERAL, TEST]
 
     for test in tests:
 

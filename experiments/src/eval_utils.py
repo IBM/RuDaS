@@ -14,186 +14,6 @@ NTP_PARAMETER = 0.0
 
 
 
-def parseFiles_comma_separated(factsFile):
-    facts = []
-    facts_dict = {}
-    rules = []
-    # parse facts
-    predicates = []
-    constants = []
-    if factsFile != None:
-        with open(factsFile, "r") as f:
-            for line in f:
-                if (len(line) > 2):
-                    [current_fact, current_predicate, current_constants] = parse_atom_comma_separated(line)
-                    facts.append(current_fact)
-                    if current_predicate not in predicates:
-                        predicates.append(current_predicate)
-                    for current_constant in current_constants:
-                        if current_constant not in constants:
-                            constants.append(current_constant)
-    facts_dict = order_facts(facts)
-    return [facts_dict, rules, predicates, constants]
-
-
-def parse_atom_comma_separated(atom_string):
-    atom_string=atom_string.replace('\n', '')
-    atom_string=atom_string.replace(' ', '')
-    atom_string_tokens = atom_string.split(',')
-    predicate_string = atom_string_tokens[0]  # predicate name
-    arguments_string = atom_string_tokens[1:]  # arguments
-    predicate = Predicate(predicate_string, len(arguments_string))
-    arguments = []
-    constants=[]
-    for arg in arguments_string:
-        if arg.isupper():  # if is capital letter is variable
-            arguments.append(Variable(arg))
-        else:  # is constant
-            arguments.append(Constant(arg))
-    for const in arguments:
-        if type(const) == Constant and const.name not in constants:
-            constants.append(const.name)
-    atom = Atom(predicate, arguments)
-    return [atom, predicate_string, constants]
-
-
-
-def parseRules_general(rulesFile):
-    # parse rules
-    rules = []
-    predicates = []
-    constants = []
-    if rulesFile != None:
-        with open(rulesFile, "r") as f:
-            for line in f:
-                if (len(line) > 4):
-                    [current_rule, current_predicates, current_constants] = parse_rule_general(line.split('.')[0])
-                    rules.append(current_rule)
-                    for current_predicate in current_predicates:
-                        if current_predicate not in predicates:
-                            predicates.append(current_predicate)
-                    for current_constant in current_constants:
-                        if current_constant not in constants:
-                            constants.append(current_constant)
-    return [rules, predicates, constants]
-
-def parseFacts_general(factsFile):
-    facts = []
-    facts_dict = {}
-    # parse facts
-    predicates = []
-    constants = []
-    if factsFile != None:
-        with open(factsFile, "r") as f:
-            for line in f:
-                if (len(line) > 3):
-                    [current_fact, current_predicate, current_constants] = parse_atom_general(line.split('.')[0])
-                    facts.append(current_fact)
-                    if current_predicate not in predicates:
-                        predicates.append(current_predicate)
-                    for current_constant in current_constants:
-                        if current_constant not in constants:
-                            constants.append(current_constant)
-    facts_dict = order_facts(facts)
-    return [facts_dict, predicates, constants]
-
-def parseFiles_general(factsFile, rulesFile):
-    [facts_dict, predicates_f, constants_f]= parseFacts_general(factsFile)
-    predicates = predicates_f
-    constants = constants_f
-    rules = None
-    if rulesFile:
-        [rules, predicates_r, constants_r] = parseRules_general(rulesFile)
-        for predicate in predicates_r:
-            if predicate not in predicates:
-                predicates.append(predicate)
-        for constant in constants_r:
-            if constant not in constants:
-                constants.append(constant)
-    return [facts_dict, rules, predicates, constants]
-
-
-def parse_atom_general(atom_string):
-    atom_string = atom_string.replace(" ", "")
-    atom_string = atom_string.replace(")", "")
-    predicate_string = (atom_string.split('(')[0])  # predicate name
-    arguments_string = (atom_string.split('(')[1]).split(',')  # arguments
-    predicate = Predicate(predicate_string, len(arguments_string))
-    arguments = []
-    constants=[]
-    for arg in arguments_string:
-        if arg.isupper():  # if is capital letter is variable
-            arguments.append(Variable(arg))
-        else:  # is constant
-            arguments.append(Constant(arg))
-    for const in arguments:
-        if type(const) == Constant and const.name not in constants:
-            constants.append(const.name)
-    atom = Atom(predicate, arguments)
-    return [atom, predicate_string, constants]
-
-
-def order_facts(facts):
-    fact_dict={}
-    for fact in facts:
-        if fact.predicate.name in fact_dict:
-            if fact not in fact_dict[fact.predicate.name]:  # avoiding facts duplicates
-                fact_dict[fact.predicate.name].append(fact)
-        else:
-            fact_dict[fact.predicate.name] = [fact]
-    return fact_dict
-
-
-def parse_rule_general(rule_string):
-    predicates = []
-    constants = []
-    rule_string=rule_string.split(':-')
-    head_string = rule_string[0]
-    bodies_string = (rule_string[1]).split('),')
-    [head, pred, constants_tmp] = parse_atom_general(head_string)
-    predicates.append(pred)
-    for const in constants_tmp:
-        if const not in constants:
-            constants.append(const)
-    bodies = []
-    for body in bodies_string:
-        [body_atom, pred, constants_tmp]=parse_atom_general(body)
-        for conts in constants_tmp:
-            if conts not in constants:
-                constants.append(conts)
-        bodies.append(body_atom)
-        if pred not in predicates:
-            predicates.append(pred)
-    rule = Rule(bodies, head)
-    return [rule, predicates, constants]
-
-
-def convert_comma_separated(format, facts_file, rules_file=None):
-    '''
-        Parameters
-        ----------
-        factsFile   :   string
-            name of the file that stores the original facts
-        rulesFile   :   string
-            name of the file that stores the original rules
-        format      :   string
-            'FOIL', 'ProGol'
-        Description
-        ----------
-        convert comma_separated file into FOIL or ProGol format
-        '''
-    # filename_w_ext = os.path.basename(facts_file)
-    # filename, file_extension = os.path.splitext(filename_w_ext)
-    path, filename = os.path.split(facts_file)
-    [facts, rules, predicates, constants] = parseFiles_comma_separated(facts_file)
-    if format == 'FOIL':
-        convert_input_FOIL(facts, predicates, constants, filename)
-    elif format == 'ProGol':
-        convert_input_ProGol(facts, rules, predicates, constants, path, filename)
-    else:
-        print("Unknown format: choose between FOIL and ProGol")
-
-
 def preprocess_FOIL(factsFile, validationFile, preprocessingFolder):
     _, filename = os.path.split(factsFile)
     filename = "train"
@@ -209,8 +29,6 @@ def preprocess_FOIL(factsFile, validationFile, preprocessingFolder):
                 constants.append(const)
     convert_input_FOIL(facts_dict, predicates, constants, filename, preprocessingFolder)
 
-def post_process_FOIL(factsFile, validationFile, preprocessingFolder):
-    pass
 
 
 def convert(format, facts_file, rules_file=None):
@@ -233,8 +51,6 @@ def convert(format, facts_file, rules_file=None):
     [facts, rules, predicates, constants] = parseFiles_general(facts_file, rules_file)
     if format=='FOIL':
         convert_input_FOIL(facts, predicates, constants, filename)
-    elif format=='ProGol':
-        convert_input_ProGol(facts, rules, predicates, constants, path, filename)
     else:
         print("Unknown format: choose between FOIL and ProGol")
 
@@ -273,9 +89,6 @@ def convert_input_FOIL(facts, predicates, constants, filename, preprocessingFold
         file.write(".\n")
     file.close()
 
-def convert_input_ProGol(facts, rules, predicates, constants, path, filename):
-    #TODO
-    pass
 
 def convert_out_FOIL(results_file):
     rules = []
@@ -301,7 +114,6 @@ def convert_out_AMIE_plus(results_file,parameter=AMIEP_PARAMETER):
     with open(results_file, 'r') as file:
         file_lines = file.readlines()
     file.close()
-    # TODO
     for line in file_lines:
         if "=>" in line:
             rules.append(line)
@@ -440,73 +252,136 @@ def convert_out_ntp(log_file, parameter=NTP_PARAMETER):
     for rule in rules:
         file.write(rule + "\n")
     file.close()
-'''
-# REFORMATTED
-def run_FOIL_test(facts_file):
-    path, filename = os.path.split(facts_file)
-    #convert_comma_separated("FOIL",facts_file)
-    #convert("FOIL",facts_file)
-    rules=[]
-    foil_path="experiments/systems/FOIL/"
-    command = foil_path+"./foil6 -v0 -n <"+foil_path+"/FOILdata/"+filename+"_FOIL.d"
-    output = subprocess.check_output(command, shell=True).decode("utf-8")
-    output=output.split("\n")
-    for line in output:
-        if ":-" in line:
-            rules.append(line)
-    file = open(path + "/" + filename + "_FOIL_result", "w")
-    for rule in rules:
-        file.write(rule+"\n")
-    file.close()
 
 
-def run_FOIL(facts_file, validationFile, preprocessingFolder, output_file):
-    preprocess_FOIL(facts_file, validationFile, preprocessingFolder)
 
-    path, filename = os.path.split(facts_file)
-    filename= "train"
-    rules = []
-    foil_path=FOIL_PATH
-    foil_path = "../systems/FOIL"
-    # ADD "-m 200000" if the max tuples are exceeded
-    command = foil_path+"/./foil6 -v0 -n <"+preprocessingFolder+filename+"_FOIL.d"
-    output = subprocess.check_output(command, shell=True).decode("utf-8")
-    output_lines = output.split("\n")
-    path_out, _ = os.path.split(output_file)
-    file = open(path_out+"/FOIL_out.txt", "w")
-    for line in output_lines:
-        file.write(line + "\n")
-    file.close()
-    for line in output_lines:
-        if ":-" in line:
-            rules.append(line)
-    file = open(output_file, "w")
-    for rule in rules:
-        file.write(rule+"\n")
-    file.close()
+def find_parameters(sys):
+    '''
+    optimal parameters are:
+    AMIEP_PARAMETER = 0.5
+    NEURAL_LP_PARAMETER = 0.5
+    NTP_PARAMETER = 0.2
+    '''
+    AMIEP_PARAMETER_list = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    NEURAL_LP_PARAMETER_list = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    NTP_PARAMETER_list = [0.0, 0.02, 0.5, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4]
+    parameter_list = None
+    if sys=="AMIE_PLUS":
+        parameter_list = AMIEP_PARAMETER_list
+    elif sys == "NEURAL_LP":
+        parameter_list = NEURAL_LP_PARAMETER_list
+    elif sys == "NTP":
+        parameter_list = NTP_PARAMETER_list
+    else:
+        print("invalid system")
+        pass
+    for value in parameter_list:
+        for ds in DATASETS:
+            if sys == "AMIE_PLUS":
+                output_directory = OUTPUT_DIR + AMIE_PLUS + '/' + ds + "/"
+                convert_out_AMIE_plus(output_directory + "results.txt", value)
+            elif sys == "NEURAL_LP":
+                output_directory = OUTPUT_DIR + NEURAL_LP + '/' + ds + "/"
+                convert_out_neural_lp(output_directory + "rules.txt", value)
+            else: #sys == "NTP"
+                output_directory = OUTPUT_DIR + NTP + '/' + ds + "/"
+                convert_out_ntp(output_directory + "log.txt", value)
+            print("starting", sys, ds)
+            outputFile = RESULTS_BASE_DIR  + sys + '_' + ds + '_' + str(value) + ".txt"
+            original_factsFile = DATASETS_DIR + ds + '/' + EVAL_SUPPORT_FILE
+            original_rulesFile = DATASETS_DIR + ds + '/' + RULE_FILE
+            original_testFile = DATASETS_DIR + ds + '/' + EVAL_CONSEQS_FILE
+            toEvaluate_factsFile = original_factsFile
+            toEvaluate_rulesFile = OUTPUT_DIR + sys + '/' + ds + "/results4eval.txt"
+            evaluator = Evaluator(original_factsFile, original_rulesFile, original_testFile, toEvaluate_factsFile, toEvaluate_rulesFile)
+            evaluator.compute_Herbrand()
+            evaluator.save_results_on_file(outputFile)
+            print("done", sys, ds)
+        print("done", ds)
 
-'''
+def tune_parameters(sys):
+    '''grid search for tuning parameters specific for the evaluated systems'''
+    # sys must be in [AMIE_PLUS, NEURAL_LP, NTP]
+    parameter_list = None
+    AMIEP_PARAMETER_list = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    NEURAL_LP_PARAMETER_list = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    NTP_PARAMETER_list = [0.0, 0.02, 0.5, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4]
+    if sys=="AMIE_PLUS":
+        parameter_list = AMIEP_PARAMETER_list
+    elif sys == "NEURAL_LP":
+        parameter_list = NEURAL_LP_PARAMETER_list
+    elif sys == "NTP":
+        parameter_list = NTP_PARAMETER_list
+    else:
+        print("invalid system")
+        pass
+    avarege_values=[0.0]*len(parameter_list)
+    for index in range(len(parameter_list)):
+        for ds in DATASETS:
+            val = parameter_list[index]
+            file_name = RESULTS_BASE_DIR + sys +'/'+sys + '_' + ds + '_' + str(val) + ".txt"
+            with open(file_name, "r") as f:
+                for line in f:
+                    if 'Herbrant accuracy (new normalization):' in line:
+                        val=float(line.split(':')[1])
+                        avarege_values[index] += val
+                        break
+        avarege_values[index]=avarege_values[index]/len(DATASETS)
+    max_accuracy=max(avarege_values)
+    max_val_index=avarege_values.index(max_accuracy)
+    max_parameter = parameter_list[max_val_index] # in case of ties, we use the lowest index
+    print("optimal value for ", sys, "=", max_parameter)
 
-def run_ProGol(facts_file, rules_file=None):
-    #TODO
-    pass
+
+def convert_systems_output():
+    print("converting systems outputs...")
+    for ds in DATASETS:
+        #AMIE PLUS
+        convert_output_amiep(ds)
+        #NEURAL LP
+        convert_output_neural_lp(ds)
+        #NTP
+        convert_output_ntp(ds)
+        #FOIL
+        convert_output_FOIL(ds)
+    print("done converting systems outputs.")
+
+def convert_output_amiep(ds):
+    output_directory = OUTPUT_DIR + AMIE_PLUS + '/' + ds + "/"
+    convert_out_AMIE_plus(output_directory + "results.txt")
+
+def convert_output_neural_lp(ds):
+    output_directory = OUTPUT_DIR + NEURAL_LP + '/' + ds + "/"
+    convert_out_neural_lp(output_directory + "rules.txt")
+
+def convert_output_ntp(ds):
+    output_directory = OUTPUT_DIR + NTP + '/' + ds + "/"
+    convert_out_ntp(output_directory + "log.txt")
+
+
+def convert_output_FOIL(ds):
+    output_directory = OUTPUT_DIR + FOIL + '/' + ds + "/"
+    convert_out_FOIL(output_directory + "FOIL_out.txt")
+
+
+
+
+
+def converter_test():
+    print("Testing FOIL Converter")
+    convert_out_FOIL("../output/existing/FOIL/EVEN/rules.txt")
+
+    print("Testing AMIEP Converter")
+    convert_out_AMIE_plus("../output/amiep/CHAIN-S-2/results.txt")
+
+    print("Testing Neural-LP Converter")
+    convert_out_neural_lp("../output/existing/Neural-LP/EVEN/rules.txt")
+
+    print("Testing NTP Converter")
+    convert_out_ntp("../output/simple/ntp/CHAIN-S-2-2/log.txt")
+
+
 
 if __name__ == '__main__':
-
-    #print("Testing Converter")
-    #factsFile = "../../datasets/test/even-facts-ext"
-    #validationFile = "../../datasets/test/even-facts-ext-validation"
-    #output_file = "../../datasets/test/even-facts-ext_FOIL_RESULT"
-    #preprocessingFolder = "../systems/FOIL/FOILdata/"
-    ##run_FOIL_test(factsFile)
-    #run_FOIL(factsFile, validationFile, preprocessingFolder, output_file)
-    
-    #print("Testing AMIEP Converter")
-    #convert_out_AMIE_plus("../output/amiep/CHAIN-S-2/results.txt")
-
-    #print("Testing Neural-LP Converter")
-    #convert_out_neural_lp("../output/existing/Neural-LP/EVEN/rules.txt")
-
-    #print("Testing NTP Converter")
-    #convert_out_ntp("../output/simple/ntp/CHAIN-S-2-2/log.txt")
+    # converter_test
     pass

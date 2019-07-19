@@ -3,16 +3,16 @@ Python 3
 Logic Classes
 '''
 import copy
+import sys
 
-def count_facts(dict):
+def count_facts_dict(dict):
     num_facts=0
     for key, value in dict.items():
         num_facts += len([item for item in value if item])
     return num_facts
 
-
 def remove_aux_pred(facts, predicates_list):
-    origin=copy.deepcopy(facts)
+    #origin = copy.deepcopy(facts)
     pred= [str(p) for p in predicates_list]
     key2pop=[]
     for key in facts:
@@ -23,14 +23,14 @@ def remove_aux_pred(facts, predicates_list):
     return facts
 
 def remove_aux_pred_NLP(facts):
-    origin=copy.deepcopy(facts)
-    key2pop=[]
+    origin = copy.deepcopy(facts)
+    key2pop = []
     for key in facts:
         if "inv" in key:
             key2pop.append(key)
     for key in set(key2pop):
-        facts.pop(key, None)
-    return facts
+        origin.pop(key, None)
+    return origin
 
 def union_dict(dict1, dict2):
     keys = set(dict1).union(dict2)
@@ -56,9 +56,9 @@ def delta_dict(dict1, dict2):
     keys = set(dict1).union(dict2)
     delta = {}
     for key in keys:
-        list_d=[]
-        list1=[]
-        list2=[]
+        list_d = []
+        list1 = []
+        list2 = []
         if key in dict1:
             list1 = dict1[key]
         if key in dict2:
@@ -71,6 +71,7 @@ def delta_dict(dict1, dict2):
                 list_d.append(element)
         delta[key] = list_d
     return delta
+
 
 
 class LogicProgram(object):
@@ -86,9 +87,8 @@ class LogicProgram(object):
         if rules == []:
             #self.grounded_facts = copy.deepcopy(self.original_facts)
             self.grounded = True
-        self.num_original_facts=0
-        for key, value in self.original_facts.items():
-            self.num_original_facts+=len([item for item in value if item])
+        self.num_original_facts = 0
+        self.num_original_facts= count_facts_dict(self.original_fact)
         self.num_grounded_facts=None # currently not used
 
     def add_inferred_facts(self, inferred_facts):
@@ -104,7 +104,7 @@ class LogicProgram(object):
                 grounded_facts = forward_inference(copy.deepcopy(self.original_facts), self.rules)
                 # extract inferred facts
                 self.inferred_facts = delta_dict(grounded_facts, self.original_facts)
-                self.num_grounded_facts = count_facts(grounded_facts)
+                self.num_grounded_facts = count_facts_dict(grounded_facts)
             self.grounded = True
 
     def return_groundings(self):
@@ -233,6 +233,7 @@ def forward_inference(facts, rules):
     facts   :   list of lists, where facts[i] is a list af all the facts of predicate p_i
     rules   :   Rule list
     '''
+    sys.setrecursionlimit(1000000)
     if rules==[]:
         return facts
     updated = True;
