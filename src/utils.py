@@ -4,7 +4,7 @@ Python 3.
 import os
 import sys
 import subprocess
-from src.logic import *
+from logic import *
 
 FOIL_PATH = "experiments/systems/FOIL/"
 AMIEP_PARAMETER = 0.7

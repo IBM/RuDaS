@@ -2,7 +2,7 @@
 Python 3.
 '''
 
-from src.logic import *
+from logic import *
 import copy
 from utils import *
 from constants import *
