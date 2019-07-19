@@ -1,4 +1,0 @@
-embeddings {
-  tensor_name: "embeddings:0"
-  metadata_path: "metadata.tsv"
-}

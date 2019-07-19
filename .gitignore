@@ -45,3 +45,8 @@ hs_err_pid*
 *.bbl
 *.blg
 *.out
+
+
+experiments/systems/amiep
+experiments/systems/ntp
+experiments/systems/Neural-LP

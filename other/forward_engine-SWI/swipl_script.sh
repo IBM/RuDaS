@@ -1,1 +1,0 @@
-swipl test.pl > out_test_pl.pl
