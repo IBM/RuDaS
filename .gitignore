@@ -45,3 +45,5 @@ hs_err_pid*
 *.bbl
 *.blg
 *.out
+
+experiments/systems

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+NAMES=(CHAIN-XS-1-5 CHAIN-XS-1-2 CHAIN-XS-1-3 CHAIN-XS-1-4 CHAIN-XS-1-23 CHAIN-XS-1-24 CHAIN-XS-1-12 CHAIN-XS-1-15 CHAIN-XS-1-41 CHAIN-XS-1-14 CHAIN-XS-1 CHAIN-XS-1-13 CHAIN-XS-1-25 CHAIN-XS-1-22 CHAIN-XS-1-40 CHAIN-XS-2-18 CHAIN-XS-2-27 CHAIN-XS-2-5 CHAIN-XS-1-38 CHAIN-XS-2-2 CHAIN-XS-2-20 CHAIN-XS-2-29 CHAIN-XS-1-31 CHAIN-XS-2-16 CHAIN-XS-2-11 CHAIN-XS-1-36 CHAIN-XS-1-37 CHAIN-XS-2-10 CHAIN-XS-2-28 CHAIN-XS-2-17 CHAIN-XS-1-30 CHAIN-XS-1-39 CHAIN-XS-2-21 CHAIN-XS-2-3 CHAIN-XS-2-19 CHAIN-XS-2-4 CHAIN-XS-2-26 CHAIN-XS-1-1 CHAIN-XS-1-6 CHAIN-XS-1-8 CHAIN-XS-1-9 CHAIN-XS-1-7 CHAIN-XS-1-0 CHAIN-XS-1-42 CHAIN-XS-1-27 CHAIN-XS-1-18 CHAIN-XS-1-20 CHAIN-XS-1-16 CHAIN-XS-2-31 CHAIN-XS-1-29 CHAIN-XS-1-11 CHAIN-XS-1-43 CHAIN-XS-1-10 CHAIN-XS-2-30 CHAIN-XS-1-17 CHAIN-XS-2 CHAIN-XS-1-28 CHAIN-XS-1-21 CHAIN-XS-1-26 CHAIN-XS-1-19 CHAIN-XS-2-1 CHAIN-XS-2-23 CHAIN-XS-2-24 CHAIN-XS-2-6 CHAIN-XS-2-12 CHAIN-XS-1-35 CHAIN-XS-2-8 CHAIN-XS-1-32 CHAIN-XS-2-15 CHAIN-XS-2-9 CHAIN-XS-2-14 CHAIN-XS-1-33 CHAIN-XS-1-34 CHAIN-XS-2-13 CHAIN-XS-2-7 CHAIN-XS-2-25 CHAIN-XS-2-22 CHAIN-XS-2-0)
+TESTS=test
+
+DIR=`dirname $0`
+SYSDIR=$DIR/../systems
+DATA=$DIR/../data/$TESTS/
+
+for NAME in ${NAMES[@]}
+do
+
+SYSTEM=Neural-LP
+echo "Running Neural-LP..."
+source activate $SYSTEM
+python $SYSDIR/$SYSTEM/src/main.py --datadir=$DATA/$SYSTEM/$NAME --exps_dir=$DIR/../output/$TESTS/$SYSTEM --exp_name=$NAME > $DIR/../output/$TESTS/$SYSTEM/$NAME/log.txt 2> $DIR/../output/$TESTS/$SYSTEM/$NAME/err.txt
+echo "done."
+
+SYSTEM=ntp
+echo "Running ntp..."
+source activate $SYSTEM
+export PYTHONPATH=$PYTHONPATH:$SYSDIR/$SYSTEM
+python $SYSDIR/$SYSTEM/ntp/experiments/learn.py $DATA/$SYSTEM/$NAME/run.conf > $DIR/../output/$TESTS/$SYSTEM/$NAME/log.txt 2> $DIR/../output/$TESTS/$SYSTEM/$NAME/err.txt
+echo "done."
+
+SYSTEM=amiep
+echo "Running amiep..."
+java -jar $SYSDIR/$SYSTEM/amie_plus.jar -mins 3 -minis 3 -minpca 0.25 -oute  $DATA/$SYSTEM/$NAME/train.txt > $DIR/../output/$TESTS/$SYSTEM/$NAME/results.txt 2> $DIR/../output/$TESTS/$SYSTEM/$NAME/err.txt
+echo "done."
+
+SYSTEM=FOIL
+echo "Running FOIL..."
+# ADD "-m 200000" if the max tuples are exceeded
+../systems/FOIL/./foil6 -v0 -n <$DATA/$SYSTEM/$NAME/train_FOIL.d >$DIR/../output/$TESTS/$SYSTEM/$NAME/FOIL_out.txt 2> $DIR/../output/$TESTS/$SYSTEM/$NAME/err.txt
+echo "done."
+
+done
+exit 0
+

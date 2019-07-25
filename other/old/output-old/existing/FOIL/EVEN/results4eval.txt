@@ -1,1 +1,0 @@
-even(A) :- succ(A,B), succ(B,C), even(C).

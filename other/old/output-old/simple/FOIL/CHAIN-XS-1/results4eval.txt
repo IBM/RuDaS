@@ -1,6 +1,0 @@
-p1(A,B) :- p0(A,B), p0(B,C), p2(D,C).
-p1(A,B) :- p0(A,B), p0(C,B), p0(D,C).
-p0(A,B) :- p1(A,B), p1(B,A).
-p0(A,B) :- p1(A,B), p2(C,B).
-p0(A,B) :- p1(A,B), p2(C,A).
-p0(A,B) :- p1(A,B), p1(B,C), p2(D,C).

@@ -1,6 +1,0 @@
-even,6,6,6
-inv_even,6,6,6
-even,8,8,8
-inv_even,8,8,8
-even,10,10,9,10
-inv_even,10,10,9,10

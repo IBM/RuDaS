@@ -23,11 +23,10 @@ OWA=0.3
 NOISE=0.1
 MISSING=0.2
 
-
-for SIZE in ${SIZES[*]}; do
-    for CATEGORY in ${CATEGORIES[*]}; do
-        for MAXDEPTH in ${MAXDEPTHS[*]}; do
-            for I in {1..10}; do
+for I in {1..10}; do
+    for SIZE in ${SIZES[*]}; do
+        for CATEGORY in ${CATEGORIES[*]}; do
+            for MAXDEPTH in ${MAXDEPTHS[*]}; do
                  python generator.py --path=$DATASETSDIR --size=$SIZE --category=$CATEGORY \
                  --maxdepth=$MAXDEPTH --owa=$OWA --noise=$NOISE --missing=$MISSING --test=$OWA
             done
