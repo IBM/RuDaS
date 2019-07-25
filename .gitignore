@@ -47,7 +47,3 @@ hs_err_pid*
 *.out
 
 experiments/systems
-experiments/systems/amiep
-experiments/systems/ntp
-experiments/systems/Neural-LP
-experiments/systems/FOIL
