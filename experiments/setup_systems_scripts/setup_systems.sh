@@ -2,6 +2,11 @@
 
 DIR=`dirname $0`
 
+
+rm -rf $DIR/../systems
+mkdir $DIR/../systems
+
+
 # NEURAL-LP
 /bin/bash $DIR/neurallp.sh
 
