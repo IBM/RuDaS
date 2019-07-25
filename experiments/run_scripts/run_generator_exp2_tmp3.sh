@@ -14,7 +14,7 @@ set -e
 cd /home/veronika/RuDaS/src/
 
 DATASETSDIR='../datasets/new2/'
-rm -rf $DATASETSDIR
+#rm -rf $DATASETSDIR
 
 SIZES=(1)
 CATEGORIES=(6)
