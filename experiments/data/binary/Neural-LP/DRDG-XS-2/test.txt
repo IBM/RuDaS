@@ -1,10 +1,5 @@
-c54	p2	c25
-c11	p0	c56
-c52	p0	c3
-c55	p4	c55
-c38	p2	c24
-c0	p8	c1
-c1	p8	c51
-c46	p4	c62
-c7	p2	c15
-c48	p4	c11
+c24	p0	c38
+c25	p0	c54
+c1	p0	c51
+c55	p0	c41
+c22	p0	c55

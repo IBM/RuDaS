@@ -9,5 +9,3 @@ succ(7,8).
 succ(8,9).
 succ(9,10).
 even(0).
-even(2).
-even(4).

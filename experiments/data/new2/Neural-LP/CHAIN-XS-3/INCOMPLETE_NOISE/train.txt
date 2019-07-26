@@ -1,0 +1,16 @@
+c60	p4	c24
+c28	p4	c8
+c20	p6	c48
+c56	p8	c55
+c55	p4	c56
+c56	p4	c56
+c24	p8	c29
+c28	p4	c56
+c7	p4	c8
+c3	p4	c40
+c11	p4	c60
+c56	p6	c8
+c56	p4	c32
+c55	p4	c24
+c29	p4	c24
+c56	p4	c24

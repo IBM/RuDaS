@@ -1,0 +1,6 @@
+model_checkpoint_path: "model-7"
+all_model_checkpoint_paths: "model-3"
+all_model_checkpoint_paths: "model-4"
+all_model_checkpoint_paths: "model-5"
+all_model_checkpoint_paths: "model-6"
+all_model_checkpoint_paths: "model-7"

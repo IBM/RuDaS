@@ -1,0 +1,1 @@
+run_new_complete.sh: line 26: python2: command not found

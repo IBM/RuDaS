@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "./../systems/Neural-LP/src/main.py", line 4, in <module>
+    import tensorflow as tf
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/tensorflow/__init__.py", line 24, in <module>
+    from tensorflow.python import *
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/tensorflow/python/__init__.py", line 75, in <module>
+    from tensorflow.core.framework.graph_pb2 import *
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/tensorflow/core/framework/graph_pb2.py", line 6, in <module>
+    from google.protobuf import descriptor as _descriptor
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/google/protobuf/__init__.py", line 37, in <module>
+    __import__('pkg_resources').declare_namespace(__name__)
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/pkg_resources/__init__.py", line 36, in <module>
+    import email.parser
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/email/parser.py", line 12, in <module>
+    from email.feedparser import FeedParser
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/email/feedparser.py", line 27, in <module>
+    from email import message
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/email/message.py", line 10, in <module>
+    import uu
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/uu.py", line 31, in <module>
+    """
+KeyboardInterrupt

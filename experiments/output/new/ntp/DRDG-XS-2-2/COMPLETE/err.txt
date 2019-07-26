@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "./../systems/ntp/ntp/experiments/learn.py", line 4, in <module>
+    from ntp.tp import rule2string
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/tp.py", line 17, in <module>
+    from gensim.models import Word2Vec
+ModuleNotFoundError: No module named 'gensim'

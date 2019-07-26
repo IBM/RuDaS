@@ -1,0 +1,54 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+
+Relation p4
+
+Relation p2
+
+Relation p6
+
+Relation p8
+
+Relation p0
+
+----------
+p4:
+
+p4(A,B) :- p8(B,A).
+
+Time 0.0 secs
+
+----------
+p8:
+
+p8(A,B) :- p4(B,A).
+
+Time 0.0 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 12 tuples in the relation
+
+p6(A,B) :- p4(A,B), p6(B,C).
+
+Time 0.0 secs
+
+----------
+p2:
+
+p2(A,B) :- p0(B,A).
+
+Time 0.0 secs
+
+----------
+p0:
+
+p0(A,B) :- p2(B,A).
+
+Time 0.0 secs
