@@ -1,0 +1,247 @@
+name: DRDG-S-3
+size: DatasetSize.S
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.2
+noisefactor: 0.2
+missfactor: 0.15
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.2
+sizefactor1:  1.1111111111111112
+sizefactor2:  1.1333333333333333
+fixedsize:  838
+generatablesize:  1676
+mingeneratablesize:  127
+numpredicates:  11
+numconstants:  838
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p8(X0,X2),p1(X3,X1).
+	|- [1] OR
+		|- [2] p8(X0,X2) :- p1(X0,X0),p2(X0,X2).
+			|- [4] p1(X3,X1) :- p1(X1,X4),p9(X3,X3).
+				|- [9] p9(X3,X3) :- p5(X8,X3),p5(X9,X3).
+			|- [5] OR
+				|- [6] p2(X0,X2) :- p6(X0,X2),p4(X2,X2).
+				|- [7] p2(X0,X2) :- p3(X5,X0),p5(X5,X2).
+		|- [3] p8(X0,X2) :- p7(X0,X2).
+			|- [8] p7(X0,X2) :- p5(X6,X7),p9(X0,X2).
+				|- [9] 
+	|- [4] 
+nsupport size: 75
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p1(X2,X1),p8(X0,X1).
+	|- [1] OR
+		|- [2] p8(X0,X1) :- p6(X1,X0).
+			|- [5] OR
+				|- [6] p6(X1,X0) :- p3(X3,X4),p9(X0,X1).
+					|- [9] OR
+						|- [10] p3(X2,X2) :- p9(X2,X6).
+						|- [11] p3(X2,X2) :- p2(X2,X7).
+				|- [7] p6(X1,X0) :- p2(X1,X1),p4(X1,X0).
+		|- [3] p8(X0,X1) :- p5(X1,X0).
+			|- [8] p5(X1,X0) :- p2(X5,X1),p3(X5,X0).
+				|- [9] 
+	|- [4] p1(X2,X1) :- p5(X1,X1),p3(X2,X2).
+		|- [8] 
+		|- [9] 
+nsupport size: 70
+1 : 553
+2 : 608
+3 : 679
+4 : 757
+5 : 820
+6 : 861
+stopped support generation after 6 steps
+generated 861 facts
+1 : 3
+2 : 6
+3 : 10
+4 : 14
+5 : 17
+6 : 20
+7 : 24
+8 : 27
+9 : 31
+10 : 34
+11 : 37
+12 : 41
+13 : 44
+14 : 47
+15 : 50
+16 : 54
+17 : 58
+18 : 61
+19 : 64
+20 : 67
+21 : 71
+22 : 75
+23 : 78
+24 : 81
+25 : 84
+26 : 87
+27 : 91
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p10(X0,X2),p2(X1,X2).
+	|- [1] OR
+		|- [2] p2(X1,X2) :- p2(X2,X3),p10(X1,X4).
+			|- [4] p10(X0,X2) :- p7(X0,X2).
+				|- [9] OR
+					|- [10] p7(X0,X2) :- p8(X0,X2),p8(X2,X0).
+					|- [11] p7(X0,X2) :- p9(X7,X0),p6(X8,X2).
+		|- [3] p2(X1,X2) :- p3(X2,X5),p4(X2,X1).
+			|- [5] p3(X2,X5) :- p4(X2,X5).
+				|- [6] OR
+					|- [7] p4(X2,X1) :- p7(X6,X2),p7(X6,X1).
+						|- [9] 
+					|- [8] p4(X2,X1) :- p9(X2,X1).
+			|- [6] 
+	|- [4] 
+nsupport size: 75
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p7(X0,X0),p3(X1,X0).
+	|- [1] OR
+		|- [2] p3(X1,X0) :- p7(X0,X2),p4(X1,X0).
+			|- [4] p7(X0,X0) :- p2(X4,X0).
+				|- [6] OR
+					|- [7] p2(X1,X3) :- p1(X6,X7),p6(X1,X3).
+					|- [8] p2(X1,X3) :- p9(X3,X1),p5(X1,X1).
+						|- [9] OR
+							|- [10] p5(X0,X3) :- p6(X3,X0).
+							|- [11] p5(X0,X3) :- p1(X8,X9),p10(X0,X3).
+			|- [5] p4(X1,X0) :- p8(X5,X1),p2(X5,X0).
+				|- [6] 
+		|- [3] p3(X1,X0) :- p2(X1,X3),p5(X0,X3).
+			|- [6] 
+			|- [9] 
+	|- [4] 
+nsupport size: 80
+1 : 178
+2 : 185
+3 : 195
+4 : 205
+5 : 214
+6 : 224
+7 : 233
+8 : 242
+9 : 249
+10 : 258
+11 : 266
+12 : 276
+13 : 285
+14 : 292
+15 : 299
+16 : 309
+17 : 317
+18 : 324
+19 : 332
+20 : 340
+21 : 345
+22 : 354
+23 : 362
+24 : 369
+25 : 379
+26 : 385
+27 : 394
+28 : 406
+29 : 410
+30 : 418
+31 : 427
+32 : 437
+33 : 446
+34 : 455
+35 : 466
+36 : 474
+37 : 482
+38 : 489
+39 : 498
+40 : 506
+41 : 509
+42 : 517
+43 : 527
+44 : 535
+45 : 542
+46 : 551
+47 : 562
+48 : 569
+49 : 579
+50 : 586
+51 : 597
+52 : 605
+53 : 614
+54 : 626
+55 : 636
+56 : 643
+57 : 653
+58 : 664
+59 : 672
+60 : 679
+61 : 691
+62 : 701
+63 : 708
+64 : 724
+65 : 733
+66 : 743
+67 : 753
+68 : 761
+69 : 772
+70 : 782
+71 : 792
+72 : 797
+73 : 806
+74 : 809
+75 : 820
+76 : 829
+77 : 838
+stopped support generation after 77 steps
+generated 838 facts
+1 : 4
+2 : 8
+3 : 12
+4 : 16
+5 : 21
+6 : 24
+7 : 29
+8 : 33
+9 : 37
+10 : 42
+11 : 47
+12 : 52
+13 : 57
+14 : 60
+15 : 63
+16 : 67
+17 : 71
+18 : 76
+19 : 80
+20 : 84
+21 : 89
+22 : 94
+23 : 99
+24 : 102
+stopped support generation after 24 steps
+generated 102 facts
+owa: removed 63 from 317  consequences
+owa: removed 22 from 110  consequences
+noise:  61 of 411 support facts removed
+noise:  151 facts added
+noise (target): 22 facts added to 88 original target facts
+size, S
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 0
+trainsupport: size, 411 , predicates, 10 , constants, 391
+trainconseqs: size, 427
+train: size, 865 , predicates, 11 , constants, 532
+train-cwa: size, 799 , predicates, 11 , constants, 403
+evalsupport: size, 102 , predicates, 9 , constants, 111
+evalconseqs: size, 105
+eval-cwa: size, 207 , predicates, 11 , constants, 111
+test: size, 85
