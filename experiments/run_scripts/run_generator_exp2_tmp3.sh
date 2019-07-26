@@ -16,7 +16,7 @@ cd /home/veronika/RuDaS/src/
 DATASETSDIR='../datasets/new2/'
 #rm -rf $DATASETSDIR
 
-SIZES=(1)
+SIZES=(0)
 CATEGORIES=(6)
 MAXDEPTHS=(2)
 OWA=0.3
@@ -27,10 +27,10 @@ MISSING=0.2
 for SIZE in ${SIZES[*]}; do
     for CATEGORY in ${CATEGORIES[*]}; do
         for MAXDEPTH in ${MAXDEPTHS[*]}; do
-            for I in {1}; do
-                 python generator.py --path=$DATASETSDIR --size=$SIZE --category=$CATEGORY \
-                 --maxdepth=$MAXDEPTH --owa=$OWA --noise=$NOISE --missing=$MISSING --test=$OWA
-            done
+            #for I in {1..1}; do
+             python generator.py --path=$DATASETSDIR --size=$SIZE --category=$CATEGORY \
+             --maxdepth=$MAXDEPTH --owa=$OWA --noise=$NOISE --missing=$MISSING --test=$OWA
+            #done
         done
     done
 done
