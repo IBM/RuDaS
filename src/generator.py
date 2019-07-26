@@ -17,6 +17,7 @@ import functools
 import inspect
 import argparse
 import time
+import signal
 
 class DatasetCategory(Enum):
     '''
@@ -98,6 +99,10 @@ F_ENTITIES = "entities"
 
 STDOUT = sys.stdout
 
+def handler(signum, frame):
+    # print("Forever is over!")
+    raise Exception("end of time")
+
 # NOTE
 # with several dags we vary size. first is of maxdepth and others varying randomly within max bound
 # overlap true might "destroy" chains or individual structs
@@ -136,6 +141,8 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     '''
     ## initialize basic parameters
     # TODO in the end: test all params eg >=0 ...
+
+    signal.signal(signal.SIGALRM, handler)
 
     if maxdags < mindags:
         raise ValueError("Parameter maxdags must not be less than parameter mindags.")
@@ -268,35 +275,47 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     print("numconstants: ",len(constants))
     #######################################
 
-    dags = []
-    var_doms = []
-    if singletarget:
-        target = predicates[0]
-    preds = np.array_split(predicates, numdags) if not overlap else predicates #oif sinfletar get add at first everywheer
-    for i in range(numdags):
-        steps = maxdepth if i == 0 else random.randint(1, maxdepth)
-        category1 = category if category != DatasetCategory.MIXED else list(DatasetCategory)[random.randint(1,len(DatasetCategory)-1)]
-        dags.append(generate_inference_structure(category1, target if singletarget else (preds[i] if overlap else preds[i][0]), \
-                                                 preds if overlap else preds[i], constants, maxatoms, steps, maxorchild, 1))
+    generated_initial = False
+    while not generated_initial:
+        try:
+            signal.alarm(180)
 
-        var_doms.append({v.name: (get_var_domain(constants) if v.name not in dags[i].const_variables \
-                      else [dags[i].const_variables[v.name]]) for v in dags[i].variables})
+            dags = []
+            var_doms = []
+            if singletarget:
+                target = predicates[0]
+            preds = np.array_split(predicates, numdags) if not overlap else predicates #oif sinfletar get add at first everywheer
+            for i in range(numdags):
+                steps = maxdepth if i == 0 else random.randint(1, maxdepth)
+                category1 = category if category != DatasetCategory.MIXED else list(DatasetCategory)[random.randint(1,len(DatasetCategory)-1)]
+                dags.append(generate_inference_structure(category1, target if singletarget else (preds[i] if overlap else preds[i][0]), \
+                                                         preds if overlap else preds[i], constants, maxatoms, steps, maxorchild, 1))
 
-    ## generate minimal set of facts to learn individual rules
-    nsupport = {p.name: [] for p in predicates}
-    if nodesupport:
-        for i in range(numdags):
-            for n in dags[i].nodes:
-                for _ in range(nodesupport):
-                    for f in generate_nsupport(n, get_assignment(var_doms[i])):
-                        nsupport[f.predicate.name].append(f)
-        print("nsupport size:",len(list(itertools.chain(*nsupport.values()))))
+                var_doms.append({v.name: (get_var_domain(constants) if v.name not in dags[i].const_variables \
+                              else [dags[i].const_variables[v.name]]) for v in dags[i].variables})
 
-    ## generate additional facts by going through tree several times
-    assignments = [[] for _ in dags]
-    targets = [predicates[i].name for i in range(numdags)] if overlap else [p[0].name for p in preds]
-    train_cwa, train_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, fixedsize, 0, support=nsupport)
-    eval_cwa, eval_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, 0, SIZE_EVAL_SUPPORT)
+            ## generate minimal set of facts to learn individual rules
+            nsupport = {p.name: [] for p in predicates}
+            if nodesupport:
+                for i in range(numdags):
+                    for n in dags[i].nodes:
+                        for _ in range(nodesupport):
+                            for f in generate_nsupport(n, get_assignment(var_doms[i])):
+                                nsupport[f.predicate.name].append(f)
+                print("nsupport size:",len(list(itertools.chain(*nsupport.values()))))
+
+            ## generate additional facts by going through tree several times
+            assignments = [[] for _ in dags]
+            targets = [predicates[i].name for i in range(numdags)] if overlap else [p[0].name for p in preds]
+            train_cwa, train_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, fixedsize, 0, support=nsupport)
+            eval_cwa, eval_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, 0, SIZE_EVAL_SUPPORT)
+
+            signal.alarm(0)
+            generated_initial = True
+
+        except Exception:
+            signal.alarm(0)
+
     train_conseqs1 = extract_consequences(train_cwa, train_support, targets) # w/o target facts
     train_conseqs2 = extract_consequences({p:train_cwa[p] for p in train_cwa if p in targets}, train_support)
     eval_conseqs = extract_consequences(eval_cwa, eval_support)

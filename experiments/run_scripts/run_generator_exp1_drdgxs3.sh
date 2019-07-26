@@ -14,11 +14,11 @@ set -e
 cd /home/veronika/RuDaS/src/
 
 DATASETSDIR='../datasets/new/'
-rm -rf $DATASETSDIR
+#rm -rf $DATASETSDIR
 
-SIZES=(0 1)
-CATEGORIES=(4 6)
-MAXDEPTHS=(2 3)
+SIZES=(0)
+CATEGORIES=(6)
+MAXDEPTHS=(3)
 OWAS=(0.2 0.3 0.4)
 NOISES=(0.2 0.3)
 MISSINGS=(0.15 0.3)
