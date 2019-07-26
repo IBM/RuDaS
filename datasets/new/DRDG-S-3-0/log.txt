@@ -1,0 +1,46 @@
+name: DRDG-S-3-0
+size: DatasetSize.S
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.4
+noisefactor: 0.2
+missfactor: 0.15
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.4
+sizefactor1:  1.25
+sizefactor2:  1.1333333333333333
+fixedsize:  653
+generatablesize:  1306
+mingeneratablesize:  143
+numpredicates:  11
+numconstants:  653
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p6(X0,X1) :- p7(X0,X2),p2(X0,X1).
+	|- [1] OR
+		|- [2] p7(X0,X2) :- p0(X2,X3),p2(X2,X0).
+			|- [4] p2(X0,X1) :- p3(X0,X5),p3(X1,X6).
+				|- [10] OR
+					|- [11] p3(X1,X6) :- p8(X9,X10),p1(X1,X6).
+					|- [12] p3(X1,X6) :- p9(X1,X11),p10(X6,X11).
+				|- [13] OR
+					|- [14] p3(X0,X5) :- p10(X12,X0),p9(X5,X0).
+					|- [15] p3(X0,X5) :- p10(X13,X0),p1(X14,X5).
+			|- [5] OR
+				|- [6] p0(X2,X3) :- p10(X3,X2).
+				|- [7] p0(X2,X3) :- p8(X7,X3),p1(X2,X3).
+		|- [3] p7(X0,X2) :- p5(X4,X0),p4(X2,X0).
+			|- [8] p5(X4,X0) :- p1(X8,X4),p1(X4,X0).
+			|- [9] p4(X2,X0) :- p1(X2,X0).
+	|- [4] 
+nsupport size: 110
+1 : 13223
+stopped support generation after 1 steps
+generated 13223 facts

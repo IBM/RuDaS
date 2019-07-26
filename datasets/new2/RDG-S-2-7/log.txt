@@ -1,0 +1,79 @@
+name: RDG-S-2-7
+size: DatasetSize.S
+category: DatasetCategory.ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 2
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  474
+generatablesize:  948
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  474
+generated DAG after 1 steps, maxdepth  2 :
+ |- [0] p6(X0,X1) :- p3(X0,X2),p10(X3,X1).
+	|- [1] p3(X0,X2) :- p5(X0,X4),p10(X2,X0).
+		|- [2] p10(X3,X1) :- p8(X5,X6),p10(X1,X3).
+	|- [2] 
+nsupport size: 30
+1 : 431
+2 : 507
+stopped support generation after 2 steps
+generated 507 facts
+1 : 4
+2 : 8
+3 : 11
+4 : 15
+5 : 19
+6 : 23
+7 : 27
+8 : 31
+9 : 34
+10 : 38
+11 : 42
+12 : 45
+13 : 49
+14 : 53
+15 : 57
+16 : 61
+17 : 65
+18 : 69
+19 : 73
+20 : 77
+21 : 80
+22 : 84
+23 : 88
+24 : 92
+25 : 96
+26 : 100
+stopped support generation after 26 steps
+generated 100 facts
+owa: removed 7 from 25  consequences
+owa: removed 133 from 444  consequences
+noise:  7 of 38 support facts removed
+noise:  5 facts added
+noise (target): 34 facts added to 311 original target facts
+size, S
+category, ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 6
+trainsupport: size, 38 , predicates, 4 , constants, 65
+trainconseqs: size, 469
+train: size, 399 , predicates, 8 , constants, 119
+train-cwa: size, 534 , predicates, 5 , constants, 116
+evalsupport: size, 100 , predicates, 4 , constants, 147
+evalconseqs: size, 2334
+eval-cwa: size, 2434 , predicates, 5 , constants, 147
+test: size, 140
