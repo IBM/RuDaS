@@ -1,0 +1,13 @@
+c27	p5	c34
+c50	p1	c9
+c2	p1	c15
+c67	p9	c69
+c50	p3	c68
+c68	p1	c55
+c43	p3	c68
+c34	p6	c34
+c68	p1	c23
+c25	p1	c63
+c50	p5	c9
+c15	p6	c15
+c57	p5	c69

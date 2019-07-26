@@ -1,0 +1,21 @@
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Traceback (most recent call last):
+  File "./../systems/Neural-LP/src/main.py", line 145, in <module>
+    main()
+  File "./../systems/Neural-LP/src/main.py", line 126, in main
+    experiment.train()
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/Neural-LP/src/experiment.py", line 121, in train
+    global_step=self.epoch)
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/tensorflow/python/training/saver.py", line 1375, in save
+    self.export_meta_graph(meta_graph_filename)
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/tensorflow/python/training/saver.py", line 1403, in export_meta_graph
+    graph_def=ops.get_default_graph().as_graph_def(add_shapes=True),
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 2189, in as_graph_def
+    result, _ = self._as_graph_def(from_version, add_shapes)
+  File "/anaconda3/envs/Neural-LP/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 2150, in _as_graph_def
+    bytesize += op.node_def.ByteSize()
+KeyboardInterrupt

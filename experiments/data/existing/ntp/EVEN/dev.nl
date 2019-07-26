@@ -1,3 +1,2 @@
-even(6).
-even(8).
-even(10).
+even(2).
+even(4).

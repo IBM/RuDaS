@@ -1,0 +1,41 @@
+WARNING: Logging before flag parsing goes to stderr.
+W0726 17:00:49.531473 4616865216 deprecation_wrapper.py:119] From ./../systems/ntp/ntp/experiments/learn.py:28: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+W0726 17:00:49.955591 4616865216 lazy_loader.py:50] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0726 17:00:49.955948 4616865216 deprecation_wrapper.py:119] From /Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/nkb.py:175: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0726 17:00:49.966277 4616865216 deprecation.py:506] From /Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/nkb.py:150: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0726 17:00:50.161674 4616865216 deprecation_wrapper.py:119] From ./../systems/ntp/ntp/experiments/learn.py:136: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0726 17:00:50.191931 4616865216 deprecation_wrapper.py:119] From ./../systems/ntp/ntp/experiments/learn.py:148: The name tf.scatter_nd_update is deprecated. Please use tf.compat.v1.scatter_nd_update instead.
+
+W0726 17:00:50.197890 4616865216 deprecation.py:506] From /Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/nunify.py:59: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+Traceback (most recent call last):
+  File "./../systems/ntp/ntp/experiments/learn.py", line 268, in <module>
+    train_0ntp=TRAIN_0NTP, max_depth=MAX_DEPTH)
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/prover.py", line 540, in prove
+    k_max=k_max, train_0ntp=train_0ntp, max_depth=max_depth)
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/prover.py", line 448, in or_
+    trace, nunify, k_max=k_max, max_depth=max_depth)
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/prover.py", line 503, in and_
+    k_max=k_max, max_depth=max_depth):
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/prover.py", line 417, in or_
+    inner_tiling=inner_tiling)
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/prover.py", line 215, in unify
+    depth, mask_id, transpose, nunify, inner_tiling)
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/prover.py", line 218, in unify
+    nunify, inner_tiling)
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/ntp/ntp/prover.py", line 168, in batch_unify
+    assert success_dim1 % mask_dim1 == 0
+AssertionError

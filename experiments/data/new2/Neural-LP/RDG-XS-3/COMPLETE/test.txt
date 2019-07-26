@@ -1,0 +1,17 @@
+c73	p8	c47
+c66	p9	c73
+c20	p8	c53
+c47	p3	c97
+c29	p8	c94
+c53	p9	c80
+c12	p8	c92
+c80	p8	c20
+c66	p9	c50
+c11	p9	c14
+c27	p8	c7
+c13	p9	c52
+c20	p3	c85
+c12	p3	c11
+c71	p3	c48
+c86	p3	c6
+c79	p9	c9

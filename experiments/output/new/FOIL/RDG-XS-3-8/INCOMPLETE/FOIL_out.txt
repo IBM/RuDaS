@@ -1,0 +1,117 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+
+Relation p7
+
+Relation p5
+
+Relation p1
+
+Relation p8
+
+Relation p10
+
+Relation p2
+
+Relation p9
+
+Relation p3
+
+Relation p6
+
+----------
+p10:
+
+***  Warning: the following definition
+***  matches 2 tuples not in the relation
+***  does not cover 21 tuples in the relation
+
+p10(A,B) :- p6(A,A), p7(C,B), p1(C,C), p5(D,A).
+p10(A,B) :- p6(A,A), p7(C,B), p5(D,B).
+p10(A,B) :- p5(A,C), p8(D,B), p5(E,A).
+p10(A,B) :- p5(A,C), p7(D,B), p8(D,B), p5(A,D), p7(C,E), p5(A,E).
+p10(A,B) :- p5(A,C), p8(D,B), p7(E,C), p2(B,D), p5(F,D), p10(F,F).
+
+Time 0.3 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 24 tuples in the relation
+
+p5(A,B) :- p7(B,C), p9(D,A), p7(C,E).
+p5(A,B) :- p10(A,C), p8(B,A).
+p5(A,B) :- p10(A,C), p7(B,D), p9(E,A), p10(C,C), p10(A,D).
+p5(A,B) :- p10(A,C), p7(B,D), p1(D,D), p5(A,C).
+p5(A,B) :- p6(A,A), p8(B,C), p5(A,C), p9(D,A).
+p5(A,B) :- p7(B,C), p8(B,C), p10(D,C), p5(A,D), p10(A,E), p10(A,C), p1(E,E).
+
+Time 0.3 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  does not cover 5 tuples in the relation
+
+p7(A,B) :- p2(B,A), p2(A,C).
+p7(A,B) :- p2(B,A), p7(B,C).
+
+Time 0.3 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 5 tuples in the relation
+
+p2(A,B) :- p7(B,A), p10(C,B).
+
+Time 0.3 secs
+
+----------
+p6:
+
+p6(A,A) :- p10(A,C), p1(C,C).
+p6(A,A) :- p9(C,A), p5(A,D), p8(D,E), p6(E,E).
+
+Time 0.3 secs
+
+----------
+p1:
+
+p1(A,A) :- p8(A,C).
+
+Time 0.3 secs
+
+----------
+p8:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+p8(A,B) :- p7(A,B), p1(A,A), p10(C,B), p5(C,A), p9(D,C).
+p8(A,B) :- p2(B,A), p1(A,A), p5(C,A), p8(D,C).
+
+Time 0.3 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+
+Time 0.4 secs
+
+----------
+p3:
+
+p3(A,A) :- p9(A,C).
+
+Time 0.4 secs

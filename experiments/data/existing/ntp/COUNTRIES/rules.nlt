@@ -1,1 +1,0 @@
-20 #even(A) :- #even(B),#succ(B,C),#succ(C,A).

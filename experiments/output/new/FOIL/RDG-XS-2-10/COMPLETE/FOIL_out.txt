@@ -1,0 +1,81 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+
+Relation p0
+
+Relation p9
+
+Relation p7
+
+Relation p10
+
+Relation p1
+
+Relation p6
+
+Relation p5
+
+----------
+p7:
+
+p7(A,B) :- p0(A,C), p6(D,B).
+
+Time 0.0 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+p0(A,B) :- p1(B,A).
+
+Time 0.0 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 3 tuples in the relation
+
+p6(A,B) :- p9(A,B).
+
+Time 0.1 secs
+
+----------
+p9:
+
+p9(A,B) :- p6(A,B), p0(C,A).
+p9(A,B) :- p6(A,B), p6(A,C), p0(D,C).
+p9(A,B) :- p6(A,B), p9(C,A).
+
+Time 0.1 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 5 tuples in the relation
+
+
+Time 0.2 secs
+
+----------
+p10:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+
+Time 0.2 secs
+
+----------
+p1:
+
+p1(A,B) :- p0(B,A), p10(C,B).
+
+Time 0.2 secs

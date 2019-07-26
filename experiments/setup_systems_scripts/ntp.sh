@@ -17,5 +17,6 @@ else
 	conda create -n ntp python=3.6 -y
 	source activate ntp
 fi
+
 pip install -r $SYSDIR/requirements.txt
 pip install -r $DIR/requirements_ntp2.txt

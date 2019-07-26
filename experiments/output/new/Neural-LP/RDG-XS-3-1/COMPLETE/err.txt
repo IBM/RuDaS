@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "./../systems/Neural-LP/src/main.py", line 145, in <module>
+    main()
+  File "./../systems/Neural-LP/src/main.py", line 78, in main
+    data = Data(option.datadir, option.seed, option.type_check, option.domain_size, option.no_extra_facts)
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/Neural-LP/src/data.py", line 79, in __init__
+    self.valid, self.num_valid = self._parse_triplets(self.valid_file)
+  File "/Users/cor/Desktop/RuDaS/experiments/systems/Neural-LP/src/data.py", line 196, in _parse_triplets
+    self.entity_to_number[l[2]]))
+KeyError: 'c10'

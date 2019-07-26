@@ -1,0 +1,9 @@
+c37	p0	c37
+c21	p5	c57
+c13	p0	c10
+c38	p4	c20
+c3	p3	c12
+c4	p3	c52
+c8	p0	c2
+c0	p5	c61
+c0	p0	c61
