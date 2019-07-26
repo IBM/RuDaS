@@ -1,0 +1,84 @@
+name: CHAIN-S-3-2
+size: DatasetSize.S
+category: DatasetCategory.CHAIN_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  428
+generatablesize:  856
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  428
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p5(X0,X1) :- p0(X0,X2),p10(X3,X1).
+	|- [1] p10(X3,X1) :- p2(X1,X1),p1(X3,X1).
+		|- [2] p1(X3,X1) :- p7(X4,X1),p3(X5,X3).
+nsupport size: 30
+1 : 136
+2 : 171
+3 : 218
+4 : 271
+5 : 320
+6 : 384
+7 : 436
+stopped support generation after 7 steps
+generated 436 facts
+1 : 4
+2 : 7
+3 : 11
+4 : 15
+5 : 19
+6 : 21
+7 : 25
+8 : 28
+9 : 32
+10 : 36
+11 : 40
+12 : 44
+13 : 48
+14 : 52
+15 : 56
+16 : 60
+17 : 63
+18 : 67
+19 : 71
+20 : 75
+21 : 78
+22 : 82
+23 : 86
+24 : 90
+25 : 94
+26 : 97
+27 : 100
+stopped support generation after 27 steps
+generated 100 facts
+owa: removed 62 from 209  consequences
+owa: removed 51 from 170  consequences
+noise:  11 of 57 support facts removed
+noise:  21 facts added
+noise (target): 13 facts added to 119 original target facts
+size, S
+category, CHAIN_RECURSIVE
+numdags, 1
+targets, 5
+trainsupport: size, 57 , predicates, 6 , constants, 80
+trainconseqs: size, 379
+train: size, 346 , predicates, 11 , constants, 126
+train-cwa: size, 438 , predicates, 7 , constants, 94
+evalsupport: size, 100 , predicates, 6 , constants, 120
+evalconseqs: size, 1608
+eval-cwa: size, 1708 , predicates, 7 , constants, 120
+test: size, 113
