@@ -1,0 +1,132 @@
+name: RDG-S-3-8
+size: DatasetSize.S
+category: DatasetCategory.ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.4
+noisefactor: 0.2
+missfactor: 0.3
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.4
+sizefactor1:  1.25
+sizefactor2:  1.1333333333333333
+fixedsize:  803
+generatablesize:  1606
+mingeneratablesize:  143
+numpredicates:  11
+numconstants:  803
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p6(X0,X1) :- p1(X0,X2),p7(X1,X2).
+	|- [1] p1(X0,X2) :- p7(X2,X3),p7(X0,X2).
+		|- [2] p7(X1,X2) :- p9(X2,X1).
+			|- [3] p9(X2,X1) :- p9(X1,X1),p8(X1,X2).
+	|- [2] 
+nsupport size: 35
+1 : 97
+2 : 114
+3 : 128
+4 : 142
+5 : 149
+6 : 163
+7 : 177
+8 : 199
+9 : 213
+10 : 227
+11 : 241
+12 : 255
+13 : 265
+14 : 279
+15 : 286
+16 : 300
+17 : 314
+18 : 324
+19 : 338
+20 : 356
+21 : 370
+22 : 384
+23 : 398
+24 : 412
+25 : 426
+26 : 440
+27 : 463
+28 : 477
+29 : 486
+30 : 500
+31 : 516
+32 : 525
+33 : 528
+34 : 542
+35 : 551
+36 : 565
+37 : 583
+38 : 595
+39 : 605
+40 : 619
+41 : 632
+42 : 652
+43 : 671
+44 : 689
+45 : 703
+46 : 715
+47 : 739
+48 : 750
+49 : 766
+50 : 780
+51 : 796
+52 : 810
+stopped support generation after 52 steps
+generated 810 facts
+1 : 4
+2 : 6
+3 : 10
+4 : 14
+5 : 17
+6 : 21
+7 : 25
+8 : 29
+9 : 33
+10 : 37
+11 : 41
+12 : 44
+13 : 48
+14 : 52
+15 : 55
+16 : 59
+17 : 62
+18 : 66
+19 : 70
+20 : 73
+21 : 76
+22 : 80
+23 : 84
+24 : 86
+25 : 90
+26 : 93
+27 : 97
+28 : 101
+stopped support generation after 28 steps
+generated 101 facts
+owa: removed 129 from 323  consequences
+owa: removed 104 from 261  consequences
+noise:  67 of 226 support facts removed
+noise:  88 facts added
+noise (target): 39 facts added to 157 original target facts
+size, S
+category, ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 6
+trainsupport: size, 226 , predicates, 4 , constants, 211
+trainconseqs: size, 584
+train: size, 637 , predicates, 11 , constants, 369
+train-cwa: size, 782 , predicates, 5 , constants, 261
+evalsupport: size, 101 , predicates, 4 , constants, 95
+evalconseqs: size, 263
+eval-cwa: size, 364 , predicates, 5 , constants, 95
+test: size, 233
