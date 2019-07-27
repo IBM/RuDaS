@@ -110,7 +110,7 @@ def handler(signum, frame):
 def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, category=DatasetCategory.MIXED, overlap=False, \
                      singletarget=False, mindags=1, maxdags=1, maxdepth=3, nodesupport=None, dagsupport=3, skipnode=5, \
                      owafactor=.3, noisefactor=.2, missfactor=.15, targetsextra=True, maxorchild=2, maxatoms=2, minarity=2, maxarity=2, \
-                     numpreds=None, numconstants=None, test=.3): #, valid=.2):
+                     numpreds=None, numconstants=None, test=.3, eval=True): #, valid=.2):
 
     '''TODO in the end: update these descriptions
     :param name: the name of the dataset directory that is created
@@ -308,7 +308,7 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
             assignments = [[] for _ in dags]
             targets = [predicates[i].name for i in range(numdags)] if overlap else [p[0].name for p in preds]
             train_cwa, train_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, fixedsize, 0, support=nsupport)
-            eval_cwa, eval_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, 0, SIZE_EVAL_SUPPORT)
+            eval_cwa, eval_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, 0, SIZE_EVAL_SUPPORT) if eval else {},{}
 
             signal.alarm(0)
             generated_initial = True
@@ -321,6 +321,8 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     eval_conseqs = extract_consequences(eval_cwa, eval_support)
 
     rules = list(itertools.chain.from_iterable([dag.get_rules() for dag in dags]))
+
+    c_strs = {str(c) for p in train_cwa for f in train_cwa[p] for c in f.arguments}
 
     ## write first files
     write_rule_file(rules, path)
@@ -358,6 +360,7 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     # I opt for the latter since we anyway have the eval set in addition
     # ie if you had owa=0, you'd have to use that as evaluation
 
+
     ## noise
     if noisefactor:
 
@@ -366,7 +369,6 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
             add2 = add_target_noise(train, rem, targets, predicates, constants, noisefactor)
         else:
             add1, rem1 = add_noise(train, train_support, rem, [], predicates, constants, noisefactor, missfactor)
-            add2 = []
 
         write_fact_file(train, path, F_TRAIN_OW_N)
 
@@ -379,19 +381,24 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
 
         write_fact_file(train_cwa, path, F_TRAIN_CW_N)
 
+        c_strs = c_strs | {str(c) for f in add1 for c in f.arguments} | {str(c) for f in add2 for c in f.arguments}
+
     # entities and relations refer to those in cwa w/o noise
     # s.t. we cannot end up with a test/valid file that contains entities not in the entities file
-    cs = []
-    for p in train_cwa:
-        for f in train_cwa[p]:
-            cs.extend(f.arguments)
-    for p in train:
-        for f in train[p]:
-            cs.extend(f.arguments)
-            # print(log.strlist(f.arguments))
-    cs = [c for c in constants if c in cs]
+    # cs = []
+    # for p in train_cwa:
+    #     for f in train_cwa[p]:
+    #         cs.extend(f.arguments)
+    # for p in train:
+    #     for f in train[p]:
+    #         cs.extend(f.arguments)
+    #         # print(log.strlist(f.arguments))
+    # cs = [c for c in constants if c in cs]
+
+
     write_list_file([p for p in predicates if train_cwa[p.name] or train[p.name]], path, F_RELATIONS)
-    write_list_file(cs, path, F_ENTITIES)
+    # write_list_file(cs, path, F_ENTITIES)
+    write_list_file(list(c_strs), path, F_ENTITIES)
 
     # TODO in the end: maybe adapt this
     # TODO do we need statistics like noise etc for later evaluation tables if we have many datasets? then
@@ -652,6 +659,7 @@ def add_noise(facts, support, removed, targets, predicates, constants, noise_fac
             p = ps[random.randint(0, len(ps) - 1)]
             f = log.Atom(p, [constants[random.randint(0, len(constants) - 1)] for _ in range(p.arity)])
         facts[p.name].append(f)
+        add.append(f)
     return add, rem
 
 

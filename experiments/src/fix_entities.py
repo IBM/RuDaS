@@ -5,7 +5,7 @@ if __name__ == '__main__':
     # report_dataset_stats(dataset_dir+'/train.tsv')
     # report_dataset_stats(dataset_dir+'/dev.tsv')
     # report_dataset_stats(dataset_dir+'/test.tsv')
-    data  = "../../datasets/exp1/"
+    data  = "../../datasets/tmp/"
 
     for d in os.listdir(data):
         if d.startswith("."): continue
@@ -36,8 +36,8 @@ if __name__ == '__main__':
             print(d,len(set(entities_old)),len(entities))
         # else: print(d,"*"*50)
 
-        with open(data + d + "/entities.txt", "w") as f:
-            f.write("\n".join(list(entities)))
+        # with open(data + d + "/entities.txt", "w") as f:
+        #     f.write("\n".join(list(entities)))
 
         # break
 
