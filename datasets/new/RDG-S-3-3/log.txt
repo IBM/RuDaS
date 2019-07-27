@@ -1,0 +1,173 @@
+name: RDG-S-3-3
+size: DatasetSize.S
+category: DatasetCategory.ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.2
+missfactor: 0.15
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  1052
+generatablesize:  2103
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  1052
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p10(X0,X1) :- p3(X2,X0),p0(X1,X2).
+	|- [1] p3(X2,X0) :- p7(X3,X4),p4(X0,X2).
+		|- [3] p4(X0,X2) :- p1(X0,X2).
+		|- [5] p7(X2,X1) :- p7(X2,X1),p7(X1,X1).
+	|- [2] p0(X1,X2) :- p5(X5,X2),p7(X2,X1).
+		|- [4] p5(X5,X2) :- p9(X6,X5),p2(X2,X6).
+		|- [5] 
+nsupport size: 55
+1 : 97
+2 : 108
+3 : 119
+4 : 130
+5 : 141
+6 : 151
+7 : 164
+8 : 175
+9 : 184
+10 : 195
+11 : 205
+12 : 218
+13 : 229
+14 : 238
+15 : 249
+16 : 260
+17 : 270
+18 : 281
+19 : 292
+20 : 303
+21 : 313
+22 : 324
+23 : 332
+24 : 343
+25 : 354
+26 : 360
+27 : 371
+28 : 382
+29 : 393
+30 : 403
+31 : 414
+32 : 425
+33 : 436
+34 : 446
+35 : 454
+36 : 465
+37 : 476
+38 : 489
+39 : 502
+40 : 513
+41 : 526
+42 : 539
+43 : 552
+44 : 562
+45 : 573
+46 : 584
+47 : 597
+48 : 609
+49 : 624
+50 : 635
+51 : 648
+52 : 659
+53 : 670
+54 : 681
+55 : 692
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p10(X0,X1) :- p2(X0,X2),p2(X2,X1).
+	|- [1] p2(X2,X1) :- p8(X1,X3),p2(X2,X3).
+		|- [2] p2(X0,X2) :- p6(X4,X2),p7(X0,X4).
+			|- [4] p6(X4,X2) :- p6(X2,X6),p9(X4,X4).
+			|- [5] p7(X0,X4) :- p0(X0,X4).
+		|- [3] p8(X1,X3) :- p1(X3,X5),p9(X1,X3).
+	|- [2] 
+nsupport size: 55
+1 : 212
+2 : 257
+3 : 333
+4 : 490
+5 : 516
+6 : 650
+7 : 800
+8 : 943
+9 : 1103
+stopped support generation after 9 steps
+generated 1103 facts
+1 : 6
+2 : 11
+3 : 17
+4 : 23
+5 : 29
+6 : 35
+7 : 40
+8 : 46
+9 : 52
+10 : 58
+11 : 64
+12 : 69
+13 : 75
+generated DAG after 2 steps, maxdepth  3 :
+ |- [0] p10(X0,X1) :- p7(X1,X0),p1(X1,X2).
+	|- [1] p1(X1,X2) :- p3(X1,X3),p2(X3,X2).
+		|- [3] p2(X3,X2) :- p6(X3,X2),p6(X3,X3).
+		|- [4] p3(X1,X3) :- p5(X1,X3),p9(X6,X3).
+			|- [6] p5(X4,X0) :- p5(X0,X7),p8(X4,X0).
+	|- [2] p7(X1,X0) :- p5(X4,X0),p4(X1,X5).
+		|- [5] p4(X1,X5) :- p8(X5,X5),p4(X1,X5).
+		|- [6] 
+nsupport size: 70
+1 : 379
+2 : 479
+3 : 591
+4 : 715
+5 : 827
+6 : 973
+7 : 1131
+stopped support generation after 7 steps
+generated 1131 facts
+1 : 8
+2 : 16
+3 : 22
+4 : 30
+5 : 37
+6 : 44
+7 : 52
+8 : 59
+9 : 66
+10 : 74
+11 : 81
+12 : 89
+13 : 97
+14 : 105
+stopped support generation after 14 steps
+generated 105 facts
+owa: removed 218 from 728  consequences
+owa: removed 83 from 278  consequences
+noise:  18 of 125 support facts removed
+noise:  154 facts added
+noise (target): 48 facts added to 195 original target facts
+size, S
+category, ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 10
+trainsupport: size, 125 , predicates, 9 , constants, 145
+trainconseqs: size, 1006
+train: size, 1014 , predicates, 11 , constants, 429
+train-cwa: size, 1161 , predicates, 10 , constants, 221
+evalsupport: size, 105 , predicates, 9 , constants, 100
+evalconseqs: size, 1061
+eval-cwa: size, 1166 , predicates, 10 , constants, 100
+test: size, 301

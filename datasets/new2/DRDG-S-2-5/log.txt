@@ -1,0 +1,114 @@
+name: DRDG-S-2-5
+size: DatasetSize.S
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 2
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  661
+generatablesize:  1321
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  661
+generated DAG after 1 steps, maxdepth  2 :
+ |- [0] p9(X0,X1) :- p4(X1,X1),p0(X0,X1).
+	|- [1] OR
+		|- [2] p4(X1,X1) :- p1(X1,X2).
+		|- [3] p4(X1,X1) :- p0(X1,X1).
+			|- [4] OR
+				|- [5] p0(X0,X1) :- p8(X0,X1).
+				|- [6] p0(X0,X1) :- p5(X1,X3),p8(X4,X0).
+	|- [4] 
+nsupport size: 35
+1 : 126
+2 : 136
+3 : 140
+4 : 151
+5 : 155
+6 : 166
+7 : 206
+8 : 250
+9 : 299
+10 : 352
+11 : 370
+12 : 428
+13 : 490
+14 : 492
+15 : 495
+16 : 561
+17 : 632
+18 : 680
+stopped support generation after 18 steps
+generated 680 facts
+1 : 3
+2 : 6
+3 : 9
+4 : 11
+5 : 12
+6 : 14
+7 : 16
+8 : 18
+9 : 20
+10 : 23
+11 : 26
+12 : 28
+13 : 30
+14 : 32
+15 : 34
+16 : 37
+17 : 40
+18 : 42
+19 : 44
+20 : 47
+21 : 50
+22 : 53
+23 : 56
+24 : 59
+25 : 61
+26 : 63
+27 : 66
+28 : 69
+29 : 71
+30 : 73
+31 : 76
+32 : 78
+33 : 80
+34 : 82
+35 : 85
+36 : 87
+37 : 89
+38 : 92
+39 : 95
+40 : 98
+41 : 101
+stopped support generation after 41 steps
+generated 101 facts
+owa: removed 116 from 387  consequences
+owa: removed 64 from 216  consequences
+noise:  15 of 77 support facts removed
+noise:  37 facts added
+noise (target): 16 facts added to 152 original target facts
+size, S
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 9
+trainsupport: size, 77 , predicates, 5 , constants, 105
+trainconseqs: size, 603
+train: size, 538 , predicates, 11 , constants, 176
+train-cwa: size, 681 , predicates, 6 , constants, 125
+evalsupport: size, 101 , predicates, 5 , constants, 130
+evalconseqs: size, 1591
+eval-cwa: size, 1692 , predicates, 6 , constants, 130
+test: size, 180
