@@ -5,7 +5,7 @@ if __name__ == '__main__':
     # report_dataset_stats(dataset_dir+'/train.tsv')
     # report_dataset_stats(dataset_dir+'/dev.tsv')
     # report_dataset_stats(dataset_dir+'/test.tsv')
-    data  = "../../datasets/exp2/"
+    data  = "../../datasets/exp1/"
 
     for d in os.listdir(data):
         if d.startswith("."): continue
@@ -28,6 +28,9 @@ if __name__ == '__main__':
             for e in es:
                 entities_old.append(e.strip())
                 if e.strip() not in entities: print(e.strip())
+        for e in entities:
+            if e not in entities_old:
+                print(e)
 
         if len(set(entities_old)) < len(entities):
             print(d,len(set(entities_old)),len(entities))

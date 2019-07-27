@@ -278,7 +278,7 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     generated_initial = False
     while not generated_initial:
         try:
-            signal.alarm(180)
+            signal.alarm(180) # TODO maybe set in dependence of size
 
             dags = []
             var_doms = []
@@ -783,14 +783,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='RuDaS Dataset Generator.')
 
     parser.add_argument('--name', default=None, type=str, help="...")
-    parser.add_argument('--path', default="../datasets/", type=str, help="...")
-    parser.add_argument('--size', default=1, type=int, choices=[0,1,2,3,4], help="...")
-    parser.add_argument('--category', default=0, type=int, choices=[0,1,2,3,4,5,6], help="...")
+    parser.add_argument('--path', default="../datasets/tmp/", type=str, help="...")
+    parser.add_argument('--size', default=0, type=int, choices=[0,1,2,3,4], help="...")
+    parser.add_argument('--category', default=1, type=int, choices=[0,1,2,3,4,5,6], help="...")
     parser.add_argument('--overlap', type=int, default=0, choices=[0,1], help="...")
     parser.add_argument('--singletarget', type=int, default=0, choices=[0,1], help="...")
     parser.add_argument('--mindags', default=1, type=int, help="...")
     parser.add_argument('--maxdags', default=1, type=int, help="...")
-    parser.add_argument('--maxdepth', default=3, type=int, help="...")
+    parser.add_argument('--maxdepth', default=2, type=int, help="...")
     parser.add_argument('--nodesupport', type=int, default=None, help="...")
     parser.add_argument('--dagsupport', default=3, type=int, help="...")
     parser.add_argument('--skipnode', default=5, type=int, help="...")
