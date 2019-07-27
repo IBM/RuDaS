@@ -308,7 +308,10 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
             assignments = [[] for _ in dags]
             targets = [predicates[i].name for i in range(numdags)] if overlap else [p[0].name for p in preds]
             train_cwa, train_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, fixedsize, 0, support=nsupport)
-            eval_cwa, eval_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, 0, SIZE_EVAL_SUPPORT) if eval else {},{}
+            if eval:
+                eval_cwa, eval_support = generate_facts(dags, predicates, var_doms, assignments, dagsupport, skipnode, 0, SIZE_EVAL_SUPPORT)
+            else:
+                eval_cwa, eval_support = {}, {}
 
             signal.alarm(0)
             generated_initial = True
@@ -611,6 +614,8 @@ def add_facts(fact_lst, fact_dict):
 
 
 def extract_consequences(facts, support, targets=[]):
+    if not facts:
+        return []
     consequences = [f for p in facts if p not in targets for f in facts[p] if f not in support[p]]
     random.shuffle(consequences)
     return consequences
@@ -630,7 +635,7 @@ def add_noise(facts, support, removed, targets, predicates, constants, noise_fac
     # remove n1 "correct" facts
     n0 = sum([len(support[p]) for p in support if p not in targets]) #support in one dag may contain target of other if overlap=True
     n1 = int(n0 * miss_factor)
-    print("noise: ", n1, "of", n0, "support facts removed")#, len(consequences), "consequences)")
+    print("noise:", n1, "of", n0, "support facts removed")#, len(consequences), "consequences)")
 
     rem = []
     ps = [p for p in support if len(support[p]) and p not in targets]
@@ -648,7 +653,7 @@ def add_noise(facts, support, removed, targets, predicates, constants, noise_fac
     # add n1 "irrelevant" facts
     n0 = sum([len(facts[p]) for p in facts if p not in targets])
     n1 = int(n0 * noise_factor // (1 - noise_factor))
-    print("noise: ", n1, "facts added")#, len(consequences)+len(support), "facts")
+    print("noise:", n1, "facts added")#, len(consequences)+len(support), "facts")
 
     add = []
     ps = [p for p in predicates if p.name not in targets]
