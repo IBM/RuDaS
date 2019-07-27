@@ -746,7 +746,7 @@ def print_stats(size, category, dags, targets, train_support, train_conseqs, tra
     print('train: size,',len(list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
           len(set(c.name for p in facts for f in facts[p] for c in f.arguments)))
     facts = train_cwa
-    print('train-cwa: size,',len(list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
+    print('train-cw-n: size,',len(list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
           len(set(c.name for p in facts for f in facts[p] for c in f.arguments)))
     facts = eval_support
     print('evalsupport: size,',len(list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
@@ -755,7 +755,7 @@ def print_stats(size, category, dags, targets, train_support, train_conseqs, tra
     print('evalconseqs: size,',len(facts)) #', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
           # len(set(c.name for p in facts for f in facts[p] for c in f.arguments)))
     facts = eval_cwa
-    print('eval-cwa: size,',len(list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
+    print('eval-cw: size,',len(list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\
           len(set(c.name for p in facts for f in facts[p] for c in f.arguments)))
     facts = test
     print('test: size,',len(facts))#list(itertools.chain(*facts.values()))),', predicates,',sum([0 if not facts[p] else 1 for p in facts]),', constants,',\

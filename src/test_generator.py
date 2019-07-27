@@ -68,20 +68,27 @@ def extract_log_lengths(path):
     owa_removed = 0
     n_removed = -1
     n_added = 0
+    g1 = -1
+    g2 = -1
     for l in lines:
         if "generated" in l and "facts" in l:
             i1 = l.index(" ") + 1
             i2 = i1 + l[i1:].index(" ")
             n = int(l[i1:i2])
-            if F_TRAIN_CW not in f2l:
-                f2l[F_TRAIN_CW] = n
+
+            if g1 == -1:
+                g1 = n
+            elif g2 == -1:
+                g2 = n
             else:
-                f2l[F_EVAL_SUPPORT] = n
+                g1=g2
+                g2=n
+
         elif "owa: removed " in l:
             i = l[5:].index(" ") + 6
             owa_removed += int(l[i:i+l[i:].index(" ")])
         elif "noise:" in l:
-            i = l.index(" ") + 1
+            i = l.index(" ") + 2
             n = int(l[i:i+l[i:].index(" ")])
             if n_removed < 0:
                 n_removed = n
@@ -91,7 +98,10 @@ def extract_log_lengths(path):
             i = l.index(": ") + 2
             n_added += int(l[i:i+l[i:].index(" ")])
 
-    # print(n_added, n_removed)
+    f2l[F_TRAIN_CW] = g1
+    f2l[F_EVAL_SUPPORT] = g2
+
+    print(n_added, n_removed)
     f2l[F_TRAIN_CW_N] = f2l[F_TRAIN_CW] + n_added - n_removed
     f2l[F_TRAIN_OW] = f2l[F_TRAIN_CW] - owa_removed
     f2l[F_TRAIN_OW_N] = f2l[F_TRAIN_OW] + n_added - n_removed
