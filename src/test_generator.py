@@ -10,13 +10,14 @@ FILES = [
     F_TEST,
     F_RELATIONS, F_ENTITIES
 ]
-# FILES = [f+F_EXT for f in FILES]
 
 # TODO add tests testing if required parameters are satisfied: size, factors
+# TODO one could also test the support consequences ie if the fact in the fact sets make sense and you can learn the rules from them
 
 def test_files_present(path):
     for f in FILES:
         if not os.path.exists(path + f +F_EXT):
+            print(f, "*" * 50)
             return False
     return True
 
@@ -30,7 +31,7 @@ def test_files_lengths(path):
             return False
 
     rels = set()
-    es =  set()
+    es = set()
     for f in [F_TRAIN_CW, F_TRAIN_CW_N]:
         with open(path + f + F_EXT) as file:
             for l in file.readlines():
@@ -50,6 +51,9 @@ def test_files_lengths(path):
 
     return True
 
+def test_parameters(path):
+    pass
+
 def extract_file_lengths(path):
     f2l = {}
     for f in FILES:
@@ -68,6 +72,7 @@ def extract_log_lengths(path):
     owa_removed = 0
     n_removed = -1
     n_added = 0
+    # need to update these two iteratively since the log may contain several failed generation starts (until both(!) fact sets are generated)
     g1 = -1
     g2 = -1
     for l in lines:
@@ -88,7 +93,7 @@ def extract_log_lengths(path):
             i = l[5:].index(" ") + 6
             owa_removed += int(l[i:i+l[i:].index(" ")])
         elif "noise:" in l:
-            i = l.index(" ") + 2
+            i = l.index(" ") + 1
             n = int(l[i:i+l[i:].index(" ")])
             if n_removed < 0:
                 n_removed = n
@@ -101,7 +106,7 @@ def extract_log_lengths(path):
     f2l[F_TRAIN_CW] = g1
     f2l[F_EVAL_SUPPORT] = g2
 
-    print(n_added, n_removed)
+    # print(n_added, n_removed)
     f2l[F_TRAIN_CW_N] = f2l[F_TRAIN_CW] + n_added - n_removed
     f2l[F_TRAIN_OW] = f2l[F_TRAIN_CW] - owa_removed
     f2l[F_TRAIN_OW_N] = f2l[F_TRAIN_OW] + n_added - n_removed
@@ -110,11 +115,41 @@ def extract_log_lengths(path):
     #     print(f,l)
     return f2l
 
+def extract_log_params(path):
+    lines = []
+    with open(path + "log" + F_EXT, "r") as file:
+        lines = file.readlines()
+
+    p2n = {}
+    for l in lines:
+        l = l.strip()
+
+        if "size" in l:
+            # TODO
+            pass#p2n["size"] = ...
+        if "owafactor" in l or "noisefactor"  in l or "missfactor" in l or "test" in l:
+            p2n[l:l.index(":")] = float(l[l.index(" ")+1:])
+
+    # category" DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+    # mindags" 1
+    # maxdags" 1
+    # maxdepth" 3
+    # dagsupport" 3
+    # skipnode" 5
+    # owafactor" 0.3
+    # noisefactor" 0.2
+    # missfactor" 0.15
+    # targetsextra" True
+    # maxorchild" 2
+    # maxatoms" 2
+    # minarity" 2
+    # maxarity" 2
+    # test" 0.3
 
 if __name__ == '__main__':
     print("testing generator")
 
-    dpath = "../datasets/new/"
+    dpath = "../datasets/new2/"
     for d in os.listdir(dpath):
         if d.startswith("."): continue
 
