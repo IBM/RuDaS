@@ -1,0 +1,137 @@
+name: DRDG-XS-2-8
+size: DatasetSize.XS
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 2
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+eval: True
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  88
+generatablesize:  176
+mingeneratablesize:  66
+numpredicates:  11
+numconstants:  88
+generated DAG after 1 steps, maxdepth  2 :
+ |- [0] p7(X0,X1) :- p9(X1,X0).
+	|- [1] OR
+		|- [2] p9(X1,X0) :- p4(X0,X2),p0(X0,X1).
+		|- [3] p9(X1,X0) :- p5(X1,X0).
+nsupport size: 12
+1 : 31
+2 : 35
+4 : 39
+5 : 42
+6 : 46
+7 : 49
+8 : 52
+9 : 56
+10 : 59
+11 : 63
+12 : 67
+13 : 70
+14 : 73
+15 : 75
+16 : 78
+17 : 81
+18 : 83
+19 : 87
+20 : 90
+stopped support generation after 20 steps
+generated 90 facts
+1 : 1
+2 : 2
+3 : 4
+4 : 6
+5 : 7
+6 : 9
+7 : 11
+8 : 13
+9 : 14
+10 : 16
+11 : 18
+12 : 19
+13 : 21
+14 : 22
+15 : 23
+16 : 25
+17 : 26
+18 : 28
+19 : 30
+20 : 31
+21 : 33
+22 : 35
+23 : 37
+24 : 39
+25 : 41
+26 : 42
+27 : 43
+28 : 44
+29 : 46
+30 : 47
+31 : 49
+32 : 51
+33 : 52
+34 : 54
+35 : 55
+36 : 57
+37 : 58
+38 : 59
+39 : 60
+40 : 62
+41 : 63
+42 : 64
+43 : 65
+44 : 66
+45 : 67
+46 : 69
+47 : 71
+48 : 73
+49 : 75
+50 : 76
+51 : 77
+52 : 78
+53 : 80
+54 : 81
+55 : 83
+56 : 85
+57 : 87
+58 : 88
+59 : 89
+60 : 90
+61 : 91
+62 : 93
+63 : 95
+64 : 97
+65 : 99
+67 : 101
+stopped support generation after 67 steps
+generated 101 facts
+owa: removed 6 from 23  consequences
+owa: removed 8 from 28  consequences
+noise: 7 of 39 support facts removed
+noise: 5 facts added
+noise (target): 2 facts added to 20 original target facts
+size, XS
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 7
+trainsupport: size, 39 , predicates, 4 , constants, 47
+trainconseqs: size, 51
+train: size, 76 , predicates, 7 , constants, 51
+train-cw-n: size, 90 , predicates, 7 , constants, 52
+evalsupport: size, 101 , predicates, 4 , constants, 80
+evalconseqs: size, 128
+eval-cw: size, 229 , predicates, 5 , constants, 80
+test: size, 14

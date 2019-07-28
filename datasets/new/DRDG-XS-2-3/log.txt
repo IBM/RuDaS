@@ -1,0 +1,88 @@
+name: DRDG-XS-2-3
+size: DatasetSize.XS
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 2
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.2
+missfactor: 0.15
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+eval: True
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  72
+generatablesize:  143
+mingeneratablesize:  66
+numpredicates:  11
+numconstants:  72
+generated DAG after 2 steps, maxdepth  2 :
+ |- [0] p7(X0,X1) :- p9(X2,X0),p10(X2,X1).
+	|- [1] OR
+		|- [2] p9(X2,X0) :- p4(X0,X3),p6(X3,X2).
+		|- [3] p9(X2,X0) :- p0(X2,X0).
+	|- [4] p10(X2,X1) :- p3(X4,X1),p4(X4,X2).
+nsupport size: 21
+1 : 42
+2 : 47
+3 : 56
+4 : 68
+5 : 73
+stopped support generation after 5 steps
+generated 73 facts
+1 : 4
+2 : 8
+3 : 11
+4 : 14
+5 : 17
+6 : 21
+7 : 24
+8 : 26
+9 : 29
+10 : 32
+11 : 34
+12 : 37
+13 : 41
+14 : 44
+15 : 47
+16 : 51
+17 : 55
+18 : 58
+19 : 62
+20 : 65
+21 : 68
+22 : 72
+23 : 75
+24 : 79
+25 : 83
+26 : 87
+27 : 91
+28 : 94
+29 : 98
+30 : 102
+stopped support generation after 30 steps
+generated 102 facts
+owa: removed 5 from 19  consequences
+owa: removed 4 from 16  consequences
+noise: 5 of 38 support facts removed
+noise: 11 facts added
+noise (target): 3 facts added to 12 original target facts
+size, XS
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 7
+trainsupport: size, 38 , predicates, 6 , constants, 42
+trainconseqs: size, 35
+train: size, 73 , predicates, 9 , constants, 50
+train-cw-n: size, 82 , predicates, 9 , constants, 50
+evalsupport: size, 102 , predicates, 6 , constants, 61
+evalconseqs: size, 133
+eval-cw: size, 235 , predicates, 7 , constants, 61
+test: size, 9

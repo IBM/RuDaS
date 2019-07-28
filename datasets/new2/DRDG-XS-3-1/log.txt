@@ -1,0 +1,125 @@
+name: DRDG-XS-3-1
+size: DatasetSize.XS
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+eval: True
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  69
+generatablesize:  138
+mingeneratablesize:  66
+numpredicates:  11
+numconstants:  69
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p6(X0,X1) :- p4(X0,X1).
+	|- [1] OR
+		|- [2] p4(X0,X1) :- p0(X0,X0),p9(X2,X1).
+			|- [4] OR
+				|- [5] p0(X0,X0) :- p7(X3,X0),p7(X0,X0).
+				|- [6] p0(X0,X0) :- p5(X0,X4).
+			|- [7] p9(X2,X1) :- p3(X2,X5),p10(X5,X1).
+				|- [8] p3(X0,X1) :- p3(X1,X0),p7(X0,X0).
+		|- [3] p4(X0,X1) :- p3(X0,X1).
+			|- [8] 
+nsupport size: 33
+1 : 220
+stopped support generation after 1 steps
+generated 220 facts
+1 : 2
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p6(X0,X1) :- p4(X0,X1).
+	|- [1] OR
+		|- [2] p4(X0,X1) :- p0(X0,X1).
+			|- [4] p0(X0,X1) :- p10(X0,X2),p2(X2,X1).
+		|- [3] p4(X0,X1) :- p3(X1,X0),p5(X1,X1).
+			|- [5] p5(X1,X1) :- p2(X1,X3).
+nsupport size: 21
+1 : 56
+2 : 62
+3 : 67
+4 : 69
+stopped support generation after 4 steps
+generated 69 facts
+1 : 2
+2 : 4
+3 : 6
+4 : 8
+5 : 10
+6 : 12
+7 : 14
+8 : 16
+9 : 18
+10 : 20
+11 : 22
+12 : 24
+13 : 26
+14 : 28
+15 : 30
+16 : 32
+17 : 34
+18 : 36
+19 : 38
+20 : 40
+21 : 42
+22 : 44
+23 : 45
+24 : 47
+25 : 49
+26 : 51
+27 : 53
+28 : 55
+29 : 57
+30 : 59
+31 : 61
+32 : 63
+33 : 65
+34 : 67
+35 : 69
+36 : 71
+37 : 73
+38 : 75
+39 : 77
+40 : 79
+41 : 81
+42 : 83
+43 : 85
+44 : 87
+45 : 89
+46 : 91
+47 : 93
+48 : 95
+49 : 97
+50 : 99
+51 : 100
+stopped support generation after 51 steps
+generated 100 facts
+owa: removed 7 from 26  consequences
+owa: removed 4 from 15  consequences
+noise: 5 of 28 support facts removed
+noise: 4 facts added
+noise (target): 1 facts added to 11 original target facts
+size, XS
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 6
+trainsupport: size, 28 , predicates, 6 , constants, 32
+trainconseqs: size, 41
+train: size, 58 , predicates, 9 , constants, 34
+train-cw-n: size, 69 , predicates, 9 , constants, 35
+evalsupport: size, 100 , predicates, 6 , constants, 64
+evalconseqs: size, 201
+eval-cw: size, 301 , predicates, 7 , constants, 64
+test: size, 11

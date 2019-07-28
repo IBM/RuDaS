@@ -1,0 +1,158 @@
+name: CHAIN-S-3-6
+size: DatasetSize.S
+category: DatasetCategory.CHAIN_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+eval: True
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  414
+generatablesize:  828
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  414
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p9(X0,X1) :- p4(X2,X0),p8(X0,X1).
+	|- [1] p4(X2,X0) :- p6(X0,X0),p5(X0,X2).
+		|- [2] p6(X0,X0) :- p7(X3,X0).
+nsupport size: 25
+1 : 46
+2 : 51
+3 : 56
+4 : 62
+5 : 68
+6 : 73
+7 : 79
+8 : 80
+9 : 86
+10 : 92
+11 : 98
+12 : 102
+13 : 108
+14 : 113
+15 : 119
+16 : 125
+17 : 128
+18 : 134
+19 : 140
+20 : 145
+21 : 151
+22 : 157
+23 : 163
+24 : 169
+25 : 175
+26 : 181
+27 : 186
+28 : 192
+29 : 198
+30 : 203
+31 : 209
+32 : 214
+33 : 219
+34 : 225
+35 : 229
+36 : 235
+37 : 241
+38 : 246
+39 : 250
+40 : 256
+41 : 259
+42 : 265
+43 : 271
+44 : 277
+45 : 281
+46 : 287
+47 : 291
+48 : 295
+49 : 300
+50 : 306
+51 : 310
+52 : 316
+53 : 322
+54 : 328
+55 : 334
+56 : 338
+57 : 344
+58 : 350
+59 : 354
+60 : 360
+61 : 366
+62 : 369
+63 : 372
+64 : 377
+65 : 383
+66 : 387
+67 : 393
+68 : 399
+69 : 405
+70 : 411
+71 : 414
+stopped support generation after 71 steps
+generated 414 facts
+1 : 3
+2 : 6
+3 : 9
+4 : 12
+5 : 14
+6 : 17
+7 : 20
+8 : 22
+9 : 25
+10 : 28
+11 : 31
+12 : 34
+13 : 37
+14 : 39
+15 : 42
+16 : 45
+17 : 48
+18 : 51
+19 : 54
+20 : 57
+21 : 58
+22 : 61
+23 : 64
+24 : 67
+25 : 70
+26 : 72
+27 : 75
+28 : 78
+29 : 81
+30 : 84
+31 : 87
+32 : 90
+33 : 92
+34 : 95
+35 : 98
+36 : 100
+stopped support generation after 36 steps
+generated 100 facts
+owa: removed 38 from 128  consequences
+owa: removed 19 from 64  consequences
+noise: 44 of 222 support facts removed
+noise: 29 facts added
+noise (target): 4 facts added to 45 original target facts
+size, S
+category, CHAIN_RECURSIVE
+numdags, 1
+targets, 9
+trainsupport: size, 222 , predicates, 5 , constants, 214
+trainconseqs: size, 192
+train: size, 346 , predicates, 10 , constants, 229
+train-cw-n: size, 403 , predicates, 10 , constants, 234
+evalsupport: size, 100 , predicates, 4 , constants, 105
+evalconseqs: size, 96
+eval-cw: size, 196 , predicates, 6 , constants, 105
+test: size, 57

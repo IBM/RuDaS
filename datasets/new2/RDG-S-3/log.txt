@@ -1,0 +1,119 @@
+name: RDG-S-3
+size: DatasetSize.S
+category: DatasetCategory.ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+eval: True
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  462
+generatablesize:  924
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  462
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p9(X0,X2),p5(X0,X1).
+	|- [1] p5(X0,X1) :- p9(X1,X0),p5(X0,X0).
+		|- [2] p9(X0,X2) :- p7(X3,X2),p6(X3,X0).
+			|- [3] p7(X3,X2) :- p4(X3,X2),p3(X4,X3).
+	|- [2] 
+nsupport size: 40
+1 : 70
+2 : 80
+3 : 90
+4 : 100
+5 : 107
+6 : 117
+7 : 127
+8 : 135
+9 : 140
+10 : 150
+11 : 160
+12 : 168
+13 : 178
+14 : 184
+15 : 194
+16 : 204
+17 : 215
+18 : 220
+19 : 230
+20 : 239
+21 : 249
+22 : 261
+23 : 267
+24 : 276
+25 : 286
+26 : 295
+27 : 302
+28 : 312
+29 : 319
+30 : 329
+31 : 339
+32 : 346
+33 : 354
+34 : 364
+35 : 372
+36 : 382
+37 : 394
+38 : 404
+39 : 414
+40 : 422
+41 : 433
+42 : 439
+43 : 449
+44 : 455
+45 : 462
+stopped support generation after 45 steps
+generated 462 facts
+1 : 5
+2 : 10
+3 : 15
+4 : 20
+5 : 25
+6 : 30
+7 : 35
+8 : 40
+9 : 45
+10 : 50
+11 : 55
+12 : 59
+13 : 64
+14 : 69
+15 : 74
+16 : 79
+17 : 83
+18 : 88
+19 : 93
+20 : 97
+21 : 101
+stopped support generation after 21 steps
+generated 101 facts
+owa: removed 40 from 134  consequences
+owa: removed 25 from 84  consequences
+noise: 48 of 244 support facts removed
+noise: 32 facts added
+noise (target): 6 facts added to 59 original target facts
+size, S
+category, ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 0
+trainsupport: size, 244 , predicates, 6 , constants, 208
+trainconseqs: size, 218
+train: size, 387 , predicates, 11 , constants, 239
+train-cw-n: size, 452 , predicates, 11 , constants, 241
+evalsupport: size, 101 , predicates, 6 , constants, 94
+evalconseqs: size, 98
+eval-cw: size, 199 , predicates, 7 , constants, 94
+test: size, 65

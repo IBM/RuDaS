@@ -1,0 +1,114 @@
+name: DRDG-S-3-6
+size: DatasetSize.S
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+eval: True
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  378
+generatablesize:  756
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  378
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p3(X1,X0).
+	|- [1] OR
+		|- [2] p3(X1,X0) :- p8(X2,X1),p5(X1,X0).
+			|- [4] p8(X2,X1) :- p6(X2,X1).
+		|- [3] p3(X1,X0) :- p7(X1,X0).
+			|- [5] OR
+				|- [6] p7(X1,X0) :- p5(X0,X3),p2(X1,X3).
+				|- [7] p7(X1,X0) :- p4(X4,X0),p4(X1,X1).
+nsupport size: 45
+1 : 245
+2 : 250
+3 : 255
+4 : 260
+5 : 328
+6 : 333
+7 : 413
+stopped support generation after 7 steps
+generated 413 facts
+1 : 2
+2 : 4
+3 : 6
+4 : 8
+5 : 10
+6 : 11
+7 : 13
+8 : 15
+9 : 17
+10 : 19
+11 : 21
+12 : 23
+13 : 25
+14 : 27
+15 : 29
+16 : 31
+17 : 33
+18 : 35
+19 : 37
+20 : 39
+21 : 41
+22 : 43
+23 : 45
+24 : 47
+25 : 49
+26 : 51
+27 : 53
+28 : 55
+29 : 57
+30 : 59
+31 : 61
+32 : 63
+33 : 65
+34 : 67
+35 : 69
+36 : 71
+37 : 73
+38 : 75
+39 : 77
+40 : 79
+41 : 81
+42 : 83
+43 : 85
+44 : 87
+45 : 89
+46 : 91
+47 : 93
+48 : 94
+49 : 96
+50 : 98
+51 : 100
+stopped support generation after 51 steps
+generated 100 facts
+owa: removed 69 from 231  consequences
+owa: removed 36 from 123  consequences
+noise: 11 of 59 support facts removed
+noise: 23 facts added
+noise (target): 9 facts added to 87 original target facts
+size, S
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 0
+trainsupport: size, 59 , predicates, 7 , constants, 90
+trainconseqs: size, 354
+train: size, 329 , predicates, 11 , constants, 131
+train-cw-n: size, 434 , predicates, 11 , constants, 133
+evalsupport: size, 100 , predicates, 7 , constants, 118
+evalconseqs: size, 1992
+eval-cw: size, 2092 , predicates, 8 , constants, 118
+test: size, 105

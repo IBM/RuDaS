@@ -1,0 +1,216 @@
+name: DRDG-S-2-7
+size: DatasetSize.S
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 2
+dagsupport: 3
+skipnode: 5
+owafactor: 0.4
+noisefactor: 0.2
+missfactor: 0.15
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.4
+eval: True
+sizefactor1:  1.25
+sizefactor2:  1.1333333333333333
+fixedsize:  710
+generatablesize:  1420
+mingeneratablesize:  143
+numpredicates:  11
+numconstants:  710
+generated DAG after 3 steps, maxdepth  2 :
+ |- [0] p7(X0,X1) :- p5(X1,X2),p1(X0,X1).
+	|- [1] p5(X1,X2) :- p10(X2,X1),p9(X2,X2).
+	|- [2] OR
+		|- [3] p1(X0,X1) :- p1(X0,X1).
+		|- [4] p1(X0,X1) :- p3(X0,X1).
+nsupport size: 30
+1 : 51
+2 : 57
+3 : 63
+4 : 69
+5 : 75
+6 : 81
+7 : 87
+8 : 91
+9 : 97
+10 : 102
+11 : 107
+12 : 112
+13 : 117
+14 : 121
+15 : 126
+16 : 131
+17 : 137
+18 : 141
+19 : 146
+20 : 151
+21 : 156
+22 : 162
+23 : 167
+24 : 172
+25 : 178
+26 : 183
+27 : 189
+28 : 195
+29 : 201
+30 : 203
+31 : 208
+32 : 210
+33 : 216
+34 : 222
+35 : 227
+36 : 232
+37 : 237
+38 : 243
+39 : 248
+40 : 253
+41 : 258
+42 : 264
+43 : 270
+44 : 275
+45 : 277
+46 : 282
+47 : 287
+48 : 293
+49 : 298
+51 : 303
+52 : 309
+53 : 314
+54 : 320
+55 : 326
+56 : 330
+57 : 336
+58 : 342
+59 : 348
+60 : 353
+61 : 358
+62 : 364
+63 : 370
+64 : 376
+65 : 382
+66 : 388
+67 : 393
+68 : 398
+69 : 401
+70 : 407
+71 : 413
+72 : 419
+73 : 424
+74 : 427
+75 : 432
+76 : 436
+77 : 441
+78 : 446
+79 : 451
+80 : 455
+81 : 460
+82 : 465
+83 : 471
+84 : 477
+85 : 483
+86 : 489
+87 : 494
+88 : 500
+89 : 505
+90 : 510
+91 : 516
+92 : 521
+93 : 526
+94 : 532
+95 : 535
+96 : 540
+97 : 546
+98 : 551
+99 : 557
+100 : 562
+101 : 567
+102 : 572
+103 : 577
+104 : 581
+105 : 586
+106 : 592
+107 : 594
+108 : 600
+109 : 606
+110 : 611
+111 : 616
+112 : 622
+113 : 628
+114 : 632
+115 : 638
+116 : 644
+117 : 649
+118 : 655
+119 : 660
+120 : 664
+121 : 669
+122 : 672
+123 : 678
+124 : 683
+125 : 687
+126 : 690
+127 : 696
+128 : 701
+129 : 706
+130 : 712
+stopped support generation after 130 steps
+generated 712 facts
+1 : 3
+2 : 6
+3 : 9
+4 : 12
+5 : 15
+6 : 18
+7 : 21
+8 : 24
+9 : 27
+10 : 30
+11 : 33
+12 : 36
+13 : 39
+14 : 42
+15 : 45
+16 : 48
+17 : 51
+18 : 54
+19 : 57
+20 : 60
+21 : 63
+22 : 66
+23 : 69
+24 : 72
+25 : 75
+26 : 77
+27 : 80
+28 : 83
+29 : 86
+30 : 89
+31 : 92
+32 : 95
+33 : 98
+34 : 101
+stopped support generation after 34 steps
+generated 101 facts
+owa: removed 75 from 189  consequences
+owa: removed 53 from 133  consequences
+noise: 58 of 390 support facts removed
+noise: 111 facts added
+noise (target): 19 facts added to 80 original target facts
+size, S
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 7
+trainsupport: size, 390 , predicates, 5 , constants, 315
+trainconseqs: size, 322
+train: size, 656 , predicates, 11 , constants, 429
+train-cw-n: size, 784 , predicates, 11 , constants, 429
+evalsupport: size, 101 , predicates, 5 , constants, 99
+evalconseqs: size, 83
+eval-cw: size, 184 , predicates, 6 , constants, 99
+test: size, 128

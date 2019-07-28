@@ -1,0 +1,236 @@
+name: RDG-S-3-7
+size: DatasetSize.S
+category: DatasetCategory.ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.3
+noisefactor: 0.1
+missfactor: 0.2
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.3
+eval: True
+sizefactor1:  1.1764705882352942
+sizefactor2:  1.1333333333333333
+fixedsize:  890
+generatablesize:  1780
+mingeneratablesize:  134
+numpredicates:  11
+numconstants:  890
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p4(X0,X2),p10(X3,X1).
+	|- [1] p10(X3,X1) :- p4(X1,X3).
+		|- [2] p4(X0,X2) :- p3(X4,X2),p2(X5,X0).
+			|- [3] p3(X4,X2) :- p3(X2,X2),p1(X4,X6).
+			|- [4] p2(X5,X0) :- p5(X7,X5),p6(X0,X8).
+	|- [2] 
+nsupport size: 45
+1 : 969
+stopped support generation after 1 steps
+generated 969 facts
+1 : 5
+2 : 10
+3 : 15
+4 : 20
+5 : 25
+6 : 29
+7 : 34
+8 : 39
+9 : 43
+10 : 48
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p7(X2,X1),p7(X3,X0).
+	|- [1] p7(X2,X1) :- p10(X2,X4),p2(X1,X5).
+		|- [3] p10(X2,X4) :- p3(X4,X7),p3(X2,X4).
+		|- [4] p2(X1,X5) :- p1(X8,X5),p1(X1,X9).
+	|- [2] p7(X3,X0) :- p2(X3,X6),p2(X0,X3).
+		|- [4] 
+nsupport size: 50
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p10(X2,X1),p10(X0,X2).
+	|- [1] p10(X2,X1) :- p3(X3,X2),p4(X4,X1).
+		|- [3] p4(X4,X1) :- p5(X6,X4),p8(X1,X7).
+			|- [6] p8(X5,X2) :- p1(X2,X8),p5(X5,X5).
+		|- [4] p3(X3,X2) :- p8(X2,X3).
+			|- [6] 
+	|- [2] p10(X0,X2) :- p8(X5,X2),p9(X5,X0).
+		|- [5] p9(X5,X0) :- p7(X5,X0).
+		|- [6] 
+nsupport size: 60
+1 : 2049
+stopped support generation after 1 steps
+generated 2049 facts
+1 : 6
+2 : 12
+3 : 17
+4 : 23
+5 : 28
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p7(X1,X2),p7(X1,X0).
+	|- [1] p7(X1,X0) :- p6(X0,X1).
+		|- [3] p6(X0,X1) :- p10(X0,X5),p3(X5,X1).
+			|- [5] p3(X2,X4) :- p10(X4,X2),p8(X7,X2).
+	|- [2] p7(X1,X2) :- p1(X1,X3),p3(X2,X4).
+		|- [4] p1(X1,X3) :- p2(X6,X3),p4(X1,X3).
+		|- [5] 
+nsupport size: 55
+1 : 503
+2 : 599
+3 : 701
+4 : 813
+5 : 933
+stopped support generation after 5 steps
+generated 933 facts
+1 : 6
+2 : 12
+3 : 18
+4 : 24
+5 : 30
+6 : 36
+7 : 42
+8 : 47
+9 : 53
+10 : 59
+11 : 65
+12 : 70
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p0(X0,X1) :- p1(X1,X0),p5(X0,X1).
+	|- [1] p1(X1,X0) :- p1(X2,X1),p10(X0,X2).
+		|- [3] p10(X0,X2) :- p7(X3,X2),p8(X3,X0).
+	|- [2] p5(X0,X1) :- p2(X1,X0).
+		|- [4] p2(X1,X0) :- p2(X0,X1).
+nsupport size: 40
+1 : 96
+2 : 106
+3 : 116
+4 : 126
+5 : 137
+6 : 144
+7 : 154
+8 : 164
+9 : 173
+10 : 183
+11 : 192
+12 : 202
+13 : 212
+14 : 217
+15 : 228
+16 : 238
+17 : 248
+18 : 258
+19 : 269
+20 : 279
+21 : 289
+22 : 300
+23 : 310
+24 : 321
+25 : 331
+26 : 337
+27 : 347
+28 : 357
+29 : 368
+30 : 378
+31 : 390
+32 : 401
+33 : 407
+34 : 417
+35 : 428
+36 : 436
+37 : 446
+38 : 456
+39 : 465
+40 : 475
+41 : 485
+42 : 495
+43 : 505
+44 : 521
+45 : 531
+46 : 541
+47 : 551
+48 : 559
+49 : 569
+50 : 579
+51 : 589
+52 : 600
+53 : 611
+54 : 623
+55 : 633
+56 : 643
+57 : 657
+58 : 667
+59 : 677
+60 : 687
+61 : 697
+62 : 707
+63 : 716
+64 : 727
+65 : 737
+66 : 746
+67 : 756
+68 : 765
+69 : 775
+70 : 785
+71 : 795
+72 : 808
+73 : 819
+74 : 830
+75 : 840
+76 : 850
+77 : 861
+78 : 869
+79 : 879
+80 : 887
+81 : 894
+stopped support generation after 81 steps
+generated 894 facts
+1 : 4
+2 : 8
+3 : 11
+4 : 15
+5 : 18
+6 : 22
+7 : 26
+8 : 29
+9 : 33
+10 : 37
+11 : 41
+12 : 45
+13 : 49
+14 : 53
+15 : 57
+16 : 61
+17 : 65
+18 : 69
+19 : 73
+20 : 77
+21 : 81
+22 : 85
+23 : 89
+24 : 93
+25 : 97
+26 : 100
+stopped support generation after 26 steps
+generated 100 facts
+owa: removed 137 from 458  consequences
+owa: removed 25 from 84  consequences
+noise: 70 of 352 support facts removed
+noise: 67 facts added
+noise (target): 6 facts added to 59 original target facts
+size, S
+category, ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 0
+trainsupport: size, 352 , predicates, 6 , constants, 292
+trainconseqs: size, 542
+train: size, 735 , predicates, 11 , constants, 371
+train-cw-n: size, 897 , predicates, 11 , constants, 373
+evalsupport: size, 100 , predicates, 5 , constants, 95
+evalconseqs: size, 155
+eval-cw: size, 255 , predicates, 7 , constants, 95
+test: size, 162

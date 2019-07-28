@@ -1,0 +1,89 @@
+name: DRDG-XS-3-2
+size: DatasetSize.XS
+category: DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+mindags: 1
+maxdags: 1
+maxdepth: 3
+dagsupport: 3
+skipnode: 5
+owafactor: 0.2
+noisefactor: 0.3
+missfactor: 0.3
+targetsextra: True
+maxorchild: 2
+maxatoms: 2
+minarity: 2
+maxarity: 2
+test: 0.2
+eval: True
+sizefactor1:  1.1111111111111112
+sizefactor2:  1.1333333333333333
+fixedsize:  72
+generatablesize:  143
+mingeneratablesize:  62
+numpredicates:  11
+numconstants:  72
+generated DAG after 1 steps, maxdepth  3 :
+ |- [0] p3(X0,X1) :- p2(X2,X0),p4(X0,X1).
+	|- [1] OR
+		|- [2] p4(X0,X1) :- p4(X0,X3),p7(X3,X1).
+			|- [7] OR
+				|- [8] p7(X3,X1) :- p9(X5,X3),p10(X1,X5).
+					|- [12] OR
+						|- [13] p10(X0,X0) :- p10(X0,X9).
+						|- [14] p10(X0,X0) :- p0(X0,X10).
+				|- [9] p7(X3,X1) :- p8(X1,X3),p5(X6,X7).
+					|- [11] p5(X2,X0) :- p5(X2,X8),p1(X0,X8).
+		|- [3] p4(X0,X1) :- p7(X1,X4),p6(X0,X4).
+			|- [7] 
+			|- [10] p6(X0,X4) :- p0(X4,X0).
+	|- [4] OR
+		|- [5] p2(X2,X0) :- p5(X2,X0).
+			|- [11] 
+		|- [6] p2(X2,X0) :- p10(X0,X0),p5(X2,X0).
+			|- [11] 
+			|- [12] 
+nsupport size: 54
+1 : 125
+stopped support generation after 1 steps
+generated 125 facts
+1 : 5
+2 : 9
+3 : 14
+4 : 19
+5 : 24
+6 : 28
+7 : 33
+8 : 38
+9 : 43
+10 : 48
+11 : 53
+12 : 57
+13 : 62
+14 : 66
+15 : 71
+16 : 75
+17 : 80
+18 : 85
+19 : 90
+20 : 95
+21 : 100
+stopped support generation after 21 steps
+generated 100 facts
+owa: removed 11 from 59  consequences
+owa: removed 1 from 8  consequences
+noise: 17 of 58 support facts removed
+noise: 38 facts added
+noise (target): 3 facts added to 7 original target facts
+size, XS
+category, DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+numdags, 1
+targets, 3
+trainsupport: size, 58 , predicates, 10 , constants, 53
+trainconseqs: size, 67
+train: size, 137 , predicates, 11 , constants, 63
+train-cw-n: size, 149 , predicates, 11 , constants, 63
+evalsupport: size, 100 , predicates, 9 , constants, 63
+evalconseqs: size, 256
+eval-cw: size, 356 , predicates, 11 , constants, 63
+test: size, 12
