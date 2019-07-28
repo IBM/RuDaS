@@ -13,7 +13,7 @@ set -e
 #conda activate rudas
 cd /home/veronika/RuDaS/src/
 
-DATASETSDIR='../datasets/new3/'
+DATASETSDIR='../datasets/new5/'
 rm -rf $DATASETSDIR
 
 SIZES=(4)
