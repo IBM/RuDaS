@@ -110,7 +110,7 @@ def handler(signum, frame):
 def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, category=DatasetCategory.MIXED, overlap=False, \
                      singletarget=False, mindags=1, maxdags=1, maxdepth=3, nodesupport=None, dagsupport=3, skipnode=5, \
                      owafactor=.3, noisefactor=.2, missfactor=.15, targetsextra=True, maxorchild=2, maxatoms=2, minarity=2, maxarity=2, \
-                     numpreds=None, numconstants=None, test=.3, eval=True): #, valid=.2):
+                     numpreds=None, numconstants=None, test=.3, eval=True, timeout=600): #, valid=.2):
 
     '''TODO in the end: update these descriptions
     :param name: the name of the dataset directory that is created
@@ -278,7 +278,7 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     generated_initial = False
     while not generated_initial:
         try:
-            signal.alarm(180) # TODO maybe set in dependence of size
+            signal.alarm(timeout)
 
             dags = []
             var_doms = []

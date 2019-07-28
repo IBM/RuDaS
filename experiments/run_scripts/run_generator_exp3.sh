@@ -13,15 +13,15 @@ set -e
 #conda activate rudas
 cd /home/veronika/RuDaS/src/
 
-DATASETSDIR='../datasets/new/'
-#rm -rf $DATASETSDIR
+DATASETSDIR='../datasets/new3/'
+rm -rf $DATASETSDIR
 
-SIZES=(1)
-CATEGORIES=(6)
-MAXDEPTHS=(3)
-OWAS=(0.2 0.3 0.4)
-NOISES=(0.2 0.3)
-MISSINGS=(0.15 0.3)
+SIZES=(2 3 4)
+CATEGORIES=(0)
+MAXDEPTHS=(2)
+OWAS=(0.3)
+NOISES=(0.2)
+MISSINGS=(0.15)
 
 for SIZE in ${SIZES[*]}; do
     for CATEGORY in ${CATEGORIES[*]}; do
