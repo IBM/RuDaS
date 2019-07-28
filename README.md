@@ -2,14 +2,14 @@
 
 Requirements: Python 3 (TODO any others? check. then create file requirements.txt)
 
-See experiments/README for additional requirements for running the experiments
+See `experiments/README` for additional requirements for running the experiments
 
 
 ## Dataset generation code
 
 * rules can be arbitrary long and with n-ary predicates
-* predicate invention: we don?t want them in the dataset and rules:
-   * we don?t want to have auxiliary predicates in the dataset
+* predicate invention: we don't want them in the dataset and rules:
+   * we don't want to have auxiliary predicates in the dataset
    * having them would imply that the theory can be expressed using binary rules and so we will not need predicate invention in our system
    * we could just eliminate them from the facts but since the dataset is automatically generated, we can not distinguish them from the name compared to normal predicate
 * parameter: number of constants, predicates, rules
