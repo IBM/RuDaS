@@ -16,7 +16,7 @@ cd /home/veronika/RuDaS/src/
 DATASETSDIR='../datasets/new3/'
 rm -rf $DATASETSDIR
 
-SIZES=(2)
+SIZES=(3)
 CATEGORIES=(0)
 MAXDEPTHS=(3)
 OWAS=(0.3)
