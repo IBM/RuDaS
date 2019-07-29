@@ -278,7 +278,7 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     generated_initial = False
     while not generated_initial:
         try:
-            signal.alarm(timeout)
+            # signal.alarm(timeout)
 
             dags = []
             var_doms = []
