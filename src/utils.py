@@ -13,11 +13,7 @@ NTP_PARAMETER = 0.0
 
 
 
-def count_facts_dict(dict):
-    num_facts = 0
-    for key, value in dict.items():
-        num_facts += len([item for item in value if item])
-    return num_facts
+
 
 
 def remove_aux_pred(facts, predicates_list):
@@ -33,46 +29,6 @@ def remove_aux_pred(facts, predicates_list):
 
 
 
-
-def union_dict(dict1, dict2):
-    keys = set(dict1).union(dict2)
-    union = {}
-    for key in keys:
-        list_d = []
-        list1 = []
-        list2 = []
-        if key in dict1:
-            list1 = dict1[key]
-        if key in dict2:
-            list2 = dict2[key]
-        for element in list1:
-            list_d.append(element)
-        for element in list2:
-            if element not in list_d:
-                list_d.append(element)
-        union[key] = list_d
-    return union
-
-
-def delta_dict(dict1, dict2):
-    keys = set(dict1).union(dict2)
-    delta = {}
-    for key in keys:
-        list_d = []
-        list1 = []
-        list2 = []
-        if key in dict1:
-            list1 = dict1[key]
-        if key in dict2:
-            list2 = dict2[key]
-        for element in list1:
-            if element not in list2:
-                list_d.append(element)
-        for element in list2:
-            if element not in list1:
-                list_d.append(element)
-        delta[key] = list_d
-    return delta
 
 
 def parseRules_general(rulesFile):

@@ -48,7 +48,7 @@ class Evaluator(object):
             test_facts = parseFacts_general(original_inferred_file)[0]
             self.original_logic_program.add_inferred_facts(test_facts)
         #distances
-        self.num_possible_ground_atoms = None
+        self.num_possible_ground_atoms = 0
         self.herbrand_distance = None
         self.herbrand_accuracy = None
         self.herbrand_score = None
@@ -117,9 +117,9 @@ class Evaluator(object):
         if self.herbrand_distance:
             file.write("Herbrant distance:\t"+str(self.herbrand_distance)+"\n")
             file.write("Herbrant accuracy (classic normalization):\t"+str(self.herbrand_accuracy)+"\n")
-            file.write("Herbrant score (new normalization):\t"+str(self.herbrand_score)+"\n")
+            file.write("Hscore (Herbrant score: new normalization):\t"+str(self.herbrand_score)+"\n")
         if self.accuracy:
-            file.write("Accuracy:\t"+str(self.standard_accuracy)+"\n")
+            file.write("Accuracy:\t"+str(self.accuracy)+"\n")
         if self.precision: #=standard accuracy
             file.write("Precision:\t"+str(self.precision)+"\n")
         if self.recall:
@@ -168,7 +168,7 @@ class Evaluator(object):
             self.num_tp = float(count_facts_dict(self.tp))
             self.num_support = float(self.original_logic_program.num_original_facts)
             # this can be commented out in the case of auxiliary constants
-            assert self.to_evaluate_logic_program.num_constants != self.original_logic_program.num_constants, "ERROR message: the two programs are defined on different constants. this assertion can be commented out in the case of auxiliary constants"
+            assert self.to_evaluate_logic_program.num_constants == self.original_logic_program.num_constants, "ERROR message: the two programs are defined on different constants. this assertion can be commented out in the case of auxiliary constants"
             num_constants = self.original_logic_program.num_constants
             #print(num_constants, len(predicates))
             for predicate in predicates:
@@ -182,12 +182,8 @@ class Evaluator(object):
             pass
         self.to_evaluate_logic_program.ground_program()
         self.original_logic_program.ground_program()
-        predicates_list = []
-        for fact_list in self.original_logic_program.original_facts:
-            predicates_list.append(self.original_logic_program.original_facts[fact_list][0].predicate)
-        for fact_list in self.original_logic_program.inferred_facts:
-            predicates_list.append(self.original_logic_program.inferred_facts[fact_list][0].predicate)
-        self.compute_fpfntptn(predicates_list)
+        self.compute_predicate_list()
+        self.compute_fpfntptn(self.original_logic_program.predicates_list)
         print(self.num_possible_ground_atoms)
         self.herbrand_distance = float(self.num_fn + self.num_fp)
         herbrand_normalization = float(self.num_fn + self.num_fp + self.num_tp)
@@ -199,25 +195,35 @@ class Evaluator(object):
         self.herbrand_score = 1 - self.herbrand_score
 
     def compute_precision(self):
-        self.compute_fpfntptn()
+        self.compute_predicate_list()
+        self.compute_fpfntptn(self.original_logic_program.predicates_list)
         self.precision = self.num_tp / (self.num_tp + self.num_fp)
 
     def compute_accuracy(self):
-        self.compute_fpfntptn()
+        self.compute_predicate_list()
+        self.compute_fpfntptn(self.original_logic_program.predicates_list)
         self.accuracy = (self.num_tp + self.num_tn) / (self.num_tp + self.num_fp + self.num_fp + self.num_fn)
 
     def compute_recall(self):
-        self.compute_fpfntptn()
+        self.compute_predicate_list()
+        self.compute_fpfntptn(self.original_logic_program.predicates_list)
         self.recall = self.num_tp / (self.num_tp + self.num_fn)
 
     def compute_f1score(self):
-        self.compute_fpfntptn()
+        self.compute_predicate_list()
+        self.compute_fpfntptn(self.original_logic_program.predicates_list)
         if not self.precision:
             self.compute_precision()
         if not self.recall:
             self.compute_recall()
         self.f1score = (2 * self.recall * self.precision) / (self.recall + self.precision)
 
+    def compute_predicate_list(self):
+        if self.original_logic_program.predicates_list == []:
+            for fact_list in self.original_logic_program.original_facts:
+                self.original_logic_program.predicates_list.append(self.original_logic_program.original_facts[fact_list][0].predicate)
+            for fact_list in self.original_logic_program.inferred_facts:
+                self.original_logic_program.predicates_list.append(self.original_logic_program.inferred_facts[fact_list][0].predicate)
 
 def testing():
     print("Testing Evaluator")

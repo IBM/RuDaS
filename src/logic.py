@@ -5,6 +5,53 @@ Logic Classes
 import copy
 import sys
 
+def count_facts_dict(dict):
+    num_facts = 0
+    for key, value in dict.items():
+        num_facts += len([item for item in value if item])
+    return num_facts
+
+
+def union_dict(dict1, dict2):
+    keys = set(dict1).union(dict2)
+    union = {}
+    for key in keys:
+        list_d = []
+        list1 = []
+        list2 = []
+        if key in dict1:
+            list1 = dict1[key]
+        if key in dict2:
+            list2 = dict2[key]
+        for element in list1:
+            list_d.append(element)
+        for element in list2:
+            if element not in list_d:
+                list_d.append(element)
+        union[key] = list_d
+    return union
+
+
+def delta_dict(dict1, dict2):
+    keys = set(dict1).union(dict2)
+    delta = {}
+    for key in keys:
+        list_d = []
+        list1 = []
+        list2 = []
+        if key in dict1:
+            list1 = dict1[key]
+        if key in dict2:
+            list2 = dict2[key]
+        for element in list1:
+            if element not in list2:
+                list_d.append(element)
+        for element in list2:
+            if element not in list1:
+                list_d.append(element)
+        delta[key] = list_d
+    return delta
+
 class LogicProgram(object):
     # we assume the num of predicates and constants are from 0 to num_predicates/num_constants
     def __init__(self, facts={}, rules=[], num_predicates=-1, num_constants=-1, grounded=False):
@@ -19,15 +66,17 @@ class LogicProgram(object):
             # self.grounded_facts = copy.deepcopy(self.original_facts)
             self.grounded = True
         self.num_original_facts = 0
-        self.num_original_facts = count_facts_dict(self.original_fact)
+        self.num_original_facts = count_facts_dict(self.original_facts)
         self.num_grounded_facts = None  # currently not used
+        self.predicates_list = []
+
 
     def add_inferred_facts(self, inferred_facts):
         self.inferred_facts = copy.deepcopy(inferred_facts)
         self.grounded = True
 
     def add_facts(self, facts):
-        self.original_facts=union_dict(self.original_facts, facts)
+        self.original_facts = union_dict(self.original_facts, facts)
 
     def ground_program(self):
         if not self.grounded:
@@ -39,7 +88,7 @@ class LogicProgram(object):
             self.grounded = True
 
     def return_groundings(self):
-        grounded_facts=union_dict(self.original_facts, self.inferred_facts)
+        grounded_facts = union_dict(self.original_facts, self.inferred_facts)
         return grounded_facts
 
 

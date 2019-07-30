@@ -1,9 +1,8 @@
 import os
 import shutil
-from exp_utils import *
 from constants import *
-
-
+from utils import *
+from exp_utils import *
 # TODO
 # write sh file var dynamically - use var for list
 
@@ -45,11 +44,14 @@ def write_run_script(test_name, datasets_string):
 def write_run_script2(test_name, datasets_string):
     p = os.getcwd() + "/../run_scripts/run_template_2.sh"
     print(p)
+    datasets_incomplete_noise = ""
+    for dataset in datasets_string.split(" "):
+        datasets_incomplete_noise += dataset + "/INCOMPLETE_NOISE "
     with open(p, 'r') as f:#./run_scripts/run_template_2.sh '/Users/veronika.thost/Desktop/git/RuDaS/experiments/run_scripts/run_template_2.sh'
         ls = f.readlines()
     with open(os.getcwd() +'/../run_scripts/run_'+test_name+'_2.sh', 'w') as f:
         f.writelines(ls[0:2])
-        f.write(ls[2].replace("VAR-NAMES", datasets_string))
+        f.write(ls[2].replace("VAR-NAMES", datasets_incomplete_noise))
         f.write(ls[3].replace("VAR-TESTS", test_name))
         f.writelines(ls[4:])
 
@@ -111,16 +113,16 @@ def setup_experiments():
         for t in src_dst:
             shutil.copyfile(t[0], t[1])
 
-        extract_validation_data(dstpath, '.nl', .15, valid='dev') # TODO discuss this percentage? is of train!
+        extract_validation_data(dstpath, '.nl', .15, valid='dev')  # TODO discuss this percentage? is of train!
 
         write_ntp_rule_template(rules, dstpath + 'rules.nlt')
 
         replace_in_file(ntpconf, [('$DATAPATH', os.path.abspath(dstpath)),
-                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/')),
+                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/COMPLETE/')),
                                   ('$SYSTEMSPATH', os.path.abspath(SYSTEMS_DIR + NTP + '/')),
-                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds)])
-        # replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
-        #                 [('./out/', os.path.abspath(OUTPUT_DIR + NTP + '/')+ '/')]) # we have to change the code here :(
+                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + '/COMPLETE')])
+        #replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
+        #                [('./out/', os.path.abspath(OUTPUT_DIR + NTP + '/COMPLETE') + '/')])  # we have to change the code here :(
 
         ## neural lp
         dstpath = DATA_DIR + NEURAL_LP + '/' + ds + '/COMPLETE' + '/'
@@ -204,7 +206,7 @@ def setup_experiments():
         write_ntp_rule_template(rules, dstpath + 'rules.nlt')
 
         replace_in_file(ntpconf, [('$DATAPATH', os.path.abspath(dstpath)),
-                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/')),
+                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/INCOMPLETE/')),
                                   ('$SYSTEMSPATH', os.path.abspath(SYSTEMS_DIR + NTP + '/')),
                                   ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds)])
         # replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
@@ -271,7 +273,6 @@ def setup_experiments():
 
 
     # INCOMPLETE_NOISE ------------------------------------------------------------------------
-    # TODO
     for ds in DATASETS:
         srcpath = DATASETS_DIR + ds + '/'
         _, rules, _, _ = parseFiles_general(None, srcpath + RULE_FILE)
@@ -293,7 +294,7 @@ def setup_experiments():
         write_ntp_rule_template(rules, dstpath + 'rules.nlt')
 
         replace_in_file(ntpconf, [('$DATAPATH', os.path.abspath(dstpath)),
-                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/')),
+                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/INCOMPLETE_NOISE/')),
                                   ('$SYSTEMSPATH', os.path.abspath(SYSTEMS_DIR + NTP + '/')),
                                   ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds)])
         # replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
@@ -360,7 +361,7 @@ def setup_experiments():
 
 
 def experiment_1():
-    tests = [NEW]
+    tests = [EXP1]
     for test in tests:
         global DATASETS_DIR
         DATASETS_DIR = DATASETS_BASE_DIR + test + "/"
@@ -377,7 +378,7 @@ def experiment_1():
         pass
 
 def experiment_2():
-    tests = [NEW2]
+    tests = [EXP2]
     for test in tests:
         global DATASETS_DIR
         DATASETS_DIR = DATASETS_BASE_DIR + test + "/"
@@ -389,7 +390,7 @@ def experiment_2():
         DATASETS = [str(f) for f in os.listdir(DATASETS_DIR) if
                     not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
                         'test') and not str(f).startswith('README')]
-        write_run_script(test, " ".join(DATASETS))
+        write_run_script2(test, " ".join(DATASETS))
         setup_experiments()
         pass
 

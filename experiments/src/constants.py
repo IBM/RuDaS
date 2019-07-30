@@ -43,15 +43,15 @@ RELATIONS = 'relations'
 ENTITIES = 'entities'
 EVAL_SUPPORT = 'eval-support'
 EVAL_CONSEQS = 'eval-conseqs'
-NEW = 'new'
-NEW2 = 'new2'
+EXP1 = 'exp1'
+EXP2 = 'exp2'
 SIMPLE = 'simple'
 SIMPLE_OWA ='simple-owa'
 SIMPLE_CWA ='simple-cwa'
 EXISTING = 'existing'
 BINARY = 'binary'
 GENERAL = 'general'
-TEST = 'test'
+
 COMPL = '-cw'
 INCOMPL = '-ow'
 INCOMPL_N = ''
@@ -77,7 +77,7 @@ NEURAL_LP = 'Neural-LP'
 AMIE_PLUS = 'amiep'
 FOIL = 'FOIL'
 
-SYSTEMS = [NTP, NEURAL_LP, AMIE_PLUS, FOIL]
+SYSTEMS = [NEURAL_LP, AMIE_PLUS, FOIL, NTP]
 SYSTEMS2 = [FOIL]
 
 
