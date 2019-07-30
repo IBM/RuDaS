@@ -146,6 +146,16 @@ def extract_log_params(path):
     # maxarity" 2
     # test" 0.3
 
+# def print_statistics(path):
+#
+#     stats = {}
+#     for d in os.listdir(dpath):
+#         if d.startswith("."): continue
+#
+#
+#
+#     for f, l extract_log_lengths()
+
 if __name__ == '__main__':
     print("testing generator")
 
