@@ -5,6 +5,7 @@ from constants import *
 import copy
 from logic import *
 from utils import *
+from exp_utils import *
 from constants import *
 
 AMIEP_PARAMETER_list = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
@@ -22,21 +23,6 @@ def remove_aux_pred_NLP(facts):
     return origin
 
 
-
-def preprocess_FOIL(factsFile, validationFile, preprocessingFolder):
-    _, filename = os.path.split(factsFile)
-    filename = "train"
-    [facts_dict, predicates, constants] = parseFacts_general(factsFile)
-    if validationFile:
-        [facts_dict_val, predicates_val, constants_val] = parseFacts_general(validationFile)
-        facts_dict = union_dict(facts_dict, facts_dict_val)
-        for pred in predicates_val:
-            if pred not in predicates:
-                predicates.append(pred)
-        for const in constants_val:
-            if const not in constants:
-                constants.append(const)
-    convert_input_FOIL(facts_dict, predicates, constants, filename, preprocessingFolder)
 
 
 def convert(format, facts_file, rules_file=None):
@@ -61,39 +47,6 @@ def convert(format, facts_file, rules_file=None):
         convert_input_FOIL(facts, predicates, constants, filename)
     else:
         print("Unknown format: choose between FOIL and ProGol")
-
-
-def convert_input_FOIL(facts, predicates, constants, filename, preprocessingFolder):
-    file = open(preprocessingFolder+filename+"_FOIL.d", "w")
-    # writing constants
-    const_string = ""
-    for i in range(len(constants)):
-        if i>0:
-            const_string += ", "
-        const_string += constants[i]
-        if i == len(constants)-1:
-            const_string += "."
-    file.write("E: "+const_string)
-    file.write("\n\n")
-    # writing facts
-    for predicate in predicates:
-        predicate_string = predicate+"("
-        predicate_arity = facts[predicate][0].predicate.arity
-        for i in range(predicate_arity):
-            if i != 0:
-                predicate_string += ","
-            predicate_string += "E"
-        predicate_string += ")"
-        file.write(predicate_string+"\n")
-        for fact in facts[predicate]:
-            fact_string = ""
-            for j in range(predicate_arity):
-                if j != 0:
-                    fact_string += ","
-                fact_string += fact.arguments[j].name
-            file.write(fact_string+"\n")
-        file.write(".\n")
-    file.close()
 
 
 def convert_out_FOIL(results_file):
@@ -338,42 +291,6 @@ def tune_parameters(sys):
 
 
 
-
-def replace_in_file(path, replacements):
-    with open(path) as f:
-        s = f.read()
-    with open(path, 'w') as f:
-        for r in replacements:
-            s = s.replace(r[0], r[1])
-        f.write(s)
-
-
-# for fact file
-# NOTE makes only sense for binary atoms
-
-def write_ntp_rule_template(rules, dstpath):
-    terms = ['A', 'B', 'C', 'D', 'E', 'F']  #'G','H'
-    with open(dstpath , "w") as f:
-        for r in rules:  # TODO predicate printing, constants by same vars? - but make Y
-            dict = {}
-            i = 0
-            r1 = copy.deepcopy(r)
-            r1.head.predicate.name = "#"+r1.head.predicate.name.replace('p', '')
-            for t in r1.head.arguments:
-                if t.name not in dict:
-                    dict[t.name] = terms[i]
-                    i += 1
-                t.name = dict[t.name]
-            for a in r1.body:
-                a.predicate.name = "#"+a.predicate.name.replace('p', '')
-                for t in a.arguments:
-                    if t.name not in dict:
-                        dict[t.name] = terms[i]
-                        i += 1
-                    t.name = dict[t.name]
-            f.write("20 " + str(r1) + "\n")  # [0:len(str(r1)) - 1]
-
-
 def parseFiles_comma_separated(factsFile):
     facts = []
     rules = []
@@ -535,7 +452,7 @@ def converter_test():
 
 
 def test():
-    tests = [EXP1]
+    tests = [EXP2]
     for test in tests:
         global DATASETS_DIR
         DATASETS_DIR = DATASETS_BASE_DIR + test +"/"
@@ -544,7 +461,14 @@ def test():
         global OUTPUT_DIR
         OUTPUT_DIR = OUTPUT_BASE_DIR + test +"/"
         global DATASETS
-        DATASETS = ['RDG-XS-2/COMPLETE']
+        #DATASETS = ['RDG-XS-2-0/INCOMPLETE_NOISE']
+        DATASETS = []
+        datasets = [str(f) for f in os.listdir(DATASETS_DIR) if
+                    not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
+                        'test') and not str(f).startswith('README') and str(f) == "CHAIN-XS-2-0"]
+        for dd in datasets:
+
+            DATASETS.append(dd + "/INCOMPLETE_NOISE")
         convert_systems_output()
         evaluate_systems()
 
@@ -558,9 +482,14 @@ def experiments_1_evaluation():
         global OUTPUT_DIR
         OUTPUT_DIR = OUTPUT_BASE_DIR + test
         global DATASETS
-        DATASETS = [str(f) for f in os.listdir(DATASETS_DIR) if
+        DATASETS = []
+        datasets = [str(f) for f in os.listdir(DATASETS_DIR) if
                     not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
                         'test') and not str(f).startswith('README')]
+        for dd in datasets:
+            DATASETS.append(dd+"/COMPLETE")
+            DATASETS.append(dd+"/INCOMPLETE")
+            DATASETS.append(dd+"/INCOMPLETE_NOISE")
         convert_systems_output()
         evaluate_systems()
 
@@ -574,9 +503,11 @@ def experiments_2_evaluation():
         global OUTPUT_DIR
         OUTPUT_DIR = OUTPUT_BASE_DIR + test
         global DATASETS
-        DATASETS = [str(f) for f in os.listdir(DATASETS_DIR) if
+        datasets = [str(f) for f in os.listdir(DATASETS_DIR) if
                     not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
-                        'test') and not str(f).startswith('README')]
+                        'test') and not str(f).startswith('README') ]
+        for dd in datasets:
+            DATASETS.append(dd + "/INCOMPLETE_NOISE")
         convert_systems_output()
         evaluate_systems()
 

@@ -208,7 +208,7 @@ def setup_experiments():
         replace_in_file(ntpconf, [('$DATAPATH', os.path.abspath(dstpath)),
                                   ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/INCOMPLETE/')),
                                   ('$SYSTEMSPATH', os.path.abspath(SYSTEMS_DIR + NTP + '/')),
-                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds)])
+                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + '/INCOMPLETE')])
         # replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
         #                 [('./out/', os.path.abspath(OUTPUT_DIR + NTP + '/')+ '/')]) # we have to change the code here :(
 
@@ -296,7 +296,7 @@ def setup_experiments():
         replace_in_file(ntpconf, [('$DATAPATH', os.path.abspath(dstpath)),
                                   ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/INCOMPLETE_NOISE/')),
                                   ('$SYSTEMSPATH', os.path.abspath(SYSTEMS_DIR + NTP + '/')),
-                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds)])
+                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + '/INCOMPLETE_NOISE')])
         # replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
         #                 [('./out/', os.path.abspath(OUTPUT_DIR + NTP + '/')+ '/')]) # we have to change the code here :(
 

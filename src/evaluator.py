@@ -118,14 +118,20 @@ class Evaluator(object):
             file.write("Herbrant distance:\t"+str(self.herbrand_distance)+"\n")
             file.write("Herbrant accuracy (classic normalization):\t"+str(self.herbrand_accuracy)+"\n")
             file.write("Hscore (Herbrant score: new normalization):\t"+str(self.herbrand_score)+"\n")
-        if self.accuracy:
+        if self.accuracy is not None:
             file.write("Accuracy:\t"+str(self.accuracy)+"\n")
-        if self.precision: #=standard accuracy
+        if self.precision is not None: #=standard accuracy
             file.write("Precision:\t"+str(self.precision)+"\n")
-        if self.recall:
+        if self.recall is not None:
             file.write("Recall:\t"+str(self.recall)+"\n")
-        if self.f1score:
+        if self.f1score is not None:
             file.write("F1score:\t"+str(self.f1score)+"\n")
+        if self.fpfntptn:
+            file.write("==================================================================\n")
+            file.write("TP:\t"+str(self.num_tp)+"\n")
+            file.write("TN:\t"+str(self.num_tn)+"\n")
+            file.write("FP:\t"+str(self.num_fp)+"\n")
+            file.write("FN:\t"+str(self.num_fn)+"\n")
         file.close()
 
     def compute_fpfntptn(self, predicates):
@@ -202,12 +208,13 @@ class Evaluator(object):
     def compute_accuracy(self):
         self.compute_predicate_list()
         self.compute_fpfntptn(self.original_logic_program.predicates_list)
-        self.accuracy = (self.num_tp + self.num_tn) / (self.num_tp + self.num_fp + self.num_fp + self.num_fn)
+        self.accuracy = (self.num_tp + self.num_tn) / (self.num_tp + self.num_tn + self.num_fp + self.num_fn)
 
     def compute_recall(self):
         self.compute_predicate_list()
         self.compute_fpfntptn(self.original_logic_program.predicates_list)
         self.recall = self.num_tp / (self.num_tp + self.num_fn)
+
 
     def compute_f1score(self):
         self.compute_predicate_list()
@@ -216,7 +223,12 @@ class Evaluator(object):
             self.compute_precision()
         if not self.recall:
             self.compute_recall()
-        self.f1score = (2 * self.recall * self.precision) / (self.recall + self.precision)
+        if  self.num_tp != 0.0:
+            self.f1score = (2 * self.recall * self.precision) / (self.recall + self.precision)
+        else:
+            self.f1score = 0.0
+        # f1score_check = (2 * self.num_tp) / ((2 * self.num_tp) + self.num_fn + self.num_fp)
+
 
     def compute_predicate_list(self):
         if self.original_logic_program.predicates_list == []:
