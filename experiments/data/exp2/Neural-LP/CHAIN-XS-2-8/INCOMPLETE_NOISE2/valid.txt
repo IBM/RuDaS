@@ -1,0 +1,13 @@
+c12	p8	c6
+c45	p8	c21
+c8	p0	c86
+c39	p0	c43
+c82	p0	c16
+c86	p6	c8
+c91	p6	c47
+c91	p1	c47
+c59	p8	c60
+c8	p8	c86
+c35	p1	c29
+c22	p1	c42
+c48	p8	c58

@@ -1,0 +1,14 @@
+c52	p8	c43
+c65	p3	c61
+c52	p8	c62
+c64	p8	c64
+c6	p8	c27
+c64	p8	c26
+c65	p9	c61
+c54	p8	c17
+c53	p8	c17
+c52	p8	c27
+c22	p8	c28
+c26	p2	c26
+c17	p5	c17
+c54	p8	c62

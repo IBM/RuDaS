@@ -1,0 +1,12 @@
+c32	p7	c20
+c33	p7	c0
+c19	p10	c66
+c86	p9	c80
+c23	p10	c64
+c0	p7	c66
+c21	p7	c48
+c0	p7	c20
+c0	p7	c0
+c33	p7	c54
+c61	p1	c0
+c37	p1	c33

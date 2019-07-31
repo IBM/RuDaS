@@ -1,0 +1,10 @@
+c30	p4	c24
+c7	p2	c8
+c4	p10	c36
+c1	p7	c36
+c10	p0	c1
+c63	p5	c22
+c32	p5	c6
+c40	p7	c22
+c58	p7	c12
+c13	p4	c62

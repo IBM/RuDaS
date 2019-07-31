@@ -191,11 +191,8 @@ def convert_out_ntp(log_file, parameter=NTP_PARAMETER):
     for line in log_lines:
         if "Writing induced logic program to" in line:
             results_file = line.split(' ')[-1].replace("\n", "")
-            #results_file = ".."+results_file.split("experiments")[1]
-            p = os.getcwd()
-            results_file = "../run_scripts"+results_file[1:]
-    # move folder in output folder
-    # TODO: fix this!!!
+            results_file = results_file.split("out/")[1]
+            results_file = '../output/exp1/ntp/' + results_file
     rules = []
     if results_file:
         with open(results_file, 'r') as file:
@@ -452,7 +449,7 @@ def converter_test():
 
 
 def test():
-    tests = [EXP2]
+    tests = [EXP1]
     for test in tests:
         global DATASETS_DIR
         DATASETS_DIR = DATASETS_BASE_DIR + test +"/"
@@ -461,14 +458,13 @@ def test():
         global OUTPUT_DIR
         OUTPUT_DIR = OUTPUT_BASE_DIR + test +"/"
         global DATASETS
-        #DATASETS = ['RDG-XS-2-0/INCOMPLETE_NOISE']
-        DATASETS = []
-        datasets = [str(f) for f in os.listdir(DATASETS_DIR) if
-                    not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
-                        'test') and not str(f).startswith('README') and str(f) == "CHAIN-XS-2-0"]
-        for dd in datasets:
-
-            DATASETS.append(dd + "/INCOMPLETE_NOISE")
+        DATASETS = ['RDG-XS-2-0/COMPLETE1']
+        #DATASETS = []
+        #datasets = [str(f) for f in os.listdir(DATASETS_DIR) if
+         #           not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
+         #               'test') and not str(f).startswith('README') and str(f) == "CHAIN-XS-2-0"]
+        #for dd in datasets:
+        #    DATASETS.append(dd + "/INCOMPLETE_NOISE")
         convert_systems_output()
         evaluate_systems()
 
@@ -487,9 +483,9 @@ def experiments_1_evaluation():
                     not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
                         'test') and not str(f).startswith('README')]
         for dd in datasets:
-            DATASETS.append(dd+"/COMPLETE")
-            DATASETS.append(dd+"/INCOMPLETE")
-            DATASETS.append(dd+"/INCOMPLETE_NOISE")
+            DATASETS.append(dd+"/COMPLETE1")
+            DATASETS.append(dd+"/INCOMPLETE1")
+            DATASETS.append(dd+"/INCOMPLETE_NOISE1")
         convert_systems_output()
         evaluate_systems()
 
@@ -507,17 +503,18 @@ def experiments_2_evaluation():
                     not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
                         'test') and not str(f).startswith('README') ]
         for dd in datasets:
-            DATASETS.append(dd + "/INCOMPLETE_NOISE")
+            DATASETS.append(dd + "/INCOMPLETE_NOISE2")
         convert_systems_output()
         evaluate_systems()
 
 
 
 if __name__ == '__main__':
-    test()
+    #test()
     # converter_test
     # USE this for grid search of optimal parameters
     # grid_search()
     #experiments_evaluation_old()
-    #experiments_1_evaluation()
+    experiments_1_evaluation()
+    experiments_2_evaluation()
 

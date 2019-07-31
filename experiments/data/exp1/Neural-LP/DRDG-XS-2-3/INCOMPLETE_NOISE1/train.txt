@@ -1,0 +1,15 @@
+c32	p4	c39
+c36	p6	c33
+c28	p4	c56
+c27	p3	c49
+c56	p10	c12
+c28	p3	c12
+c68	p10	c43
+c12	p0	c29
+c66	p10	c46
+c2	p4	c56
+c68	p9	c20
+c53	p9	c63
+c56	p9	c1
+c1	p7	c3
+c13	p4	c2

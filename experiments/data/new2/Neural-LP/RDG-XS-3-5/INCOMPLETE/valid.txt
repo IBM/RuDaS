@@ -1,9 +1,0 @@
-c23	p6	c11
-c8	p9	c15
-c15	p7	c37
-c35	p9	c23
-c8	p7	c8
-c34	p7	c8
-c35	p7	c56
-c56	p9	c56
-c15	p3	c1

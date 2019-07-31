@@ -1,0 +1,15 @@
+c100	p2	c15
+c86	p2	c15
+c2	p2	c2
+c55	p6	c25
+c84	p5	c25
+c25	p9	c8
+c0	p2	c2
+c46	p9	c13
+c100	p2	c68
+c8	p6	c25
+c13	p2	c112
+c83	p9	c24
+c83	p6	c2
+c46	p9	c24
+c8	p2	c5

@@ -21,6 +21,8 @@ echo "Running ntp..."
 source activate $SYSTEM
 export PYTHONPATH=$PYTHONPATH:$SYSDIR/$SYSTEM
 python $SYSDIR/$SYSTEM/ntp/experiments/learn.py $DATA/$SYSTEM/$NAME/run.conf > $DIR/../output/$TESTS/$SYSTEM/$NAME/log.txt 2> $DIR/../output/$TESTS/$SYSTEM/$NAME/err.txt
+mv out/$NAME/* $DIR/../output/$TESTS/$SYSTEM/$NAME/
+rm -r out/$NAME
 echo "done."
 
 SYSTEM=amiep

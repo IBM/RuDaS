@@ -1,0 +1,17 @@
+c33	p5	c33
+c26	p3	c96
+c16	p5	c82
+c76	p0	c58
+c16	p5	c16
+c92	p7	c12
+c16	p0	c89
+c33	p5	c72
+c76	p5	c12
+c72	p0	c29
+c82	p6	c89
+c12	p5	c12
+c41	p7	c88
+c82	p7	c67
+c33	p0	c88
+c16	p5	c72
+c76	p6	c58

@@ -1,0 +1,9 @@
+c32	p0	c5
+c5	p6	c14
+c19	p6	c50
+c50	p3	c19
+c12	p2	c35
+c51	p2	c5
+c36	p7	c31
+c7	p0	c21
+c39	p0	c4

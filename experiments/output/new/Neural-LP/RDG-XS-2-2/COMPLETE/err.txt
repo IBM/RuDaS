@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/anaconda3/envs/Neural-LP/lib/python2.7/encodings/__init__.py", line 32, in <module>
-    from encodings import aliases
-  File "/anaconda3/envs/Neural-LP/lib/python2.7/encodings/aliases.py", line 17, in <module>
-    """
-KeyboardInterrupt

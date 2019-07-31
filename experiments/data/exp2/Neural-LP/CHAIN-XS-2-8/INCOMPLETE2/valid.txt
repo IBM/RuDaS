@@ -1,0 +1,14 @@
+c4	p2	c65
+c83	p2	c75
+c40	p1	c46
+c97	p0	c16
+c39	p0	c43
+c81	p6	c47
+c47	p0	c81
+c65	p1	c60
+c70	p0	c92
+c82	p0	c16
+c65	p6	c60
+c83	p6	c75
+c43	p1	c39
+c90	p8	c56

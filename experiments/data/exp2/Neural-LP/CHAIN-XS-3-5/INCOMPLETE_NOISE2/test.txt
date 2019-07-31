@@ -1,0 +1,16 @@
+c79	p9	c30
+c32	p0	c4
+c32	p0	c22
+c75	p0	c24
+c59	p0	c79
+c32	p9	c22
+c32	p0	c79
+c32	p9	c37
+c10	p0	c22
+c27	p0	c37
+c27	p0	c49
+c32	p9	c49
+c32	p0	c37
+c10	p0	c79
+c32	p0	c49
+c75	p0	c4

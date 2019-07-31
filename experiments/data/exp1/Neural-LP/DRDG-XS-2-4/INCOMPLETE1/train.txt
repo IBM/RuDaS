@@ -1,0 +1,13 @@
+c47	p9	c19
+c21	p9	c46
+c48	p5	c35
+c48	p6	c8
+c63	p9	c48
+c13	p9	c48
+c39	p6	c38
+c29	p1	c21
+c45	p6	c63
+c47	p9	c63
+c48	p6	c47
+c3	p6	c19
+c61	p9	c23

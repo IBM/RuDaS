@@ -1,0 +1,17 @@
+c81	p0	c45
+c11	p0	c80
+c51	p7	c51
+c11	p0	c72
+c32	p0	c3
+c62	p5	c11
+c81	p7	c81
+c11	p7	c11
+c81	p0	c72
+c87	p0	c72
+c67	p6	c12
+c32	p0	c45
+c32	p0	c83
+c32	p0	c66
+c87	p0	c45
+c80	p6	c72
+c64	p6	c90

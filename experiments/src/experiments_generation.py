@@ -10,18 +10,17 @@ from exp_utils import *
 
 def write_run_script(test_name, datasets_string):
     p = os.getcwd() + "/../run_scripts/run_template_1.sh"
-    print(p)
     with open(p, 'r') as f:#./run_scripts/run_template_1.sh '/Users/veronika.thost/Desktop/git/RuDaS/experiments/run_scripts/run_template_1.sh'
         ls = f.readlines()
     datasets_complete = ""
     for dataset in datasets_string.split(" "):
-        datasets_complete += dataset+"/COMPLETE "
+        datasets_complete += dataset+"/COMPLETE1 "
     datasets_incomplete = ""
     for dataset in datasets_string.split(" "):
-        datasets_incomplete += dataset + "/INCOMPLETE "
+        datasets_incomplete += dataset + "/INCOMPLETE1 "
     datasets_incomplete_noise = ""
     for dataset in datasets_string.split(" "):
-        datasets_incomplete_noise += dataset + "/INCOMPLETE_NOISE "
+        datasets_incomplete_noise += dataset + "/INCOMPLETE_NOISE1 "
     # COMPLETE
     with open(os.getcwd() +'/../run_scripts/run_'+test_name+'_complete.sh', 'w') as f:
         f.writelines(ls[0:2])
@@ -46,7 +45,7 @@ def write_run_script2(test_name, datasets_string):
     print(p)
     datasets_incomplete_noise = ""
     for dataset in datasets_string.split(" "):
-        datasets_incomplete_noise += dataset + "/INCOMPLETE_NOISE "
+        datasets_incomplete_noise += dataset + "/INCOMPLETE_NOISE2 "
     with open(p, 'r') as f:#./run_scripts/run_template_2.sh '/Users/veronika.thost/Desktop/git/RuDaS/experiments/run_scripts/run_template_2.sh'
         ls = f.readlines()
     with open(os.getcwd() +'/../run_scripts/run_'+test_name+'_2.sh', 'w') as f:
@@ -74,18 +73,26 @@ def extract_validation_data(path, ext, split, valid=VALID):
         for l in ls2:
             f.write(l)
 
-def setup_experiments():
+def setup_experiments(experiment_number):
     print("setting up experiments")
     # print('datasets (copy and paste into run.sh): ', " ".join(DATASETS))
+    tag_c = '/COMPLETE1'
+    tag_i = '/INCOMPLETE1'
+    tag_in = '/INCOMPLETE_NOISE1'
+    if experiment_number == 2:
+        tag_c = '/COMPLETE2'
+        tag_i = '/INCOMPLETE2'
+        tag_in = '/INCOMPLETE_NOISE2'
+
     for s in SYSTEMS:
         for dir in [DATA_DIR, OUTPUT_DIR]:
             path = dir + s
             if os.path.exists(path):
                 shutil.rmtree(path, ignore_errors=True)
             for ds in DATASETS:
-                path1 = dir + s + '/' + ds + '/COMPLETE'
-                path2 = dir + s + '/' + ds + '/INCOMPLETE'
-                path3 = dir + s + '/' + ds + '/INCOMPLETE_NOISE'
+                path1 = dir + s + '/' + ds + tag_c
+                path2 = dir + s + '/' + ds + tag_i
+                path3 = dir + s + '/' + ds + tag_in
                 if os.path.exists(path1):
                     shutil.rmtree(path1, ignore_errors=True)
                 if os.path.exists(path2):
@@ -102,7 +109,7 @@ def setup_experiments():
         _, rules, _, _ = parseFiles_general(None, srcpath + RULE_FILE)
 
         ## ntp
-        dstpath = DATA_DIR + NTP + '/' + ds + '/COMPLETE' + '/'
+        dstpath = DATA_DIR + NTP + '/' + ds + tag_c + '/'
 
         ntpconf = dstpath + 'run.conf'
         src_dst = [('../../other/ntp.conf', ntpconf),
@@ -118,14 +125,14 @@ def setup_experiments():
         write_ntp_rule_template(rules, dstpath + 'rules.nlt')
 
         replace_in_file(ntpconf, [('$DATAPATH', os.path.abspath(dstpath)),
-                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/COMPLETE/')),
+                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + tag_c + '/')),
                                   ('$SYSTEMSPATH', os.path.abspath(SYSTEMS_DIR + NTP + '/')),
-                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + '/COMPLETE')])
+                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + tag_c)])
         #replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
         #                [('./out/', os.path.abspath(OUTPUT_DIR + NTP + '/COMPLETE') + '/')])  # we have to change the code here :(
 
         ## neural lp
-        dstpath = DATA_DIR + NEURAL_LP + '/' + ds + '/COMPLETE' + '/'
+        dstpath = DATA_DIR + NEURAL_LP + '/' + ds + tag_c + '/'
 
         trpath = dstpath + TRAIN + '.txt'
         tpath = dstpath + TEST + '.txt'
@@ -164,7 +171,7 @@ def setup_experiments():
 
         ## amiep
 
-        dstpath = DATA_DIR + AMIE_PLUS + '/' + ds + '/COMPLETE' + '/'
+        dstpath = DATA_DIR + AMIE_PLUS + '/' + ds + tag_c + '/'
 
         trpath = dstpath + TRAIN + '.txt'
         shutil.copyfile(srcpath + TRAIN_FILE_COMPLETE, trpath)
@@ -178,7 +185,7 @@ def setup_experiments():
 
 
         ## FOIL
-        dstpath_FOIL = DATA_DIR + FOIL + '/' + ds + '/COMPLETE' + '/'
+        dstpath_FOIL = DATA_DIR + FOIL + '/' + ds + tag_c + '/'
         srpath_FOIL = srcpath_FOIL + TRAIN_FILE_COMPLETE
         # vpath_FOIL = srcpath_FOIL + VALID + '.txt'
         vpath_FOIL = None
@@ -190,7 +197,7 @@ def setup_experiments():
         _, rules, _, _ = parseFiles_general(None, srcpath + RULE_FILE)
 
         ## ntp
-        dstpath = DATA_DIR + NTP + '/' + ds + '/INCOMPLETE' + '/'
+        dstpath = DATA_DIR + NTP + '/' + ds + tag_i + '/'
 
         ntpconf = dstpath + 'run.conf'
         src_dst = [('../../other/ntp.conf', ntpconf),
@@ -206,14 +213,14 @@ def setup_experiments():
         write_ntp_rule_template(rules, dstpath + 'rules.nlt')
 
         replace_in_file(ntpconf, [('$DATAPATH', os.path.abspath(dstpath)),
-                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/INCOMPLETE/')),
+                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + tag_i + '/')),
                                   ('$SYSTEMSPATH', os.path.abspath(SYSTEMS_DIR + NTP + '/')),
-                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + '/INCOMPLETE')])
+                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + tag_i)])
         # replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
         #                 [('./out/', os.path.abspath(OUTPUT_DIR + NTP + '/')+ '/')]) # we have to change the code here :(
 
         ## neural lp
-        dstpath = DATA_DIR + NEURAL_LP + '/' + ds + '/INCOMPLETE' + '/'
+        dstpath = DATA_DIR + NEURAL_LP + '/' + ds + tag_i + '/'
 
         trpath = dstpath + TRAIN + '.txt'
         tpath = dstpath + TEST + '.txt'
@@ -252,7 +259,7 @@ def setup_experiments():
 
         ## amiep
 
-        dstpath = DATA_DIR + AMIE_PLUS + '/' + ds + '/INCOMPLETE' + '/'
+        dstpath = DATA_DIR + AMIE_PLUS + '/' + ds + tag_i + '/'
 
         trpath = dstpath + TRAIN + '.txt'
         shutil.copyfile(srcpath + TRAIN_FILE_INCOMPLETE, trpath)
@@ -265,7 +272,7 @@ def setup_experiments():
         _, rules_FOIL, _, _ = parseFiles_general(None, srcpath_FOIL + RULE_FILE)
 
         ## FOIL
-        dstpath_FOIL = DATA_DIR + FOIL + '/' + ds + '/INCOMPLETE' + '/'
+        dstpath_FOIL = DATA_DIR + FOIL + '/' + ds + tag_i + '/'
         srpath_FOIL = srcpath_FOIL + TRAIN_FILE_INCOMPLETE
         # vpath_FOIL = srcpath_FOIL + VALID + '.txt'
         vpath_FOIL = None
@@ -278,7 +285,7 @@ def setup_experiments():
         _, rules, _, _ = parseFiles_general(None, srcpath + RULE_FILE)
 
         ## ntp
-        dstpath = DATA_DIR + NTP + '/' + ds + '/INCOMPLETE_NOISE' + '/'
+        dstpath = DATA_DIR + NTP + '/' + ds + tag_in + '/'
 
         ntpconf = dstpath + 'run.conf'
         src_dst = [('../../other/ntp.conf', ntpconf),
@@ -294,14 +301,14 @@ def setup_experiments():
         write_ntp_rule_template(rules, dstpath + 'rules.nlt')
 
         replace_in_file(ntpconf, [('$DATAPATH', os.path.abspath(dstpath)),
-                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + '/INCOMPLETE_NOISE/')),
+                                  ('$OUTPUTPATH', os.path.abspath(OUTPUT_DIR + NTP + '/' + ds + tag_in + '/')),
                                   ('$SYSTEMSPATH', os.path.abspath(SYSTEMS_DIR + NTP + '/')),
-                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + '/INCOMPLETE_NOISE')])
+                                  ('$TRAIN', TRAIN), ('$TEST', TEST), ('$NAME', ds + tag_in)])
         # replace_in_file(SYSTEMS_DIR + NTP + '/ntp/experiments/learn.py',
         #                 [('./out/', os.path.abspath(OUTPUT_DIR + NTP + '/')+ '/')]) # we have to change the code here :(
 
         ## neural lp
-        dstpath = DATA_DIR + NEURAL_LP + '/' + ds + '/INCOMPLETE_NOISE' + '/'
+        dstpath = DATA_DIR + NEURAL_LP + '/' + ds + tag_in + '/'
 
         trpath = dstpath + TRAIN + '.txt'
         tpath = dstpath + TEST + '.txt'
@@ -340,7 +347,7 @@ def setup_experiments():
 
         ## amiep
 
-        dstpath = DATA_DIR + AMIE_PLUS + '/' + ds + '/INCOMPLETE_NOISE' + '/'
+        dstpath = DATA_DIR + AMIE_PLUS + '/' + ds + tag_in + '/'
 
         trpath = dstpath + TRAIN + '.txt'
         shutil.copyfile(srcpath + TRAIN_FILE_INCOMPLETE_NOISE, trpath)
@@ -353,7 +360,7 @@ def setup_experiments():
         _, rules_FOIL, _, _ = parseFiles_general(None, srcpath_FOIL + RULE_FILE)
 
         ## FOIL
-        dstpath_FOIL = DATA_DIR + FOIL + '/' + ds + '/INCOMPLETE_NOISE' + '/'
+        dstpath_FOIL = DATA_DIR + FOIL + '/' + ds + tag_in + '/'
         srpath_FOIL = srcpath_FOIL + TRAIN_FILE_INCOMPLETE_NOISE
         # vpath_FOIL = srcpath_FOIL + VALID + '.txt'
         vpath_FOIL = None
@@ -374,7 +381,7 @@ def experiment_1():
                     not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
                         'test') and not str(f).startswith('README')]
         write_run_script(test, " ".join(DATASETS))
-        setup_experiments()
+        setup_experiments(1)
         pass
 
 def experiment_2():
@@ -391,8 +398,7 @@ def experiment_2():
                     not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
                         'test') and not str(f).startswith('README')]
         write_run_script2(test, " ".join(DATASETS))
-        setup_experiments()
-        pass
+        setup_experiments(2)
 
 
 def experiment_old():

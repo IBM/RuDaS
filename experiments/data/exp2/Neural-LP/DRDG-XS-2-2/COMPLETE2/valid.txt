@@ -1,0 +1,17 @@
+c37	p4	c17
+c26	p4	c14
+c17	p7	c68
+c37	p4	c14
+c51	p0	c21
+c61	p7	c25
+c17	p7	c80
+c39	p7	c25
+c56	p4	c17
+c80	p4	c17
+c80	p7	c65
+c32	p4	c61
+c61	p9	c37
+c56	p4	c14
+c47	p7	c7
+c17	p7	c26
+c39	p7	c37

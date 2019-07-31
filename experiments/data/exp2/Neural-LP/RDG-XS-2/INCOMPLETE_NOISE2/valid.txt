@@ -1,0 +1,12 @@
+c44	p0	c39
+c13	p3	c39
+c23	p3	c37
+c38	p0	c30
+c9	p3	c3
+c58	p3	c30
+c17	p3	c5
+c21	p3	c1
+c43	p3	c14
+c58	p3	c37
+c50	p10	c23
+c21	p3	c43

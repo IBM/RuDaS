@@ -1,0 +1,17 @@
+c57	p1	c16
+c69	p2	c55
+c43	p1	c54
+c60	p2	c69
+c44	p10	c57
+c42	p1	c35
+c60	p1	c31
+c45	p2	c59
+c63	p1	c22
+c23	p2	c39
+c23	p7	c54
+c42	p7	c22
+c42	p1	c31
+c58	p4	c46
+c57	p1	c22
+c60	p1	c67
+c59	p4	c45

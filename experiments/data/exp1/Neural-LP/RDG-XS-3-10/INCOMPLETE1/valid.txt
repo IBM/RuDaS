@@ -1,0 +1,9 @@
+c17	p4	c62
+c1	p3	c1
+c62	p6	c3
+c13	p3	c13
+c40	p4	c59
+c26	p5	c9
+c59	p6	c8
+c6	p3	c6
+c54	p4	c64

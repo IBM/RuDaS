@@ -1,0 +1,17 @@
+c65	p0	c58
+c35	p0	c20
+c65	p0	c14
+c65	p0	c20
+c27	p0	c5
+c35	p0	c5
+c27	p0	c77
+c31	p4	c44
+c12	p0	c45
+c27	p0	c0
+c65	p0	c53
+c45	p0	c0
+c44	p0	c5
+c35	p0	c45
+c44	p0	c14
+c12	p0	c58
+c44	p0	c77

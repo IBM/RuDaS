@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "./../systems/Neural-LP/src/main.py", line 6, in <module>
-    from model import Learner
-  File "/Users/cor/Desktop/RuDaS/experiments/systems/Neural-LP/src/model.py", line 207
-    lambda (grad, var): self._clip_if_not_None(grad, var, -5., 5.), gvs) 
-           ^
-SyntaxError: invalid syntax

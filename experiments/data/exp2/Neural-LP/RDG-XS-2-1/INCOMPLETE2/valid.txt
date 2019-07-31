@@ -1,0 +1,12 @@
+c97	p2	c8
+c80	p9	c15
+c97	p2	c80
+c78	p9	c15
+c51	p2	c78
+c78	p9	c97
+c76	p8	c76
+c54	p9	c21
+c78	p9	c37
+c73	p2	c78
+c51	p4	c0
+c55	p2	c6
