@@ -192,7 +192,10 @@ def convert_out_ntp(log_file, parameter=NTP_PARAMETER):
         if "Writing induced logic program to" in line:
             results_file = line.split(' ')[-1].replace("\n", "")
             results_file = results_file.split("out/")[1]
-            results_file = '../output/exp1/ntp/' + results_file
+            if 'exp1' in path:
+                results_file = '../output/exp1/ntp/' + results_file
+            elif 'exp2' in path:
+                results_file = '../output/exp2/ntp/' + results_file
     rules = []
     if results_file:
         with open(results_file, 'r') as file:
@@ -360,23 +363,26 @@ def evaluate_systems():
     for ds in DATASETS:
         dsData = ds.split("/")[0]
         for sys in SYSTEMS:
-            print("starting evaluation", sys, dsData)
-            outputFile = OUTPUT_DIR + sys + '/' + ds + "/evaluation.txt"
-            logFile = OUTPUT_DIR + sys + '/' + ds + "/evaluation_log"
-            original_factsFile = DATASETS_DIR + dsData + '/' + EVAL_SUPPORT_FILE
-            original_rulesFile = DATASETS_DIR + dsData + '/' + RULE_FILE
-            original_testFile = DATASETS_DIR + dsData + '/' + EVAL_CONSEQS_FILE
-            toEvaluate_factsFile = original_factsFile
-            toEvaluate_rulesFile = OUTPUT_DIR + sys + '/' + ds + "/results4eval.txt"
-            evaluator = Evaluator(original_factsFile, original_rulesFile, original_testFile, toEvaluate_factsFile, toEvaluate_rulesFile)
-            evaluator.compute_Herbrand()
-            evaluator.compute_accuracy()
-            evaluator.compute_precision()
-            evaluator.compute_recall()
-            evaluator.compute_f1score()
-            evaluator.save_results_on_file(outputFile)
-            #evaluator.save_log_on_file(logFile)
-            print("done", sys, ds)
+            try:
+                print("starting evaluation", sys, dsData)
+                outputFile = OUTPUT_DIR + sys + '/' + ds + "/evaluation.txt"
+                logFile = OUTPUT_DIR + sys + '/' + ds + "/evaluation_log"
+                original_factsFile = DATASETS_DIR + dsData + '/' + EVAL_SUPPORT_FILE
+                original_rulesFile = DATASETS_DIR + dsData + '/' + RULE_FILE
+                original_testFile = DATASETS_DIR + dsData + '/' + EVAL_CONSEQS_FILE
+                toEvaluate_factsFile = original_factsFile
+                toEvaluate_rulesFile = OUTPUT_DIR + sys + '/' + ds + "/results4eval.txt"
+                evaluator = Evaluator(original_factsFile, original_rulesFile, original_testFile, toEvaluate_factsFile, toEvaluate_rulesFile)
+                evaluator.compute_Herbrand()
+                evaluator.compute_accuracy()
+                evaluator.compute_precision()
+                evaluator.compute_recall()
+                evaluator.compute_f1score()
+                evaluator.save_results_on_file(outputFile)
+                #evaluator.save_log_on_file(logFile)
+                print("done", sys, ds)
+            except:
+                print(sys+'not evaluated on'+ds)
         print("----------done", ds)
 
 
@@ -406,7 +412,10 @@ def convert_systems_output():
         #NEURAL LP
         convert_output_neural_lp(ds)
         #NTP
-        convert_output_ntp(ds)
+        try:
+            convert_output_ntp(ds)
+        except:
+            print('ntp not evaluated on ', ds)
         #FOIL
         convert_output_FOIL(ds)
     print("done converting systems outputs.")
@@ -472,11 +481,11 @@ def experiments_1_evaluation():
     tests = [EXP1]
     for test in tests:
         global DATASETS_DIR
-        DATASETS_DIR = DATASETS_BASE_DIR + test
+        DATASETS_DIR = DATASETS_BASE_DIR + test+"/"
         global DATA_DIR
-        DATA_DIR = DATA_BASE_DIR + test
+        DATA_DIR = DATA_BASE_DIR + test+"/"
         global OUTPUT_DIR
-        OUTPUT_DIR = OUTPUT_BASE_DIR + test
+        OUTPUT_DIR = OUTPUT_BASE_DIR + test+"/"
         global DATASETS
         DATASETS = []
         datasets = [str(f) for f in os.listdir(DATASETS_DIR) if
@@ -493,12 +502,13 @@ def experiments_2_evaluation():
     tests = [EXP2]
     for test in tests:
         global DATASETS_DIR
-        DATASETS_DIR = DATASETS_BASE_DIR + test
+        DATASETS_DIR = DATASETS_BASE_DIR + test+"/"
         global DATA_DIR
-        DATA_DIR = DATA_BASE_DIR + test
+        DATA_DIR = DATA_BASE_DIR + test+"/"
         global OUTPUT_DIR
-        OUTPUT_DIR = OUTPUT_BASE_DIR + test
+        OUTPUT_DIR = OUTPUT_BASE_DIR + test+"/"
         global DATASETS
+        DATASETS = []
         datasets = [str(f) for f in os.listdir(DATASETS_DIR) if
                     not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
                         'test') and not str(f).startswith('README') ]
@@ -507,9 +517,30 @@ def experiments_2_evaluation():
         convert_systems_output()
         evaluate_systems()
 
+def evaluate_specific(experiment, datasets):
+    if experiment == 1:
+        test = EXP1
+    elif experiment == 2:
+        test = EXP2
+    global DATASETS_DIR
+    DATASETS_DIR = DATASETS_BASE_DIR + test+"/"
+    global DATA_DIR
+    DATA_DIR = DATA_BASE_DIR + test+"/"
+    global OUTPUT_DIR
+    OUTPUT_DIR = OUTPUT_BASE_DIR + test+"/"
+    global DATASETS
+    DATASETS = []
+    for dd in datasets:
+        if experiment == 1:
+            DATASETS.append(dd + "/COMPLETE1")
+            DATASETS.append(dd + "/INCOMPLETE1")
+            DATASETS.append(dd + "/INCOMPLETE_NOISE1")
+        elif experiment == 2:
+            DATASETS.append(dd + "/INCOMPLETE_NOISE2")
+    convert_systems_output()
+    evaluate_systems()
 
-
-if __name__ == '__main__':
+if __name__ == '__main__'():
     #test()
     # converter_test
     # USE this for grid search of optimal parameters
@@ -517,4 +548,6 @@ if __name__ == '__main__':
     #experiments_evaluation_old()
     experiments_1_evaluation()
     experiments_2_evaluation()
+    #data = ["CHAIN-XS-2"]
+    #evaluate_specific(2, data)
 
