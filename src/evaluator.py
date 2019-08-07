@@ -203,18 +203,26 @@ class Evaluator(object):
     def compute_precision(self):
         self.compute_predicate_list()
         self.compute_fpfntptn(self.original_logic_program.predicates_list)
-        self.precision = self.num_tp / (self.num_tp + self.num_fp)
+        if self.num_tp == 0.0:
+            self.precision = 0.0
+        else:
+            self.precision = self.num_tp / (self.num_tp + self.num_fp)
 
     def compute_accuracy(self):
         self.compute_predicate_list()
         self.compute_fpfntptn(self.original_logic_program.predicates_list)
-        self.accuracy = (self.num_tp + self.num_tn) / (self.num_tp + self.num_tn + self.num_fp + self.num_fn)
+        if self.num_tp + self.num_tn == 0.0:
+            self.accuracy = 0.0
+        else:
+            self.accuracy = (self.num_tp + self.num_tn) / (self.num_tp + self.num_tn + self.num_fp + self.num_fn)
 
     def compute_recall(self):
         self.compute_predicate_list()
         self.compute_fpfntptn(self.original_logic_program.predicates_list)
-        self.recall = self.num_tp / (self.num_tp + self.num_fn)
-
+        if self.num_tp == 0.0:
+            self.recall = 0.0
+        else:
+            self.recall = self.num_tp / (self.num_tp + self.num_fn)
 
     def compute_f1score(self):
         self.compute_predicate_list()
