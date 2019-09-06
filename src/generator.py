@@ -276,9 +276,10 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
     #######################################
 
     generated_initial = False
+    category0 = None
     while not generated_initial:
         try:
-            # signal.alarm(timeout)
+            signal.alarm(timeout)
 
             dags = []
             var_doms = []
@@ -288,6 +289,13 @@ def generate_dataset(name=None, path="../datasets/", size=DatasetSize.S, categor
             for i in range(numdags):
                 steps = maxdepth if i == 0 else random.randint(1, maxdepth)
                 category1 = category if category != DatasetCategory.MIXED else list(DatasetCategory)[random.randint(1,len(DatasetCategory)-1)]
+                if category == DatasetCategory.MIXED: # ensure second dag different from first
+                    if i == 0:
+                        category0 = category1
+                    elif i == 1:
+                        while category0 == category1:
+                            category1 = list(DatasetCategory)[random.randint(1, len(DatasetCategory) - 1)]
+
                 dags.append(generate_inference_structure(category1, target if singletarget else (preds[i] if overlap else preds[i][0]), \
                                                          preds if overlap else preds[i], constants, maxatoms, steps, maxorchild, 1))
 

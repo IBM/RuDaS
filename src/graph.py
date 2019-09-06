@@ -251,8 +251,6 @@ class InferenceStructure(object):
         allvars = []
         body = []
         for j,p in ps:
-            #TODO check below probabilities, or make get random method with \
-            #percentage parameter, and make parameter an attribute of generation
             args = [ hvs[hvps.index((j,p.name, i))] if (j,p.name, i) in hvps 
                      else hvs[random.randint(0, len(hvs)-1)] if random.randint(0, 4) == 0
                      else allvars[random.randint(0, len(allvars)-1)] if allvars != [] and random.randint(0, 3) > 0
@@ -260,9 +258,11 @@ class InferenceStructure(object):
                      else self.get_new_var() 
                      for i in range(p.arity)]
             allvars.extend([v for v in args if v not in allvars])
-            body.append(log.Atom(p, args))
+            atom = log.Atom(p, args)
+            if atom not in body:
+                body.append(atom)
 
-        return log.Rule(remove_duplicates(body), head) #TODO the set transformation does not delete duplicates :( try something else
+        return log.Rule(remove_duplicates(body), head) #TODO CHECK the set transformation does it delete duplicates?
      
     def get_predicate(self, head_predicate):
         l = [i for i in range(len(predicates))]
@@ -313,7 +313,7 @@ class InferenceStructure(object):
     #check if an atom can serve as head atom  
     #assumes that atom is a body atom in rule           
     def check_atom(self, atom, rule):
-        #TODO maybe discuss that, it could serve as head, but the constant replacement is randomly
+        #TODO could discuss that, it could serve as head, but the constant replacement is randomly
         #so it would not be sure that they are replaced. 
         #and still then the derivation would be boring because the variable's domain contains only the one constant
         #TODO or maybe accept an only constant atom here if there are no others in rule

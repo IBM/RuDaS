@@ -130,27 +130,109 @@ def extract_log_params(path):
         if "owafactor" in l or "noisefactor"  in l or "missfactor" in l or "test" in l:
             p2n[l:l.index(":")] = float(l[l.index(" ")+1:])
 
-    # category" DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
-    # mindags" 1
-    # maxdags" 1
-    # maxdepth" 3
-    # dagsupport" 3
-    # skipnode" 5
-    # owafactor" 0.3
-    # noisefactor" 0.2
-    # missfactor" 0.15
-    # targetsextra" True
-    # maxorchild" 2
-    # maxatoms" 2
-    # minarity" 2
-    # maxarity" 2
-    # test" 0.3
 
-# def print_statistics(path):
-#
-#     stats = {}
-#     for d in os.listdir(dpath):
-#         if d.startswith("."): continue
+def print_statistics(paths):
+    TYPE = "category:"
+    SIZE = "size:"
+    DEPTH = "maxdepth:"
+    keys = [
+        # "size", #DatasetSize.S
+        # "category", #DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE
+        # mindags", 1
+        # maxdags", 1
+        # "maxdepth", #2
+        # dagsupport", 3
+        # skipnode", 5
+        # "owafactor:", #0.2
+        # "noisefactor:",# 0.2
+        # "missfactor:", #0.15
+        "r",
+        "f",
+        "p",
+        "c",
+
+       # train: size, 633, predicates, 11, constants, 416""
+        # targetsextra", True
+        # maxorchild", 2
+        # maxatoms", 2
+        # minarity", 2
+        # maxarity", 2
+        # test", 0.2
+        # eval", True
+        # sizefactor1", 1.1111111111111112
+        # sizefactor2", 1.1333333333333333
+        # fixedsize", 612
+        # generatablesize", 1224
+        # mingeneratablesize", 127
+        #"numpredicates", #11
+       # "numconstants", #612
+    ]
+
+    cats = [DatasetCategory.CHAIN_RECURSIVE,DatasetCategory.ROOTED_DAG_RECURSIVE,DatasetCategory.DISJUNCTIVE_ROOTED_DAG_RECURSIVE]
+    sizes = [DatasetSize.XS,DatasetSize.S]
+    depths = ["2","3"]
+    dic = {}
+    for cat in cats:
+        dic2 = {}
+        dic[cat.name] = dic2
+        for s in sizes:
+            dic3 = {}
+            dic2[s.name] = dic3
+            for d in depths:
+                dic4 = {}
+                dic3[d] = dic4
+                for k in keys:
+                    dic4[k] = []
+
+    stats = {}
+    for path in paths:
+        for d in os.listdir(path):
+            if d.startswith("."): continue
+
+            lines = []
+            with open(path + d + "/rules.txt", "r") as file:
+                lines = file.readlines()
+            r = len(lines)
+
+            with open(path + d + "/log.txt", "r") as file:
+                lines = file.readlines()
+
+            for l in lines:
+                l = l.strip()
+
+                if TYPE in l:
+                    t = l.split(":")[1].split(".")[1].strip()
+                if SIZE in l and l[0] == "s":
+                    s = l.split(":")[1].split(".")[1].strip()
+                if DEPTH in l:
+                    d = l.split(":")[1].strip()
+
+
+                if "train:" in l:
+                    tl = l.split(",")
+                    tl = [i.strip() for i in tl]
+
+                    tmp = dic[t][s][d]
+                    tmp["r"].append(int(r))
+                    tmp["f"].append(int(tl[1]))
+                    tmp["p"].append(int(tl[3]))
+                    tmp["c"].append(int(tl[5]))
+    for k1 in dic:
+        for k2 in dic[k1]:
+            for k3 in dic[k1][k2]:
+
+                s = k1 + " "+ k2+ " " + k3 + " "
+                for k4 in dic[k1][k2][k3]:
+                    s += " & "
+                    d = dic[k1][k2][k3][k4]
+                    s += str(min(d))+"/"+str(int(round(np.average(d))))+"/"+str(max(d))
+                    # print(k1,k2,k3,k4, str(min(d))+"/"+str(int(round(np.average(d))))+"/"+str(max(d))) # ,d)
+
+                print(s)
+
+
+
+
 #
 #
 #
@@ -159,16 +241,16 @@ def extract_log_params(path):
 if __name__ == '__main__':
     print("testing generator")
 
-    dpath = "../datasets/new2/"
-    for d in os.listdir(dpath):
-        if d.startswith("."): continue
-
-        # print("\n",d)
-        path = dpath + d + "/"
-        b = test_files_present(path)
-        if not b:
-            print(d)
-        b = test_files_lengths(path)
-        if not b:
-            print("P",d)
-
+    # dpath = "../datasets/exp1/"
+    # for d in os.listdir(dpath):
+    #     if d.startswith("."): continue
+    #
+    #     # print("\n",d)
+    #     path = dpath + d + "/"
+    #     b = test_files_present(path)
+    #     if not b:
+    #         print(d)
+    #     b = test_files_lengths(path)
+    #     if not b:
+    #         print("P",d)
+    print_statistics(["../datasets/exp1/","../datasets/exp2/"])
