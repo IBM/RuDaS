@@ -1,0 +1,93 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p5
+
+Relation p4
+
+Relation p1
+
+Relation p3
+
+Relation p0
+
+Relation p7
+
+----------
+p1:
+
+p1(A,B) :- p3(B,A).
+
+Time 0.1 secs
+
+----------
+p3:
+
+p3(A,B) :- p1(B,A).
+
+Time 0.2 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 27 tuples in the relation
+
+p5(A,B) :- p1(A,B), p7(B,C), p1(D,A).
+p5(A,B) :- p1(A,B), p7(B,C), p7(D,B).
+p5(A,B) :- p1(A,B), p7(B,C), p4(A,D).
+p5(A,B) :- p1(A,B), p7(B,C), p7(D,A).
+p5(A,B) :- p1(A,B), p7(B,C), p7(C,D), p1(E,D).
+p5(A,B) :- p1(A,B), p7(B,C), p5(B,D).
+
+Time 31.5 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  does not cover 69 tuples in the relation
+
+
+Time 32.1 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  matches 14 tuples not in the relation
+
+p4(A,B) :- p0(A,C), p1(C,B).
+
+Time 33.9 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 31 tuples in the relation
+
+p0(A,B) :- p4(A,C), p1(B,C), p4(D,A), p1(D,E).
+p0(A,B) :- p4(A,C), p1(B,C), p4(D,B), p1(E,D).
+p0(A,B) :- p4(A,C), p1(B,C), p7(D,C).
+p0(A,B) :- p4(A,C), p1(B,C), p1(D,B), p7(E,A).
+p0(A,B) :- p4(A,C), p1(B,C), p5(D,A), p1(E,B).
+p0(A,B) :- p4(A,C), p1(B,C), p7(A,D), p1(D,E).
+p0(A,B) :- p4(A,C), p1(B,C), p7(D,B), p7(E,A).
+p0(A,B) :- p4(A,C), p1(B,C), p1(A,D), p4(E,D).
+p0(A,B) :- p4(A,C), p1(B,C), p5(D,A), p7(E,A).
+p0(A,B) :- p4(A,C), p1(B,C), p4(D,B), p5(B,E).
+p0(A,B) :- p4(A,C), p1(B,C), p5(A,D), p5(B,E).
+p0(A,B) :- p4(A,C), p1(B,C), p7(D,B), p1(E,B).
+p0(A,B) :- p4(A,C), p1(B,C), p7(A,D), p4(D,E).
+p0(A,B) :- p4(A,C), p1(B,C), p1(D,B), p1(E,D).
+p0(A,B) :- p4(A,C), p1(B,C), p5(C,D), p1(D,E).
+p0(A,B) :- p4(A,C), p1(B,C), p5(A,D), p7(D,E), p1(E,F).
+p0(A,B) :- p4(A,C), p1(B,C), p0(C,D).
+
+Time 36.1 secs

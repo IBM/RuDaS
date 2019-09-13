@@ -1,0 +1,11 @@
+p6(A,B) :- p7(B,A).
+p6(A,B) :- p3(A,B).
+p7(A,B) :- p9(A,B).
+p7(A,B) :- p6(B,A).
+p7(A,B) :- p3(B,A).
+p9(A,B) :- p7(A,B).
+p9(A,B) :- p3(B,A).
+p3(A,B) :- p9(B,A).
+p3(A,B) :- p7(B,A).
+p7(A,B) :- p3(B,A),p9(A,B).
+p3(A,B) :- p7(B,A),p9(B,A).

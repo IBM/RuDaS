@@ -1,0 +1,35 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	maximum 200000 tuples 
+	no negated literals
+
+Relation p3
+
+Relation p9
+
+Relation p10
+
+Relation p6
+
+Relation p2
+
+Relation p8
+
+Relation p1
+
+Relation p5
+
+Relation p0
+
+Relation p7
+
+Relation p4
+
+----------
+p3:
+Training Set Size will exceed tuple limit: 237169 > 200000
+Rerun with larger MAXTUPLES to proceed further
+(or use smaller sample of negative tuples).

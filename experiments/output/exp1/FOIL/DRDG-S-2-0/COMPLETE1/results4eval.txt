@@ -1,0 +1,12 @@
+p7(A,B) :- p3(B,A).
+
+p3(A,B) :- p7(B,A).
+
+p9(A,B) :- p7(A,B), p7(A,A).
+
+p9(A,B) :- p7(A,B), p6(C,B), p6(D,C), p6(E,D).
+
+p9(A,B) :- p7(A,B), p7(B,C), p6(D,C), p6(E,D), p6(F,B).
+
+p9(A,B) :- p7(A,B), p7(B,C), p7(C,D), p6(E,D), p7(D,F), p7(G,C), p6(C,G).
+

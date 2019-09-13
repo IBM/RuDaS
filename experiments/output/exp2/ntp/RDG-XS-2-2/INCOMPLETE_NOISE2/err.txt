@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "../systems/ntp/ntp/experiments/learn.py", line 1, in <module>
+    from ntp.kb import Atom, load_from_file, normalize
+ModuleNotFoundError: No module named 'ntp'

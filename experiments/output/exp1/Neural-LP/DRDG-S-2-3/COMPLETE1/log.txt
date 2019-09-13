@@ -1,0 +1,58 @@
+Epoch 1 mode train Loss 7.2922 In top 0.9099. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode valid Loss 8.1943 In top 0.9127. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode test Loss 1.7174 In top 0.9956. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode train Loss 7.0466 In top 0.9249. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 2 mode valid Loss 7.9879 In top 0.9307. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 2 mode test Loss 1.6208 In top 0.9978. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode train Loss 6.8783 In top 0.9292. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode valid Loss 7.8479 In top 0.9398. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode test Loss 1.5597 In top 0.9978. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode train Loss 6.7698 In top 0.9335. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode valid Loss 7.7554 In top 0.9428. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode test Loss 1.5241 In top 0.9956. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 5 mode train Loss 6.6965 In top 0.9399. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 5 mode valid Loss 7.6854 In top 0.9458. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 5 mode test Loss 1.5020 In top 0.9934. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode train Loss 6.6372 In top 0.9421. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode valid Loss 7.6219 In top 0.9488. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode test Loss 1.4859 In top 0.9934. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode train Loss 6.5796 In top 0.9549. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode valid Loss 7.5558 In top 0.9488. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode test Loss 1.4720 In top 0.9934. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 8 mode train Loss 6.5154 In top 0.9592. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 8 mode valid Loss 7.4790 In top 0.9548. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 8 mode test Loss 1.4569 In top 0.9934. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 9 mode train Loss 6.4373 In top 0.9635. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 9 mode valid Loss 7.3871 In top 0.9578. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 9 mode test Loss 1.4368 In top 0.9956. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 10 mode train Loss 6.3459 In top 0.9657. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 10 mode valid Loss 7.2863 In top 0.9578. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 10 mode test Loss 1.4104 In top 0.9956. Time elapsed 0.01 hrs (0.4 mins)
+Best test in top: 0.9978 at epoch 2.
+Test in top 0.9956
+Test predictions written. Time elapsed 0.01 hrs (0.4 mins)
+Attentions collected. Time elapsed 0.01 hrs (0.4 mins)
+
+Rules listed and printed. Time elapsed 0.01 hrs (0.4 mins)
+7
+1/4	2/4	3/4	4/4	Epoch 8 mode train Loss 6.5154 In top 0.9592. Time elapsed 0.00 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 8 mode valid Loss 7.4790 In top 0.9548. Time elapsed 0.00 hrs (0.3 mins)
+1/4	2/4	3/4	4/4	Epoch 8 mode test Loss 1.4569 In top 0.9934. Time elapsed 0.00 hrs (0.3 mins)
+Model saved at ./../output/exp1/Neural-LP/DRDG-S-2-3/COMPLETE1/ckpt/model-8
+1/4	2/4	3/4	4/4	Epoch 9 mode train Loss 6.4373 In top 0.9635. Time elapsed 0.01 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 9 mode valid Loss 7.3871 In top 0.9578. Time elapsed 0.01 hrs (0.3 mins)
+1/4	2/4	3/4	4/4	Epoch 9 mode test Loss 1.4368 In top 0.9956. Time elapsed 0.01 hrs (0.3 mins)
+Model saved at ./../output/exp1/Neural-LP/DRDG-S-2-3/COMPLETE1/ckpt/model-9
+1/4	2/4	3/4	4/4	Epoch 10 mode train Loss 6.3459 In top 0.9657. Time elapsed 0.01 hrs (0.4 mins)
+1/3	2/3	3/3	Epoch 10 mode valid Loss 7.2863 In top 0.9578. Time elapsed 0.01 hrs (0.4 mins)
+1/4	2/4	3/4	4/4	Epoch 10 mode test Loss 1.4104 In top 0.9956. Time elapsed 0.01 hrs (0.4 mins)
+Model saved at ./../output/exp1/Neural-LP/DRDG-S-2-3/COMPLETE1/ckpt/model-10
+Best test in top: 0.9978 at epoch 2.
+Start getting test predictions...
+1/4	2/4	3/4	4/4	Test in top 0.9956
+Test predictions written. Time elapsed 0.01 hrs (0.4 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.01 hrs (0.4 mins)
+1/12	3/12	5/12	7/12	9/12	11/12	
+Rules listed and printed. Time elapsed 0.01 hrs (0.4 mins)
+====================================Finish====================================

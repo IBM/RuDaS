@@ -1,0 +1,40 @@
+p7(A,B) :- p8(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p1(A,B) :- p8(B,A).
+p7(A,B) :- p7(B,A).
+p1(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p7(A,B) :- p7(B,A).
+p1(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p1(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p8(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p1(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).
+p7(A,B) :- p7(C,A), p7(A,B).

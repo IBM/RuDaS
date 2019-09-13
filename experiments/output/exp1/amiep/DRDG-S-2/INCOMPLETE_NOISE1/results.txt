@@ -1,0 +1,32 @@
+Loading files... 
+  Starting train.txt
+  Finished train.txt, still running: 0
+Loaded 633 facts in 43 ms using -2 MB
+Using HeadCoverage as pruning metric with minimum threshold 0.01
+Using recursivity limit 3
+Default mining assistant that defines support by counting support on both head variables
+No minimum threshold on standard confidence
+Filtering on PCA confidence with minimum threshold 0.25
+Constants in the arguments of relations are disabled
+Lossless (query refinement) heuristics enabled
+Starting the mining phase... Using 8 threads
+Rule	Head Coverage	Std Confidence	PCA Confidence	Positive Examples	Body size	PCA Body size	Functional variable	Std. Lower Bound	PCA Lower Bound	PCA Conf estimation
+?b  p5  ?a   => ?a  p3  ?b	0.31292517	0.657142857	0.93877551	46	70	49	?b	0.0	0.0	0.0
+?b  p1  ?a   => ?a  p3  ?b	0.741496599	0.641176471	0.886178862	109	170	123	?b	0.0	0.0	0.0
+?a  p1  ?b   => ?a  p5  ?b	0.728571429	0.3	0.822580645	51	170	62	?b	0.0	0.0	0.0
+?b  p3  ?a   => ?a  p5  ?b	0.657142857	0.31292517	0.821428571	46	147	56	?b	0.0	0.0	0.0
+?a  p5  ?b   => ?a  p1  ?b	0.3	0.728571429	0.927272727	51	70	55	?b	0.0	0.0	0.0
+?b  p3  ?a   => ?a  p1  ?b	0.641176471	0.741496599	0.886178862	109	147	123	?b	0.0	0.0	0.0
+?b  p1  ?a  ?b  p5  ?a   => ?a  p3  ?b	0.25170068	0.725490196	0.948717949	37	51	39	?b	0.0	0.0	0.0
+?e  p0  ?b  ?e  p4  ?a   => ?a  p3  ?b	0.346938776	0.80952381	0.894736842	51	63	57	?b	0.0	0.0	0.0
+?a  p0  ?f  ?b  p3  ?f   => ?a  p4  ?b	0.692307692	0.692307692	0.803571429	45	65	56	?a	0.0	0.0	0.0
+?a  p0  ?f  ?f  p1  ?b   => ?a  p4  ?b	0.6	0.661016949	0.8125	39	59	48	?a	0.0	0.0	0.0
+?b  p3  ?a  ?a  p5  ?b   => ?a  p1  ?b	0.217647059	0.804347826	0.948717949	37	46	39	?b	0.0	0.0	0.0
+?a  p1  ?b  ?b  p3  ?a   => ?a  p5  ?b	0.528571429	0.339449541	0.860465116	37	109	43	?b	0.0	0.0	0.0
+?f  p1  ?b  ?a  p4  ?f   => ?a  p0  ?b	0.014285714	0.047619048	0.25	1	21	4	?b	0.0	0.0	0.0
+?f  p3  ?b  ?a  p4  ?f   => ?a  p0  ?b	0.642857143	0.642857143	0.849056604	45	70	53	?b	0.0	0.0	0.0
+?b  p1  ?f  ?a  p4  ?f   => ?a  p0  ?b	0.557142857	0.582089552	0.847826087	39	67	46	?b	0.0	0.0	0.0
+?e  p0  ?a  ?e  p4  ?b   => ?a  p1  ?b	0.264705882	0.714285714	0.833333333	45	63	54	?b	0.0	0.0	0.0
+Mining done in 0.54 s
+Total time 0.59 s
+16 rules mined.

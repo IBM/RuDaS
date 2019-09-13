@@ -1,0 +1,58 @@
+Epoch 1 mode train Loss 12.4275 In top 0.5879. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode valid Loss 11.9583 In top 0.6525. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode test Loss 5.9946 In top 0.5641. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode train Loss 12.3092 In top 0.6482. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 2 mode valid Loss 11.8746 In top 0.6809. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 2 mode test Loss 5.8979 In top 0.5801. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode train Loss 12.2238 In top 0.6784. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode valid Loss 11.8103 In top 0.7057. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode test Loss 5.8262 In top 0.6010. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode train Loss 12.1593 In top 0.6960. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode valid Loss 11.7604 In top 0.7163. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode test Loss 5.7723 In top 0.6154. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 5 mode train Loss 12.1092 In top 0.7010. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 5 mode valid Loss 11.7191 In top 0.7128. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 5 mode test Loss 5.7285 In top 0.6106. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode train Loss 12.0674 In top 0.6960. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode valid Loss 11.6829 In top 0.7199. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode test Loss 5.6904 In top 0.6010. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode train Loss 12.0311 In top 0.6809. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode valid Loss 11.6492 In top 0.7163. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode test Loss 5.6560 In top 0.6202. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 8 mode train Loss 11.9962 In top 0.6834. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 8 mode valid Loss 11.6133 In top 0.7021. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 8 mode test Loss 5.6202 In top 0.6042. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 9 mode train Loss 11.9561 In top 0.6809. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 9 mode valid Loss 11.5701 In top 0.7163. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 9 mode test Loss 5.5756 In top 0.6042. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 10 mode train Loss 11.9064 In top 0.6935. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 10 mode valid Loss 11.5164 In top 0.7340. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 10 mode test Loss 5.5161 In top 0.6058. Time elapsed 0.01 hrs (0.3 mins)
+Best test in top: 0.6202 at epoch 7.
+Test in top 0.6058
+Test predictions written. Time elapsed 0.01 hrs (0.4 mins)
+Attentions collected. Time elapsed 0.01 hrs (0.4 mins)
+
+Rules listed and printed. Time elapsed 0.01 hrs (0.4 mins)
+d at ./../output/exp2/Neural-LP/RDG-S-3-2/INCOMPLETE_NOISE2/ckpt/model-7
+1/4	2/4	3/4	4/4	Epoch 8 mode train Loss 11.9962 In top 0.6834. Time elapsed 0.00 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 8 mode valid Loss 11.6133 In top 0.7021. Time elapsed 0.00 hrs (0.3 mins)
+1/5	2/5	3/5	4/5	5/5	Epoch 8 mode test Loss 5.6202 In top 0.6042. Time elapsed 0.00 hrs (0.3 mins)
+Model saved at ./../output/exp2/Neural-LP/RDG-S-3-2/INCOMPLETE_NOISE2/ckpt/model-8
+1/4	2/4	3/4	4/4	Epoch 9 mode train Loss 11.9561 In top 0.6809. Time elapsed 0.00 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 9 mode valid Loss 11.5701 In top 0.7163. Time elapsed 0.00 hrs (0.3 mins)
+1/5	2/5	3/5	4/5	5/5	Epoch 9 mode test Loss 5.5756 In top 0.6042. Time elapsed 0.01 hrs (0.3 mins)
+Model saved at ./../output/exp2/Neural-LP/RDG-S-3-2/INCOMPLETE_NOISE2/ckpt/model-9
+1/4	2/4	3/4	4/4	Epoch 10 mode train Loss 11.9064 In top 0.6935. Time elapsed 0.01 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 10 mode valid Loss 11.5164 In top 0.7340. Time elapsed 0.01 hrs (0.3 mins)
+1/5	2/5	3/5	4/5	5/5	Epoch 10 mode test Loss 5.5161 In top 0.6058. Time elapsed 0.01 hrs (0.3 mins)
+Model saved at ./../output/exp2/Neural-LP/RDG-S-3-2/INCOMPLETE_NOISE2/ckpt/model-10
+Best test in top: 0.6202 at epoch 7.
+Start getting test predictions...
+1/5	2/5	3/5	4/5	5/5	Test in top 0.6058
+Test predictions written. Time elapsed 0.01 hrs (0.4 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.01 hrs (0.4 mins)
+3/22	7/22	11/22	15/22	19/22	
+Rules listed and printed. Time elapsed 0.01 hrs (0.4 mins)
+====================================Finish====================================

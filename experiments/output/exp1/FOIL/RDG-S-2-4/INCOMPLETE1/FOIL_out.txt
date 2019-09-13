@@ -1,0 +1,108 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	maximum 200000 tuples 
+	no negated literals
+
+Relation p8
+
+Relation p7
+
+Relation p1
+
+Relation p5
+
+Relation p0
+
+Relation p2
+
+Relation p4
+
+----------
+p8:
+
+***  Warning: the following definition
+***  matches 3 tuples not in the relation
+***  does not cover 172 tuples in the relation
+
+p8(A,B) :- p5(A,B), p4(A,D).
+p8(A,B) :- p5(C,B), p4(A,D), p5(B,E), p7(F,A).
+p8(A,B) :- p5(C,B), p4(A,D), p0(C,E), p7(F,D).
+p8(A,B) :- p5(C,B), p4(A,B).
+p8(A,B) :- p4(A,C), p5(B,D), p0(E,B).
+p8(A,B) :- p5(C,B), p4(A,D), p0(C,E), p0(F,D).
+p8(A,B) :- p5(C,B), p4(A,D), p0(C,E), p7(F,A).
+p8(A,B) :- p5(C,B), p4(A,D), p0(C,E), p4(F,A).
+p8(A,B) :- p5(C,B), p4(A,D), p0(E,C), p7(F,D).
+p8(A,B) :- p5(C,B), p5(B,D), p8(A,D), p8(B,D).
+p8(A,B) :- p5(C,B), p4(A,D), p0(C,E), p8(D,B).
+
+Time 0.2 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 3 tuples in the relation
+
+p0(A,B) :- p2(B,A).
+p0(A,B) :- p1(B,A), p5(C,B).
+p0(A,B) :- p1(B,A), p7(A,C), p8(C,D).
+p0(A,B) :- p1(B,A), p7(A,C), p4(D,C).
+
+Time 0.3 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  does not cover 18 tuples in the relation
+
+p7(A,B) :- p1(C,A), p5(C,D), p0(B,E), p4(F,B).
+
+Time 0.4 secs
+
+----------
+p1:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+p1(A,B) :- p7(B,C), p0(B,A).
+
+Time 0.5 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 16 tuples in the relation
+
+p5(A,B) :- p8(A,A), p0(C,B), p4(D,B).
+
+Time 0.7 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  does not cover 17 tuples in the relation
+
+
+Time 0.8 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+p2(A,B) :- p0(B,A), p5(B,C).
+p2(A,B) :- p0(B,A), p8(C,A), p7(D,C), p0(D,E), p8(F,E).
+p2(A,B) :- p0(B,A), p5(C,A), p7(D,C).
+p2(A,B) :- p0(B,A), p8(C,A), p8(D,A), p4(D,E), p4(F,C), p8(D,E).
+p2(A,B) :- p0(B,A), p5(C,A), p2(C,D).
+
+Time 1.0 secs

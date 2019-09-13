@@ -1,0 +1,60 @@
+p6(A,A) :- p8(A,A).
+p2(A,A) :- p8(A,A).
+p2(A,A) :- p2(A,A).
+p6(A,A) :- p6(A,A).
+p2(A,A) :- p2(A,A).
+p2(A,A) :- p2(A,A).
+p2(A,A) :- p2(A,A).
+p2(A,A) :- p2(A,A).
+p2(A,A) :- p2(A,A).
+p2(A,A) :- p2(A,A).
+p8(A,A) :- p6(A,A).
+p8(A,A) :- p6(A,A).
+p2(A,A) :- p6(A,A).
+p2(A,A) :- p8(A,A).
+p2(A,A) :- p2(A,A).
+p2(A,A) :- p2(A,A).
+p2(A,A) :- p2(A,A).
+p8(A,A) :- p6(A,A).
+p6(A,A) :- p8(A,A).
+p2(A,A) :- p6(A,A).
+p2(A,B) :- p2(A,C), p8(B,A).
+p8(A,B) :- p6(A,C), p2(B,A).
+p2(A,B) :- p2(A,C), p2(B,A).
+p2(A,B) :- p2(A,C), p2(B,A).
+p2(A,B) :- p2(A,C), p2(B,A).
+p2(A,B) :- p6(A,C), p2(B,A).
+p2(A,B) :- p2(A,C), p2(B,A).
+p2(A,B) :- p2(A,C), p2(B,A).
+p2(A,B) :- p2(A,C), p2(B,A).
+p2(A,B) :- p6(A,C), p2(B,A).
+p6(A,B) :- p6(A,C), p6(B,A).
+p2(A,B) :- p2(A,C), p6(B,A).
+p8(A,B) :- p6(A,C), p2(B,A).
+p2(A,B) :- p2(A,C), p6(B,A).
+p2(A,B) :- p2(A,C), p6(B,A).
+p2(A,B) :- p2(A,C), p2(B,A).
+p6(A,B) :- p2(A,C), p6(B,A).
+p2(A,B) :- p2(A,C), p2(B,A).
+p2(A,B) :- p2(A,C), p6(B,A).
+p2(A,B) :- p8(A,C), p2(B,A).
+p8(A,B) :- p2(A,C), p2(B,B).
+p2(A,B) :- p2(A,C), p6(B,B).
+p2(A,B) :- p2(A,C), p8(B,B).
+p2(A,B) :- p2(A,C), p2(B,B).
+p2(A,B) :- p2(A,C), p6(B,B).
+p2(A,B) :- p2(A,C), p6(B,B).
+p8(A,B) :- p2(A,C), p8(B,B).
+p2(A,B) :- p2(A,C), p2(B,B).
+p6(A,B) :- p2(A,C), p6(B,B).
+p2(A,B) :- p2(A,C), p6(B,B).
+p2(A,B) :- p2(A,C), p2(B,B).
+p2(A,B) :- p2(A,C), p8(B,B).
+p2(A,B) :- p2(A,C), p2(B,B).
+p2(A,B) :- p2(A,C), p2(B,B).
+p2(A,B) :- p2(A,C), p2(B,B).
+p2(A,B) :- p2(A,C), p6(B,B).
+p2(A,B) :- p2(A,C), p2(B,B).
+p2(A,B) :- p2(A,C), p2(B,B).
+p2(A,B) :- p2(A,C), p6(B,B).
+p6(A,B) :- p8(A,C), p2(B,B).

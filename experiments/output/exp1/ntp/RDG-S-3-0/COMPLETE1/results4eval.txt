@@ -1,0 +1,120 @@
+p10(A,A) :- p6(A,B).
+p8(A,A) :- p6(A,B).
+p10(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p6(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p6(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p6(A,A) :- p10(A,B).
+p6(A,A) :- p10(A,B).
+p9(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p10(A,A) :- p10(A,B).
+p6(A,A) :- p6(A,B).
+p6(A,A) :- p10(A,B).
+p6(A,A) :- p10(A,B).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p10(A,B) :- p9(A,A), p6(B,C).
+p10(A,B) :- p10(A,A), p10(B,C).
+p4(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p6(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p6(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(A,B).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(C,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p8(B,C), p8(B,A).
+p8(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).
+p10(A,B) :- p10(C,A), p10(A,B).

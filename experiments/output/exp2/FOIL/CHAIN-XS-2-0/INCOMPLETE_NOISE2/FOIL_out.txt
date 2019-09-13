@@ -1,0 +1,67 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p0
+
+Relation p7
+
+Relation p5
+
+Relation p6
+
+Relation p4
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 38 tuples in the relation
+
+p0(A,A) :- p7(A,A), p6(A,C).
+p0(A,B) :- p4(B,C), p0(A,C), p0(C,C).
+p0(A,B) :- p6(C,B), p6(D,C), p0(A,D).
+p0(A,B) :- p7(B,B), p6(C,B), p0(A,C).
+
+Time 0.0 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 7 tuples in the relation
+
+p6(A,B) :- p4(B,A), p6(C,A).
+
+Time 0.0 secs
+
+----------
+p7:
+
+p7(A,A) :- p0(A,C), p0(C,D).
+
+Time 0.0 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+p4(A,B) :- p6(B,A), p6(D,B), p0(E,B).
+p4(A,B) :- p6(B,A), p6(D,B), p0(E,A), p6(F,E), p0(E,F).
+
+Time 0.0 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 0.0 secs

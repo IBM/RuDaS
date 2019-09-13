@@ -1,0 +1,36 @@
+Loading files... 
+  Starting train.txt
+  Finished train.txt, still running: 0
+Loaded 473 facts in 34 ms using -2 MB
+Using HeadCoverage as pruning metric with minimum threshold 0.01
+Using recursivity limit 3
+Default mining assistant that defines support by counting support on both head variables
+No minimum threshold on standard confidence
+Filtering on PCA confidence with minimum threshold 0.25
+Constants in the arguments of relations are disabled
+Lossless (query refinement) heuristics enabled
+Starting the mining phase... Using 8 threads
+Rule	Head Coverage	Std Confidence	PCA Confidence	Positive Examples	Body size	PCA Body size	Functional variable	Std. Lower Bound	PCA Lower Bound	PCA Conf estimation
+?a  p3  ?b   => ?a  p6  ?b	0.37037037	0.214285714	0.625	30	140	48	?b	0.0	0.0	0.0
+?b  p7  ?a   => ?a  p6  ?b	0.432098765	0.315315315	0.777777778	35	111	45	?b	0.0	0.0	0.0
+?b  p6  ?a   => ?a  p7  ?b	0.315315315	0.432098765	0.744680851	35	81	47	?b	0.0	0.0	0.0
+?b  p3  ?a   => ?a  p7  ?b	0.747747748	0.592857143	0.892473118	83	140	93	?b	0.0	0.0	0.0
+?a  p9  ?b   => ?a  p7  ?b	0.378378378	0.456521739	0.807692308	42	92	52	?b	0.0	0.0	0.0
+?b  p9  ?a   => ?a  p3  ?b	0.307142857	0.467391304	0.811320755	43	92	53	?a	0.0	0.0	0.0
+?b  p7  ?a   => ?a  p3  ?b	0.592857143	0.747747748	0.882978723	83	111	94	?a	0.0	0.0	0.0
+?a  p6  ?b   => ?a  p3  ?b	0.214285714	0.37037037	0.612244898	30	81	49	?a	0.0	0.0	0.0
+?a  p7  ?b   => ?a  p9  ?b	0.456521739	0.378378378	0.807692308	42	111	52	?b	0.0	0.0	0.0
+?b  p3  ?a   => ?a  p9  ?b	0.467391304	0.307142857	0.767857143	43	140	56	?b	0.0	0.0	0.0
+?b  p3  ?a  ?b  p6  ?a   => ?a  p7  ?b	0.225225225	0.833333333	0.961538462	25	30	26	?b	0.0	0.0	0.0
+?b  p3  ?a  ?a  p9  ?b   => ?a  p7  ?b	0.324324324	0.837209302	1	36	43	36	?b	0.0	0.0	0.0
+?b  p7  ?a  ?b  p9  ?a   => ?a  p3  ?b	0.257142857	0.857142857	1	36	42	36	?a	0.0	0.0	0.0
+?a  p3  ?b  ?a  p7  ?b   => ?a  p9  ?b	0.010869565	1	1	1	1	1	?b	0.0	0.0	0.0
+?b  p3  ?a  ?a  p3  ?b   => ?a  p9  ?b	0.010869565	0.5	1	1	2	1	?b	0.0	0.0	0.0
+?b  p3  ?a  ?a  p7  ?b   => ?a  p9  ?b	0.391304348	0.43373494	0.818181818	36	83	44	?b	0.0	0.0	0.0
+?a  p7  ?b  ?b  p9  ?a   => ?a  p9  ?b	0.010869565	1	1	1	1	1	?b	0.0	0.0	0.0
+?b  p3  ?a  ?b  p7  ?a   => ?a  p9  ?b	0.010869565	1	1	1	1	1	?b	0.0	0.0	0.0
+?b  p3  ?a  ?b  p9  ?a   => ?a  p9  ?b	0.010869565	0.5	1	1	2	1	?b	0.0	0.0	0.0
+?b  p7  ?a  ?a  p7  ?b   => ?a  p9  ?b	0.010869565	1	1	1	1	1	?b	0.0	0.0	0.0
+Mining done in 0.41 s
+Total time 0.45 s
+20 rules mined.

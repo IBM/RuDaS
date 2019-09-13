@@ -1,0 +1,131 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	maximum 20000000 tuples 
+	no negated literals
+
+Relation p8
+
+Relation p7
+
+Relation p1
+
+Relation p9
+
+Relation p10
+
+Relation p4
+
+Relation p2
+
+Relation p6
+
+----------
+p1:
+
+***  Warning: the following definition
+***  matches 2 tuples not in the relation
+***  does not cover 11 tuples in the relation
+
+p1(A,B) :- p8(B,C), p4(A,D), p2(A,E), p2(D,F).
+p1(A,B) :- p8(B,C), p4(A,D), p4(B,E), p7(E,B), p9(F,D).
+p1(A,B) :- p8(B,C), p4(A,D), p2(E,C), p8(F,D).
+p1(A,B) :- p8(B,C), p4(A,C).
+p1(A,B) :- p8(B,C), p2(D,A), p2(E,D).
+p1(A,B) :- p8(B,C), p4(A,B).
+p1(A,B) :- p8(B,C), p10(A,C).
+p1(A,B) :- p8(B,C), p7(D,A), p10(C,E), p10(D,F).
+p1(A,A) :- p8(A,C), p9(A,D).
+p1(A,B) :- p8(B,C), p7(D,A), p9(E,D), p2(F,E), p2(B,G).
+p1(A,B) :- p4(A,C), p2(D,B), p10(E,D), p4(D,F), p2(C,A).
+p1(A,B) :- p8(B,C), p4(A,D), p4(C,E), p8(E,D).
+p1(A,B) :- p8(B,C), p10(B,D), p2(E,A), p4(F,E), p9(F,G).
+p1(A,B) :- p2(C,B), p4(A,D), p10(E,C), p8(F,D).
+p1(A,B) :- p8(B,C), p4(A,D), p4(E,C), p10(F,A).
+p1(A,B) :- p7(C,A), p8(B,D), p4(D,E), p9(F,C).
+p1(A,B) :- p8(B,C), p4(A,D), p4(E,B), p2(D,F), p7(D,A), p9(F,D).
+p1(A,B) :- p8(B,C), p4(A,D), p2(E,C), p1(A,D).
+p1(A,B) :- p2(C,B), p4(A,D), p4(B,D), p1(B,C).
+p1(A,B) :- p2(C,B), p4(A,D), p10(E,C), p1(C,D).
+p1(A,B) :- p2(C,B), p7(D,A), p1(B,C), p1(A,A).
+
+Time 0.1 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  does not cover 6 tuples in the relation
+
+p4(A,B) :- p9(A,B).
+p4(A,B) :- p7(B,A), p10(C,A).
+p4(A,B) :- p7(B,A), p9(C,B), p1(A,C).
+p4(A,B) :- p7(B,A), p4(B,C).
+
+Time 0.1 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 8 tuples in the relation
+
+p2(A,B) :- p7(A,B), p10(A,C).
+p2(A,B) :- p1(B,B), p9(B,A).
+p2(A,B) :- p7(A,B), p6(C,B).
+
+Time 0.1 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  matches 1 tuple not in the relation
+***  does not cover 4 tuples in the relation
+
+p7(A,B) :- p4(B,A), p10(C,B).
+p7(A,B) :- p2(A,B), p10(A,C).
+p7(A,B) :- p4(B,A), p9(C,A), p1(C,D), p2(D,E).
+
+Time 0.2 secs
+
+----------
+p10:
+
+***  Warning: the following definition
+***  does not cover 5 tuples in the relation
+
+p10(A,B) :- p6(C,B), p8(D,A), p7(B,D).
+
+Time 0.2 secs
+
+----------
+p8:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+p8(A,B) :- p10(B,C), p7(C,A).
+
+Time 0.3 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 2 tuples in the relation
+
+p9(A,B) :- p4(A,B), p1(A,A), p2(B,A).
+
+Time 0.3 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+
+Time 0.3 secs

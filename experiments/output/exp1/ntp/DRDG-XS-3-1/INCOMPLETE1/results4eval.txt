@@ -1,0 +1,120 @@
+p1(A,B) :- p1(C,B), p1(A,B).
+p5(A,B) :- p7(C,B), p7(A,B).
+p6(A,B) :- p6(C,B), p6(A,B).
+p1(A,B) :- p1(C,B), p1(A,B).
+p5(A,B) :- p6(C,B), p6(A,B).
+p1(A,B) :- p1(C,B), p1(A,B).
+p1(A,B) :- p1(C,B), p1(A,B).
+p6(A,B) :- p6(C,B), p6(A,B).
+p6(A,B) :- p5(C,B), p6(A,B).
+p5(A,B) :- p5(C,B), p6(A,B).
+p7(A,B) :- p5(C,B), p7(A,B).
+p5(A,B) :- p5(C,B), p1(A,B).
+p6(A,B) :- p1(C,B), p1(A,B).
+p1(A,B) :- p1(C,B), p1(A,B).
+p5(A,B) :- p7(C,B), p1(A,B).
+p1(A,B) :- p1(C,B), p5(A,B).
+p5(A,B) :- p5(C,B), p6(A,B).
+p6(A,B) :- p5(C,B), p5(A,B).
+p5(A,B) :- p5(C,B), p5(A,B).
+p6(A,B) :- p6(C,B), p6(A,B).
+p6(A,B) :- p5(A,C), p6(B,C).
+p1(A,B) :- p6(A,C), p6(B,C).
+p6(A,B) :- p5(A,C), p1(B,C).
+p1(A,B) :- p1(A,C), p5(B,C).
+p5(A,B) :- p5(A,C), p1(B,C).
+p7(A,B) :- p6(A,C), p5(B,C).
+p1(A,B) :- p1(A,C), p6(B,C).
+p1(A,B) :- p5(A,C), p1(B,C).
+p5(A,B) :- p1(A,C), p1(B,C).
+p5(A,B) :- p5(A,C), p1(B,C).
+p1(A,B) :- p6(A,C), p5(B,C).
+p5(A,B) :- p6(A,C), p1(B,C).
+p5(A,B) :- p5(A,C), p1(B,C).
+p5(A,B) :- p6(A,C), p5(B,C).
+p5(A,B) :- p5(A,C), p1(B,C).
+p6(A,B) :- p6(A,C), p6(B,C).
+p5(A,B) :- p6(A,C), p5(B,C).
+p6(A,B) :- p6(A,C), p5(B,C).
+p6(A,B) :- p1(A,C), p6(B,C).
+p1(A,B) :- p6(A,C), p1(B,C).
+p5(A,B) :- p6(B,A).
+p6(A,B) :- p6(B,A).
+p5(A,B) :- p6(B,A).
+p5(A,B) :- p6(B,A).
+p6(A,B) :- p5(B,A).
+p1(A,B) :- p6(B,A).
+p1(A,B) :- p5(B,A).
+p6(A,B) :- p6(B,A).
+p6(A,B) :- p1(B,A).
+p1(A,B) :- p6(B,A).
+p5(A,B) :- p5(B,A).
+p6(A,B) :- p5(B,A).
+p5(A,B) :- p5(B,A).
+p6(A,B) :- p6(B,A).
+p6(A,B) :- p6(B,A).
+p5(A,B) :- p5(B,A).
+p6(A,B) :- p1(B,A).
+p6(A,B) :- p1(B,A).
+p1(A,B) :- p5(B,A).
+p5(A,B) :- p5(B,A).
+p1(A,B) :- p1(B,A).
+p5(A,B) :- p1(B,A).
+p6(A,B) :- p1(B,A).
+p5(A,B) :- p1(B,A).
+p1(A,B) :- p1(B,A).
+p1(A,B) :- p7(B,A).
+p6(A,B) :- p6(B,A).
+p6(A,B) :- p6(B,A).
+p1(A,B) :- p5(B,A).
+p6(A,B) :- p6(B,A).
+p6(A,B) :- p6(B,A).
+p6(A,B) :- p6(B,A).
+p5(A,B) :- p1(B,A).
+p1(A,B) :- p5(B,A).
+p9(A,B) :- p6(B,A).
+p5(A,B) :- p6(B,A).
+p6(A,B) :- p5(B,A).
+p6(A,B) :- p5(B,A).
+p6(A,B) :- p6(B,A).
+p5(A,B) :- p5(B,A).
+p1(A,B) :- p5(B,A).
+p1(A,B) :- p7(B,A).
+p6(A,B) :- p6(B,A).
+p5(A,B) :- p5(B,A).
+p1(A,B) :- p1(B,A).
+p7(A,B) :- p5(B,A).
+p6(A,B) :- p1(B,A).
+p6(A,B) :- p6(B,A).
+p5(A,B) :- p1(B,A).
+p5(A,B) :- p5(B,A).
+p5(A,B) :- p5(B,A).
+p5(A,B) :- p5(B,A).
+p1(A,B) :- p6(B,A).
+p5(A,B) :- p6(B,A).
+p1(A,B) :- p6(B,A).
+p1(A,B) :- p6(B,A).
+p1(A,B) :- p6(B,A).
+p6(A,B) :- p6(B,A).
+p5(A,B) :- p1(B,A).
+p6(A,B) :- p5(B,A).
+p5(A,B) :- p1(B,C), p1(A,C).
+p1(A,B) :- p6(B,C), p6(A,C).
+p6(A,B) :- p6(B,C), p1(A,C).
+p1(A,B) :- p1(B,C), p5(A,C).
+p1(A,B) :- p6(B,C), p5(A,C).
+p5(A,B) :- p5(B,C), p6(A,C).
+p5(A,B) :- p6(B,C), p5(A,C).
+p5(A,B) :- p5(B,C), p1(A,C).
+p5(A,B) :- p6(B,C), p1(A,C).
+p5(A,B) :- p1(B,C), p5(A,C).
+p5(A,B) :- p1(B,C), p1(A,C).
+p6(A,B) :- p1(B,C), p6(A,C).
+p1(A,B) :- p6(B,C), p1(A,C).
+p1(A,B) :- p5(B,C), p1(A,C).
+p6(A,B) :- p5(B,C), p6(A,C).
+p1(A,B) :- p5(B,C), p5(A,C).
+p5(A,B) :- p6(B,C), p6(A,C).
+p6(A,B) :- p5(B,C), p6(A,C).
+p5(A,B) :- p1(B,C), p5(A,C).
+p5(A,B) :- p6(B,C), p5(A,C).

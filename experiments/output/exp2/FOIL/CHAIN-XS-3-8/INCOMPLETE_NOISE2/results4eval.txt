@@ -1,0 +1,10 @@
+p4(A,B) :- p7(A,B), p5(B,C).
+
+p4(A,B) :- p1(C,A), p7(D,B), p5(E,B), p0(E,F), p5(G,F), p0(D,H).
+
+p7(A,B) :- p4(A,B), p0(A,B).
+
+p7(A,B) :- p4(A,B), p5(B,C).
+
+p0(A,B) :- p5(A,B), p4(A,C).
+

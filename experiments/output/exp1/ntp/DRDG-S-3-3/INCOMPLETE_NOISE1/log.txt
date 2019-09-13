@@ -1,0 +1,113 @@
+{'data': {'kb': '/home/cristina/RuDaS/experiments/data/exp1/ntp/DRDG-S-3-3/INCOMPLETE_NOISE1/train.nl',
+          'templates': '/home/cristina/RuDaS/experiments/data/exp1/ntp/DRDG-S-3-3/INCOMPLETE_NOISE1/rules.nlt'},
+ 'meta': {'check_numerics': False,
+          'conf': './../data/exp1//ntp/DRDG-S-3-3/INCOMPLETE_NOISE1/run.conf',
+          'debug': False,
+          'ensemble': False,
+          'experiment_dir': './out/DRDG-S-3-3/INCOMPLETE_NOISE1/19-08-23/08-52-39/',
+          'experiment_prefix': 'DRDG-S-3-3/INCOMPLETE_NOISE1',
+          'file_name': 'run.conf',
+          'name': 'run',
+          'output_predictions': False,
+          'parent': '/home/cristina/RuDaS/experiments/systems/ntp/conf/default.conf',
+          'result_file': '/home/cristina/RuDaS/experiments/output/exp1/ntp/DRDG-S-3-3/INCOMPLETE_NOISE1/results.tsv',
+          'test_graph_creation': False,
+          'test_set': 'test',
+          'test_time_batching': False,
+          'test_time_neural_link_prediction': True,
+          'tfdbg': False,
+          'train': True},
+ 'model': {'aggregate_fun': 'Max',
+           'input_size': 100,
+           'k_max': 10,
+           'keep_prob': 0.7,
+           'l2': 0.01,
+           'max_depth': 1,
+           'name': '???',
+           'neural_link_predictor': 'ComplEx',
+           'train_0ntp': False,
+           'unification': 'cos',
+           'unit_normalize': False},
+ 'training': {'clip': (-1.0, 1.0),
+              'epsilon': 1e-10,
+              'init': None,
+              'learning_rate': 0.001,
+              'mean_loss': False,
+              'neg_per_pos': 1,
+              'num_epochs': 100,
+              'optimizer': 'Adam',
+              'pos_per_batch': 10,
+              'report_interval': 10,
+              'sampling_scheme': 'all'}}
+Batch size: 50, pos: 10, neg: 1, corrupted: 4
+before
+[(('p0', 'X0', 'X0'), ('p0', 'X0', 'X1')),
+ (('p0', 'X0', 'X0'), ('p1', 'X1', 'X0')),
+ (('p0', 'X0', 'X1'), ('p0', 'X1', 'X0')),
+ (('p0', 'X0', 'X1'), ('p1', 'X0', 'X1'), ('p2', 'X0', 'X0')),
+ (('p0', 'X0', 'X1'), ('p1', 'X0', 'X2'), ('p2', 'X0', 'X1')),
+ (('p0', 'X0', 'X1'), ('p1', 'X1', 'X0'), ('p2', 'X0', 'X1')),
+ (('p0', 'X0', 'X1'), ('p1', 'X1', 'X1'), ('p2', 'X1', 'X0')),
+ (('p0', 'c', 'c'),)]
+after
+(('p0', 'X0', 'X0'), ('p0', 'X0', 'X1'))
+(('p0', 'X0', 'X0'), ('p1', 'X1', 'X0'))
+(('p0', 'X0', 'X1'), ('p0', 'X1', 'X0'))
+(('p0', 'X0', 'X1'), ('p1', 'X0', 'X1'), ('p2', 'X0', 'X0'))
+(('p0', 'X0', 'X1'), ('p1', 'X0', 'X2'), ('p2', 'X0', 'X1'))
+(('p0', 'X0', 'X1'), ('p1', 'X1', 'X0'), ('p2', 'X0', 'X1'))
+(('p0', 'X0', 'X1'), ('p1', 'X1', 'X1'), ('p2', 'X1', 'X0'))
+(('p0', 'c', 'c'),)
+Goal: [35mT[0m[33m50[0m([36mT[0m[33m50[0m[31m,[0m[36mT[0m[33m50[0m) {}
+    Rule: [35mT[0m[33m20[0m(A0[31m,[0mA0)[31m :- [0m[35mT[0m[33m20[0m(A0[31m,[0mB0)[31m.[0m
+    Subgoal: [35mT[0m[33m20[0m(A0[31m,[0mB0) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A0[31m/[0m[36mT[0m[33m50[0m}
+rep inner tiling of A0 20
+goal outer tiling of [35mT[0m[33m20[0m 50
+    Goal: [35mT[0m[33m1000[0m([36mT[0m[33m1000[0m[31m,[0mB0) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A0[31m/[0m[36mT[0m[33m1000[0m}
+        Rule: [35mT[0m[33m589[0m([36mT[0m[33m589[0m[31m,[0m[36mT[0m[33m589[0m)[31m.[0m
+            Taking 10 max
+            [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m1000[0m, A0[31m/[0m[36mT[0m[33m1000[0m, B0[31m/[0m[36mT[0m[33m10000[0m}
+        [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m1000[0m, A0[31m/[0m[36mT[0m[33m1000[0m, B0[31m/[0m[36mT[0m[33m10000[0m}
+    Rule: [35mT[0m[33m20[0m(A1[31m,[0mA1)[31m :- [0m[35mT[0m[33m20[0m(B1[31m,[0mA1)[31m.[0m
+    Subgoal: [35mT[0m[33m20[0m(B1[31m,[0mA1) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A1[31m/[0m[36mT[0m[33m50[0m}
+rep inner tiling of A1 20
+goal outer tiling of [35mT[0m[33m20[0m 50
+    Goal: [35mT[0m[33m1000[0m(B1[31m,[0m[36mT[0m[33m1000[0m) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A1[31m/[0m[36mT[0m[33m1000[0m}
+        Rule: [35mT[0m[33m589[0m([36mT[0m[33m589[0m[31m,[0m[36mT[0m[33m589[0m)[31m.[0m
+            Taking 10 max
+            [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m1000[0m, A1[31m/[0m[36mT[0m[33m1000[0m, B1[31m/[0m[36mT[0m[33m10000[0m}
+        [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m1000[0m, A1[31m/[0m[36mT[0m[33m1000[0m, B1[31m/[0m[36mT[0m[33m10000[0m}
+    Rule: [35mT[0m[33m20[0m(A2[31m,[0mB2)[31m :- [0m[35mT[0m[33m20[0m(B2[31m,[0mA2)[31m.[0m
+    Subgoal: [35mT[0m[33m20[0m(B2[31m,[0mA2) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A2[31m/[0m[36mT[0m[33m50[0m, B2[31m/[0m[36mT[0m[33m50[0m}
+rep inner tiling of A2 20
+rep inner tiling of B2 20
+goal outer tiling of [35mT[0m[33m20[0m 50
+    Goal: [35mT[0m[33m1000[0m([36mT[0m[33m1000[0m[31m,[0m[36mT[0m[33m1000[0m) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A2[31m/[0m[36mT[0m[33m1000[0m, B2[31m/[0m[36mT[0m[33m1000[0m}
+        Rule: [35mT[0m[33m589[0m([36mT[0m[33m589[0m[31m,[0m[36mT[0m[33m589[0m)[31m.[0m
+            [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m589[0m[34mx[0m[33m1000[0m, A2[31m/[0m[36mT[0m[33m1000[0m, B2[31m/[0m[36mT[0m[33m1000[0m}
+        [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m589[0m[34mx[0m[33m1000[0m, A2[31m/[0m[36mT[0m[33m1000[0m, B2[31m/[0m[36mT[0m[33m1000[0m}
+    Rule: [35mT[0m[33m20[0m(A3[31m,[0mB3)[31m :- [0m[35mT[0m[33m20[0m(A3[31m,[0mB3), [35mT[0m[33m20[0m(A3[31m,[0mA3)[31m.[0m
+    Subgoal: [35mT[0m[33m20[0m(A3[31m,[0mB3) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A3[31m/[0m[36mT[0m[33m50[0m, B3[31m/[0m[36mT[0m[33m50[0m}
+rep inner tiling of A3 20
+rep inner tiling of B3 20
+goal outer tiling of [35mT[0m[33m20[0m 50
+goal outer tiling of [35mT[0m[33m20[0m 50
+    Goal: [35mT[0m[33m1000[0m([36mT[0m[33m1000[0m[31m,[0m[36mT[0m[33m1000[0m) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A3[31m/[0m[36mT[0m[33m1000[0m, B3[31m/[0m[36mT[0m[33m1000[0m}
+        Rule: [35mT[0m[33m589[0m([36mT[0m[33m589[0m[31m,[0m[36mT[0m[33m589[0m)[31m.[0m
+            [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m589[0m[34mx[0m[33m1000[0m, A3[31m/[0m[36mT[0m[33m1000[0m, B3[31m/[0m[36mT[0m[33m1000[0m}
+    Subgoal: [35mT[0m[33m1000[0m(A3[31m,[0mA3) {SUCCESS:[36mT[0m[33m589[0m[34mx[0m[33m1000[0m, A3[31m/[0m[36mT[0m[33m1000[0m, B3[31m/[0m[36mT[0m[33m1000[0m}
+rep inner tiling of A3 589
+rep inner tiling of B3 589
+goal inner tiling of [35mT[0m[33m1000[0m 589
+    Goal: [35mT[0m[33m589000[0m([36mT[0m[33m589000[0m[31m,[0m[36mT[0m[33m589000[0m) {SUCCESS:[36mT[0m[33m589[0m[34mx[0m[33m1000[0m, A3[31m/[0m[36mT[0m[33m589000[0m, B3[31m/[0m[36mT[0m[33m589000[0m}
+        Rule: [35mT[0m[33m589[0m([36mT[0m[33m589[0m[31m,[0m[36mT[0m[33m589[0m)[31m.[0m
+            [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m589[0m[34mx[0m[33m589000[0m, A3[31m/[0m[36mT[0m[33m589000[0m, B3[31m/[0m[36mT[0m[33m589000[0m}
+        [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m589[0m[34mx[0m[33m589000[0m, A3[31m/[0m[36mT[0m[33m589000[0m, B3[31m/[0m[36mT[0m[33m589000[0m}
+    Rule: [35mT[0m[33m40[0m(A4[31m,[0mB4)[31m :- [0m[35mT[0m[33m40[0m(A4[31m,[0mC4), [35mT[0m[33m40[0m(A4[31m,[0mB4)[31m.[0m
+    Subgoal: [35mT[0m[33m40[0m(A4[31m,[0mC4) {SUCCESS:[36mT[0m[33m40[0m[34mx[0m[33m50[0m, A4[31m/[0m[36mT[0m[33m50[0m, B4[31m/[0m[36mT[0m[33m50[0m}
+rep inner tiling of A4 40
+rep inner tiling of B4 40
+goal outer tiling of [35mT[0m[33m40[0m 50
+goal outer tiling of [35mT[0m[33m40[0m 50
+    Goal: [35mT[0m[33m2000[0m([36mT[0m[33m2000[0m[31m,[0mC4) {SUCCESS:[36mT[0m[33m40[0m[34mx[0m[33m50[0m, A4[31m/[0m[36mT[0m[33m2000[0m, B4[31m/[0m[36mT[0m[33m2000[0m}
+        Rule: [35mT[0m[33m589[0m([36mT[0m[33m589[0m[31m,[0m[36mT[0m[33m589[0m)[31m.[0m

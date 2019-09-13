@@ -1,0 +1,134 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p4
+
+Relation p5
+
+Relation p8
+
+Relation p6
+
+Relation p10
+
+Relation p0
+
+Relation p9
+
+Relation p3
+
+Relation p7
+
+Relation p2
+
+----------
+p4:
+
+***  Warning: the following definition
+***  matches 1 tuple not in the relation
+***  does not cover 64 tuples in the relation
+
+p4(A,B) :- p3(A,A), p9(B,C), p10(A,D), p8(E,C).
+p4(A,B) :- p9(B,C), p5(D,A), p3(B,B).
+p4(A,B) :- p3(A,A), p9(B,C), p9(A,D), p0(B,C).
+p4(A,B) :- p9(B,C), p10(A,B).
+p4(A,B) :- p9(B,C), p10(C,A).
+p4(A,B) :- p9(B,C), p5(D,A), p8(D,C).
+p4(A,B) :- p3(A,A), p9(B,C), p10(D,C).
+p4(A,B) :- p9(B,C), p5(D,A), p10(A,E), p4(E,B).
+p4(A,B) :- p9(B,C), p5(D,A), p5(A,E), p4(E,C).
+
+Time 0.0 secs
+
+----------
+p3:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+p3(A,A) :- p5(C,A).
+p3(A,A) :- p4(A,C), p8(A,D).
+p3(A,A) :- p4(A,A).
+p3(A,A) :- p4(A,C), p9(D,A), p9(C,E).
+
+Time 0.1 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+p9(A,B) :- p0(A,B), p4(C,B).
+p9(A,B) :- p0(A,B), p4(B,C).
+
+Time 0.1 secs
+
+----------
+p10:
+
+***  Warning: the following definition
+***  does not cover 6 tuples in the relation
+
+p10(A,B) :- p3(A,A), p4(B,B), p9(C,A), p4(B,C).
+
+Time 0.1 secs
+
+----------
+p0:
+
+p0(A,B) :- p6(A,B).
+p0(A,B) :- p9(A,B), p9(B,A).
+p0(A,B) :- p9(A,B), p8(C,B).
+p0(A,B) :- p9(A,B), p4(B,C), p2(C,D).
+
+Time 0.1 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+
+Time 0.1 secs
+
+----------
+p8:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+
+Time 0.1 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+p6(A,B) :- p0(A,B), p10(C,A).
+
+Time 0.1 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 2 tuples in the relation
+
+
+Time 0.2 secs
+
+----------
+p7:
+
+p7(A,B) :- p5(C,A), p5(D,C), p4(B,E), p9(F,E), p8(G,E), p4(A,F).
+
+Time 0.2 secs

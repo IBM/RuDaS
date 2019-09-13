@@ -1,0 +1,26 @@
+p4(A,B) :- p8(B,B), p9(C,A), p9(C,B).
+
+p9(A,B) :- p1(A,B), p4(C,B).
+
+p9(A,B) :- p1(A,B), p4(A,C).
+
+p9(A,B) :- p1(A,B), p5(C,B), p7(D,C).
+
+p9(A,B) :- p1(A,B), p4(B,C), p10(C,D), p4(E,D), p4(B,F), p10(F,G), p4(F,H).
+
+p9(A,B) :- p4(B,C), p1(A,C), p5(B,C).
+
+p1(A,B) :- p9(A,B), p5(C,B).
+
+p1(A,B) :- p9(A,B), p4(A,C), p4(B,D).
+
+p8(A,A) :- p4(A,A).
+
+p8(A,A) :- p4(C,A), p3(C,D).
+
+p8(A,A) :- p10(A,C), p4(A,D).
+
+p8(A,A) :- p10(A,C), p4(D,C).
+
+p5(A,B) :- p1(C,B), p9(C,A), p0(D,A).
+

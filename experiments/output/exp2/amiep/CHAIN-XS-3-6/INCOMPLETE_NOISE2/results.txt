@@ -1,0 +1,72 @@
+Loading files... 
+  Starting train.txt
+  Finished train.txt, still running: 0
+Loaded 73 facts in 44 ms using -2 MB
+Using HeadCoverage as pruning metric with minimum threshold 0.01
+Using recursivity limit 3
+Default mining assistant that defines support by counting support on both head variables
+No minimum threshold on standard confidence
+Filtering on PCA confidence with minimum threshold 0.25
+Constants in the arguments of relations are disabled
+Lossless (query refinement) heuristics enabled
+Starting the mining phase... Using 8 threads
+Rule	Head Coverage	Std Confidence	PCA Confidence	Positive Examples	Body size	PCA Body size	Functional variable	Std. Lower Bound	PCA Lower Bound	PCA Conf estimation
+?b  p3  ?a   => ?a  p1  ?b	0.066666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p7  ?b   => ?a  p1  ?b	0.733333333	0.846153846	1	11	13	11	?a	0.0	0.0	0.0
+?a  p4  ?b   => ?a  p1  ?b	0.733333333	0.733333333	1	11	15	11	?a	0.0	0.0	0.0
+?b  p10  ?a   => ?a  p10  ?b	1	1	1	13	13	13	?a	0.0	0.0	0.0
+?b  p3  ?a   => ?a  p7  ?b	0.076923077	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p4  ?b   => ?a  p7  ?b	0.846153846	0.733333333	0.916666667	11	15	12	?a	0.0	0.0	0.0
+?a  p1  ?b   => ?a  p7  ?b	0.846153846	0.733333333	0.916666667	11	15	12	?a	0.0	0.0	0.0
+?a  p1  ?b   => ?a  p4  ?b	0.733333333	0.733333333	0.916666667	11	15	12	?a	0.0	0.0	0.0
+?a  p7  ?b   => ?a  p4  ?b	0.733333333	0.846153846	0.916666667	11	13	12	?a	0.0	0.0	0.0
+?a  p10  ?f  ?b  p3  ?f   => ?a  p1  ?b	0.066666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?f  p1  ?b  ?a  p10  ?f   => ?a  p1  ?b	0.466666667	1	1	7	7	7	?a	0.0	0.0	0.0
+?f  p10  ?a  ?b  p3  ?f   => ?a  p1  ?b	0.066666667	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p10  ?f  ?f  p7  ?b   => ?a  p1  ?b	0.4	0.75	1	6	8	6	?a	0.0	0.0	0.0
+?a  p10  ?f  ?f  p4  ?b   => ?a  p1  ?b	0.4	0.75	1	6	8	6	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p7  ?b   => ?a  p1  ?b	0.4	0.75	1	6	8	6	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p5  ?b   => ?a  p5  ?b	0.692307692	1	1	9	9	9	?a	0.0	0.0	0.0
+?e  p1  ?b  ?e  p10  ?a   => ?a  p1  ?b	0.466666667	1	1	7	7	7	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p4  ?b   => ?a  p1  ?b	0.4	0.75	1	6	8	6	?a	0.0	0.0	0.0
+?a  p1  ?f  ?b  p1  ?f   => ?a  p10  ?b	0.461538462	0.375	1	6	16	6	?a	0.0	0.0	0.0
+?b  p1  ?f  ?a  p4  ?f   => ?a  p10  ?b	0.461538462	0.545454545	1	6	11	6	?a	0.0	0.0	0.0
+?a  p5  ?f  ?b  p5  ?f   => ?a  p10  ?b	0.692307692	0.529411765	0.75	9	17	12	?a	0.0	0.0	0.0
+?a  p4  ?f  ?b  p4  ?f   => ?a  p10  ?b	0.615384615	0.533333333	1	8	15	8	?a	0.0	0.0	0.0
+?a  p4  ?f  ?b  p7  ?f   => ?a  p10  ?b	0.461538462	0.545454545	1	6	11	6	?a	0.0	0.0	0.0
+?f  p3  ?b  ?a  p7  ?f   => ?a  p10  ?b	0.076923077	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p7  ?f  ?b  p7  ?f   => ?a  p10  ?b	0.615384615	0.615384615	1	8	13	8	?a	0.0	0.0	0.0
+?b  p4  ?f  ?a  p7  ?f   => ?a  p10  ?b	0.461538462	0.545454545	1	6	11	6	?a	0.0	0.0	0.0
+?f  p10  ?b  ?a  p10  ?f   => ?a  p10  ?b	1	1	1	13	13	13	?a	0.0	0.0	0.0
+?e  p3  ?a  ?e  p3  ?b   => ?a  p10  ?b	0.076923077	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p1  ?e  ?e  p3  ?b   => ?a  p10  ?b	0.076923077	1	1	1	1	1	?a	0.0	0.0	0.0
+?e  p2  ?a  ?e  p2  ?b   => ?a  p10  ?b	0.076923077	0.5	1	1	2	1	?a	0.0	0.0	0.0
+?a  p10  ?e  ?e  p5  ?b   => ?a  p5  ?b	0.692307692	1	1	9	9	9	?a	0.0	0.0	0.0
+?f  p10  ?a  ?b  p10  ?f   => ?a  p10  ?b	1	1	1	13	13	13	?a	0.0	0.0	0.0
+?b  p1  ?f  ?f  p3  ?a   => ?a  p10  ?b	0.076923077	1	1	1	1	1	?a	0.0	0.0	0.0
+?b  p1  ?f  ?a  p7  ?f   => ?a  p10  ?b	0.461538462	0.545454545	1	6	11	6	?a	0.0	0.0	0.0
+?b  p10  ?f  ?a  p5  ?f   => ?a  p5  ?b	0.153846154	1	1	2	2	2	?a	0.0	0.0	0.0
+?f  p10  ?b  ?a  p5  ?f   => ?a  p5  ?b	0.153846154	1	1	2	2	2	?a	0.0	0.0	0.0
+?a  p1  ?f  ?b  p4  ?f   => ?a  p10  ?b	0.461538462	0.545454545	1	6	11	6	?a	0.0	0.0	0.0
+?a  p1  ?f  ?b  p7  ?f   => ?a  p10  ?b	0.461538462	0.545454545	1	6	11	6	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p4  ?b   => ?a  p7  ?b	0.461538462	0.75	0.857142857	6	8	7	?a	0.0	0.0	0.0
+?a  p10  ?f  ?b  p10  ?f   => ?a  p10  ?b	1	1	1	13	13	13	?a	0.0	0.0	0.0
+?e  p5  ?a  ?e  p5  ?b   => ?a  p10  ?b	0.153846154	0.181818182	1	2	11	2	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p10  ?b   => ?a  p10  ?b	1	1	1	13	13	13	?a	0.0	0.0	0.0
+?a  p10  ?f  ?f  p7  ?b   => ?a  p7  ?b	0.615384615	1	1	8	8	8	?a	0.0	0.0	0.0
+?a  p10  ?f  ?b  p3  ?f   => ?a  p7  ?b	0.076923077	1	1	1	1	1	?a	0.0	0.0	0.0
+?f  p3  ?a  ?b  p7  ?f   => ?a  p10  ?b	0.076923077	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p10  ?e  ?e  p4  ?b   => ?a  p7  ?b	0.461538462	0.75	0.857142857	6	8	7	?a	0.0	0.0	0.0
+?e  p10  ?a  ?b  p3  ?e   => ?a  p7  ?b	0.076923077	1	1	1	1	1	?a	0.0	0.0	0.0
+?e  p1  ?b  ?e  p10  ?a   => ?a  p7  ?b	0.461538462	0.857142857	0.857142857	6	7	7	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p4  ?b   => ?a  p4  ?b	0.533333333	1	1	8	8	8	?a	0.0	0.0	0.0
+?e  p1  ?b  ?a  p10  ?e   => ?a  p7  ?b	0.461538462	0.857142857	0.857142857	6	7	7	?a	0.0	0.0	0.0
+?e  p1  ?b  ?e  p10  ?a   => ?a  p4  ?b	0.4	0.857142857	0.857142857	6	7	7	?a	0.0	0.0	0.0
+?a  p10  ?e  ?e  p4  ?b   => ?a  p4  ?b	0.533333333	1	1	8	8	8	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p7  ?b   => ?a  p7  ?b	0.615384615	1	1	8	8	8	?a	0.0	0.0	0.0
+?a  p10  ?f  ?f  p7  ?b   => ?a  p4  ?b	0.4	0.75	0.857142857	6	8	7	?a	0.0	0.0	0.0
+?e  p1  ?b  ?a  p10  ?e   => ?a  p4  ?b	0.4	0.857142857	0.857142857	6	7	7	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p7  ?b   => ?a  p4  ?b	0.4	0.75	0.857142857	6	8	7	?a	0.0	0.0	0.0
+Mining done in 0.39 s
+Total time 0.44 s
+56 rules mined.

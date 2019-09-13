@@ -1,0 +1,9 @@
+p0(A,B) :- p4(B,A).
+p0(A,B) :- p9(B,A).
+p9(A,B) :- p0(B,A).
+p9(A,B) :- p4(A,B).
+p4(A,B) :- p9(A,B).
+p4(A,B) :- p0(B,A).
+p0(A,B) :- p1(F,B),p1(A,F).
+p1(A,B) :- p4(B,F),p9(F,A).
+p9(A,B) :- p0(B,A),p4(A,B).

@@ -1,0 +1,52 @@
+p3(A,B) :- p2(C,A), p5(C,B), p5(D,C).
+
+p3(A,B) :- p2(C,A), p1(C,B), p0(D,A).
+
+p3(A,B) :- p2(C,A), p1(C,B), p2(D,C).
+
+p3(A,B) :- p2(C,A), p1(C,B), p2(C,D), p2(D,E), p0(F,E).
+
+p3(A,B) :- p2(C,A), p0(B,D), p2(B,D), p2(A,E), p0(F,E).
+
+p3(A,B) :- p2(C,A), p0(B,D), p5(B,D), p5(C,B).
+
+p3(A,B) :- p2(C,A), p5(C,B), p3(C,D).
+
+p2(A,B) :- p3(B,C), p5(A,C), p5(D,A).
+
+p2(A,B) :- p0(A,C), p3(B,D), p1(A,D), p0(C,E).
+
+p2(A,B) :- p3(B,C), p5(A,C), p0(B,D).
+
+p5(A,B) :- p1(A,B), p3(C,A).
+
+p5(A,B) :- p1(A,B), p2(B,C), p2(A,D).
+
+p5(A,B) :- p1(A,B), p3(B,C).
+
+p5(A,B) :- p1(A,B), p0(C,B).
+
+p5(A,B) :- p1(A,B), p9(B,C).
+
+p5(A,B) :- p1(A,B), p2(C,A), p2(A,D).
+
+p5(A,A) :- p0(A,C), p3(D,C), p0(D,E).
+
+p5(A,B) :- p2(A,C), p9(B,C).
+
+p0(A,B) :- p1(A,B), p5(C,A).
+
+p0(A,B) :- p2(A,B), p9(D,A), p0(B,E).
+
+p1(A,B) :- p5(A,B), p3(C,A).
+
+p1(A,B) :- p5(A,B), p2(B,C), p0(A,D).
+
+p1(A,B) :- p5(A,B), p3(B,C).
+
+p1(A,B) :- p5(A,B), p0(C,B).
+
+p1(A,B) :- p5(A,B), p3(C,B), p2(D,A), p5(D,E), p2(E,F).
+
+p1(A,B) :- p5(A,B), p9(B,C), p1(D,C).
+

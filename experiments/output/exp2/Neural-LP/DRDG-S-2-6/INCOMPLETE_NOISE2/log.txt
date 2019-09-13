@@ -1,0 +1,57 @@
+Epoch 1 mode train Loss 27.8199 In top 0.4965. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode valid Loss 30.5273 In top 0.5049. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode test Loss 30.3885 In top 0.3578. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode train Loss 27.7721 In top 0.5000. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode valid Loss 30.4963 In top 0.5049. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode test Loss 30.3555 In top 0.3578. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode train Loss 27.7309 In top 0.5000. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode valid Loss 30.4685 In top 0.5049. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode test Loss 30.3257 In top 0.3578. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode train Loss 27.6928 In top 0.5000. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode valid Loss 30.4446 In top 0.5049. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode test Loss 30.3000 In top 0.3578. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 5 mode train Loss 27.6585 In top 0.5000. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 5 mode valid Loss 30.4256 In top 0.5049. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 5 mode test Loss 30.2793 In top 0.3627. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 6 mode train Loss 27.6301 In top 0.5069. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 6 mode valid Loss 30.4117 In top 0.5097. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 6 mode test Loss 30.2640 In top 0.3676. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 7 mode train Loss 27.6083 In top 0.5104. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 7 mode valid Loss 30.4014 In top 0.5097. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 7 mode test Loss 30.2524 In top 0.3676. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 8 mode train Loss 27.5910 In top 0.5104. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 8 mode valid Loss 30.3928 In top 0.5097. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 8 mode test Loss 30.2423 In top 0.3676. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 9 mode train Loss 27.5758 In top 0.5104. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 9 mode valid Loss 30.3845 In top 0.5097. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 9 mode test Loss 30.2321 In top 0.3676. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 10 mode train Loss 27.5609 In top 0.5104. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 10 mode valid Loss 30.3756 In top 0.5097. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 10 mode test Loss 30.2210 In top 0.3676. Time elapsed 0.00 hrs (0.2 mins)
+Best test in top: 0.3676 at epoch 6.
+Test in top 0.3676
+Test predictions written. Time elapsed 0.00 hrs (0.2 mins)
+Attentions collected. Time elapsed 0.00 hrs (0.2 mins)
+
+Rules listed and printed. Time elapsed 0.00 hrs (0.2 mins)
+	3/3	Epoch 8 mode train Loss 27.5910 In top 0.5104. Time elapsed 0.00 hrs (0.1 mins)
+1/2	2/2	Epoch 8 mode valid Loss 30.3928 In top 0.5097. Time elapsed 0.00 hrs (0.1 mins)
+1/4	2/4	3/4	4/4	Epoch 8 mode test Loss 30.2423 In top 0.3676. Time elapsed 0.00 hrs (0.1 mins)
+Model saved at ./../output/exp2/Neural-LP/DRDG-S-2-6/INCOMPLETE_NOISE2/ckpt/model-8
+1/3	2/3	3/3	Epoch 9 mode train Loss 27.5758 In top 0.5104. Time elapsed 0.00 hrs (0.1 mins)
+1/2	2/2	Epoch 9 mode valid Loss 30.3845 In top 0.5097. Time elapsed 0.00 hrs (0.1 mins)
+1/4	2/4	3/4	4/4	Epoch 9 mode test Loss 30.2321 In top 0.3676. Time elapsed 0.00 hrs (0.1 mins)
+Model saved at ./../output/exp2/Neural-LP/DRDG-S-2-6/INCOMPLETE_NOISE2/ckpt/model-9
+1/3	2/3	3/3	Epoch 10 mode train Loss 27.5609 In top 0.5104. Time elapsed 0.00 hrs (0.2 mins)
+1/2	2/2	Epoch 10 mode valid Loss 30.3756 In top 0.5097. Time elapsed 0.00 hrs (0.2 mins)
+1/4	2/4	3/4	4/4	Epoch 10 mode test Loss 30.2210 In top 0.3676. Time elapsed 0.00 hrs (0.2 mins)
+Model saved at ./../output/exp2/Neural-LP/DRDG-S-2-6/INCOMPLETE_NOISE2/ckpt/model-10
+Best test in top: 0.3676 at epoch 6.
+Start getting test predictions...
+1/4	2/4	3/4	4/4	Test in top 0.3676
+Test predictions written. Time elapsed 0.00 hrs (0.2 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.00 hrs (0.2 mins)
+3/20	7/20	11/20	15/20	19/20	
+Rules listed and printed. Time elapsed 0.00 hrs (0.2 mins)
+====================================Finish====================================

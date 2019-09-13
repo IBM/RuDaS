@@ -1,0 +1,80 @@
+p4(A,B) :- p7(A,B).
+p7(A,B) :- p4(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p5(A,B) :- p2(A,B).
+p4(A,B) :- p7(A,B).
+p4(A,B) :- p7(A,B).
+p7(A,B) :- p4(A,C), p4(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p7(A,B) :- p7(A,C), p7(A,B).
+p5(A,B) :- p7(B,C), p5(C,A).
+p9(A,B) :- p7(B,C), p9(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p2(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p2(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p3(A,B) :- p7(B,C), p2(C,A).
+p7(A,B) :- p7(B,C), p7(C,A).
+p7(A,B) :- p7(B,C), p10(C,A).

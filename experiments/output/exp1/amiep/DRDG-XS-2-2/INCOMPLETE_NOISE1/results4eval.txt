@@ -1,0 +1,16 @@
+p0(A,B) :- p5(A,B).
+p0(A,B) :- p6(B,A).
+p0(A,B) :- p4(B,A).
+p4(A,B) :- p0(B,A).
+p4(A,B) :- p6(A,B).
+p5(A,B) :- p0(A,B).
+p5(A,B) :- p6(B,A).
+p6(A,B) :- p5(B,A).
+p6(A,B) :- p4(A,B).
+p6(A,B) :- p0(B,A).
+p0(A,B) :- p6(B,A),p9(A,B).
+p6(A,B) :- p9(B,A).
+p9(A,B) :- p0(A,B),p6(B,A).
+p0(A,B) :- p4(B,A),p6(B,A).
+p6(A,B) :- p0(B,A),p9(B,A).
+p9(A,B) :- p6(B,A).

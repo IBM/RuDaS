@@ -1,0 +1,16 @@
+p1(A,B) :- p8(A,B).
+p1(A,B) :- p7(B,A).
+p8(A,B) :- p7(B,A).
+p8(A,B) :- p1(A,B).
+p7(A,B) :- p8(B,A).
+p10(A,B) :- p1(B,F),p2(F,A).
+p1(A,B) :- p10(F,A),p2(B,F).
+p7(A,B) :- p1(B,A).
+p7(A,B) :- p1(B,A),p8(B,A).
+p7(A,B) :- p10(E,B),p2(A,E).
+p10(A,B) :- p2(F,A),p8(B,F).
+p2(A,B) :- p10(B,E),p8(E,A).
+p2(A,B) :- p10(B,F),p7(A,F).
+p10(A,B) :- p2(E,A),p7(E,B).
+p2(A,B) :- p1(E,A),p10(B,E).
+p8(A,B) :- p10(F,A),p2(B,F).

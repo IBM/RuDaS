@@ -1,0 +1,14 @@
+p8,c53,c20,c53
+inv_p8,c20,c53,c53,c20
+p8,c53,c7,c53
+inv_p8,c7,c53,c53,c7
+p8,c17,c46,c17
+inv_p8,c46,c17,c46
+p5,c7,c11,c11,c8,c35,c7
+inv_p5,c11,c7,c7,c11
+p8,c47,c40,c47
+inv_p8,c40,c47,c40
+p5,c35,c11,c11,c8,c35
+inv_p5,c11,c35,c35,c11
+p5,c15,c57,c57,c15
+inv_p5,c57,c15,c15,c57

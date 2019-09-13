@@ -1,0 +1,152 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p0
+
+Relation p7
+
+Relation p5
+
+Relation p3
+
+Relation p1
+
+Relation p4
+
+----------
+p3:
+
+***  Warning: the following definition
+***  does not cover 61 tuples in the relation
+
+p3(A,B) :- p1(B,A), p0(A,C).
+p3(A,B) :- p1(B,A), p1(A,C), p4(D,B).
+p3(A,B) :- p1(B,A), p1(C,A), p7(D,C).
+p3(A,B) :- p1(B,A), p5(A,C), p0(D,A).
+p3(A,B) :- p1(B,A), p1(C,A), p7(C,D), p7(A,E).
+p3(A,B) :- p1(B,A), p1(C,A), p0(D,C), p4(E,D), p7(A,F).
+p3(A,B) :- p1(B,A), p5(A,C), p7(C,D), p1(D,E).
+p3(A,B) :- p1(B,A), p0(C,B), p1(B,D), p4(E,C), p0(F,D).
+p3(A,B) :- p1(B,A), p0(C,B), p7(C,D).
+p3(A,B) :- p1(B,A), p5(A,C), p7(D,A).
+p3(A,B) :- p1(B,A), p1(A,C), p7(D,A).
+p3(A,B) :- p1(B,A), p5(A,C), p0(D,B).
+p3(A,B) :- p1(B,A), p4(C,A), p7(A,D).
+p3(A,B) :- p1(B,A), p5(A,C), p7(A,D), p1(E,D).
+p3(A,B) :- p1(B,A), p0(C,B), p4(D,B).
+p3(A,B) :- p1(B,A), p1(C,A), p0(D,C), p7(E,D), p0(B,F).
+p3(A,B) :- p1(B,A), p1(C,A), p0(D,C), p5(B,E), p3(B,F).
+p3(A,B) :- p1(B,A), p7(B,C), p3(B,D), p7(D,E).
+p3(A,B) :- p1(B,A), p0(B,C), p1(C,D), p3(D,E).
+
+Time 1.7 secs
+
+----------
+p1:
+
+***  Warning: the following definition
+***  does not cover 45 tuples in the relation
+
+p1(A,B) :- p3(B,A), p5(A,C), p5(C,D), p7(D,E), p3(F,E).
+p1(A,B) :- p3(B,A), p0(C,B), p0(B,D).
+p1(A,B) :- p3(B,A), p5(A,C), p0(C,D), p7(E,C).
+p1(A,B) :- p3(B,A), p0(C,B), p3(D,C).
+p1(A,B) :- p3(B,A), p5(A,C), p7(C,D), p0(D,E).
+p1(A,B) :- p3(B,A), p4(C,B), p7(D,A).
+p1(A,B) :- p3(B,A), p4(C,A), p3(C,D).
+p1(A,B) :- p3(B,A), p3(B,C), p3(C,D), p5(C,E), p0(B,F).
+p1(A,B) :- p3(B,A), p7(C,B), p7(D,C).
+p1(A,B) :- p3(B,A), p0(A,C), p0(B,D).
+p1(A,B) :- p3(B,A), p3(B,C), p3(D,A), p0(E,C), p4(F,E), p3(G,D).
+p1(A,B) :- p3(B,A), p7(C,B), p0(D,C).
+p1(A,B) :- p3(B,A), p7(B,C), p7(D,C), p3(D,E), p0(E,F).
+p1(A,B) :- p3(B,A), p4(C,A), p3(A,D), p3(D,E).
+p1(A,B) :- p3(B,A), p7(B,C), p7(C,D), p3(D,E).
+p1(A,B) :- p3(B,A), p5(B,C), p7(C,D), p4(D,E), p7(E,F).
+p1(A,B) :- p3(B,A), p7(A,C), p7(C,D).
+p1(A,B) :- p3(B,A), p0(C,A), p5(C,D).
+p1(A,B) :- p3(B,A), p3(A,C), p7(C,D).
+p1(A,B) :- p3(B,A), p7(A,C), p7(B,D), p3(E,D).
+p1(A,B) :- p3(B,A), p4(C,B), p0(C,D), p5(D,E).
+p1(A,B) :- p3(B,A), p3(B,C), p0(D,C), p4(E,D), p3(D,F), p3(F,G).
+p1(A,B) :- p5(A,B), p4(C,A).
+p1(A,B) :- p3(B,A), p0(C,B), p4(D,B), p1(E,D).
+p1(A,B) :- p3(B,A), p7(B,C), p4(D,B), p1(E,D).
+p1(A,B) :- p3(B,A), p7(C,B), p1(D,C), p3(D,E).
+p1(A,B) :- p3(B,A), p4(C,B), p7(D,C), p1(E,C).
+
+Time 5.3 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  does not cover 68 tuples in the relation
+
+p7(A,B) :- p5(C,A), p1(A,D), p4(E,D), p5(A,D), p5(F,B), p7(G,F), p5(H,F).
+
+Time 6.4 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 23 tuples in the relation
+
+p5(A,B) :- p1(A,B), p7(B,C), p3(A,D).
+p5(A,B) :- p1(A,B), p7(B,C), p0(A,D).
+p5(A,B) :- p3(B,A), p7(B,C), p7(D,A).
+p5(A,B) :- p1(A,B), p7(B,C), p7(D,B).
+p5(A,B) :- p1(A,B), p7(B,C), p7(C,D).
+p5(A,B) :- p1(A,B), p7(B,C), p0(C,D), p3(D,E).
+p5(A,B) :- p1(A,B), p7(B,C), p0(C,D), p0(D,E).
+p5(A,B) :- p3(B,A), p7(B,C), p3(A,D).
+p5(A,B) :- p1(A,B), p7(B,C), p5(B,D).
+
+Time 35.8 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 41 tuples in the relation
+
+p0(A,B) :- p4(A,C), p3(C,B), p1(B,D), p4(E,A), p3(F,D).
+p0(A,B) :- p4(A,C), p3(C,B), p1(B,D), p7(A,E).
+p0(A,B) :- p4(A,C), p1(B,C), p3(B,D), p1(D,B).
+p0(A,B) :- p4(A,C), p3(C,B), p7(D,C).
+p0(A,B) :- p4(A,C), p1(B,C), p7(D,C).
+p0(A,B) :- p4(A,C), p3(C,B), p0(C,D).
+
+Time 37.6 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  matches 3 tuples not in the relation
+***  does not cover 23 tuples in the relation
+
+p4(A,B) :- p0(A,C), p3(B,C), p1(D,A), p5(D,E).
+p4(A,B) :- p0(A,C), p3(B,C), p1(D,B), p7(D,E).
+p4(A,B) :- p0(A,C), p3(B,C), p3(B,D), p7(E,D).
+p4(A,B) :- p0(A,C), p3(B,C), p0(B,D), p1(D,E), p3(F,E).
+p4(A,B) :- p0(A,C), p1(C,B), p1(D,A), p0(E,D), p3(E,F).
+p4(A,B) :- p0(A,C), p1(C,B), p0(B,D), p1(D,E), p7(E,F).
+p4(A,B) :- p0(A,C), p1(C,B), p1(A,D), p0(D,E), p3(F,E), p3(G,F).
+p4(A,B) :- p0(A,C), p1(C,B), p7(D,B), p3(D,E).
+p4(A,B) :- p0(A,C), p1(C,B), p0(D,B), p3(E,D).
+p4(A,B) :- p0(A,C), p3(B,C), p3(A,D), p1(B,E).
+p4(A,B) :- p0(A,C), p3(B,C), p3(A,D), p7(C,E).
+p4(A,B) :- p0(A,C), p3(B,C), p7(A,D), p3(A,E).
+p4(A,B) :- p0(A,C), p3(B,C), p3(A,D), p4(D,E).
+p4(A,B) :- p0(A,C), p3(B,C), p3(B,D), p4(D,E).
+p4(A,B) :- p0(A,C), p1(C,B), p1(D,A), p3(B,E), p4(E,F).
+p4(A,B) :- p0(A,C), p1(C,B), p4(C,D), p3(C,E).
+
+Time 43.3 secs

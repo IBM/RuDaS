@@ -1,0 +1,28 @@
+p6(A,B) :- p8(B,C), p4(D,A), p7(B,C), p8(D,E).
+
+p6(A,B) :- p8(B,C), p4(D,A), p7(B,C), p1(A,E).
+
+p6(A,B) :- p8(B,C), p1(D,A), p4(D,A), p5(B,E).
+
+p6(A,B) :- p8(B,C), p1(D,A), p4(B,E).
+
+p6(A,B) :- p8(B,C), p1(D,A), p6(E,C).
+
+p8(A,B) :- p7(A,B), p1(A,C).
+
+p8(A,B) :- p7(A,B), p6(C,A), p6(D,C).
+
+p7(A,B) :- p8(A,B), p1(A,C).
+
+p7(A,B) :- p8(A,B), p6(C,A), p4(D,C), p6(D,A).
+
+p1(A,B) :- p4(A,B), p6(B,A).
+
+p1(A,B) :- p4(A,B), p6(C,B).
+
+p1(A,B) :- p4(A,B), p4(C,A).
+
+p4(A,B) :- p1(A,B), p5(C,A).
+
+p4(A,B) :- p1(A,B), p6(B,C), p8(C,D), p4(E,D).
+

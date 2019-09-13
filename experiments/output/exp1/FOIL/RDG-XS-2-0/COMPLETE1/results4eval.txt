@@ -1,0 +1,24 @@
+p10(A,B) :- p0(B,A).
+
+p5(A,B) :- p1(A,B).
+
+p0(A,B) :- p10(B,A).
+
+p1(A,B) :- p5(A,B), p10(B,C).
+
+p1(A,B) :- p5(A,B), p10(A,C).
+
+p1(A,B) :- p5(A,B), p5(C,A).
+
+p1(A,B) :- p5(A,B), p1(B,C).
+
+p7(A,B) :- p10(B,A), p5(A,C), p10(C,D).
+
+p7(A,B) :- p10(B,A), p5(A,C), p10(D,C).
+
+p7(A,B) :- p10(B,A), p10(C,B), p10(D,C).
+
+p7(A,B) :- p1(C,B), p10(B,A), p10(D,C), p10(E,D).
+
+p7(A,B) :- p10(B,A), p10(A,C), p7(D,C).
+

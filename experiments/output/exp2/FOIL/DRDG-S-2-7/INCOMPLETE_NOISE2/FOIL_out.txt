@@ -1,0 +1,131 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p4
+
+Relation p10
+
+Relation p5
+
+Relation p1
+
+Relation p9
+
+Relation p8
+
+Relation p7
+
+Relation p3
+
+Relation p0
+
+Relation p6
+
+----------
+p4:
+
+***  Warning: the following definition
+***  does not cover 677 tuples in the relation
+
+p4(A,B) :- p8(B,B), p9(C,A), p9(C,B).
+
+Time 14.5 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  matches 1 tuple not in the relation
+***  does not cover 13 tuples in the relation
+
+p9(A,B) :- p1(A,B), p4(C,B).
+p9(A,B) :- p1(A,B), p4(A,C).
+p9(A,B) :- p1(A,B), p5(C,B), p7(D,C).
+p9(A,B) :- p1(A,B), p4(B,C), p10(C,D), p4(E,D), p4(B,F), p10(F,G), p4(F,H).
+p9(A,B) :- p4(B,C), p1(A,C), p5(B,C).
+
+Time 18.0 secs
+
+----------
+p1:
+
+***  Warning: the following definition
+***  does not cover 13 tuples in the relation
+
+p1(A,B) :- p9(A,B), p5(C,B).
+p1(A,B) :- p9(A,B), p4(A,C), p4(B,D).
+
+Time 18.2 secs
+
+----------
+p8:
+
+***  Warning: the following definition
+***  does not cover 12 tuples in the relation
+
+p8(A,A) :- p4(A,A).
+p8(A,A) :- p4(C,A), p3(C,D).
+p8(A,A) :- p10(A,C), p4(A,D).
+p8(A,A) :- p10(A,C), p4(D,C).
+
+Time 72.6 secs
+
+----------
+p3:
+
+***  Warning: the following definition
+***  does not cover 10 tuples in the relation
+
+
+Time 72.9 secs
+
+----------
+p10:
+
+***  Warning: the following definition
+***  does not cover 9 tuples in the relation
+
+
+Time 73.2 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 8 tuples in the relation
+
+p5(A,B) :- p1(C,B), p9(C,A), p0(D,A).
+
+Time 73.4 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  does not cover 8 tuples in the relation
+
+
+Time 73.8 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 74.3 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 74.9 secs

@@ -1,0 +1,58 @@
+Epoch 1 mode train Loss 30.8739 In top 0.3392. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode valid Loss 25.5117 In top 0.3944. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode test Loss 23.1336 In top 0.2705. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode train Loss 30.7460 In top 0.3543. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode valid Loss 25.4193 In top 0.3944. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode test Loss 23.0306 In top 0.2705. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode train Loss 30.6982 In top 0.3568. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode valid Loss 25.3932 In top 0.3944. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode test Loss 23.0030 In top 0.2705. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode train Loss 30.6866 In top 0.3568. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode valid Loss 25.3853 In top 0.3944. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode test Loss 22.9964 In top 0.2705. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 5 mode train Loss 30.6796 In top 0.3568. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 5 mode valid Loss 25.3759 In top 0.4014. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 5 mode test Loss 22.9883 In top 0.2766. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 6 mode train Loss 30.6661 In top 0.3568. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 6 mode valid Loss 25.3597 In top 0.4014. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 6 mode test Loss 22.9724 In top 0.2781. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 7 mode train Loss 30.6441 In top 0.3568. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode valid Loss 25.3346 In top 0.4014. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode test Loss 22.9465 In top 0.2796. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 8 mode train Loss 30.6128 In top 0.3593. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 8 mode valid Loss 25.2993 In top 0.4049. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 8 mode test Loss 22.9091 In top 0.2827. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 9 mode train Loss 30.5728 In top 0.3593. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 9 mode valid Loss 25.2566 In top 0.4049. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 9 mode test Loss 22.8628 In top 0.2903. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 10 mode train Loss 30.5309 In top 0.3618. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 10 mode valid Loss 25.2233 In top 0.4120. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 10 mode test Loss 22.8234 In top 0.2994. Time elapsed 0.00 hrs (0.2 mins)
+Best test in top: 0.2994 at epoch 10.
+Test in top 0.2994
+Test predictions written. Time elapsed 0.00 hrs (0.3 mins)
+Attentions collected. Time elapsed 0.00 hrs (0.3 mins)
+
+Rules listed and printed. Time elapsed 0.01 hrs (0.3 mins)
+MPLETE_NOISE2/ckpt/model-7
+1/4	2/4	3/4	4/4	Epoch 8 mode train Loss 30.6128 In top 0.3593. Time elapsed 0.00 hrs (0.2 mins)
+1/3	2/3	3/3	Epoch 8 mode valid Loss 25.2993 In top 0.4049. Time elapsed 0.00 hrs (0.2 mins)
+2/6	4/6	6/6	Epoch 8 mode test Loss 22.9091 In top 0.2827. Time elapsed 0.00 hrs (0.2 mins)
+Model saved at ./../output/exp2/Neural-LP/CHAIN-S-3-0/INCOMPLETE_NOISE2/ckpt/model-8
+1/4	2/4	3/4	4/4	Epoch 9 mode train Loss 30.5728 In top 0.3593. Time elapsed 0.00 hrs (0.2 mins)
+1/3	2/3	3/3	Epoch 9 mode valid Loss 25.2566 In top 0.4049. Time elapsed 0.00 hrs (0.2 mins)
+2/6	4/6	6/6	Epoch 9 mode test Loss 22.8628 In top 0.2903. Time elapsed 0.00 hrs (0.2 mins)
+Model saved at ./../output/exp2/Neural-LP/CHAIN-S-3-0/INCOMPLETE_NOISE2/ckpt/model-9
+1/4	2/4	3/4	4/4	Epoch 10 mode train Loss 30.5309 In top 0.3618. Time elapsed 0.00 hrs (0.2 mins)
+1/3	2/3	3/3	Epoch 10 mode valid Loss 25.2233 In top 0.4120. Time elapsed 0.00 hrs (0.2 mins)
+2/6	4/6	6/6	Epoch 10 mode test Loss 22.8234 In top 0.2994. Time elapsed 0.00 hrs (0.2 mins)
+Model saved at ./../output/exp2/Neural-LP/CHAIN-S-3-0/INCOMPLETE_NOISE2/ckpt/model-10
+Best test in top: 0.2994 at epoch 10.
+Start getting test predictions...
+2/6	4/6	6/6	Test in top 0.2994
+Test predictions written. Time elapsed 0.00 hrs (0.3 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.00 hrs (0.3 mins)
+2/16	5/16	8/16	11/16	14/16	
+Rules listed and printed. Time elapsed 0.01 hrs (0.3 mins)
+====================================Finish====================================

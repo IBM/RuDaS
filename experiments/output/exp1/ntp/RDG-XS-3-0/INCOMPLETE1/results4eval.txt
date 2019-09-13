@@ -1,0 +1,80 @@
+p1(A,A) :- p4(A,B).
+p9(A,A) :- p1(A,B).
+p4(A,A) :- p1(A,B).
+p1(A,A) :- p2(A,B).
+p2(A,A) :- p1(A,B).
+p2(A,A) :- p2(A,B).
+p2(A,A) :- p1(A,B).
+p1(A,A) :- p1(A,B).
+p2(A,A) :- p1(A,B).
+p1(A,A) :- p9(A,B).
+p5(A,A) :- p2(A,B).
+p1(A,A) :- p1(A,B).
+p2(A,A) :- p1(A,B).
+p1(A,A) :- p1(A,B).
+p1(A,A) :- p1(A,B).
+p2(A,A) :- p1(A,B).
+p2(A,A) :- p9(A,B).
+p2(A,A) :- p4(A,B).
+p1(A,A) :- p2(A,B).
+p2(A,A) :- p2(A,B).
+p1(A,B) :- p2(A,B).
+p2(A,B) :- p1(A,B).
+p1(A,B) :- p2(A,B).
+p1(A,B) :- p2(A,B).
+p1(A,B) :- p1(A,B).
+p1(A,B) :- p4(A,B).
+p2(A,B) :- p2(A,B).
+p1(A,B) :- p2(A,B).
+p1(A,B) :- p2(A,B).
+p1(A,B) :- p1(A,B).
+p1(A,B) :- p1(A,B).
+p2(A,B) :- p2(A,B).
+p2(A,B) :- p1(A,B).
+p1(A,B) :- p1(A,B).
+p2(A,B) :- p1(A,B).
+p2(A,B) :- p1(A,B).
+p2(A,B) :- p2(A,B).
+p1(A,B) :- p2(A,B).
+p2(A,B) :- p1(A,B).
+p2(A,B) :- p2(A,B).
+p1(A,B) :- p1(A,C), p2(C,B).
+p1(A,B) :- p2(A,C), p2(C,B).
+p2(A,B) :- p1(A,C), p9(C,B).
+p2(A,B) :- p2(A,C), p1(C,B).
+p2(A,B) :- p1(A,C), p1(C,B).
+p2(A,B) :- p1(A,C), p1(C,B).
+p1(A,B) :- p1(A,C), p9(C,B).
+p2(A,B) :- p1(A,C), p1(C,B).
+p1(A,B) :- p1(A,C), p1(C,B).
+p2(A,B) :- p1(A,C), p1(C,B).
+p4(A,B) :- p2(A,C), p1(C,B).
+p1(A,B) :- p1(A,C), p1(C,B).
+p2(A,B) :- p2(A,C), p2(C,B).
+p1(A,B) :- p1(A,C), p1(C,B).
+p2(A,B) :- p1(A,C), p2(C,B).
+p1(A,B) :- p3(A,C), p2(C,B).
+p2(A,B) :- p2(A,C), p2(C,B).
+p2(A,B) :- p1(A,C), p2(C,B).
+p1(A,B) :- p1(A,C), p2(C,B).
+p1(A,B) :- p2(A,C), p2(C,B).
+p2(A,B) :- p4(B,C), p9(A,A).
+p2(A,B) :- p1(B,C), p2(A,A).
+p2(A,B) :- p1(B,C), p2(A,A).
+p1(A,B) :- p1(B,C), p4(A,A).
+p1(A,B) :- p2(B,C), p2(A,A).
+p1(A,B) :- p1(B,C), p1(A,A).
+p1(A,B) :- p1(B,C), p2(A,A).
+p1(A,B) :- p1(B,C), p1(A,A).
+p5(A,B) :- p2(B,C), p1(A,A).
+p2(A,B) :- p1(B,C), p1(A,A).
+p1(A,B) :- p2(B,C), p2(A,A).
+p2(A,B) :- p1(B,C), p2(A,A).
+p2(A,B) :- p1(B,C), p1(A,A).
+p2(A,B) :- p2(B,C), p2(A,A).
+p1(A,B) :- p1(B,C), p1(A,A).
+p4(A,B) :- p1(B,C), p2(A,A).
+p1(A,B) :- p1(B,C), p1(A,A).
+p2(A,B) :- p2(B,C), p1(A,A).
+p1(A,B) :- p1(B,C), p2(A,A).
+p1(A,B) :- p2(B,C), p5(A,A).

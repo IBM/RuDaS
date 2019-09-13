@@ -1,0 +1,103 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p6
+
+Relation p4
+
+Relation p2
+
+Relation p10
+
+Relation p9
+
+Relation p5
+
+Relation p3
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 11 tuples in the relation
+
+p2(A,B) :- p6(B,A), p10(C,B), p4(C,D).
+p2(A,B) :- p6(B,A), p10(B,C), p4(D,C), p10(C,E).
+p2(A,B) :- p6(B,A), p2(B,B).
+p2(A,B) :- p6(B,A), p4(C,B), p2(B,C).
+p2(A,B) :- p4(B,A), p6(C,B), p2(B,C).
+
+Time 0.0 secs
+
+----------
+p10:
+
+***  Warning: the following definition
+***  does not cover 20 tuples in the relation
+
+
+Time 0.1 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 5 tuples in the relation
+
+p6(A,B) :- p4(A,B), p10(C,A).
+p6(A,B) :- p2(B,A), p10(A,C), p2(C,D).
+p6(A,B) :- p2(B,A), p4(C,B), p2(A,A).
+p6(A,B) :- p4(A,B), p3(A,C).
+p6(A,B) :- p2(B,A), p10(C,A), p4(C,D).
+p6(A,B) :- p4(A,B), p10(C,B), p10(D,C).
+p6(A,B) :- p2(B,A), p10(A,C), p4(D,C), p6(C,E).
+p6(A,B) :- p4(A,B), p4(B,C), p6(C,D).
+
+Time 0.1 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+p4(A,B) :- p6(A,B), p10(C,B).
+p4(A,B) :- p6(A,B), p10(A,C), p2(A,D).
+p4(A,B) :- p6(A,B), p10(A,C), p6(D,A).
+p4(A,B) :- p6(A,B), p10(A,C), p10(D,C), p2(E,C), p10(F,D).
+p4(A,B) :- p2(B,A), p10(A,C), p2(D,C), p4(B,E).
+p4(A,B) :- p6(A,B), p4(B,C).
+
+Time 0.1 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 0.1 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 0.1 secs
+
+----------
+p3:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 0.1 secs

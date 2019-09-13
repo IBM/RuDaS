@@ -1,0 +1,13 @@
+p8(A,B) :- p3(B,A).
+p5(A,B) :- p3(B,A).
+p3(A,B) :- p5(B,A).
+p8(A,B) :- p3(B,A),p9(A,B).
+p8(A,B) :- p3(B,A),p8(B,A).
+p8(A,B) :- p2(B,F),p9(A,F).
+p3(A,B) :- p8(B,A),p9(B,A).
+p8(A,B) :- p1(B,F),p9(A,F).
+p8(A,B) :- p9(F,B),p9(A,F).
+p8(A,B) :- p3(B,A),p3(A,B).
+p3(A,B) :- p3(B,A),p8(B,A).
+p3(A,B) :- p8(B,A),p8(A,B).
+p3(A,B) :- p1(A,F),p9(B,F).

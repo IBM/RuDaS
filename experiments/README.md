@@ -7,17 +7,8 @@ Installation requirements: git, anaconda, wget
 4. Run experiments/run_scripts/run_new2.sh to run the experiment 2.
 4. For evaluation, run experiments/src/experiments_evaluation.py to evaluate both experiments.
 
-The following systems are evaluated
+The following systems are evaluated:
 
-
-TODO include the following two into the above script!
-
-<!--
-## ProGol
-
-* *Version:* 5.0
-* *Source Code:* <https://www.doc.ic.ac.uk/~shm/Software/progol5.0/>
--->
 ## FOIL
 
 * *Version:* 6.4
@@ -61,3 +52,18 @@ Andres Campero, Aldo Pareja, Tim Klinger, Josh Tenenbaum, and Sebastian Riedel.
 <https://git.ng.bluemix.net/MIT-IBM-Watson-AI-Lab/AI-Algorithms/inducing-probabilistic-programs/neural-theorem-proving>-->
 
 
+
+# Experiments results
+
+## Existing datasets
+
+|system/dataset| even |
+| --- | --- | 
+| FOIL | 1.0 | 
+| amie plus | | 
+| ntp | | 
+| neural-lp | | 
+
+
+
+## TODO

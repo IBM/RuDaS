@@ -1,0 +1,16 @@
+p7(A,B) :- p5(B,A).
+p7(A,B) :- p9(B,A).
+p7(A,B) :- p0(A,B).
+p5(A,B) :- p9(A,B).
+p5(A,B) :- p7(B,A).
+p9(A,B) :- p5(A,B).
+p9(A,B) :- p0(B,A).
+p0(A,B) :- p7(A,B).
+p9(A,B) :- p7(B,A).
+p7(A,B) :- p5(B,A),p5(A,B).
+p7(A,B) :- p5(B,A),p7(B,A).
+p0(A,B) :- p9(B,A).
+p5(A,B) :- p5(B,F),p7(A,F).
+p5(A,B) :- p5(B,A),p7(B,A).
+p5(A,B) :- p7(B,A),p7(A,B).
+p5(A,B) :- p7(E,B),p7(A,E).
