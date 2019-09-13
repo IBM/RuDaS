@@ -60,10 +60,58 @@ Andres Campero, Aldo Pareja, Tim Klinger, Josh Tenenbaum, and Sebastian Riedel.
 |system/dataset| even |
 | --- | --- | 
 | FOIL | 1.0 | 
-| amie plus | | 
-| ntp | | 
-| neural-lp | | 
+| amie plus | - | 
+| ntp | 1.0| 
+| neural-lp | - | 
+
+## Overall Results in Terms of Different Metrics
+Impact of different metrics, each one averaged on 120 datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
+
+|| FOIL | AMIE+ | Neural-LP | NTP |
+| --- | --- | ---  | --- | --- | 
+| **H-accuracy** |0.9872 | 0.8708 | 0.9852 |0.9304 |
+|    **Accuracy** | 0.9872  | 0.8719 | 0.9850   | 0.9302|
+ |   **F1-score** |  0.2136 | 0.3164 |  0.1620 | 0.1192 |
+  |  **H-score** | 0.1523 | 0.2429 | 0.1027 | 0.0772 |
+ |   **Precision** | 0.5810 | 0.3125 | 0.1693 | 0.1049 | %($s_c$) 
+ |   **Recall** | 0.2273  | 0.7178  | 0.2421 | 0.3960 |
 
 
+## Impact of Missing Consequences and Noise
+Effect of missing consequences and noise on 144 datasets. Each H-score value is averaged on 48 datasets, with uniformly distributed categories in {RDG, DRDG}, sizes in {XS,S}, and graph depths in {2,3}
+The  noise  parameters  are  definesas follows (the  set  memberships  are  intended  to  mean  “uniformly  distributed over"):
 
-## TODO
+| |  Complete | Incomplete | Incomplete + Noise | 
+| --- | --- | ---  | --- | 
+| **n_OW** | 0    | {0.2,0.3,0.4} | {0.2,0.3,0.4} | 
+| **nNoise+** | 0 | 0.3951 | {0.2,0.3} | 
+| **nNoise-** | 0 | 0.3951 | {0.15,0.3} | 
+
+Moreover, in order to give an impression  of  some  of  the  datasets  considered  in  existing  evaluations,  we  included  one  manually  created  dataset,  EVEN,inspired  by  the  corresponding  dataset  used  in  (Evans  and Grefenstette 2018), which contains complete information:
+
+|| EVEN |  Complete | Incomplete | Incomplete + Noise | 
+| --- | --- | ---  | --- | --- | 
+| **FOIL** | 1.0 | 0.3951 | 0.2102 | 0.0940 |
+| **AMIE+** | - |  0.2219 |  0.2646 |  0.2634 |
+|  **Neural-LP**|  - | 0.0659 | 0.0750 | 0.0701 |
+|   **NTP**  | 1.0 | 0.0601 | 0.0833 | 0.0718|
+
+## Impact of Dependencies Between Rules
+Impact of dataset category. H-score averaged on 40datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
+
+||CHAIN |  RDG | DRDG  |
+| --- | --- | ---  | --- |
+| **FOIL** | 0.2024 | 0.0873 | 0.1648     |
+| **AMIE+** |  0.3395 | 0.2323 | 0.1443 |
+| **Neural-LP**  |  0.1291 | 0.1059 | 0.0718 |
+| **NTP**  | 0.1239 | 0.0551 | 0.0427   |
+
+## Scalability: Impact of Dataset Size
+Impact of dataset size and rule graph depth. H-scoreaveraged on 30 datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
+
+|| XS-2 |  XS-3 | S-2 | S-3  |
+| --- | --- | ---  | --- | --- | 
+| **FOIL**  | 0.2815 | 0.2119 | 0.0346 | 0.0934 |
+| **AMIE+**  | 0.1449 | 0.1581 | 0.4392 | 0.2124 |
+| **Neural-LP**   | 0.1155 | 0.0643 | 0.1281 | 0.0992 |
+| **NTP** | 0.1512 | 0.0605 | 0.0562 | 0.0471|
