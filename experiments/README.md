@@ -55,15 +55,6 @@ Andres Campero, Aldo Pareja, Tim Klinger, Josh Tenenbaum, and Sebastian Riedel.
 
 # Experiments results
 
-## Existing datasets
-
-|system/dataset| even |
-| --- | --- | 
-| FOIL | 1.0 | 
-| amie plus | - | 
-| ntp | 1.0| 
-| neural-lp | - | 
-
 ## Overall Results in Terms of Different Metrics
 Impact of different metrics, each one averaged on 120 datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
 
