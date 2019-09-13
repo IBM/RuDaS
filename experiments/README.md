@@ -1,11 +1,11 @@
 # Experiments
 
 Installation requirements: git, anaconda, wget
-1. Run experiments/setup_systems_scripts/setup_systems.sh to download and set up the systems.
-2. Run experiments/src/experiments_generation.py to set up the experiments.
-3. Run experiments/run_scripts/run_new.sh to run the experiment 1.
-4. Run experiments/run_scripts/run_new2.sh to run the experiment 2.
-4. For evaluation, run experiments/src/experiments_evaluation.py to evaluate both experiments.
+1. Run **experiments/setup_systems_scripts/setup_systems.sh** to download and set up the systems.
+2. Run **experiments/src/experiments_generation.py** to set up the experiments.
+3. Run **experiments/run_scripts/run_new.sh** to run the experiment 1.
+4. Run **experiments/run_scripts/run_new2.sh** to run the experiment 2.
+4. For evaluation, run **experiments/src/experiments_evaluation.py** to evaluate both experiments.
 
 The following systems are evaluated:
 
@@ -72,11 +72,11 @@ Impact of different metrics, each one averaged on 120 datasets with uniformly di
 Effect of missing consequences and noise on 144 datasets. Each H-score value is averaged on 48 datasets, with uniformly distributed categories in {RDG, DRDG}, sizes in {XS,S}, and graph depths in {2,3}
 The  noise  parameters  are  definesas follows (the  set  memberships  are  intended  to  mean  “uniformly  distributed over"):
 
-| |  Complete | Incomplete | Incomplete + Noise | 
-| --- | --- | ---  | --- | 
-| **n_OW** | 0    | {0.2,0.3,0.4} | {0.2,0.3,0.4} | 
-| **nNoise+** | 0 | 0.3951 | {0.2,0.3} | 
-| **nNoise-** | 0 | 0.3951 | {0.15,0.3} | 
+|                        |  n_OW       |  nNoise+ |  nNoise-   | 
+| ---                    |  ---        |  ---     | ---        | 
+| **Complete**           |    0        |    0     |     0      | 
+| **Incomplete**         |{0.2,0.3,0.4}| 0        |  0         |
+| **Incomplete + Noise** |{0.2,0.3,0.4}| {0.2,0.3}| {0.15,0.3} | 
 
 Moreover, in order to give an impression  of  some  of  the  datasets  considered  in  existing  evaluations,  we  included  one  manually  created  dataset,  EVEN,inspired  by  the  corresponding  dataset  used  in  (Evans  and Grefenstette 2018), which contains complete information:
 
