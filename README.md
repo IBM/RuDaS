@@ -69,10 +69,22 @@ Predicate invention: we don't penalize them in the evaluation
 ## Available Datasets Description
 
 <!--TODO TABLE-->
+<sub>
+  
+| n.  | type | Size | Depth |n.Rules|n.Rules|n.Rules|n.Facts|n.Facts|n.Facts|n.Pred|n.Pred|n.Pred|n.Const|n.Const|n.Const|
+|--- | ---  | ---  | ---   | --- | ---   | --- | --- | ---   | --- | --- | ---  | --- | ---| ---   | --- |
+|     |      |      |       | min |   avg |max  | min | avg   |max  | min | avg  |max  | min| avg   |max  |
+| 10  |CHAIN |   XS | 2     |2    |2      |2    | 51  |74     |95   | 5   |7     |9    | 31 |47     |71   |
+| 10  |CHAIN |   XS | 3     |3    |3      |3    | 49  |70     |97   | 7   |8     |  9  | 31 |43     |64   |
+| 10  |CHAIN | S | 2  | 2|2|2 | 168|447|908 | 9|10|11 | 97|259|460|
+|      10 |CHAIN  | S |  3 | 3|3|3 | 120|508|958 |8|10|11 | 52|230|374|
+|    22 | RDG  |  XS | 2  | 3|3|3 | 49|84|122 | 6|9|11 | 28|50|84 | 
+|     12 | RDG  |  XS | 3  | 4|5|6 | 56|104|172 | 8|10|11 | 41|55|75 |
+|     22 |  RDG  | S | 2 | 3|3|3 | 200|646|1065 | 6|11|11 | 71|370|648   |
+|     22 |RDG  |  S | 3 | 4|5|7 | 280|613|1107 | 10|11|11 | 149|297|612   |
+|    22 |DRDG |  XS | 2  | 3|4|5 | 60|100|181 | 6|9|11 | 29|55|82    |
+|   12 |DRDG |  XS |3  | 4|7|11 | 58|144|573 | 8|10|11 | 34|58|89   |
+|    22 |DRDG |  S |2 | 3|4|5 | 149|564|1027 | 10|11|11 | 88|327|621   |
+|    22 |DRDG |  S |3 | 4|7|12 | 111|540|1126 | 10|11|11 | 70|284|680   |
 
-|dataset| n. | type | Size | Depth | n.Rules | n.Facts n.Pred n.Const
-| --- | --- |--- | --- | --- | --- | --- | --- | --- |
-| name | | | | | | | | |
-| ... | | | | | | | | |
-| name | | | | | | | | |
-
+</sub>
