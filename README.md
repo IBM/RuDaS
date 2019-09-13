@@ -68,10 +68,10 @@ Predicate invention: we don't penalize them in the evaluation
 
 ## Available Datasets Description
 
-<!--TODO TABLE-->
-<sub>
+<!--add <sub> and </sub> to reduce the font-->
+
   
-| n.  | type | Size | Depth |n.Rules|n.Rules|n.Rules|n.Facts|n.Facts|n.Facts|n.Pred|n.Pred|n.Pred|n.Const|n.Const|n.Const|
+| \#  | type | Size | Depth |\#Rules|\#Rules|\#Rules|\#Facts|\#Facts|\#Facts|\#Pred|\#Pred|\#Pred|\#Const|\#Const|\#Const|
 |--- | ---  | ---  | ---   | --- | ---   | --- | --- | ---   | --- | --- | ---  | --- | ---| ---   | --- |
 |     |      |      |       | min |   avg |max  | min | avg   |max  | min | avg  |max  | min| avg   |max  |
 | 10  |CHAIN |   XS | 2     |2    |2      |2    | 51  |74     |95   | 5   |7     |9    | 31 |47     |71   |
@@ -87,4 +87,4 @@ Predicate invention: we don't penalize them in the evaluation
 |    22 |DRDG |  S |2 | 3|4|5 | 149|564|1027 | 10|11|11 | 88|327|621   |
 |    22 |DRDG |  S |3 | 4|7|12 | 111|540|1126 | 10|11|11 | 70|284|680   |
 
-</sub>
+
