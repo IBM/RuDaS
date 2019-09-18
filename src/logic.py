@@ -128,6 +128,9 @@ class Predicate:
             return self.name == other.name and self.arity == other.arity
         return self is other  #super(Predicate, self).__eq__(other) #TODO
 
+    def __repr__(self):
+        return self.__str__()
+
     def __str__(self):
         return 'p'+ str(self.name) if isinstance(self.name, int) else str(self.name)
 
@@ -149,6 +152,9 @@ class Atom(object):
         if isinstance(other, Atom):
             return self.predicate == other.predicate and self.predicate.arity == sum([1 if other.arguments[i] == a else 0 for i,a in enumerate(self.arguments)])  #self.arguments == other.arguments
         return super(Atom, self).__eq__(other)
+
+    def __repr__(self):
+        return self.__str__()
 
     def __str__(self):
         return str(self.predicate) + '(' + ','.join([str(a) for a in self.arguments]) + ')'
@@ -177,6 +183,9 @@ class Variable(Term):
             return self.name == other.name
         # return super(Variable, self).__eq__(other)
 
+    def __repr__(self):
+        return self.__str__()
+
     def __str__(self):
         return 'X'+ str(self.name) if isinstance(self.name, int) else str(self.name)
 
@@ -197,6 +206,9 @@ class Constant(Term):
 
     def __hash__(self):
         return self.name
+
+    def __repr__(self):
+        return self.__str__()
 
     def __str__(self):
         return 'c' + str(self.name) if isinstance(self.name, int) else str(self.name)

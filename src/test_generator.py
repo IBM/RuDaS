@@ -1,5 +1,7 @@
 import os
 from generator import *
+from utils import *
+from itertools import chain
 
 FILES = [
     "log", "rules",
@@ -11,8 +13,6 @@ FILES = [
     F_RELATIONS, F_ENTITIES
 ]
 
-# TODO add tests testing if required parameters are satisfied: size, factors
-# TODO one could also test the support consequences ie if the fact in the fact sets make sense and you can learn the rules from them
 
 def test_files_present(path):
     for f in FILES:
@@ -130,6 +130,138 @@ def extract_log_params(path):
         if "owafactor" in l or "noisefactor"  in l or "missfactor" in l or "test" in l:
             p2n[l:l.index(":")] = float(l[l.index(" ")+1:])
 
+# assuming predicate fits
+def check_assignment(fact, atom, assignment):
+    assignment1 = copy.deepcopy(assignment)
+    for i, t in enumerate(atom.arguments):
+        if t.name in assignment1:
+            if fact.arguments[i] != assignment1[t.name]:
+                # print(fact.arguments[i],assignment1[t.name])
+                return {}
+        elif isinstance(t, Constant):
+            # if isinstance(fact.arguments[i], Constant) and
+            if fact.arguments[i] == t:
+                assignment1[t.name] = fact.arguments[i]
+            else:
+                return {}
+        else:
+            assignment1[t.name] = fact.arguments[i]
+    return assignment1
+
+
+def get_assignments(fact_dict, atom, assignments): # = [([],{})]):
+
+    # if not assignments:
+    result = []
+    for f in fact_dict[atom.predicate.name]:
+
+        for fs, ass in assignments:
+            # r = []
+            # for ass0 in ass:
+            ass1 = check_assignment(f, atom, ass)
+            if ass1:
+                result.append((fs+[f], ass1))
+    return result
+
+
+def extend_by_head(atom, fs, ass):
+    fs.append(Atom(atom.predicate,[ass[t.name] if t.name in ass else t for t in atom.arguments])) #else case is const
+    return fs
+
+
+# looks for rules instantiations and graph instantiations in data
+# but thus ignores missfactor (leading to partial insts of ..., so counts the partial instances as noise)
+# thus
+# underestimates insts
+# overestimates noisefactor
+def test_graph_insts(path):
+
+    rf = path + "rules.txt"
+    tf = path + "train.txt"
+    fs, rs, _, _ = parseFiles_general(tf, rf)
+
+    rs.reverse()
+
+    rd = {}
+    for r in rs:
+        if r.head.predicate.name in rd:
+            rd[r.head.predicate.name].append(r)
+        else:
+            rd[r.head.predicate.name] = [r]
+
+    count_r_insts = [0] * len(rs)
+    count_rb_insts = [0] * len(rs)
+    rinst_assignments = []
+    for i, r in enumerate(rs):
+        # print()
+        # print(r)
+        bs = r.body
+
+        ass = [([],{})]
+        for i1, a in enumerate(bs):
+            ass1 = get_assignments(fs, a, ass)
+
+            ass = ass1
+            # if i1 == len(bs)-1:
+            #     print(ass1)
+            #     print(len(ass1))
+        count_rb_insts[i] = len(ass1)
+        ass1 = get_assignments(fs, r.head, ass)
+        # print(ass1)
+        # print(len(ass1))
+        count_r_insts[i] = len(ass1)
+        # if count_r_insts[i] == 0 and len(rd[r.head.predicate.name]) == 1:
+        #     print("narder since rule has no full insts")
+        rinst_assignments.extend(ass1)
+
+    print("num rule body insts:",count_rb_insts)
+    print("num rule insts:",count_r_insts)
+    print("overestimated owa:",sum(count_r_insts)/sum(count_rb_insts)) # overestimated since not all partial rule insts must be real insts
+
+
+
+
+    assignments = []
+    for pn, rl in rd.items():
+        tmpassignments = []
+
+        for r in rl:
+            # print("*"*20)
+            # print(r)
+            ass1 = [([], {})] if not assignments else copy.deepcopy(assignments)
+            for i1, a in enumerate(r.body):
+                ass1 = get_assignments(fs, a, ass1) # could be critical in later iterations if new atoms have vars from old but diff ass bec replaced in ass. so better would be to renam a;; nes...
+
+                # if i1 == len(r.body) - 1:
+                    # print(ass1)
+                    # print(len(ass1))
+
+            for fs1,ass in ass1:
+                extend_by_head(r.head, fs1, ass)
+            # print(ass1)
+            tmpassignments.extend(ass1)
+        assignments.extend(tmpassignments)
+    # print(len(assignments))
+
+    rest = chain.from_iterable(fs1 for fs1 in fs.values())
+    # print("1",len([f for f in rest]))
+
+    all=len([f for f in rest])
+    for fs1, ass1 in assignments:
+        for f in fs1:
+            if f in fs[f.predicate.name]:
+                fs[f.predicate.name].remove(f) # derived heads might not be in there
+
+    for fs1, ass1 in rinst_assignments:
+        for f in fs1:
+            if f in fs[f.predicate.name]:
+                fs[f.predicate.name].remove(f) # derived heads might not be in there
+    noise = chain.from_iterable(fs1 for fs1 in fs.values())
+    l = len([f for f in noise])
+    #print(l,"noise, of",all,"ie (overestimated)",l/all)
+    print("overestimated noise", l / all,"(",l,"/",all,")")
+
+
 
 def print_statistics(paths):
     TYPE = "category:"
@@ -241,16 +373,24 @@ def print_statistics(paths):
 if __name__ == '__main__':
     print("testing generator")
 
-    # dpath = "../datasets/exp1/"
-    # for d in os.listdir(dpath):
-    #     if d.startswith("."): continue
+    dpath = "../datasets/exp1/"
+    for d in os.listdir(dpath):
+        if d.startswith("."): continue
     #
-    #     # print("\n",d)
-    #     path = dpath + d + "/"
+
+        if not "XS" in d:
+            continue
+        print(#"\n",
+             d)
+        path = dpath + d + "/"
+        test_graph_insts(path)
+        # break
+    #
     #     b = test_files_present(path)
     #     if not b:
     #         print(d)
     #     b = test_files_lengths(path)
     #     if not b:
     #         print("P",d)
-    print_statistics(["../datasets/exp1/","../datasets/exp2/"])
+    # print_statistics(["../datasets/exp1/","../datasets/exp2/"])
+    # test_graph_insts(["../datasets/exp1/","../datasets/exp2/"])
