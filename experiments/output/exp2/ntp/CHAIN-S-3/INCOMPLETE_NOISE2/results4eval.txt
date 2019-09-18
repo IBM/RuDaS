@@ -1,0 +1,60 @@
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(A,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,A), p0(C,B).
+p0(A,B) :- p0(C,B), p1(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p4(A,B) :- p4(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p4(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).
+p0(A,B) :- p0(C,B), p0(D,A).

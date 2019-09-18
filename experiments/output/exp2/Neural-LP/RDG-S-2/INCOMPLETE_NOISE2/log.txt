@@ -1,0 +1,57 @@
+Epoch 1 mode train Loss 15.2652 In top 0.9385. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 1 mode valid Loss 12.1820 In top 0.9764. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 1 mode test Loss 6.2192 In top 0.9503. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 2 mode train Loss 15.1323 In top 0.9525. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 2 mode valid Loss 12.0563 In top 0.9803. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 2 mode test Loss 6.0635 In top 0.9678. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 3 mode train Loss 15.0211 In top 0.9581. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 3 mode valid Loss 11.9475 In top 0.9803. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 3 mode test Loss 5.9300 In top 0.9708. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 4 mode train Loss 14.9261 In top 0.9581. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 4 mode valid Loss 11.8556 In top 0.9843. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 4 mode test Loss 5.8156 In top 0.9737. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 5 mode train Loss 14.8463 In top 0.9581. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 5 mode valid Loss 11.7800 In top 0.9843. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 5 mode test Loss 5.7188 In top 0.9766. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 6 mode train Loss 14.7805 In top 0.9637. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 6 mode valid Loss 11.7185 In top 0.9882. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 6 mode test Loss 5.6373 In top 0.9766. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 7 mode train Loss 14.7260 In top 0.9637. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 7 mode valid Loss 11.6673 In top 0.9882. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 7 mode test Loss 5.5665 In top 0.9766. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 8 mode train Loss 14.6787 In top 0.9637. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 8 mode valid Loss 11.6216 In top 0.9882. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 8 mode test Loss 5.4999 In top 0.9795. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 9 mode train Loss 14.6334 In top 0.9637. Time elapsed 0.01 hrs (0.5 mins)
+Epoch 9 mode valid Loss 11.5762 In top 0.9882. Time elapsed 0.01 hrs (0.5 mins)
+Epoch 9 mode test Loss 5.4291 In top 0.9795. Time elapsed 0.01 hrs (0.5 mins)
+Epoch 10 mode train Loss 14.5847 In top 0.9637. Time elapsed 0.01 hrs (0.5 mins)
+Epoch 10 mode valid Loss 11.5264 In top 0.9882. Time elapsed 0.01 hrs (0.5 mins)
+Epoch 10 mode test Loss 5.3456 In top 0.9795. Time elapsed 0.01 hrs (0.5 mins)
+Best test in top: 0.9795 at epoch 8.
+Test in top 0.9795
+Test predictions written. Time elapsed 0.01 hrs (0.6 mins)
+Attentions collected. Time elapsed 0.01 hrs (0.6 mins)
+
+Rules listed and printed. Time elapsed 0.01 hrs (0.6 mins)
+9637. Time elapsed 0.01 hrs (0.4 mins)
+1/2	2/2	Epoch 8 mode valid Loss 11.6216 In top 0.9882. Time elapsed 0.01 hrs (0.4 mins)
+1/3	2/3	3/3	Epoch 8 mode test Loss 5.4999 In top 0.9795. Time elapsed 0.01 hrs (0.4 mins)
+Model saved at ./../output/exp2/Neural-LP/RDG-S-2/INCOMPLETE_NOISE2/ckpt/model-8
+1/3	2/3	3/3	Epoch 9 mode train Loss 14.6334 In top 0.9637. Time elapsed 0.01 hrs (0.5 mins)
+1/2	2/2	Epoch 9 mode valid Loss 11.5762 In top 0.9882. Time elapsed 0.01 hrs (0.5 mins)
+1/3	2/3	3/3	Epoch 9 mode test Loss 5.4291 In top 0.9795. Time elapsed 0.01 hrs (0.5 mins)
+Model saved at ./../output/exp2/Neural-LP/RDG-S-2/INCOMPLETE_NOISE2/ckpt/model-9
+1/3	2/3	3/3	Epoch 10 mode train Loss 14.5847 In top 0.9637. Time elapsed 0.01 hrs (0.5 mins)
+1/2	2/2	Epoch 10 mode valid Loss 11.5264 In top 0.9882. Time elapsed 0.01 hrs (0.5 mins)
+1/3	2/3	3/3	Epoch 10 mode test Loss 5.3456 In top 0.9795. Time elapsed 0.01 hrs (0.5 mins)
+Model saved at ./../output/exp2/Neural-LP/RDG-S-2/INCOMPLETE_NOISE2/ckpt/model-10
+Best test in top: 0.9795 at epoch 8.
+Start getting test predictions...
+1/3	2/3	3/3	Test in top 0.9795
+Test predictions written. Time elapsed 0.01 hrs (0.6 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.01 hrs (0.6 mins)
+2/18	5/18	8/18	11/18	14/18	17/18	
+Rules listed and printed. Time elapsed 0.01 hrs (0.6 mins)
+====================================Finish====================================

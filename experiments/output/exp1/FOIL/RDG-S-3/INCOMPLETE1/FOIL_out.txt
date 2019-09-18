@@ -1,0 +1,95 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+
+Relation p2
+
+Relation p4
+
+Relation p5
+
+Relation p8
+
+Relation p7
+
+Relation p9
+
+Relation p6
+
+----------
+p2:
+
+***  Warning: the following definition
+***  matches 9 tuples not in the relation
+***  does not cover 275 tuples in the relation
+
+p2(A,B) :- p9(C,B), p8(A,D), p7(E,B), p8(E,F).
+p2(A,B) :- p8(A,C), p9(D,B), p7(A,E), p9(F,E), p5(D,B), p6(D,B).
+p2(A,B) :- p9(C,B), p8(A,D), p7(B,E).
+p2(A,B) :- p4(A,A), p8(C,A), p2(C,B).
+
+Time 60.7 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  matches 3 tuples not in the relation
+***  does not cover 5 tuples in the relation
+
+p7(A,B) :- p4(B,A).
+
+Time 63.0 secs
+
+----------
+p8:
+
+***  Warning: the following definition
+***  does not cover 21 tuples in the relation
+
+
+Time 66.4 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+p4(A,B) :- p7(B,A), p7(B,B).
+p4(A,B) :- p7(B,A), p2(B,C), p4(B,B).
+
+Time 66.7 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 9 tuples in the relation
+
+p9(A,B) :- p5(A,B), p2(C,B), p7(C,D), p2(C,D).
+
+Time 66.7 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 9 tuples in the relation
+
+p5(A,B) :- p9(A,B), p7(C,B).
+
+Time 66.8 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 7 tuples in the relation
+
+p6(A,B) :- p9(A,B), p7(C,B).
+
+Time 66.9 secs

@@ -1,0 +1,18 @@
+p10(A,A) :- p8(A,C).
+
+p10(A,A) :- p3(C,A), p5(A,D).
+
+p4(A,A) :- p8(A,C).
+
+p4(A,A) :- p5(C,A), p3(D,C).
+
+p4(A,A) :- p5(C,A), p10(D,A), p3(E,D).
+
+p4(A,A) :- p10(C,A), p3(C,D).
+
+p4(A,A) :- p3(C,A), p5(A,D).
+
+p4(A,B) :- p10(A,B), p5(C,A), p3(D,A).
+
+p5(A,A) :- p4(C,A), p10(D,C), p3(D,E).
+

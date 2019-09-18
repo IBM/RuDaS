@@ -1,0 +1,36 @@
+p6(A,B) :- p3(B,C), p5(A,D), p10(E,D), p5(B,F).
+
+p6(A,B) :- p3(B,C), p5(A,D), p0(E,C), p10(F,D).
+
+p6(A,B) :- p3(B,C), p5(A,B).
+
+p6(A,B) :- p3(B,C), p5(A,D), p10(B,E), p10(A,F).
+
+p6(A,B) :- p3(B,C), p0(B,D), p10(A,A).
+
+p6(A,B) :- p4(B,C), p2(D,A).
+
+p6(A,B) :- p4(B,C), p5(A,D), p3(A,E).
+
+p6(A,B) :- p3(B,C), p10(A,D), p10(C,A).
+
+p6(A,B) :- p3(B,C), p5(A,D), p6(D,C).
+
+p10(A,A) :- p5(A,C), p6(C,D), p0(A,C).
+
+p10(A,A) :- p5(A,C), p6(C,D), p2(D,E).
+
+p5(A,B) :- p0(B,A), p6(A,C).
+
+p5(A,B) :- p0(A,B), p6(A,C), p10(C,D).
+
+p5(A,B) :- p2(C,A), p10(D,B), p3(E,D), p10(E,F).
+
+p5(A,B) :- p0(A,B), p5(B,A).
+
+p3(A,B) :- p4(A,B), p6(C,B).
+
+p0(A,B) :- p5(A,B), p10(A,C), p6(A,D), p0(E,D).
+
+p4(A,B) :- p3(A,B), p6(C,B).
+

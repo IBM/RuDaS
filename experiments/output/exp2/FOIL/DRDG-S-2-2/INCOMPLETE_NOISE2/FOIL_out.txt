@@ -1,0 +1,166 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p9
+
+Relation p1
+
+Relation p8
+
+Relation p4
+
+Relation p5
+
+Relation p10
+
+Relation p6
+
+Relation p7
+
+Relation p2
+
+Relation p0
+
+Relation p3
+
+----------
+p8:
+
+***  Warning: the following definition
+***  matches 5 tuples not in the relation
+***  does not cover 166 tuples in the relation
+
+p8(A,B) :- p5(A,A), p1(B,C), p10(C,B), p6(E,A).
+p8(A,B) :- p5(A,A), p10(B,C), p9(D,B), p6(E,A), p1(D,F).
+p8(A,B) :- p5(A,A), p1(B,C), p10(C,D), p6(E,A), p1(D,F), p1(G,A), p1(H,B).
+p8(A,B) :- p1(B,C), p10(C,D), p10(B,E), p3(F,A).
+p8(A,B) :- p5(A,A), p9(C,B), p6(D,C), p1(E,D), p10(F,D), p1(G,A), p9(G,H).
+p8(A,B) :- p1(B,C), p1(D,C), p6(E,A), p10(F,E), p6(G,C), p1(B,F), p1(D,A), p1(B,H), p10(H,I), p1(I,C).
+p8(A,B) :- p5(A,A), p1(B,C), p9(D,B), p5(E,D), p1(C,A).
+p8(A,B) :- p5(A,A), p1(B,C), p9(D,B), p1(A,E), p10(B,F).
+p8(A,B) :- p5(A,A), p9(C,B), p1(A,D), p4(E,C).
+p8(A,B) :- p5(A,A), p1(B,C), p9(D,B), p1(E,A), p1(E,D).
+p8(A,B) :- p3(C,A), p9(D,B), p1(D,E).
+p8(A,B) :- p5(C,A), p9(A,B).
+p8(A,B) :- p5(A,A), p1(B,C), p9(D,B), p8(C,D).
+p8(A,B) :- p5(A,A), p6(A,C), p8(C,B).
+p8(A,B) :- p5(A,A), p1(B,C), p10(C,D), p1(C,E), p6(D,F), p6(A,G), p8(F,B), p1(B,H), p6(H,I).
+p8(A,B) :- p5(A,A), p1(B,C), p1(D,C), p9(E,D), p10(C,F), p6(F,G), p8(H,A), p10(H,I), p1(I,J), p1(K,J), p1(B,H), p1(K,G).
+
+Time 171.0 secs
+
+----------
+p1:
+
+***  Warning: the following definition
+***  matches 1 tuple not in the relation
+***  does not cover 126 tuples in the relation
+
+p1(A,B) :- p8(C,A), p10(B,D), p6(B,C).
+p1(A,B) :- p8(C,A), p10(B,D), p9(E,D), p6(A,C).
+p1(A,B) :- p8(C,A), p10(B,D), p6(D,C), p5(A,E).
+p1(A,B) :- p8(C,A), p10(B,D), p6(D,E), p5(E,E), p9(C,F), p8(G,C).
+p1(A,B) :- p8(C,A), p10(B,D), p9(E,D), p5(F,C), p1(G,D), p9(C,H).
+p1(A,B) :- p8(B,C), p1(B,C), p8(B,D), p8(D,A), p1(E,A).
+p1(A,B) :- p8(B,C), p1(D,C), p8(D,E), p8(E,A), p6(A,F).
+p1(A,B) :- p8(C,A), p10(B,D), p8(E,D), p8(B,F), p1(G,F), p8(G,H), p8(I,H), p8(I,A), p2(C,J), p8(K,A), p3(L,K).
+p1(A,B) :- p8(C,A), p10(B,D), p9(E,D), p10(A,F), p1(G,D).
+
+Time 180.0 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 26 tuples in the relation
+
+p9(A,B) :- p8(A,B), p4(C,A).
+p9(A,B) :- p8(A,B), p1(A,C), p8(C,B).
+p9(A,B) :- p8(A,B), p6(C,A), p8(C,D), p8(E,C).
+p9(A,B) :- p8(A,B), p9(C,A).
+
+Time 180.1 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 15 tuples in the relation
+
+p6(A,B) :- p10(C,A), p8(C,B), p9(B,D).
+p6(A,B) :- p10(C,A), p8(C,B), p8(B,D), p10(E,D).
+
+Time 180.3 secs
+
+----------
+p10:
+
+***  Warning: the following definition
+***  does not cover 14 tuples in the relation
+
+p10(A,B) :- p6(B,C), p8(A,C), p8(D,B).
+p10(A,B) :- p6(B,C), p8(A,C), p1(D,C).
+
+Time 180.4 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 3 tuples in the relation
+
+p5(A,A) :- p8(A,C), p1(C,D), p8(A,D).
+p5(A,A) :- p8(A,C), p2(A,D).
+p5(A,A) :- p8(A,C), p1(C,D), p8(D,E), p8(A,E), p10(E,F).
+
+Time 181.9 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  does not cover 5 tuples in the relation
+
+
+Time 182.1 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+
+Time 182.2 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 3 tuples in the relation
+
+
+Time 182.3 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 182.4 secs
+
+----------
+p3:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 182.6 secs

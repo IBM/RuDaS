@@ -1,0 +1,89 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+
+Relation p7
+
+Relation p2
+
+Relation p4
+
+Relation p5
+
+Relation p9
+
+Relation p1
+
+----------
+p7:
+
+p7(A,B) :- p4(A,B).
+
+Time 0.0 secs
+
+----------
+p4:
+
+p4(A,B) :- p7(A,B).
+
+Time 0.1 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 11 tuples in the relation
+
+p2(A,B) :- p9(A,B).
+p2(A,B) :- p5(A,B).
+
+Time 0.4 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 24 tuples in the relation
+
+p9(A,B) :- p2(A,B), p2(B,C), p7(A,D).
+p9(A,B) :- p2(A,B), p2(B,C), p1(D,A).
+p9(A,B) :- p2(A,B), p2(B,C), p2(D,C), p1(E,D).
+p9(A,B) :- p2(A,B), p7(B,C), p5(D,C), p2(E,D), p7(D,F).
+p9(A,B) :- p2(A,B), p7(B,C), p7(C,D), p2(B,E), p7(D,F).
+p9(A,B) :- p2(A,B), p7(A,C), p9(D,C), p7(C,E).
+p9(A,B) :- p2(A,B), p9(C,A), p7(A,D), p7(E,B).
+p9(A,B) :- p2(A,B), p7(A,C), p7(C,D), p9(E,D).
+p9(A,B) :- p2(A,B), p7(C,A), p2(D,C), p2(E,B), p9(F,E), p7(G,C).
+p9(A,B) :- p2(A,B), p7(B,C), p1(D,C), p7(E,C), p2(F,E), p9(G,A), p5(F,H).
+p9(A,B) :- p2(A,B), p7(B,C), p9(D,C), p7(E,B).
+p9(A,B) :- p2(A,B), p7(B,C), p1(D,C), p5(A,E), p7(F,C), p2(G,F), p9(H,G).
+
+Time 1.2 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 8 tuples in the relation
+
+p5(A,B) :- p2(A,B), p1(A,C), p7(D,B).
+p5(A,B) :- p2(A,B), p1(A,C), p1(D,A).
+p5(A,B) :- p2(A,B), p1(A,C), p7(A,D), p9(D,E).
+p5(A,B) :- p2(A,B), p1(A,C), p7(D,A), p2(D,E).
+p5(A,B) :- p2(A,B), p1(A,C), p7(B,D), p7(D,E), p1(E,F), p7(F,G).
+p5(A,B) :- p2(A,B), p1(A,C), p5(C,D).
+p5(A,B) :- p2(A,B), p1(A,C), p7(A,D), p5(D,E), p7(B,E).
+
+Time 1.6 secs
+
+----------
+p1:
+
+***  Warning: the following definition
+***  does not cover 27 tuples in the relation
+
+
+Time 2.2 secs

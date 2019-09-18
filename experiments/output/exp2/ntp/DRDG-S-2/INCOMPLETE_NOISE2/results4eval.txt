@@ -1,0 +1,80 @@
+p2(A,B) :- p8(A,B).
+p10(A,B) :- p9(A,B).
+p4(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p9(A,B).
+p8(A,B) :- p9(A,B).
+p10(A,B) :- p9(A,B).
+p3(A,B) :- p9(A,B).
+p6(A,B) :- p10(B,C), p10(B,A).
+p10(A,B) :- p6(B,C), p6(B,A).
+p8(A,B) :- p2(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p8(A,B) :- p9(B,C), p10(B,A).
+p9(A,B) :- p9(B,C), p9(B,A).
+p8(A,B) :- p9(B,C), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).
+p9(A,B) :- p9(C,B), p9(B,A).

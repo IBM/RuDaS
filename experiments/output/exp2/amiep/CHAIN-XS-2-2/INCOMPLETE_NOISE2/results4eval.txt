@@ -1,0 +1,7 @@
+p1(A,B) :- p3(B,A).
+p3(A,B) :- p1(B,A).
+p5(A,B) :- p4(A,F),p7(F,B).
+p7(A,B) :- p4(E,A),p5(E,B).
+p1(A,B) :- p4(B,F),p5(A,F).
+p3(A,B) :- p3(F,B),p3(A,F).
+p4(A,B) :- p5(A,F),p7(B,F).

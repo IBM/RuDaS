@@ -1,0 +1,107 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+
+Relation p3
+
+Relation p7
+
+Relation p2
+
+Relation p10
+
+Relation p8
+
+Relation p5
+
+Relation p6
+
+----------
+p7:
+
+***  Warning: the following definition
+***  does not cover 15 tuples in the relation
+
+p7(A,B) :- p10(B,A), p3(C,B), p2(A,D).
+p7(A,B) :- p10(B,A), p3(B,A).
+p7(A,B) :- p10(B,A), p5(B,C).
+p7(A,B) :- p10(B,A), p3(C,A), p2(D,B).
+p7(A,B) :- p10(B,A), p3(A,C), p10(A,D), p7(E,C).
+
+Time 0.0 secs
+
+----------
+p10:
+
+***  Warning: the following definition
+***  does not cover 13 tuples in the relation
+
+p10(A,B) :- p7(B,A), p2(A,C), p7(D,C).
+p10(A,B) :- p7(B,A), p3(C,A), p7(C,D), p7(E,B).
+p10(A,B) :- p7(B,A), p3(C,A), p10(B,D), p2(A,E).
+p10(A,B) :- p7(B,A), p3(B,C), p7(C,D), p10(B,E).
+
+Time 0.0 secs
+
+----------
+p3:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+p3(A,B) :- p2(C,B), p10(C,A), p2(D,C).
+p3(A,B) :- p2(C,B), p7(A,C), p7(C,D).
+p3(A,B) :- p2(C,B), p10(B,D), p7(A,C).
+p3(A,A) :- p2(C,A), p10(C,A).
+p3(A,B) :- p7(A,C), p2(C,B), p10(A,D).
+p3(A,B) :- p10(C,A), p2(C,B), p10(B,D), p2(B,E).
+p3(A,B) :- p2(C,B), p10(C,A), p3(C,D).
+
+Time 0.1 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 5 tuples in the relation
+
+p2(A,B) :- p3(C,B), p10(A,C), p3(B,D).
+p2(A,B) :- p3(C,B), p10(A,C), p10(A,D), p3(E,D).
+p2(A,B) :- p3(C,B), p10(A,C), p7(A,D).
+p2(A,B) :- p3(C,B), p10(A,C), p5(A,D).
+p2(A,B) :- p3(C,B), p10(A,C), p6(D,C).
+p2(A,B) :- p3(C,B), p7(C,A), p7(D,C).
+p2(A,B) :- p3(C,B), p10(A,C), p7(D,A), p7(E,D).
+p2(A,B) :- p3(C,B), p7(C,A), p10(D,A).
+
+Time 0.1 secs
+
+----------
+p8:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 0.1 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 0.1 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 0.2 secs

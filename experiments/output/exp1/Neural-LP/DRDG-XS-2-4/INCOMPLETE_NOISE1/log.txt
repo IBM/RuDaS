@@ -1,0 +1,56 @@
+Epoch 1 mode train Loss 14.8660 In top 0.8000. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode valid Loss 18.7291 In top 0.9091. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode test Loss 2.6475 In top 0.9412. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode train Loss 14.7995 In top 0.8333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode valid Loss 18.7076 In top 0.9091. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode test Loss 2.6211 In top 0.9412. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode train Loss 14.7433 In top 0.8667. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode valid Loss 18.6888 In top 0.9091. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode test Loss 2.5992 In top 0.9412. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode train Loss 14.6957 In top 0.9000. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode valid Loss 18.6726 In top 0.9091. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode test Loss 2.5817 In top 0.9412. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode train Loss 14.6548 In top 0.9333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode valid Loss 18.6590 In top 0.8636. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode test Loss 2.5681 In top 0.9412. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 6 mode train Loss 14.6194 In top 0.9333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 6 mode valid Loss 18.6477 In top 0.8636. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 6 mode test Loss 2.5579 In top 0.9706. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 7 mode train Loss 14.5885 In top 0.9333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 7 mode valid Loss 18.6387 In top 0.8636. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 7 mode test Loss 2.5504 In top 0.9706. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 8 mode train Loss 14.5614 In top 0.9333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 8 mode valid Loss 18.6317 In top 0.8636. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 8 mode test Loss 2.5448 In top 0.9706. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 9 mode train Loss 14.5376 In top 0.9333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 9 mode valid Loss 18.6266 In top 0.8636. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 9 mode test Loss 2.5402 In top 0.9706. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 10 mode train Loss 14.5165 In top 0.9333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 10 mode valid Loss 18.6231 In top 0.8636. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 10 mode test Loss 2.5354 In top 0.9706. Time elapsed 0.00 hrs (0.0 mins)
+Best test in top: 0.9706 at epoch 6.
+Test in top 0.9706
+Test predictions written. Time elapsed 0.00 hrs (0.0 mins)
+Attentions collected. Time elapsed 0.00 hrs (0.0 mins)
+
+Rules listed and printed. Time elapsed 0.00 hrs (0.0 mins)
+s)
+1/1	Epoch 8 mode test Loss 2.5448 In top 0.9706. Time elapsed 0.00 hrs (0.0 mins)
+Model saved at ./../output/exp1/Neural-LP/DRDG-XS-2-4/INCOMPLETE_NOISE1/ckpt/model-8
+1/1	Epoch 9 mode train Loss 14.5376 In top 0.9333. Time elapsed 0.00 hrs (0.0 mins)
+1/1	Epoch 9 mode valid Loss 18.6266 In top 0.8636. Time elapsed 0.00 hrs (0.0 mins)
+1/1	Epoch 9 mode test Loss 2.5402 In top 0.9706. Time elapsed 0.00 hrs (0.0 mins)
+Model saved at ./../output/exp1/Neural-LP/DRDG-XS-2-4/INCOMPLETE_NOISE1/ckpt/model-9
+1/1	Epoch 10 mode train Loss 14.5165 In top 0.9333. Time elapsed 0.00 hrs (0.0 mins)
+1/1	Epoch 10 mode valid Loss 18.6231 In top 0.8636. Time elapsed 0.00 hrs (0.0 mins)
+1/1	Epoch 10 mode test Loss 2.5354 In top 0.9706. Time elapsed 0.00 hrs (0.0 mins)
+Model saved at ./../output/exp1/Neural-LP/DRDG-XS-2-4/INCOMPLETE_NOISE1/ckpt/model-10
+Best test in top: 0.9706 at epoch 6.
+Start getting test predictions...
+1/1	Test in top 0.9706
+Test predictions written. Time elapsed 0.00 hrs (0.0 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.00 hrs (0.0 mins)
+0/8	1/8	2/8	3/8	4/8	5/8	6/8	7/8	
+Rules listed and printed. Time elapsed 0.00 hrs (0.0 mins)
+====================================Finish====================================

@@ -1,0 +1,16 @@
+p0(A,A) :- p7(A,A), p6(A,C).
+
+p0(A,B) :- p4(B,C), p0(A,C), p0(C,C).
+
+p0(A,B) :- p6(C,B), p6(D,C), p0(A,D).
+
+p0(A,B) :- p7(B,B), p6(C,B), p0(A,C).
+
+p6(A,B) :- p4(B,A), p6(C,A).
+
+p7(A,A) :- p0(A,C), p0(C,D).
+
+p4(A,B) :- p6(B,A), p6(D,B), p0(E,B).
+
+p4(A,B) :- p6(B,A), p6(D,B), p0(E,A), p6(F,E), p0(E,F).
+

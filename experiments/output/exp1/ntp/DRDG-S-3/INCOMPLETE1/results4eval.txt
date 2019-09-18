@@ -1,0 +1,80 @@
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p7(A,B).
+p4(A,B) :- p4(A,B).
+p7(A,B) :- p5(A,B).
+p7(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p7(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p4(A,B) :- p4(A,C), p4(A,B).
+p2(A,B) :- p4(B,C), p2(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p5(A,B) :- p2(B,C), p5(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).
+p4(A,B) :- p4(B,C), p4(C,A).

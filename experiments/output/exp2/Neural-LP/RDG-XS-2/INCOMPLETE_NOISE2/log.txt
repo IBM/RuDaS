@@ -1,0 +1,40 @@
+Epoch 1 mode train Loss 22.5903 In top 0.4688. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode valid Loss 18.6689 In top 0.2917. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode test Loss 14.0724 In top 0.3636. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode train Loss 22.4781 In top 0.5312. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode valid Loss 18.6802 In top 0.3333. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode test Loss 14.0649 In top 0.3636. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode train Loss 22.3845 In top 0.5625. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode valid Loss 18.7035 In top 0.4167. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 3 mode test Loss 14.0724 In top 0.4318. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode train Loss 22.3055 In top 0.5938. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode valid Loss 18.7338 In top 0.4167. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 4 mode test Loss 14.0892 In top 0.4318. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode train Loss 22.2366 In top 0.6250. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode valid Loss 18.7691 In top 0.4583. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 5 mode test Loss 14.1124 In top 0.4545. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 6 mode train Loss 22.1747 In top 0.7188. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 6 mode valid Loss 18.8092 In top 0.4167. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 6 mode test Loss 14.1415 In top 0.4773. Time elapsed 0.00 hrs (0.1 mins)
+Best test in top: 0.4773 at epoch 6.
+Test in top 0.4773
+Test predictions written. Time elapsed 0.00 hrs (0.1 mins)
+Attentions collected. Time elapsed 0.00 hrs (0.1 mins)
+
+Rules listed and printed. Time elapsed 0.00 hrs (0.1 mins)
+d 0.00 hrs (0.0 mins)
+Model saved at ./../output/exp2/Neural-LP/RDG-XS-2/INCOMPLETE_NOISE2/ckpt/model-5
+1/1	Epoch 6 mode train Loss 22.1747 In top 0.7188. Time elapsed 0.00 hrs (0.1 mins)
+1/1	Epoch 6 mode valid Loss 18.8092 In top 0.4167. Time elapsed 0.00 hrs (0.1 mins)
+1/1	Epoch 6 mode test Loss 14.1415 In top 0.4773. Time elapsed 0.00 hrs (0.1 mins)
+Model saved at ./../output/exp2/Neural-LP/RDG-XS-2/INCOMPLETE_NOISE2/ckpt/model-6
+Early stopped at epoch 6
+Best test in top: 0.4773 at epoch 6.
+Start getting test predictions...
+1/1	Test in top 0.4773
+Test predictions written. Time elapsed 0.00 hrs (0.1 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.00 hrs (0.1 mins)
+1/10	3/10	5/10	7/10	9/10	
+Rules listed and printed. Time elapsed 0.00 hrs (0.1 mins)
+====================================Finish====================================

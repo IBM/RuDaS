@@ -1,0 +1,80 @@
+p2(A,B) :- p7(A,B).
+p7(A,B) :- p2(A,B).
+p2(A,B) :- p2(A,B).
+p2(A,B) :- p2(A,B).
+p7(A,B) :- p2(A,B).
+p2(A,B) :- p2(A,B).
+p7(A,B) :- p2(A,B).
+p2(A,B) :- p2(A,B).
+p7(A,B) :- p2(A,B).
+p7(A,B) :- p7(A,B).
+p2(A,B) :- p7(A,B).
+p2(A,B) :- p7(A,B).
+p2(A,B) :- p7(A,B).
+p2(A,B) :- p2(A,B).
+p7(A,B) :- p7(A,B).
+p2(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p2(A,B) :- p7(A,B).
+p2(A,B) :- p7(A,B).
+p2(A,B) :- p2(A,B).
+p2(A,B) :- p2(A,B).
+p2(A,B) :- p9(A,B).
+p2(A,B) :- p9(A,B).
+p2(A,B) :- p2(A,B).
+p2(A,B) :- p9(A,B).
+p7(A,B) :- p2(A,B).
+p7(A,B) :- p7(A,B).
+p2(A,B) :- p2(A,B).
+p7(A,B) :- p7(A,B).
+p9(A,B) :- p2(A,B).
+p2(A,B) :- p2(A,B).
+p7(A,B) :- p7(A,B).
+p7(A,B) :- p7(A,B).
+p2(A,B) :- p2(A,B).
+p2(A,B) :- p7(A,B).
+p7(A,B) :- p9(A,B).
+p2(A,B) :- p7(A,B).
+p7(A,B) :- p2(A,B).
+p7(A,B) :- p2(A,B).
+p2(A,B) :- p2(C,B), p2(A,C).
+p7(A,B) :- p6(C,B), p2(A,C).
+p2(A,B) :- p2(C,B), p2(A,C).
+p7(A,B) :- p7(C,B), p7(A,C).
+p2(A,B) :- p7(C,B), p7(A,C).
+p2(A,B) :- p7(C,B), p7(A,C).
+p7(A,B) :- p7(C,B), p2(A,C).
+p7(A,B) :- p7(C,B), p2(A,C).
+p2(A,B) :- p7(C,B), p2(A,C).
+p2(A,B) :- p7(C,B), p7(A,C).
+p7(A,B) :- p2(C,B), p2(A,C).
+p7(A,B) :- p2(C,B), p2(A,C).
+p7(A,B) :- p2(C,B), p2(A,C).
+p2(A,B) :- p7(C,B), p2(A,C).
+p2(A,B) :- p2(C,B), p2(A,C).
+p7(A,B) :- p2(C,B), p7(A,C).
+p7(A,B) :- p7(C,B), p7(A,C).
+p2(A,B) :- p7(C,B), p7(A,C).
+p2(A,B) :- p7(C,B), p7(A,C).
+p2(A,B) :- p2(C,B), p2(A,C).
+p9(A,B) :- p2(C,B), p2(B,A).
+p7(A,B) :- p2(C,B), p10(B,A).
+p2(A,B) :- p7(C,B), p7(B,A).
+p7(A,B) :- p7(C,B), p7(B,A).
+p2(A,B) :- p2(C,B), p2(B,A).
+p7(A,B) :- p7(C,B), p2(B,A).
+p7(A,B) :- p7(C,B), p7(B,A).
+p7(A,B) :- p7(C,B), p7(B,A).
+p0(A,B) :- p2(C,B), p7(B,A).
+p2(A,B) :- p7(C,B), p2(B,A).
+p2(A,B) :- p7(C,B), p7(B,A).
+p2(A,B) :- p2(C,B), p7(B,A).
+p7(A,B) :- p2(C,B), p2(B,A).
+p2(A,B) :- p7(C,B), p9(B,A).
+p2(A,B) :- p2(C,B), p0(B,A).
+p2(A,B) :- p7(C,B), p7(B,A).
+p2(A,B) :- p2(C,B), p7(B,A).
+p7(A,B) :- p7(C,B), p2(B,A).
+p2(A,B) :- p2(C,B), p2(B,A).
+p7(A,B) :- p9(C,B), p2(B,A).

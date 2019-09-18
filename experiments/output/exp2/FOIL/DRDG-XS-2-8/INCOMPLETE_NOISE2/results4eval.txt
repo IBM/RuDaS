@@ -1,0 +1,44 @@
+p7(A,B) :- p9(B,A), p4(B,C).
+
+p7(A,B) :- p9(B,A), p9(A,C).
+
+p7(A,B) :- p0(A,B), p5(C,A).
+
+p7(A,B) :- p0(A,B), p4(C,B).
+
+p7(A,A) :- p5(A,A).
+
+p7(A,B) :- p9(B,A), p7(C,A).
+
+p9(A,B) :- p7(B,A), p7(C,B), p0(D,A).
+
+p9(A,B) :- p7(B,A), p4(A,C).
+
+p9(A,B) :- p7(B,A), p1(C,A).
+
+p9(A,B) :- p7(B,A), p4(C,A), p7(C,D).
+
+p9(A,B) :- p5(A,B), p4(B,C).
+
+p9(A,B) :- p7(B,A), p1(A,C).
+
+p9(A,B) :- p5(A,B), p7(A,C), p1(D,C).
+
+p9(A,B) :- p0(B,A), p4(C,B), p7(C,D).
+
+p5(A,B) :- p9(A,B), p4(A,C).
+
+p5(A,B) :- p9(A,B), p1(C,A).
+
+p5(A,B) :- p9(A,B), p7(A,C), p4(B,D).
+
+p5(A,A) :- p7(A,A).
+
+p5(A,B) :- p9(A,B), p5(C,A).
+
+p0(A,B) :- p7(A,B), p4(A,C), p9(B,D).
+
+p0(A,B) :- p9(B,A), p4(C,A), p4(A,D).
+
+p0(A,B) :- p7(A,B), p4(A,C), p4(D,A).
+

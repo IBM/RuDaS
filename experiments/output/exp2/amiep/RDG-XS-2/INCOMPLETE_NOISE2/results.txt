@@ -1,0 +1,30 @@
+Loading files... 
+  Starting train.txt
+  Finished train.txt, still running: 0
+Loaded 79 facts in 49 ms using -2 MB
+Using HeadCoverage as pruning metric with minimum threshold 0.01
+Using recursivity limit 3
+Default mining assistant that defines support by counting support on both head variables
+No minimum threshold on standard confidence
+Filtering on PCA confidence with minimum threshold 0.25
+Constants in the arguments of relations are disabled
+Lossless (query refinement) heuristics enabled
+Starting the mining phase... Using 8 threads
+Rule	Head Coverage	Std Confidence	PCA Confidence	Positive Examples	Body size	PCA Body size	Functional variable	Std. Lower Bound	PCA Lower Bound	PCA Conf estimation
+?f  p10  ?b  ?a  p10  ?f   => ?a  p5  ?b	0.75	0.6	0.6	3	5	5	?a	0.0	0.0	0.0
+?b  p0  ?f  ?f  p10  ?a   => ?a  p3  ?b	0.018518519	0.333333333	0.333333333	1	3	3	?a	0.0	0.0	0.0
+?f  p10  ?b  ?a  p8  ?f   => ?a  p3  ?b	0.018518519	1	1	1	1	1	?a	0.0	0.0	0.0
+?a  p10  ?f  ?f  p3  ?b   => ?a  p3  ?b	0.277777778	0.365853659	0.681818182	15	41	22	?a	0.0	0.0	0.0
+?f  p3  ?b  ?a  p3  ?f   => ?a  p3  ?b	0.481481481	0.577777778	0.577777778	26	45	45	?a	0.0	0.0	0.0
+?f  p0  ?b  ?a  p3  ?f   => ?a  p3  ?b	0.111111111	0.5	0.5	6	12	12	?a	0.0	0.0	0.0
+?e  p3  ?a  ?e  p3  ?b   => ?a  p3  ?b	0.111111111	0.111111111	0.4	6	54	15	?a	0.0	0.0	0.0
+?e  p10  ?a  ?e  p3  ?b   => ?a  p3  ?b	0.314814815	0.653846154	0.653846154	17	26	26	?a	0.0	0.0	0.0
+?e  p0  ?a  ?e  p0  ?b   => ?a  p3  ?b	0.018518519	0.090909091	0.25	1	11	4	?a	0.0	0.0	0.0
+?b  p10  ?f  ?f  p8  ?a   => ?a  p10  ?b	0.090909091	1	1	1	1	1	?b	0.0	0.0	0.0
+?b  p10  ?f  ?a  p5  ?f   => ?a  p10  ?b	0.363636364	0.8	1	4	5	4	?b	0.0	0.0	0.0
+?e  p3  ?b  ?e  p8  ?a   => ?a  p10  ?b	0.090909091	0.142857143	1	1	7	1	?b	0.0	0.0	0.0
+?e  p3  ?b  ?a  p5  ?e   => ?a  p10  ?b	0.090909091	0.055555556	1	1	18	1	?b	0.0	0.0	0.0
+?e  p10  ?a  ?e  p5  ?b   => ?a  p10  ?b	0.363636364	0.8	0.8	4	5	5	?b	0.0	0.0	0.0
+Mining done in 0.27 s
+Total time 0.32 s
+14 rules mined.

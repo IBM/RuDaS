@@ -1,0 +1,135 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p4
+
+Relation p7
+
+Relation p5
+
+Relation p6
+
+Relation p9
+
+Relation p0
+
+Relation p3
+
+Relation p1
+
+Relation p8
+
+Relation p2
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 20 tuples in the relation
+
+p6(A,B) :- p3(B,A).
+p6(A,B) :- p7(A,B), p5(A,C).
+p6(A,B) :- p7(A,B), p8(C,B).
+p6(A,B) :- p7(A,B), p1(C,A), p5(C,D).
+p6(A,B) :- p7(A,B), p5(B,C).
+p6(A,B) :- p7(B,A), p1(C,B), p8(D,A).
+
+Time 0.1 secs
+
+----------
+p7:
+
+***  Warning: the following definition
+***  does not cover 17 tuples in the relation
+
+p7(A,B) :- p6(A,B), p1(C,B), p5(A,D).
+p7(A,B) :- p6(A,B), p0(A,B).
+
+Time 0.1 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 7 tuples in the relation
+
+p5(A,B) :- p3(A,B).
+p5(A,B) :- p0(B,A), p6(A,C).
+
+Time 0.1 secs
+
+----------
+p1:
+
+***  Warning: the following definition
+***  does not cover 12 tuples in the relation
+
+p1(A,B) :- p7(C,B), p5(D,B), p1(A,D).
+
+Time 0.2 secs
+
+----------
+p0:
+
+***  Warning: the following definition
+***  does not cover 7 tuples in the relation
+
+p0(A,B) :- p5(B,A), p7(B,C).
+p0(A,B) :- p5(B,A), p1(B,C).
+p0(A,B) :- p4(A,B), p6(A,C).
+
+Time 0.2 secs
+
+----------
+p4:
+
+***  Warning: the following definition
+***  does not cover 2 tuples in the relation
+
+p4(A,B) :- p0(A,B), p1(C,A).
+p4(A,B) :- p0(A,B), p8(C,A).
+p4(A,B) :- p5(B,A), p8(C,A).
+
+Time 0.3 secs
+
+----------
+p3:
+
+p3(A,B) :- p5(A,B), p6(A,B).
+p3(A,B) :- p5(A,B), p7(B,C).
+p3(A,B) :- p5(A,B), p0(A,C).
+p3(A,B) :- p9(C,B), p5(A,B).
+
+Time 0.3 secs
+
+----------
+p8:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+
+Time 0.3 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 3 tuples in the relation
+
+
+Time 0.3 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 0.3 secs

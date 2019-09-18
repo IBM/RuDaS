@@ -1,0 +1,16 @@
+p1(A,B) :- p8(A,B).
+
+p1(A,B) :- p9(C,A), p6(D,B).
+
+p8(A,B) :- p1(A,B), p7(B,C).
+
+p7(A,B) :- p5(B,A).
+
+p5(A,B) :- p7(B,A), p6(A,C).
+
+p5(A,B) :- p7(B,A), p7(C,A), p6(D,C).
+
+p5(A,B) :- p7(B,A), p1(C,B), p1(D,C).
+
+p5(A,B) :- p7(B,A), p1(C,B), p6(C,D).
+

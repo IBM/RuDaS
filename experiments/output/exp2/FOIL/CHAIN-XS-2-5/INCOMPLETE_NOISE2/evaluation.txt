@@ -1,0 +1,12 @@
+Herbrant distance:	31.0
+Herbrant accuracy (classic normalization):	0.998734693877551
+Hscore (Herbrant score: new normalization):	0.7019230769230769
+Accuracy:	0.9987295081967213
+Precision:	0.948051948051948
+Recall:	0.73
+F1score:	0.824858757062147
+==================================================================
+TP:	73.0
+TN:	24296.0
+FP:	4.0
+FN:	27.0

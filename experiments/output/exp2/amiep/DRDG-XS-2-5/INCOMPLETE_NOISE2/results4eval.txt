@@ -1,0 +1,12 @@
+p10(A,B) :- p3(A,B).
+p2(A,B) :- p9(B,A).
+p2(A,B) :- p7(A,B).
+p7(A,B) :- p9(B,A).
+p7(A,B) :- p2(A,B).
+p3(A,B) :- p10(A,B).
+p9(A,B) :- p2(B,A).
+p9(A,B) :- p7(B,A).
+p0(A,B) :- p10(A,F),p6(B,F).
+p10(A,B) :- p10(F,A),p10(B,F).
+p10(A,B) :- p0(A,F),p6(F,B).
+p6(A,B) :- p0(E,A),p10(E,B).

@@ -1,0 +1,12 @@
+p0(A,B) :- p7(A,B).
+p4(A,B) :- p1(A,B).
+p1(A,B) :- p4(A,B).
+p7(A,B) :- p0(A,B).
+p1(A,B) :- p7(E,A),p8(E,B).
+p4(A,B) :- p7(E,A),p8(E,B).
+p4(A,B) :- p0(E,A),p8(E,B).
+p1(A,B) :- p0(E,A),p8(E,B).
+p8(A,B) :- p0(A,F),p4(F,B).
+p8(A,B) :- p4(F,B),p7(A,F).
+p8(A,B) :- p1(F,B),p7(A,F).
+p8(A,B) :- p0(A,F),p1(F,B).

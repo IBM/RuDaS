@@ -1,0 +1,12 @@
+p5(A,B) :- p9(B,A).
+p9(A,B) :- p5(B,A).
+p10(A,B) :- p3(A,B).
+p3(A,B) :- p10(A,B).
+p10(A,B) :- p2(A,B),p3(A,B).
+p2(A,B) :- p2(F,B),p5(A,F).
+p2(A,B) :- p2(F,B),p9(A,F).
+p2(A,B) :- p2(E,B),p9(E,A).
+p3(A,B) :- p10(A,B),p2(A,B).
+p2(A,B) :- p2(E,B),p5(E,A).
+p2(A,B) :- p10(E,B),p2(A,E).
+p2(A,B) :- p2(A,E),p3(E,B).

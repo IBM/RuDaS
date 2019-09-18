@@ -1,0 +1,16 @@
+p5,c72,c72,c72
+inv_p5,c72,c72,c72
+p9,c48,c13,c48
+inv_p9,c13,c48,c48,c13
+p5,c24,c24,c24
+inv_p5,c24,c24,c24
+p7,c63,c63,c63
+inv_p7,c63,c63,c63
+p10,c10,c19,c10
+inv_p10,c19,c10,c10,c19
+p6,c72,c3,c72
+inv_p6,c3,c72,c72,c3
+p7,c48,c48,c48
+inv_p7,c48,c48,c48
+p10,c53,c26,c26,c53
+inv_p10,c26,c53,c53,c26

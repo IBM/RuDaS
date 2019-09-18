@@ -1,0 +1,127 @@
+FOIL 6.4   [January 1996]
+--------
+
+    Options:
+	verbosity level 0
+	no negated literals
+	maximum 200000 tuples 
+
+Relation p1
+
+Relation p8
+
+Relation p7
+
+Relation p6
+
+Relation p9
+
+Relation p2
+
+Relation p10
+
+Relation p5
+
+Relation p3
+
+----------
+p7:
+
+***  Warning: the following definition
+***  matches 6 tuples not in the relation
+***  does not cover 44 tuples in the relation
+
+p7(A,B) :- p1(A,B).
+p7(A,B) :- p8(B,A), p1(B,C), p8(D,C).
+p7(A,B) :- p8(B,A), p8(A,C), p1(D,A), p1(E,C).
+
+Time 0.1 secs
+
+----------
+p8:
+
+***  Warning: the following definition
+***  does not cover 37 tuples in the relation
+
+p8(A,B) :- p1(B,A), p2(B,C).
+p8(A,B) :- p1(B,A), p1(C,B), p2(C,D).
+p8(A,B) :- p1(B,A), p2(A,C).
+p8(A,B) :- p1(B,A), p1(C,B), p1(D,C), p1(E,D).
+p8(A,B) :- p7(B,A), p7(A,C), p5(D,C).
+p8(A,B) :- p7(B,A), p7(C,B), p9(D,C).
+p8(A,B) :- p7(B,A), p7(C,B), p6(C,D), p1(E,B).
+p8(A,B) :- p1(B,A), p7(C,A), p6(C,D).
+
+Time 0.5 secs
+
+----------
+p1:
+
+***  Warning: the following definition
+***  matches 1 tuple not in the relation
+***  does not cover 19 tuples in the relation
+
+p1(A,B) :- p7(A,B), p7(B,C), p7(D,A), p8(D,E).
+p1(A,B) :- p8(B,A), p7(C,B), p7(A,D), p8(D,E), p7(F,E), p7(E,G), p8(G,H), p8(I,G), p7(J,F).
+p1(A,B) :- p7(A,B), p3(C,A).
+p1(A,B) :- p8(B,A), p2(A,C).
+p1(A,B) :- p8(B,A), p2(B,C).
+p1(A,B) :- p7(A,B), p8(B,C), p7(D,C), p10(D,E).
+p1(A,B) :- p7(A,B), p8(C,A), p8(D,C), p7(E,D).
+p1(A,B) :- p7(A,B), p8(B,C), p7(D,C), p3(E,D).
+
+Time 158.8 secs
+
+----------
+p2:
+
+***  Warning: the following definition
+***  does not cover 4 tuples in the relation
+
+
+Time 159.2 secs
+
+----------
+p10:
+
+***  Warning: the following definition
+***  does not cover 2 tuples in the relation
+
+
+Time 159.3 secs
+
+----------
+p6:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 159.4 secs
+
+----------
+p9:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 159.5 secs
+
+----------
+p5:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 159.5 secs
+
+----------
+p3:
+
+***  Warning: the following definition
+***  does not cover 1 tuple in the relation
+
+
+Time 159.6 secs

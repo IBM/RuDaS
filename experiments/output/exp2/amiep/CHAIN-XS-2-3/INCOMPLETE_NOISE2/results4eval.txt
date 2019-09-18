@@ -1,0 +1,7 @@
+p3(A,B) :- p6(A,B).
+p6(A,B) :- p3(A,B).
+p3(A,B) :- p0(B,F),p9(F,A).
+p0(A,B) :- p6(F,A),p9(B,F).
+p9(A,B) :- p0(F,A),p6(B,F).
+p9(A,B) :- p0(F,A),p3(B,F).
+p6(A,B) :- p0(B,F),p9(F,A).

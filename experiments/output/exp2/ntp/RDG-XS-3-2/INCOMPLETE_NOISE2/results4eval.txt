@@ -1,0 +1,100 @@
+p4(A,A) :- p0(A,B).
+p4(A,A) :- p4(A,B).
+p4(A,A) :- p9(A,B).
+p9(A,A) :- p0(A,B).
+p4(A,A) :- p4(A,B).
+p4(A,A) :- p4(A,B).
+p9(A,A) :- p4(A,B).
+p4(A,A) :- p4(A,B).
+p9(A,A) :- p4(A,B).
+p4(A,A) :- p4(A,B).
+p4(A,A) :- p4(A,B).
+p3(A,A) :- p4(A,B).
+p4(A,A) :- p4(A,B).
+p4(A,A) :- p4(A,B).
+p9(A,A) :- p4(A,B).
+p9(A,A) :- p4(A,B).
+p9(A,A) :- p4(A,B).
+p4(A,A) :- p9(A,B).
+p0(A,A) :- p4(A,B).
+p4(A,A) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p9(A,B) :- p4(A,B).
+p4(A,B) :- p9(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p9(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p9(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p9(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p4(A,B) :- p4(A,B).
+p9(A,B) :- p4(A,B).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p9(A,B) :- p4(B,C), p4(A,A).
+p0(A,B) :- p4(B,C), p4(A,A).
+p9(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p9(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p0(B,C), p4(A,A).
+p4(A,B) :- p9(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(B,C), p4(A,A).
+p4(A,B) :- p4(C,A), p4(C,B).
+p9(A,B) :- p4(C,A), p9(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p0(A,B) :- p4(C,A), p4(C,B).
+p9(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p0(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p0(A,B) :- p4(C,A), p0(C,B).
+p4(A,B) :- p4(C,A), p4(C,B).
+p9(A,B) :- p9(C,A), p9(C,B).
+p4(A,B) :- p9(C,A), p4(C,B).
+p4(A,B) :- p9(C,A), p4(C,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p9(A,B) :- p9(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p9(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p9(A,B) :- p4(C,B), p9(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p0(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p9(A,B).
+p9(A,B) :- p4(C,B), p4(A,B).
+p4(A,B) :- p4(C,B), p4(A,B).
+p9(A,B) :- p4(C,B), p4(A,B).

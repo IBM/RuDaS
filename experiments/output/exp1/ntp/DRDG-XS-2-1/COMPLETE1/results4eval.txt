@@ -1,0 +1,60 @@
+p3(A,B) :- p8(B,A).
+p8(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p8(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p3(A,B) :- p8(B,A).
+p3(A,B) :- p8(B,A).
+p3(A,B) :- p3(B,A).
+p8(A,B) :- p8(B,A).
+p8(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p8(A,B) :- p8(B,A).
+p8(A,B) :- p3(B,A).
+p8(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p3(A,B) :- p8(B,A).
+p3(A,B) :- p8(B,A).
+p3(A,B) :- p8(B,A).
+p3(A,B) :- p3(B,A).
+p5(A,B) :- p8(B,A).
+p3(A,B) :- p8(B,A).
+p3(A,B) :- p5(B,A).
+p3(A,B) :- p8(B,A).
+p3(A,B) :- p3(B,A).
+p8(A,B) :- p3(B,A).
+p8(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p8(A,B) :- p3(B,A).
+p8(A,B) :- p8(B,A).
+p3(A,B) :- p1(B,A).
+p3(A,B) :- p3(B,A).
+p3(A,B) :- p3(B,A).
+p5(A,B) :- p8(B,A).
+p8(A,B) :- p1(B,A).
+p8(A,B) :- p8(B,A).
+p8(A,B) :- p3(B,A).
+p3(A,B) :- p8(B,A).
+p3(A,B) :- p8(B,C), p3(A,D).
+p3(A,B) :- p8(B,C), p8(A,D).
+p3(A,B) :- p3(B,C), p3(A,D).
+p8(A,B) :- p8(B,C), p3(A,D).
+p3(A,B) :- p8(B,C), p8(A,D).
+p3(A,B) :- p8(B,C), p3(A,D).
+p8(A,B) :- p3(B,C), p3(A,D).
+p8(A,B) :- p8(B,C), p3(A,D).
+p3(A,B) :- p3(B,C), p5(A,D).
+p3(A,B) :- p3(B,C), p8(A,D).
+p3(A,B) :- p8(B,C), p3(A,D).
+p8(A,B) :- p8(B,C), p3(A,D).
+p3(A,B) :- p8(B,C), p8(A,D).
+p8(A,B) :- p3(B,C), p3(A,D).
+p8(A,B) :- p3(B,C), p3(A,D).
+p3(A,B) :- p1(B,C), p3(A,D).
+p8(A,B) :- p8(B,C), p8(A,D).
+p3(A,B) :- p3(B,C), p8(A,D).
+p3(A,B) :- p3(B,C), p3(A,D).
+p3(A,B) :- p8(B,C), p8(A,D).

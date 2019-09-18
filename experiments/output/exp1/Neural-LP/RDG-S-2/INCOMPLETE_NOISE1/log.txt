@@ -1,0 +1,57 @@
+Epoch 1 mode train Loss 41.2337 In top 0.2559. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode valid Loss 39.6290 In top 0.2900. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 1 mode test Loss 40.3808 In top 0.0480. Time elapsed 0.00 hrs (0.0 mins)
+Epoch 2 mode train Loss 41.1674 In top 0.2654. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 2 mode valid Loss 39.5804 In top 0.2933. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 2 mode test Loss 40.3135 In top 0.0480. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode train Loss 41.1177 In top 0.2678. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode valid Loss 39.5442 In top 0.2933. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 3 mode test Loss 40.2689 In top 0.0508. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode train Loss 41.0826 In top 0.2701. Time elapsed 0.00 hrs (0.1 mins)
+Epoch 4 mode valid Loss 39.5226 In top 0.2933. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 4 mode test Loss 40.2445 In top 0.0734. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 5 mode train Loss 41.0592 In top 0.2796. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 5 mode valid Loss 39.5098 In top 0.2933. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 5 mode test Loss 40.2252 In top 0.0734. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode train Loss 41.0402 In top 0.2820. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode valid Loss 39.4985 In top 0.2933. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 6 mode test Loss 40.2013 In top 0.0734. Time elapsed 0.00 hrs (0.2 mins)
+Epoch 7 mode train Loss 41.0223 In top 0.2820. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 7 mode valid Loss 39.4857 In top 0.2933. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 7 mode test Loss 40.1745 In top 0.0734. Time elapsed 0.00 hrs (0.3 mins)
+Epoch 8 mode train Loss 41.0044 In top 0.2820. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 8 mode valid Loss 39.4691 In top 0.2933. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 8 mode test Loss 40.1452 In top 0.0734. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 9 mode train Loss 40.9843 In top 0.2820. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 9 mode valid Loss 39.4492 In top 0.2933. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 9 mode test Loss 40.1143 In top 0.0734. Time elapsed 0.01 hrs (0.3 mins)
+Epoch 10 mode train Loss 40.9622 In top 0.2820. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 10 mode valid Loss 39.4267 In top 0.2933. Time elapsed 0.01 hrs (0.4 mins)
+Epoch 10 mode test Loss 40.0819 In top 0.0763. Time elapsed 0.01 hrs (0.4 mins)
+Best test in top: 0.0763 at epoch 10.
+Test in top 0.0763
+Test predictions written. Time elapsed 0.01 hrs (0.4 mins)
+Attentions collected. Time elapsed 0.01 hrs (0.4 mins)
+
+Rules listed and printed. Time elapsed 0.01 hrs (0.4 mins)
+/4	2/4	3/4	4/4	Epoch 8 mode train Loss 41.0044 In top 0.2820. Time elapsed 0.01 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 8 mode valid Loss 39.4691 In top 0.2933. Time elapsed 0.01 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 8 mode test Loss 40.1452 In top 0.0734. Time elapsed 0.01 hrs (0.3 mins)
+Model saved at ./../output/exp1/Neural-LP/RDG-S-2/INCOMPLETE_NOISE1/ckpt/model-8
+1/4	2/4	3/4	4/4	Epoch 9 mode train Loss 40.9843 In top 0.2820. Time elapsed 0.01 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 9 mode valid Loss 39.4492 In top 0.2933. Time elapsed 0.01 hrs (0.3 mins)
+1/3	2/3	3/3	Epoch 9 mode test Loss 40.1143 In top 0.0734. Time elapsed 0.01 hrs (0.3 mins)
+Model saved at ./../output/exp1/Neural-LP/RDG-S-2/INCOMPLETE_NOISE1/ckpt/model-9
+1/4	2/4	3/4	4/4	Epoch 10 mode train Loss 40.9622 In top 0.2820. Time elapsed 0.01 hrs (0.4 mins)
+1/3	2/3	3/3	Epoch 10 mode valid Loss 39.4267 In top 0.2933. Time elapsed 0.01 hrs (0.4 mins)
+1/3	2/3	3/3	Epoch 10 mode test Loss 40.0819 In top 0.0763. Time elapsed 0.01 hrs (0.4 mins)
+Model saved at ./../output/exp1/Neural-LP/RDG-S-2/INCOMPLETE_NOISE1/ckpt/model-10
+Best test in top: 0.0763 at epoch 10.
+Start getting test predictions...
+1/3	2/3	3/3	Test in top 0.0763
+Test predictions written. Time elapsed 0.01 hrs (0.4 mins)
+Start getting rules...
+Attentions collected. Time elapsed 0.01 hrs (0.4 mins)
+3/20	7/20	11/20	15/20	19/20	
+Rules listed and printed. Time elapsed 0.01 hrs (0.4 mins)
+====================================Finish====================================
