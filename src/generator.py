@@ -1,6 +1,9 @@
-'''Python 3
-Dataset Generator
 '''
+ Copyright IBM Corp. 1992, 1993 All Rights Reserved
+SPDX-License-Identifier: Apache-2.0
+'''
+
+
 from enum import Enum
 import numpy as np
 import shutil

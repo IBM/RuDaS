@@ -1,3 +1,6 @@
+#  Copyright IBM Corp. 1992, 1993 All Rights Reserved
+# SPDX-License-Identifier: Apache-2.0
+
 #!/bin/bash
 
 NAMES=(DRDG-XS-3/COMPLETE1 RDG-S-3/COMPLETE1)

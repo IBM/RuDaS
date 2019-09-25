@@ -1,3 +1,7 @@
+'''
+ Copyright IBM Corp. 1992, 1993 All Rights Reserved
+SPDX-License-Identifier: Apache-2.0
+'''
 
 DATASETS_BASE_DIR = '../../datasets/'
 DATA_BASE_DIR = '../data/'

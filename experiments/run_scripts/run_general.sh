@@ -1,3 +1,6 @@
+#  Copyright IBM Corp. 1992, 1993 All Rights Reserved
+# SPDX-License-Identifier: Apache-2.0
+
 #!/bin/bash
 
 NAMES=(CHAIN-S-2 CHAIN-S-3 RDG-XS-2 DRDG-XS-3 CHAIN-XS-3 RDG-XS-3 CHAIN-XS-2 DRDG-XS-2 DRDG-S-2 DRDG-S-3 RDG-S-3 RDG-S-2)

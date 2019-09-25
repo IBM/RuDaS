@@ -1,10 +1,9 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Sep 16 00:56:04 2018
-
-@author: veronika.thost
-"""
+'''
+ Copyright IBM Corp. 1992, 1993 All Rights Reserved
+SPDX-License-Identifier: Apache-2.0
+'''
 
 import random
 import copy

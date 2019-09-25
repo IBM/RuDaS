@@ -1,7 +1,8 @@
 '''
-Python 3
-Logic Classes
+ Copyright IBM Corp. 1992, 1993 All Rights Reserved
+SPDX-License-Identifier: Apache-2.0
 '''
+
 import copy
 import sys
 

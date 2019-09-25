@@ -1,3 +1,8 @@
+'''
+ Copyright IBM Corp. 1992, 1993 All Rights Reserved
+SPDX-License-Identifier: Apache-2.0
+'''
+
 import os
 if __name__ == '__main__':
     # dataset_dir = sys.argv[1]
