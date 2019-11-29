@@ -10,6 +10,19 @@ In this repository there is also the code (see experiments/README) we used to ev
 
 **Paper:** <https://arxiv.org/abs/1909.07095> (arXiv preprint)
 
+How to cite:
+
+```latex
+@misc{cornelio_thost_rudas,
+    title={RuDaS: Synthetic Datasets for Rule Learning and Evaluation Tools},
+    author={Cristina Cornelio and Veronika Thost},
+    year={2019},
+    eprint={1909.07095},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI}
+}
+```
+---
 Requirements: Python 3 
 <!--TODO any others check. then create file requirements.txt)-->
 See experiments/README for additional requirements for running the experiments
