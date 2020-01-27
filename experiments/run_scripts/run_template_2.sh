@@ -13,7 +13,6 @@ DATA=$DIR/../data/$TESTS/
 for NAME in ${NAMES[@]}
 do
 
-
 SYSTEM=Neural-LP
 echo "Running Neural-LP..."
 source activate $SYSTEM

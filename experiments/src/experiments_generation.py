@@ -28,22 +28,22 @@ def write_run_script(test_name, datasets_string):
         datasets_incomplete_noise += dataset + "/INCOMPLETE_NOISE1 "
     # COMPLETE
     with open(os.getcwd() +'/../run_scripts/run_'+test_name+'_complete.sh', 'w') as f:
-        f.writelines(ls[0:2])
-        f.write(ls[2].replace("VAR-NAMES", datasets_complete))
-        f.write(ls[3].replace("VAR-TESTS", test_name))
-        f.writelines(ls[4:])
+        f.writelines(ls[0:5])
+        f.write(ls[5].replace("VAR-NAMES", datasets_complete))
+        f.write(ls[6].replace("VAR-TESTS", test_name))
+        f.writelines(ls[7:])
     # INCOMPLETE
     with open(os.getcwd() + '/../run_scripts/run_' + test_name +'_incomplete.sh', 'w') as f:
-        f.writelines(ls[0:2])
-        f.write(ls[2].replace("VAR-NAMES", datasets_incomplete))
-        f.write(ls[3].replace("VAR-TESTS", test_name))
-        f.writelines(ls[4:])
+        f.writelines(ls[0:5])
+        f.write(ls[5].replace("VAR-NAMES", datasets_incomplete))
+        f.write(ls[6].replace("VAR-TESTS", test_name))
+        f.writelines(ls[7:])
     # INCOMPLETE + NOISE
     with open(os.getcwd() + '/../run_scripts/run_' + test_name + '_incomplete_noise.sh', 'w') as f:
-        f.writelines(ls[0:2])
-        f.write(ls[2].replace("VAR-NAMES", datasets_incomplete_noise))
-        f.write(ls[3].replace("VAR-TESTS", test_name))
-        f.writelines(ls[4:])
+        f.writelines(ls[0:5])
+        f.write(ls[5].replace("VAR-NAMES", datasets_incomplete_noise))
+        f.write(ls[6].replace("VAR-TESTS", test_name))
+        f.writelines(ls[7:])
 
 def write_run_script2(test_name, datasets_string):
     p = os.getcwd() + "/../run_scripts/run_template_2.sh"
@@ -54,10 +54,10 @@ def write_run_script2(test_name, datasets_string):
     with open(p, 'r') as f:#./run_scripts/run_template_2.sh '/Users/veronika.thost/Desktop/git/RuDaS/experiments/run_scripts/run_template_2.sh'
         ls = f.readlines()
     with open(os.getcwd() +'/../run_scripts/run_'+test_name+'_2.sh', 'w') as f:
-        f.writelines(ls[0:2])
-        f.write(ls[2].replace("VAR-NAMES", datasets_incomplete_noise))
-        f.write(ls[3].replace("VAR-TESTS", test_name))
-        f.writelines(ls[4:])
+        f.writelines(ls[0:5])
+        f.write(ls[5].replace("VAR-NAMES", datasets_incomplete_noise))
+        f.write(ls[6].replace("VAR-TESTS", test_name))
+        f.writelines(ls[7:])
 
 
 

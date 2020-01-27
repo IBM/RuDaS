@@ -3,8 +3,8 @@
 Installation requirements: git, anaconda, wget
 1. Run **experiments/setup_systems_scripts/setup_systems.sh** to download and set up the systems.
 2. Run **experiments/src/experiments_generation.py** to set up the experiments.
-3. Run **experiments/run_scripts/run_new.sh** to run the experiment 1.
-4. Run **experiments/run_scripts/run_new2.sh** to run the experiment 2.
+3. Run **experiments/run_scripts/run_exp1_complete.sh**, **experiments/run_scripts/run_exp1_incomplete.sh** and **experiments/run_scripts/run_exp1_incomplete_noise.sh** to run experiment 1.
+4. Run **experiments/run_scripts/run_exp2_2.sh** to run experiment 2.
 4. For evaluation, run **experiments/src/experiments_evaluation.py** to evaluate both experiments.
 
 The following systems are evaluated:
