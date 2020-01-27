@@ -8,9 +8,11 @@ Moreover, RuDaS allows for assessing the performance of rule learning systems by
 
 In this repository there is also the code (see experiments/README) we used to evaluate representatives of different types of rule learning systems on our datasets demonstrating the necessity of having a diversified portfolio of datasets to help revealing the variety in the capabilities of the systems and thus also to support and help researchers in developing and optimizing new/existing approaches. 
 
-**Paper:** <https://arxiv.org/abs/1909.07095> (arXiv preprint)
+### Paper:
 
-How to cite:
+<https://arxiv.org/abs/1909.07095> (arXiv preprint)
+
+### How to cite:
 
 ```latex
 @misc{cornelio_thost_rudas,
@@ -23,8 +25,10 @@ How to cite:
 }
 ```
 ---
-Requirements: Python 3 
+### Requirements: 
+* Python 3 
 <!--TODO any others check. then create file requirements.txt)-->
+### Experiments
 See experiments/README for additional requirements for running the experiments
 
 
@@ -93,7 +97,7 @@ Evaluation tool to compute distances between logic programs:
 * *F1-score*
 
 
-Predicate invention: we don't penalize them in the evaluation
+Predicate invention: we don't penalize it in the evaluation
 
 
 ## Future extensions
