@@ -98,7 +98,7 @@ Evaluation tool to compute distances between logic programs:
 * *F1-score*
 
 
-Predicate invention: we don't penalize them in the evaluation
+Predicate invention: we don't penalize it in the evaluation
 
 
 ## Future extensions
