@@ -1,0 +1,19 @@
+Warning: /Users/cor/Desktop/untitled folder/rules.pl:1:
+	Redefined static procedure p1/2
+	Previously defined at /Users/cor/Desktop/untitled folder/facts.pl:1
+Warning: /Users/cor/Desktop/untitled folder/rules.pl:3:
+	Singleton variables: [C]
+ERROR: /Users/cor/Desktop/untitled folder/query.pl:1: Initialization goal raised exception:
+ERROR: Stack limit (1.0Gb) exceeded
+ERROR:   Stack sizes: local: 1.0Gb, global: 12Kb, trail: 0Kb
+ERROR:   Stack depth: 26,841,659, last-call: 50%, Choice points: 10
+ERROR:   Probable infinite recursion (cycle):
+ERROR:     [26,841,658] user:p0(_3206, _3208)
+ERROR:     [26,841,656] user:p0(_3226, _3228)
+ERROR: /Users/cor/Desktop/untitled folder/query.pl:2: Initialization goal raised exception:
+ERROR: Stack limit (1.0Gb) exceeded
+ERROR:   Stack sizes: local: 1.0Gb, global: 12Kb, trail: 0Kb
+ERROR:   Stack depth: 26,841,658, last-call: 50%, Choice points: 10
+ERROR:   Probable infinite recursion (cycle):
+ERROR:     [26,841,657] user:p0(_3378, _3380)
+ERROR:     [26,841,655] user:p0(_3398, _3400)
