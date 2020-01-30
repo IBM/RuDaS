@@ -60,12 +60,12 @@ Impact of different metrics, each one averaged on 120 datasets with uniformly di
 
 || FOIL | AMIE+ | Neural-LP | NTP |
 | --- | --- | ---  | --- | --- | 
-| **H-accuracy** |0.9872 | 0.8708 | 0.9852 |0.9304 |
-|    **Accuracy** | 0.9872  | 0.8719 | 0.9850   | 0.9302|
- |   **F1-score** |  0.2136 | 0.3164 |  0.1620 | 0.1192 |
-  |  **H-score** | 0.1523 | 0.2429 | 0.1027 | 0.0772 |
- |   **Precision** | 0.5810 | 0.3125 | 0.1693 | 0.1049 | %($s_c$) 
- |   **Recall** | 0.2273  | 0.7178  | 0.2421 | 0.3960 |
+| **H-accuracy** | 0.9873 | 0.8498 | 0.9850 |0.9221 |
+|    **Accuracy** | 0.9872  | 0.8494 | 0.9849   | 0.9219|
+ |   **F1-score** |  0.2151 | 0.3031 |  0.1621 | 0.1125 |
+  |  **H-score** | 0.1520 | 0.2321 | 0.1025 | 0.0728 |
+ |   **Precision** | 0.5963 | 0.2982 | 0.1687 | 0.1021 | %($s_c$) 
+ |   **Recall** | 0.2264  | 0.7311  | 0.2433 | 0.3921 |
 
 
 ## Impact of Missing Consequences and Noise
@@ -82,27 +82,45 @@ Moreover, in order to give an impression  of  some  of  the  datasets  considere
 
 || EVEN |  Complete | Incomplete | Incomplete + Noise | 
 | --- | --- | ---  | --- | --- | 
-| **FOIL** | 1.0 | 0.3951 | 0.2102 | 0.0940 |
-| **AMIE+** | - |  0.2219 |  0.2646 |  0.2634 |
-|  **Neural-LP**|  - | 0.0659 | 0.0750 | 0.0701 |
-|   **NTP**  | 1.0 | 0.0601 | 0.0833 | 0.0718|
+| **FOIL**     | 1.0  | 0.4053  | 0.1919  | 0.0849  |
+| **AMIE+**    | -    |  0.2021 |  0.2098 |  0.2075 |
+| **Neural-LP**|  -   | 0.0633  | 0.0692  | 0.0649  |
+| **NTP**      | 1.0  | 0.0482  | 0.0617  | 0.0574  |
 
 ## Impact of Dependencies Between Rules
 Impact of dataset category. H-score averaged on 40datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
 
 ||CHAIN |  RDG | DRDG  |
 | --- | --- | ---  | --- |
-| **FOIL** | 0.2024 | 0.0873 | 0.1648     |
-| **AMIE+** |  0.3395 | 0.2323 | 0.1443 |
-| **Neural-LP**  |  0.1291 | 0.1059 | 0.0718 |
-| **NTP**  | 0.1239 | 0.0551 | 0.0427   |
+| **FOIL** | 0.2024 | 0.0877 | 0.1633     |
+| **AMIE+** |  0.3395 | 0.2275 | 0.1293 |
+| **Neural-LP**  |  0.1291 | 0.1050 | 0.0734 |
+| **NTP**  | 0.1239 | 0.0538 | 0.0368   |
 
 ## Scalability: Impact of Dataset Size
 Impact of dataset size and rule graph depth. H-scoreaveraged on 30 datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
 
 || XS-2 |  XS-3 | S-2 | S-3  |
 | --- | --- | ---  | --- | --- | 
-| **FOIL**  | 0.2815 | 0.2119 | 0.0346 | 0.0934 |
-| **AMIE+**  | 0.1449 | 0.1581 | 0.4392 | 0.2124 |
-| **Neural-LP**   | 0.1155 | 0.0643 | 0.1281 | 0.0992 |
-| **NTP** | 0.1512 | 0.0605 | 0.0562 | 0.0471|
+| **FOIL**  | 0.2815 | 0.2074 | 0.0356 | 0.0934 |
+| **AMIE+**  | 0.1449 | 0.1319 | 0.4392 | 0.2124 |
+| **Neural-LP**   | 0.1155 | 0.0673 | 0.1281 | 0.0992 |
+| **NTP** | 0.1512 | 0.0432 | 0.0652 | 0.0374|
+
+Same results aggregated by sizes in {XS,S}:
+
+|| XS | S   |
+| --- | --- | --- | 
+| **FOIL**  | 0.2444 | 0.0645 |
+| **AMIE+**  | 0.1384 | 0.3258 |
+| **Neural-LP**   | 0.0914 | 0.1137 |
+| **NTP** | 0.0972 | 0.0513 |
+
+Same results aggregated by graph depths in {2,3}:
+
+|| 2 | 3   |
+| --- | --- | --- | 
+| **FOIL**  | 0.1585 | 0.1504 |
+| **AMIE+**  | 0.2921 | 0.1722 |
+| **Neural-LP**   | 0.1218 | 0.0833 |
+| **NTP** | 0.1082 | 0.0403 |
