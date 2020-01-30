@@ -1,0 +1,80 @@
+p0(A,B) :- p0(A,B).
+p9(A,B) :- p0(A,B).
+p9(A,B) :- p10(A,B).
+p6(A,B) :- p9(A,B).
+p9(A,B) :- p7(A,B).
+p9(A,B) :- p4(A,B).
+p7(A,B) :- p7(A,B).
+p9(A,B) :- p10(A,B).
+p9(A,B) :- p10(A,B).
+p10(A,B) :- p9(A,B).
+p9(A,B) :- p4(A,B).
+p9(A,B) :- p7(A,B).
+p7(A,B) :- p9(A,B).
+p10(A,B) :- p10(A,B).
+p9(A,B) :- p9(A,B).
+p9(A,B) :- p7(A,B).
+p7(A,B) :- p9(A,B).
+p9(A,B) :- p6(A,B).
+p4(A,B) :- p9(A,B).
+p7(A,B) :- p4(A,B).
+p9(A,B) :- p4(B,C), p6(C,A).
+p7(A,B) :- p7(B,C), p9(C,A).
+p3(A,B) :- p0(B,C), p9(C,A).
+p7(A,B) :- p7(B,C), p9(C,A).
+p0(A,B) :- p9(B,C), p10(C,A).
+p4(A,B) :- p9(B,C), p9(C,A).
+p9(A,B) :- p9(B,C), p9(C,A).
+p7(A,B) :- p0(B,C), p7(C,A).
+p9(A,B) :- p9(B,C), p9(C,A).
+p7(A,B) :- p4(B,C), p9(C,A).
+p9(A,B) :- p6(B,C), p9(C,A).
+p9(A,B) :- p10(B,C), p9(C,A).
+p9(A,B) :- p10(B,C), p7(C,A).
+p7(A,B) :- p9(B,C), p7(C,A).
+p10(A,B) :- p9(B,C), p7(C,A).
+p3(A,B) :- p7(B,C), p9(C,A).
+p9(A,B) :- p6(B,C), p10(C,A).
+p9(A,B) :- p9(B,C), p10(C,A).
+p9(A,B) :- p7(B,C), p9(C,A).
+p9(A,B) :- p9(B,C), p7(C,A).
+p7(A,B) :- p9(C,A), p10(C,B).
+p9(A,B) :- p9(C,A), p3(C,B).
+p4(A,B) :- p4(C,A), p9(C,B).
+p9(A,B) :- p9(C,A), p3(C,B).
+p9(A,B) :- p9(C,A), p9(C,B).
+p7(A,B) :- p10(C,A), p7(C,B).
+p9(A,B) :- p7(C,A), p10(C,B).
+p9(A,B) :- p9(C,A), p9(C,B).
+p6(A,B) :- p9(C,A), p7(C,B).
+p6(A,B) :- p6(C,A), p9(C,B).
+p9(A,B) :- p7(C,A), p9(C,B).
+p9(A,B) :- p4(C,A), p9(C,B).
+p9(A,B) :- p6(C,A), p9(C,B).
+p7(A,B) :- p0(C,A), p7(C,B).
+p9(A,B) :- p9(C,A), p7(C,B).
+p9(A,B) :- p7(C,A), p7(C,B).
+p10(A,B) :- p9(C,A), p10(C,B).
+p9(A,B) :- p9(C,A), p9(C,B).
+p9(A,B) :- p7(C,A), p9(C,B).
+p9(A,B) :- p9(C,A), p9(C,B).
+p9(A,B) :- p9(C,B), p9(C,A).
+p9(A,B) :- p9(C,B), p4(C,A).
+p9(A,B) :- p9(C,B), p3(C,A).
+p9(A,B) :- p3(C,B), p10(C,A).
+p7(A,B) :- p9(C,B), p9(C,A).
+p6(A,B) :- p9(C,B), p10(C,A).
+p10(A,B) :- p9(C,B), p9(C,A).
+p9(A,B) :- p7(C,B), p9(C,A).
+p6(A,B) :- p9(C,B), p9(C,A).
+p9(A,B) :- p7(C,B), p3(C,A).
+p9(A,B) :- p7(C,B), p9(C,A).
+p10(A,B) :- p4(C,B), p9(C,A).
+p3(A,B) :- p6(C,B), p10(C,A).
+p6(A,B) :- p9(C,B), p9(C,A).
+p9(A,B) :- p10(C,B), p3(C,A).
+p7(A,B) :- p9(C,B), p9(C,A).
+p10(A,B) :- p9(C,B), p9(C,A).
+p9(A,B) :- p10(C,B), p4(C,A).
+p7(A,B) :- p7(C,B), p9(C,A).
+p3(A,B) :- p6(C,B), p9(C,A).

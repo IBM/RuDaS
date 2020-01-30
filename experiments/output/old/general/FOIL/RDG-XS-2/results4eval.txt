@@ -1,0 +1,8 @@
+p6(A) :- p8(B,A), p8(A,C).
+p6(A) :- p8(B,A), p6(B).
+p0(A) :- p7(A), p9(A,B).
+p0(A) :- p5(B,A).
+p7(A) :- p0(A), p9(A,B).
+p7(A) :- p5(B,A).
+p9(A,B) :- p8(C,A), p7(B).
+p9(A,B) :- p0(B), p8(C,A), p8(A,D), p8(D,E).

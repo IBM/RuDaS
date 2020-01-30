@@ -1,10 +1,12 @@
+DEBUG:smart_open.smart_open_lib:{'transport_params': None, 'ignore_ext': False, 'opener': None, 'closefd': True, 'newline': None, 'errors': None, 'encoding': None, 'buffering': -1, 'mode': 'r', 'uri': '/home/cristina/.conda/envs/ntp/lib/python3.6/site-packages/smart_open/VERSION'}
+INFO:gensim.summarization.textcleaner:'pattern' package not found; tag filters are not available for English
 {'data': {'kb': '/home/cristina/RuDaS/experiments/data/exp1/ntp/RDG-XS-2-3/INCOMPLETE_NOISE1/train.nl',
           'templates': '/home/cristina/RuDaS/experiments/data/exp1/ntp/RDG-XS-2-3/INCOMPLETE_NOISE1/rules.nlt'},
  'meta': {'check_numerics': False,
           'conf': './../data/exp1//ntp/RDG-XS-2-3/INCOMPLETE_NOISE1/run.conf',
           'debug': False,
           'ensemble': False,
-          'experiment_dir': './out/RDG-XS-2-3/INCOMPLETE_NOISE1/19-08-23/08-50-05/',
+          'experiment_dir': './out/RDG-XS-2-3/INCOMPLETE_NOISE1/20-01-24/10-16-03/',
           'experiment_prefix': 'RDG-XS-2-3/INCOMPLETE_NOISE1',
           'file_name': 'run.conf',
           'name': 'run',
@@ -58,6 +60,7 @@ goal outer tiling of [35mT[0m[33m20[0m 50
     Goal: [35mT[0m[33m1000[0m([36mT[0m[33m1000[0m[31m,[0mC0) {SUCCESS:[36mT[0m[33m20[0m[34mx[0m[33m50[0m, A0[31m/[0m[36mT[0m[33m1000[0m, B0[31m/[0m[36mT[0m[33m1000[0m}
         Rule: [35mT[0m[33m69[0m([36mT[0m[33m69[0m[31m,[0m[36mT[0m[33m69[0m)[31m.[0m
             Taking 10 max
+WARNING:tensorflow:tf.op_scope(values, name, default_name) is deprecated, use tf.name_scope(name, default_name, values)
             [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m1000[0m, A0[31m/[0m[36mT[0m[33m1000[0m, B0[31m/[0m[36mT[0m[33m1000[0m, C0[31m/[0m[36mT[0m[33m10000[0m}
     Subgoal: [35mT[0m[33m1000[0m(D0[31m,[0mB0) {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m1000[0m, A0[31m/[0m[36mT[0m[33m1000[0m, B0[31m/[0m[36mT[0m[33m1000[0m, C0[31m/[0m[36mT[0m[33m10000[0m}
 rep inner tiling of A0 10
@@ -66,6 +69,7 @@ goal inner tiling of [35mT[0m[33m1000[0m 10
     Goal: [35mT[0m[33m10000[0m(D0[31m,[0m[36mT[0m[33m10000[0m) {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m1000[0m, A0[31m/[0m[36mT[0m[33m10000[0m, B0[31m/[0m[36mT[0m[33m10000[0m, C0[31m/[0m[36mT[0m[33m10000[0m}
         Rule: [35mT[0m[33m69[0m([36mT[0m[33m69[0m[31m,[0m[36mT[0m[33m69[0m)[31m.[0m
             Taking 10 max
+WARNING:tensorflow:tf.op_scope(values, name, default_name) is deprecated, use tf.name_scope(name, default_name, values)
             [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m10000[0m, A0[31m/[0m[36mT[0m[33m10000[0m, B0[31m/[0m[36mT[0m[33m10000[0m, C0[31m/[0m[36mT[0m[33m10000[0m, D0[31m/[0m[36mT[0m[33m100000[0m}
         [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m10000[0m, A0[31m/[0m[36mT[0m[33m10000[0m, B0[31m/[0m[36mT[0m[33m10000[0m, C0[31m/[0m[36mT[0m[33m10000[0m, D0[31m/[0m[36mT[0m[33m100000[0m}
     Rule: [35mT[0m[33m40[0m(A1[31m,[0mB1)[31m :- [0m[35mT[0m[33m40[0m(C1[31m,[0mB1), [35mT[0m[33m40[0m(B1[31m,[0mA1)[31m.[0m
@@ -77,6 +81,7 @@ goal outer tiling of [35mT[0m[33m40[0m 50
     Goal: [35mT[0m[33m2000[0m(C1[31m,[0m[36mT[0m[33m2000[0m) {SUCCESS:[36mT[0m[33m40[0m[34mx[0m[33m50[0m, A1[31m/[0m[36mT[0m[33m2000[0m, B1[31m/[0m[36mT[0m[33m2000[0m}
         Rule: [35mT[0m[33m69[0m([36mT[0m[33m69[0m[31m,[0m[36mT[0m[33m69[0m)[31m.[0m
             Taking 10 max
+WARNING:tensorflow:tf.op_scope(values, name, default_name) is deprecated, use tf.name_scope(name, default_name, values)
             [32mSUCCESS[0m {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m2000[0m, A1[31m/[0m[36mT[0m[33m2000[0m, B1[31m/[0m[36mT[0m[33m2000[0m, C1[31m/[0m[36mT[0m[33m20000[0m}
     Subgoal: [35mT[0m[33m2000[0m(B1[31m,[0mA1) {SUCCESS:[36mT[0m[33m10[0m[34mx[0m[33m2000[0m, A1[31m/[0m[36mT[0m[33m2000[0m, B1[31m/[0m[36mT[0m[33m2000[0m, C1[31m/[0m[36mT[0m[33m20000[0m}
 rep inner tiling of A1 10
@@ -90,4 +95,184 @@ Graph creation complete.
 Variables
 	 <tf.Variable 'embeddings:0' shape=(233, 100) dtype=float32_ref>
 	 <tf.Variable 'fact_mask:0' shape=(69, 50) dtype=float32_ref>
-Writing induced logic program to ./out/RDG-XS-2-3/INCOMPLETE_NOISE1/19-08-23/08-50-05/rules.nl
+INFO:ntp.jtr.util.hooks:Epoch 2	Iter 10	Loss 231.39020843505858
+INFO:ntp.jtr.util.hooks:Epoch 2	Iter 10	Examples/s 137.13
+INFO:ntp.jtr.util.hooks:Epoch 2	Iter 10	ETA in 00:00:20 [1.67%] 20-01-24 10:17:12
+INFO:ntp.jtr.util.hooks:Epoch 4	Iter 20	Loss 225.99370574951172
+INFO:ntp.jtr.util.hooks:Epoch 4	Iter 20	Examples/s 456.71
+INFO:ntp.jtr.util.hooks:Epoch 4	Iter 20	ETA in 00:00:31 [3.33%] 20-01-24 10:17:35
+INFO:ntp.jtr.util.hooks:Epoch 5	Iter 30	Loss 224.0702377319336
+INFO:ntp.jtr.util.hooks:Epoch 5	Iter 30	Examples/s 84.42
+INFO:ntp.jtr.util.hooks:Epoch 5	Iter 30	ETA in 00:00:42 [5.00%] 20-01-24 10:17:59
+INFO:ntp.jtr.util.hooks:Epoch 7	Iter 40	Loss 225.80173034667968
+INFO:ntp.jtr.util.hooks:Epoch 7	Iter 40	Examples/s 133.73
+INFO:ntp.jtr.util.hooks:Epoch 7	Iter 40	ETA in 00:00:53 [6.67%] 20-01-24 10:18:22
+INFO:ntp.jtr.util.hooks:Epoch 9	Iter 50	Loss 216.0885452270508
+INFO:ntp.jtr.util.hooks:Epoch 9	Iter 50	Examples/s 503.47
+INFO:ntp.jtr.util.hooks:Epoch 9	Iter 50	ETA in 00:01:03 [8.33%] 20-01-24 10:18:42
+INFO:ntp.jtr.util.hooks:Epoch 10	Iter 60	Loss 217.1698425292969
+INFO:ntp.jtr.util.hooks:Epoch 10	Iter 60	Examples/s 93.87
+INFO:ntp.jtr.util.hooks:Epoch 10	Iter 60	ETA in 00:01:11 [10.00%] 20-01-24 10:19:01
+INFO:ntp.jtr.util.hooks:Epoch 12	Iter 70	Loss 213.69590911865234
+INFO:ntp.jtr.util.hooks:Epoch 12	Iter 70	Examples/s 150.38
+INFO:ntp.jtr.util.hooks:Epoch 12	Iter 70	ETA in 00:01:19 [11.67%] 20-01-24 10:19:21
+INFO:ntp.jtr.util.hooks:Epoch 14	Iter 80	Loss 215.34931640625
+INFO:ntp.jtr.util.hooks:Epoch 14	Iter 80	Examples/s 452.95
+INFO:ntp.jtr.util.hooks:Epoch 14	Iter 80	ETA in 00:01:27 [13.33%] 20-01-24 10:19:40
+INFO:ntp.jtr.util.hooks:Epoch 15	Iter 90	Loss 210.78712005615233
+INFO:ntp.jtr.util.hooks:Epoch 15	Iter 90	Examples/s 93.07
+INFO:ntp.jtr.util.hooks:Epoch 15	Iter 90	ETA in 00:01:35 [15.00%] 20-01-24 10:19:58
+INFO:ntp.jtr.util.hooks:Epoch 17	Iter 100	Loss 210.34434967041017
+INFO:ntp.jtr.util.hooks:Epoch 17	Iter 100	Examples/s 163.31
+INFO:ntp.jtr.util.hooks:Epoch 17	Iter 100	ETA in 00:01:42 [16.67%] 20-01-24 10:20:16
+INFO:ntp.jtr.util.hooks:Epoch 19	Iter 110	Loss 206.8329879760742
+INFO:ntp.jtr.util.hooks:Epoch 19	Iter 110	Examples/s 467.41
+INFO:ntp.jtr.util.hooks:Epoch 19	Iter 110	ETA in 00:01:49 [18.33%] 20-01-24 10:20:35
+INFO:ntp.jtr.util.hooks:Epoch 20	Iter 120	Loss 208.623681640625
+INFO:ntp.jtr.util.hooks:Epoch 20	Iter 120	Examples/s 95.09
+INFO:ntp.jtr.util.hooks:Epoch 20	Iter 120	ETA in 00:01:56 [20.00%] 20-01-24 10:20:52
+INFO:ntp.jtr.util.hooks:Epoch 22	Iter 130	Loss 204.03026123046874
+INFO:ntp.jtr.util.hooks:Epoch 22	Iter 130	Examples/s 156.11
+INFO:ntp.jtr.util.hooks:Epoch 22	Iter 130	ETA in 00:02:01 [21.67%] 20-01-24 10:21:08
+INFO:ntp.jtr.util.hooks:Epoch 24	Iter 140	Loss 216.41558532714845
+INFO:ntp.jtr.util.hooks:Epoch 24	Iter 140	Examples/s 484.78
+INFO:ntp.jtr.util.hooks:Epoch 24	Iter 140	ETA in 00:02:07 [23.33%] 20-01-24 10:21:24
+INFO:ntp.jtr.util.hooks:Epoch 25	Iter 150	Loss 204.11929321289062
+INFO:ntp.jtr.util.hooks:Epoch 25	Iter 150	Examples/s 95.38
+INFO:ntp.jtr.util.hooks:Epoch 25	Iter 150	ETA in 00:02:12 [25.00%] 20-01-24 10:21:40
+INFO:ntp.jtr.util.hooks:Epoch 27	Iter 160	Loss 205.0394058227539
+INFO:ntp.jtr.util.hooks:Epoch 27	Iter 160	Examples/s 152.15
+INFO:ntp.jtr.util.hooks:Epoch 27	Iter 160	ETA in 00:02:17 [26.67%] 20-01-24 10:21:56
+INFO:ntp.jtr.util.hooks:Epoch 29	Iter 170	Loss 195.72720794677736
+INFO:ntp.jtr.util.hooks:Epoch 29	Iter 170	Examples/s 479.59
+INFO:ntp.jtr.util.hooks:Epoch 29	Iter 170	ETA in 00:02:22 [28.33%] 20-01-24 10:22:12
+INFO:ntp.jtr.util.hooks:Epoch 30	Iter 180	Loss 204.13280334472657
+INFO:ntp.jtr.util.hooks:Epoch 30	Iter 180	Examples/s 92.40
+INFO:ntp.jtr.util.hooks:Epoch 30	Iter 180	ETA in 00:02:26 [30.00%] 20-01-24 10:22:27
+INFO:ntp.jtr.util.hooks:Epoch 32	Iter 190	Loss 189.97225952148438
+INFO:ntp.jtr.util.hooks:Epoch 32	Iter 190	Examples/s 148.09
+INFO:ntp.jtr.util.hooks:Epoch 32	Iter 190	ETA in 00:02:30 [31.67%] 20-01-24 10:22:42
+INFO:ntp.jtr.util.hooks:Epoch 34	Iter 200	Loss 190.91634674072264
+INFO:ntp.jtr.util.hooks:Epoch 34	Iter 200	Examples/s 469.16
+INFO:ntp.jtr.util.hooks:Epoch 34	Iter 200	ETA in 00:02:34 [33.33%] 20-01-24 10:22:56
+INFO:ntp.jtr.util.hooks:Epoch 35	Iter 210	Loss 195.71938781738282
+INFO:ntp.jtr.util.hooks:Epoch 35	Iter 210	Examples/s 96.15
+INFO:ntp.jtr.util.hooks:Epoch 35	Iter 210	ETA in 00:02:37 [35.00%] 20-01-24 10:23:10
+INFO:ntp.jtr.util.hooks:Epoch 37	Iter 220	Loss 194.22528686523438
+INFO:ntp.jtr.util.hooks:Epoch 37	Iter 220	Examples/s 149.14
+INFO:ntp.jtr.util.hooks:Epoch 37	Iter 220	ETA in 00:02:40 [36.67%] 20-01-24 10:23:24
+INFO:ntp.jtr.util.hooks:Epoch 39	Iter 230	Loss 187.81322174072267
+INFO:ntp.jtr.util.hooks:Epoch 39	Iter 230	Examples/s 484.56
+INFO:ntp.jtr.util.hooks:Epoch 39	Iter 230	ETA in 00:02:42 [38.33%] 20-01-24 10:23:37
+INFO:ntp.jtr.util.hooks:Epoch 40	Iter 240	Loss 190.44059143066406
+INFO:ntp.jtr.util.hooks:Epoch 40	Iter 240	Examples/s 98.21
+INFO:ntp.jtr.util.hooks:Epoch 40	Iter 240	ETA in 00:02:44 [40.00%] 20-01-24 10:23:49
+INFO:ntp.jtr.util.hooks:Epoch 42	Iter 250	Loss 177.11809692382812
+INFO:ntp.jtr.util.hooks:Epoch 42	Iter 250	Examples/s 158.26
+INFO:ntp.jtr.util.hooks:Epoch 42	Iter 250	ETA in 00:02:45 [41.67%] 20-01-24 10:24:01
+INFO:ntp.jtr.util.hooks:Epoch 44	Iter 260	Loss 191.7076614379883
+INFO:ntp.jtr.util.hooks:Epoch 44	Iter 260	Examples/s 473.62
+INFO:ntp.jtr.util.hooks:Epoch 44	Iter 260	ETA in 00:02:47 [43.33%] 20-01-24 10:24:14
+INFO:ntp.jtr.util.hooks:Epoch 45	Iter 270	Loss 185.42103271484376
+INFO:ntp.jtr.util.hooks:Epoch 45	Iter 270	Examples/s 89.73
+INFO:ntp.jtr.util.hooks:Epoch 45	Iter 270	ETA in 00:02:48 [45.00%] 20-01-24 10:24:26
+INFO:ntp.jtr.util.hooks:Epoch 47	Iter 280	Loss 177.84513092041016
+INFO:ntp.jtr.util.hooks:Epoch 47	Iter 280	Examples/s 158.69
+INFO:ntp.jtr.util.hooks:Epoch 47	Iter 280	ETA in 00:02:49 [46.67%] 20-01-24 10:24:37
+INFO:ntp.jtr.util.hooks:Epoch 49	Iter 290	Loss 184.4759765625
+INFO:ntp.jtr.util.hooks:Epoch 49	Iter 290	Examples/s 424.25
+INFO:ntp.jtr.util.hooks:Epoch 49	Iter 290	ETA in 00:02:49 [48.33%] 20-01-24 10:24:48
+INFO:ntp.jtr.util.hooks:Epoch 50	Iter 300	Loss 178.14402923583984
+INFO:ntp.jtr.util.hooks:Epoch 50	Iter 300	Examples/s 92.71
+INFO:ntp.jtr.util.hooks:Epoch 50	Iter 300	ETA in 00:02:49 [50.00%] 20-01-24 10:24:59
+INFO:ntp.jtr.util.hooks:Epoch 52	Iter 310	Loss 172.6501937866211
+INFO:ntp.jtr.util.hooks:Epoch 52	Iter 310	Examples/s 162.60
+INFO:ntp.jtr.util.hooks:Epoch 52	Iter 310	ETA in 00:02:48 [51.67%] 20-01-24 10:25:09
+INFO:ntp.jtr.util.hooks:Epoch 54	Iter 320	Loss 183.21131134033203
+INFO:ntp.jtr.util.hooks:Epoch 54	Iter 320	Examples/s 504.30
+INFO:ntp.jtr.util.hooks:Epoch 54	Iter 320	ETA in 00:02:47 [53.33%] 20-01-24 10:25:18
+INFO:ntp.jtr.util.hooks:Epoch 55	Iter 330	Loss 175.3360153198242
+INFO:ntp.jtr.util.hooks:Epoch 55	Iter 330	Examples/s 92.46
+INFO:ntp.jtr.util.hooks:Epoch 55	Iter 330	ETA in 00:02:46 [55.00%] 20-01-24 10:25:28
+INFO:ntp.jtr.util.hooks:Epoch 57	Iter 340	Loss 177.9590835571289
+INFO:ntp.jtr.util.hooks:Epoch 57	Iter 340	Examples/s 157.42
+INFO:ntp.jtr.util.hooks:Epoch 57	Iter 340	ETA in 00:02:45 [56.67%] 20-01-24 10:25:37
+INFO:ntp.jtr.util.hooks:Epoch 59	Iter 350	Loss 167.40645446777344
+INFO:ntp.jtr.util.hooks:Epoch 59	Iter 350	Examples/s 465.32
+INFO:ntp.jtr.util.hooks:Epoch 59	Iter 350	ETA in 00:02:43 [58.33%] 20-01-24 10:25:47
+INFO:ntp.jtr.util.hooks:Epoch 60	Iter 360	Loss 163.52296752929686
+INFO:ntp.jtr.util.hooks:Epoch 60	Iter 360	Examples/s 89.64
+INFO:ntp.jtr.util.hooks:Epoch 60	Iter 360	ETA in 00:02:41 [60.00%] 20-01-24 10:25:55
+INFO:ntp.jtr.util.hooks:Epoch 62	Iter 370	Loss 164.846875
+INFO:ntp.jtr.util.hooks:Epoch 62	Iter 370	Examples/s 147.95
+INFO:ntp.jtr.util.hooks:Epoch 62	Iter 370	ETA in 00:02:38 [61.67%] 20-01-24 10:26:04
+INFO:ntp.jtr.util.hooks:Epoch 64	Iter 380	Loss 166.7367141723633
+INFO:ntp.jtr.util.hooks:Epoch 64	Iter 380	Examples/s 465.58
+INFO:ntp.jtr.util.hooks:Epoch 64	Iter 380	ETA in 00:02:35 [63.33%] 20-01-24 10:26:12
+INFO:ntp.jtr.util.hooks:Epoch 65	Iter 390	Loss 164.7210723876953
+INFO:ntp.jtr.util.hooks:Epoch 65	Iter 390	Examples/s 93.84
+INFO:ntp.jtr.util.hooks:Epoch 65	Iter 390	ETA in 00:02:32 [65.00%] 20-01-24 10:26:19
+INFO:ntp.jtr.util.hooks:Epoch 67	Iter 400	Loss 159.89550170898437
+INFO:ntp.jtr.util.hooks:Epoch 67	Iter 400	Examples/s 144.94
+INFO:ntp.jtr.util.hooks:Epoch 67	Iter 400	ETA in 00:02:28 [66.67%] 20-01-24 10:26:26
+INFO:ntp.jtr.util.hooks:Epoch 69	Iter 410	Loss 164.2850570678711
+INFO:ntp.jtr.util.hooks:Epoch 69	Iter 410	Examples/s 444.81
+INFO:ntp.jtr.util.hooks:Epoch 69	Iter 410	ETA in 00:02:24 [68.33%] 20-01-24 10:26:33
+INFO:ntp.jtr.util.hooks:Epoch 70	Iter 420	Loss 162.7881637573242
+INFO:ntp.jtr.util.hooks:Epoch 70	Iter 420	Examples/s 97.30
+INFO:ntp.jtr.util.hooks:Epoch 70	Iter 420	ETA in 00:02:20 [70.00%] 20-01-24 10:26:39
+INFO:ntp.jtr.util.hooks:Epoch 72	Iter 430	Loss 161.06001892089844
+INFO:ntp.jtr.util.hooks:Epoch 72	Iter 430	Examples/s 167.18
+INFO:ntp.jtr.util.hooks:Epoch 72	Iter 430	ETA in 00:02:15 [71.67%] 20-01-24 10:26:45
+INFO:ntp.jtr.util.hooks:Epoch 74	Iter 440	Loss 154.4830436706543
+INFO:ntp.jtr.util.hooks:Epoch 74	Iter 440	Examples/s 481.29
+INFO:ntp.jtr.util.hooks:Epoch 74	Iter 440	ETA in 00:02:10 [73.33%] 20-01-24 10:26:51
+INFO:ntp.jtr.util.hooks:Epoch 75	Iter 450	Loss 154.09979858398438
+INFO:ntp.jtr.util.hooks:Epoch 75	Iter 450	Examples/s 93.44
+INFO:ntp.jtr.util.hooks:Epoch 75	Iter 450	ETA in 00:02:05 [75.00%] 20-01-24 10:26:56
+INFO:ntp.jtr.util.hooks:Epoch 77	Iter 460	Loss 154.12806243896483
+INFO:ntp.jtr.util.hooks:Epoch 77	Iter 460	Examples/s 162.83
+INFO:ntp.jtr.util.hooks:Epoch 77	Iter 460	ETA in 00:01:59 [76.67%] 20-01-24 10:27:00
+INFO:ntp.jtr.util.hooks:Epoch 79	Iter 470	Loss 154.30302734375
+INFO:ntp.jtr.util.hooks:Epoch 79	Iter 470	Examples/s 422.46
+INFO:ntp.jtr.util.hooks:Epoch 79	Iter 470	ETA in 00:01:52 [78.33%] 20-01-24 10:27:05
+INFO:ntp.jtr.util.hooks:Epoch 80	Iter 480	Loss 162.19112243652344
+INFO:ntp.jtr.util.hooks:Epoch 80	Iter 480	Examples/s 88.44
+INFO:ntp.jtr.util.hooks:Epoch 80	Iter 480	ETA in 00:01:46 [80.00%] 20-01-24 10:27:10
+INFO:ntp.jtr.util.hooks:Epoch 82	Iter 490	Loss 149.43857803344727
+INFO:ntp.jtr.util.hooks:Epoch 82	Iter 490	Examples/s 159.21
+INFO:ntp.jtr.util.hooks:Epoch 82	Iter 490	ETA in 00:01:39 [81.67%] 20-01-24 10:27:14
+INFO:ntp.jtr.util.hooks:Epoch 84	Iter 500	Loss 150.59459533691407
+INFO:ntp.jtr.util.hooks:Epoch 84	Iter 500	Examples/s 433.46
+INFO:ntp.jtr.util.hooks:Epoch 84	Iter 500	ETA in 00:01:32 [83.33%] 20-01-24 10:27:17
+INFO:ntp.jtr.util.hooks:Epoch 85	Iter 510	Loss 151.1121383666992
+INFO:ntp.jtr.util.hooks:Epoch 85	Iter 510	Examples/s 92.79
+INFO:ntp.jtr.util.hooks:Epoch 85	Iter 510	ETA in 00:01:24 [85.00%] 20-01-24 10:27:20
+INFO:ntp.jtr.util.hooks:Epoch 87	Iter 520	Loss 150.39026489257813
+INFO:ntp.jtr.util.hooks:Epoch 87	Iter 520	Examples/s 158.32
+INFO:ntp.jtr.util.hooks:Epoch 87	Iter 520	ETA in 00:01:16 [86.67%] 20-01-24 10:27:23
+INFO:ntp.jtr.util.hooks:Epoch 89	Iter 530	Loss 144.4387435913086
+INFO:ntp.jtr.util.hooks:Epoch 89	Iter 530	Examples/s 463.79
+INFO:ntp.jtr.util.hooks:Epoch 89	Iter 530	ETA in 00:01:08 [88.33%] 20-01-24 10:27:25
+INFO:ntp.jtr.util.hooks:Epoch 90	Iter 540	Loss 147.37117767333984
+INFO:ntp.jtr.util.hooks:Epoch 90	Iter 540	Examples/s 95.67
+INFO:ntp.jtr.util.hooks:Epoch 90	Iter 540	ETA in 00:00:59 [90.00%] 20-01-24 10:27:27
+INFO:ntp.jtr.util.hooks:Epoch 92	Iter 550	Loss 141.3478271484375
+INFO:ntp.jtr.util.hooks:Epoch 92	Iter 550	Examples/s 153.55
+INFO:ntp.jtr.util.hooks:Epoch 92	Iter 550	ETA in 00:00:50 [91.67%] 20-01-24 10:27:29
+INFO:ntp.jtr.util.hooks:Epoch 94	Iter 560	Loss 140.66948471069335
+INFO:ntp.jtr.util.hooks:Epoch 94	Iter 560	Examples/s 461.21
+INFO:ntp.jtr.util.hooks:Epoch 94	Iter 560	ETA in 00:00:41 [93.33%] 20-01-24 10:27:31
+INFO:ntp.jtr.util.hooks:Epoch 95	Iter 570	Loss 138.41456756591796
+INFO:ntp.jtr.util.hooks:Epoch 95	Iter 570	Examples/s 94.96
+INFO:ntp.jtr.util.hooks:Epoch 95	Iter 570	ETA in 00:00:31 [95.00%] 20-01-24 10:27:31
+INFO:ntp.jtr.util.hooks:Epoch 97	Iter 580	Loss 140.49811706542968
+INFO:ntp.jtr.util.hooks:Epoch 97	Iter 580	Examples/s 139.08
+INFO:ntp.jtr.util.hooks:Epoch 97	Iter 580	ETA in 00:00:21 [96.67%] 20-01-24 10:27:32
+INFO:ntp.jtr.util.hooks:Epoch 99	Iter 590	Loss 140.35178756713867
+INFO:ntp.jtr.util.hooks:Epoch 99	Iter 590	Examples/s 479.31
+INFO:ntp.jtr.util.hooks:Epoch 99	Iter 590	ETA in 00:00:10 [98.33%] 20-01-24 10:27:32
+INFO:ntp.jtr.util.hooks:Epoch 100	Iter 600	Loss 143.23861236572264
+INFO:ntp.jtr.util.hooks:Epoch 100	Iter 600	Examples/s 91.63
+INFO:ntp.jtr.util.hooks:Epoch 100	Iter 600	ETA in 00:00:00 [100.00%] 20-01-24 10:27:32
+Writing induced logic program to ./out/RDG-XS-2-3/INCOMPLETE_NOISE1/20-01-24/10-16-03/rules.nl

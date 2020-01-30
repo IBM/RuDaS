@@ -1,0 +1,20 @@
+p2(A,B) :- p0(C,A), p1(B,D), p1(D,C), p0(E,D), p0(A,F).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p0(E,A), p0(F,D).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p0(E,A), p1(E,F), p1(C,G).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p0(E,A), p1(F,C), p0(F,G).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p1(B,E), p1(E,F), p0(A,G).
+p2(A,B) :- p0(C,A), p1(B,D), p1(D,C), p1(B,E), p0(F,E), p0(B,G), p1(H,B), p1(C,I), p0(I,J).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p1(E,C), p0(D,E).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p0(E,D), p0(A,F).
+p2(A,B) :- p0(C,A), p1(B,D), p1(D,C), p0(E,A), p0(F,D), p1(F,G), p1(C,H), p0(H,I), p1(J,E), p0(K,J), p1(L,K).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p1(B,E), p1(C,F), p0(E,G).
+p2(A,B) :- p0(C,A), p1(B,D), p1(D,C), p0(E,B), p1(E,F), p1(G,A), p0(H,G).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p0(E,D), p0(C,F).
+p2(A,B) :- p0(B,C), p1(A,D), p1(D,B), p0(E,A), p1(E,F), p2(B,G).
+p0(A,B) :- p2(B,C), p2(C,A), p1(D,A), p2(A,D).
+p0(A,B) :- p2(B,C), p2(C,A), p1(D,A), p1(C,D), p1(D,E), p1(E,F), p2(G,B), p1(G,H), p1(I,C), p0(I,J), p2(K,G).
+p0(A,B) :- p2(B,C), p2(C,A), p0(C,B).
+p1(A,B) :- p2(A,C), p2(D,B), p2(E,A), p1(E,D), p2(F,D), p2(B,G), p0(H,A).
+p1(A,B) :- p0(B,C), p2(D,A), p2(A,E), p2(C,F), p1(D,F), p2(G,B), p0(G,H), p0(I,A), p2(J,D), p0(E,K).
+p1(A,B) :- p2(C,A), p2(D,B), p1(C,D), p2(A,E), p0(C,F), p2(G,F), p0(E,C).
+p1(A,B) :- p2(C,A), p2(D,B), p1(C,D), p0(C,E), p2(A,F), p0(D,G).

@@ -1,0 +1,3 @@
+Herbrant distance: 1373.0
+Herbrant accuracy (classic normalization): 0.9988063620122319
+Herbrant accuracy (new normalization): 0.01577060931899643
