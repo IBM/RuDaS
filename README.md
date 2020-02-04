@@ -89,13 +89,14 @@ See experiments/README for additional requirements for running the experiments
 ## Evaluation Tools for ILP systems
 
 Evaluation tool to compute distances between logic programs:
-* *Herbrand distance:* the traditional distance between Herbrand mod- els; two normalized versions of the Herbrand distance
+* *Herbrand distance:* the traditional distance between Herbrand models; two normalized versions of the Herbrand distance
 * *Herbrand accuracy:* (H-accuracy), Herbrand distance normalized on the Herbrand universe
 * *Herbrand score:* (H- score), a new metric we propose in this paper;
 * *Accuracy*
 * *Precision* (or standard confidence)
 * *Recall*
 * *F1-score*
+* *Rule-score*: a computationally efficient measure that consider only the induced rules and not the grounded atoms.
 
 
 Predicate invention: we don't penalize it in the evaluation
