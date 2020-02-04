@@ -5,6 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 
 import copy
 import sys
+import itertools
 
 def count_facts_dict(dict):
     num_facts = 0
@@ -112,6 +113,139 @@ class Rule(object):
     def get_predicates(self):
         return [self.head.predicate] + [a.predicate for a in self.body]
 
+    def copute_mappings(self, rule2):
+        variables_1 = []
+        variables_1.append(self.head.arguments[0].name)
+        var = self.head.arguments[1].name
+        if var not in variables_1:
+            variables_1.append(var)
+        for body_atom in self.body:
+            var = body_atom.arguments[0].name
+            if var not in variables_1:
+                variables_1.append(var)
+            var = body_atom.arguments[1].name
+            if var not in variables_1:
+                variables_1.append(var)
+        variables_2 = []
+        variables_2.append(rule2.head.arguments[0].name)
+        var = rule2.head.arguments[1].name
+        if var not in variables_2:
+            variables_2.append(var)
+        for body_atom in rule2.body:
+            var = body_atom.arguments[0].name
+            if var not in variables_2:
+                variables_2.append(var)
+            var = body_atom.arguments[1].name
+            if var not in variables_2:
+                variables_2.append(var)
+        mappings = []
+        mappings_head = []
+        if self.head.arguments[0].name == self.head.arguments[1].name:
+            if rule2.head.arguments[0].name == rule2.head.arguments[1].name:
+                mappings_head.append({self.head.arguments[0].name: rule2.head.arguments[0].name})
+            elif rule2.head.arguments[0].name != rule2.head.arguments[1].name:
+                mappings_head.append({self.head.arguments[0].name: rule2.head.arguments[0].name}, {self.head.arguments[0].name: rule2.head.arguments[1].name})
+        elif self.head.arguments[0].name != self.head.arguments[1].name:
+            if rule2.head.arguments[0].name != rule2.head.arguments[1].name:
+                mappings_head.append({self.head.arguments[0].name: rule2.head.arguments[0].name, self.head.arguments[1].name: rule2.head.arguments[1].name })
+            elif rule2.head.arguments[0].name == rule2.head.arguments[1].name:
+                mappings_head.append({self.head.arguments[0].name: rule2.head.arguments[0].name}, {self.head.arguments[1].name: rule2.head.arguments[0].name})
+        for map in mappings_head:
+            mapped_var_1 = []
+            mapped_var_2 = []
+            for i in map:
+                mapped_var_1.append(i)
+                mapped_var_2.append(map[i])
+            to_map_1= [i for i in variables_1 if i not in mapped_var_1]
+            to_map_2= [i for i in variables_2 if i not in mapped_var_2]
+            if to_map_1 == [] or to_map_2 == []:
+                mappings.append(map)
+            else:
+                if len(to_map_1)>=len(to_map_2):
+                    combo = list(itertools.combinations(to_map_1, len(to_map_2)))
+                    for (i, j) in list(itertools.combinations(to_map_1, len(to_map_2))):
+                        combo.append((j, i))
+                    for element in combo:
+                        mapping= map.copy()
+                        index = 0
+                        for i in element:
+                            mapping[i] = to_map_2[index]
+                            index += 1
+                        mappings.append(mapping)
+                else:
+                    combo = list(itertools.combinations(to_map_2, len(to_map_1)))
+                    for (i, j) in list(itertools.combinations(to_map_2, len(to_map_1))):
+                        combo.append((j, i))
+                    for element in combo:
+                        mapping = map.copy()
+                        index = 0
+                        for i in element:
+                            mapping[to_map_1[index]] = i
+                            index += 1
+                        mappings.append(mapping)
+        return mappings
+
+    def compute_distance(self, rule2):
+        '''
+        copute distance between 2 rules with same head predicate
+        '''
+        # return vector with all the metrics
+        # TODO: find different mappings, then use the max between the mappings
+        # TODO: UPDATE compute_distance ATOMS
+
+        assert self.head.predicate.name == rule2.head.predicate.name, "Error - compute distance between rules with different head predicate!!!!"
+        mappings = self.copute_mappings(rule2)
+        # TODO: aggiungere i mappings
+        mapping_distance = 1
+        for mapping in mappings:
+            ###################################
+            head_dist = self.head.compute_distance(rule2.head, mapping)
+            combinations_bodies = []
+            if len(self.body) >= len(rule2.body):
+                current_distance = len(self.body) - len(rule2.body)
+                min_combination_bodies = len(rule2.body)
+                long_body = self.body
+                short_body = rule2.body
+                combo = list(itertools.combinations(long_body, len(short_body)))
+                for (i, j) in list(itertools.combinations(long_body, len(short_body))):
+                    combo.append((j, i))
+                for element in combo:
+                    combination_pairs=[]
+                    index=0
+                    for i in element:
+                        combination_pairs.append([i, short_body[index]])
+                        index += 1
+                    combinations_bodies.append(combination_pairs)
+            else:
+                current_distance = len(rule2.body) - len(self.body)
+                min_combination_bodies = len(self.body)
+                long_body = rule2.body
+                short_body = self.body
+                combo = list(itertools.combinations(long_body, len(short_body)))
+                for (i,j) in list(itertools.combinations(long_body, len(short_body))):
+                    combo.append((j,i))
+                for element in combo:
+                    combination_pairs = []
+                    index = 0
+                    for i in element:
+                        combination_pairs.append([short_body[index], i])
+                        index += 1
+                    combinations_bodies.append(combination_pairs)
+            for cc in combinations_bodies:
+                # find cost combination
+                combination_dist = 0
+                for ii in cc:
+                    combination_dist+= ii[0].compute_distance(ii[1], mapping)
+                if combination_dist < min_combination_bodies:
+                    min_combination_bodies = combination_dist
+            current_distance += float((head_dist + min_combination_bodies))
+            current_distance /= (1+max(len(self.body), len(rule2.body)))
+            ###################################
+            if current_distance < mapping_distance:
+                current_distance = mapping_distance
+        return mapping_distance
+
+
 
 class Predicate:
     '''
@@ -159,6 +293,35 @@ class Atom(object):
 
     def __str__(self):
         return str(self.predicate) + '(' + ','.join([str(a) for a in self.arguments]) + ')'
+
+    def compute_distance(self, atom2, mapping):
+        # Nienhuys-Cheng distance between atoms
+        var1_atom2 = atom2.arguments[0].name
+        var2_atom2 = atom2.arguments[1].name
+        a= mapping.keys()
+        if self.arguments[0].name in mapping.keys():
+            var1_atom1 = mapping[self.arguments[0].name]
+        else:
+            var1_atom1 = self.arguments[0].name
+        if self.arguments[1].name in mapping.keys():
+            var2_atom1 = mapping[self.arguments[1].name]
+        else:
+            var2_atom1 = self.arguments[1].name
+        if self.predicate.name == atom2.predicate.name and var1_atom1 == var1_atom2 and var2_atom1 == var2_atom2 :
+            return 0
+        elif self.predicate.name != atom2.predicate.name:
+            return 1
+        else:
+            d1 = 1
+            if var1_atom1 == var1_atom2 :
+                d1 = 0
+            d2 = 1
+            if var2_atom1 == var2_atom2 :
+                d2 = 0
+            distance = 0.25 * (d1 + d2)
+        return distance
+
+
 
 
 class Term(object):

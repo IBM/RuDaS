@@ -43,6 +43,49 @@ def print_measures2(file_name,FOIL,NTP,NEURAL_LP,AMIE):
 		if count in [40,80]:
 			file.write("\n")
 
+
+	averageFOIL=0
+	no_eval_count=0
+	for i in FOIL:
+		if "no_eval" not in i:
+			averageFOIL+=float(i)
+		else:
+			no_eval_count+=1
+	if averageFOIL >0:
+		averageFOIL /= len(FOIL) - no_eval_count
+
+	averageNTP = 0
+	no_eval_count = 0
+	for i in NTP:
+		if "no_eval" not in i:
+			averageNTP += float(i)
+		else:
+			no_eval_count += 1
+	if averageNTP > 0:
+		averageNTP /= len(NTP) - no_eval_count
+
+	averageNEURAL_LP = 0
+	no_eval_count = 0
+	for i in NEURAL_LP:
+		if "no_eval" not in i:
+			averageNEURAL_LP += float(i)
+		else:
+			no_eval_count += 1
+	if averageNEURAL_LP>0:
+		averageNEURAL_LP /= len(NEURAL_LP) - no_eval_count
+
+	averageAMIE = 0
+	no_eval_count = 0
+	for i in AMIE:
+		if "no_eval" not in i:
+			averageAMIE += float(i)
+		else:
+			no_eval_count += 1
+	if averageAMIE>0:
+		averageAMIE /= len(AMIE) - no_eval_count
+	print(averageFOIL,averageNTP,averageNEURAL_LP,averageAMIE)
+
+
 def print_measures1(file_name,FOIL,NTP,NEURAL_LP,AMIE):
 	file = open(file_name, "w+")
 	file.write("\n FOIL \n")
@@ -76,14 +119,15 @@ def print_measures1(file_name,FOIL,NTP,NEURAL_LP,AMIE):
 			file.write("\n")
 
 def read_measures(file_name):
-	no_eval=False
-	measures=["no_eval\n","no_eval\n","no_eval\n","no_eval\n","no_eval\n","no_eval\n"]
-	Herbrant_accuracy =None
-	Hscore=None
-	Accuracy=None
-	Precision=None
-	Recall=None
-	F1score=None
+	no_eval = False
+	measures =["no_eval\n","no_eval\n","no_eval\n","no_eval\n","no_eval\n","no_eval\n","no_eval\n"]
+	Herbrant_accuracy = "no_eval"
+	Hscore = "no_eval"
+	Accuracy = "no_eval"
+	Precision = "no_eval"
+	Recall = "no_eval"
+	F1score = "no_eval"
+	RuleScore = "no_eval"
 	try:
 		file = open(file_name, "r")
 	except:
@@ -105,8 +149,10 @@ def read_measures(file_name):
 				Recall=line.split("\t")[1]
 			if "F1score" in line:
 				F1score=line.split("\t")[1]
+			if "Rule-score" in line:
+				RuleScore = line.split("\t")[1]
 			line = file.readline()
-		measures=[Herbrant_accuracy,Hscore,Accuracy,Precision,Recall,F1score]
+		measures = [Herbrant_accuracy,Hscore,Accuracy,Precision,Recall,F1score,RuleScore]
 	file.close()
 	return measures
 
@@ -121,6 +167,7 @@ def read_exp_2(path):
 	FOIL_Precision=[]
 	FOIL_Recall=[]
 	FOIL_F1score=[]
+	FOIL_RuleScore=[]
 	# NTP
 	NTP_Herbrant_accuracy=[]
 	NTP_Hscore=[]
@@ -128,6 +175,7 @@ def read_exp_2(path):
 	NTP_Precision=[]
 	NTP_Recall=[]
 	NTP_F1score=[]
+	NTP_RuleScore=[]
 	# NEURAL_LP
 	NEURAL_LP_Herbrant_accuracy=[]
 	NEURAL_LP_Hscore=[]
@@ -135,6 +183,7 @@ def read_exp_2(path):
 	NEURAL_LP_Precision=[]
 	NEURAL_LP_Recall=[]
 	NEURAL_LP_F1score=[]
+	NEURAL_LP_RuleScore=[]
 	# AMIE
 	AMIE_Herbrant_accuracy=[]
 	AMIE_Hscore=[]
@@ -142,6 +191,7 @@ def read_exp_2(path):
 	AMIE_Precision=[]
 	AMIE_Recall=[]
 	AMIE_F1score=[]
+	AMIE_RuleScore=[]
 	# FOIL
 	for dataset in datasets:
 		mes=read_measures(path+"FOIL/"+dataset+"/INCOMPLETE_NOISE2/evaluation.txt")
@@ -151,6 +201,7 @@ def read_exp_2(path):
 		FOIL_Precision.append(mes[3])
 		FOIL_Recall.append(mes[4])
 		FOIL_F1score.append(mes[5])
+		FOIL_RuleScore.append(mes[6])
 	# NTP
 	for dataset in datasets:
 		mes=read_measures(path+"ntp/"+dataset+"/INCOMPLETE_NOISE2/evaluation.txt")
@@ -161,6 +212,7 @@ def read_exp_2(path):
 		NTP_Precision.append(mes[3])
 		NTP_Recall.append(mes[4])
 		NTP_F1score.append(mes[5])
+		NTP_RuleScore.append(mes[6])
 	# NEURAL_LP
 	for dataset in datasets:
 		mes=read_measures(path+"Neural-LP/"+dataset+"/INCOMPLETE_NOISE2/evaluation.txt")
@@ -170,6 +222,7 @@ def read_exp_2(path):
 		NEURAL_LP_Precision.append(mes[3])
 		NEURAL_LP_Recall.append(mes[4])
 		NEURAL_LP_F1score.append(mes[5])
+		NEURAL_LP_RuleScore.append(mes[6])
 	# AMIE
 	for dataset in datasets:
 		mes=read_measures(path+"amiep/"+dataset+"/INCOMPLETE_NOISE2/evaluation.txt")
@@ -179,12 +232,14 @@ def read_exp_2(path):
 		AMIE_Precision.append(mes[3])
 		AMIE_Recall.append(mes[4])
 		AMIE_F1score.append(mes[5])
+		AMIE_RuleScore.append(mes[6])
 	print_measures2(os.getcwd()+"/Herbrant_accuracy.txt",FOIL_Herbrant_accuracy,NTP_Herbrant_accuracy,NEURAL_LP_Herbrant_accuracy,AMIE_Herbrant_accuracy)
 	print_measures2(os.getcwd()+"/Hscore.txt",FOIL_Hscore,NTP_Hscore,NEURAL_LP_Hscore,AMIE_Hscore)
 	print_measures2(os.getcwd()+"/Accuracy.txt",FOIL_Accuracy,NTP_Accuracy,NEURAL_LP_Accuracy,AMIE_Accuracy)
 	print_measures2(os.getcwd()+"/Precision.txt",FOIL_Precision,NTP_Precision,NEURAL_LP_Precision,AMIE_Precision)
 	print_measures2(os.getcwd()+"/Recall.txt",FOIL_Recall,NTP_Recall,NEURAL_LP_Recall,AMIE_Recall)
 	print_measures2(os.getcwd()+"/F1score.txt",FOIL_F1score,NTP_F1score,NEURAL_LP_F1score,AMIE_F1score)
+	print_measures2(os.getcwd()+"/RuleScore.txt",FOIL_RuleScore,NTP_RuleScore,NEURAL_LP_RuleScore,AMIE_RuleScore)
 
 
 
@@ -266,7 +321,12 @@ def read_exp_1(path):
 	read_mode("INCOMPLETE_NOISE1",path)
 
 
-path = os.getcwd()+"../output/exp2/"
+
+path = os.getcwd()+"/../output/exp2/"
 read_exp_2(path)
-path = os.getcwd()+"../output/exp1/"
+path = os.getcwd()+"/../output/exp1/"
 read_exp_1(path)
+
+#rule score
+#path = "../output/test/"
+#read_exp_2(path)

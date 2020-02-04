@@ -5,6 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 
 from logic import *
 import copy
+import math
 from utils import *
 from constants import *
 import pickle
@@ -57,6 +58,7 @@ class Evaluator(object):
         self.precision = None #=standard accuracy
         self.recall = None
         self.f1score = None
+        self.rules_score = None
         # aux_distances
         self.fp = None
         self.fn = None
@@ -74,18 +76,20 @@ class Evaluator(object):
         print("Comparing:\n-", self.original_facts_file_name, "+", self.original_rules_file_name, "\n-", self.to_evaluate_facts_file_name, "+", self.to_evaluate_rules_file_name)
         print("---------")
         print("Distances computed:")
-        if self.herbrand_distance:
+        if self.herbrand_distance is not None:
             print("- Herbrant distance: ", self.herbrand_distance)
             print("- Herbrant accuracy (classic normalization): ", self.herbrand_accuracy)
             print("- Herbrant score: ", self.herbrand_score)
-        if self.accuracy:
+        if self.accuracy is not None:
             print("- Accuracy: ", self.accuracy)
-        if self.precision: #=standard accuracy
+        if self.precision is not None: #=standard accuracy
             print("- Precision (or Standard confidence): ", self.precision)
-        if self.recall:
+        if self.recall is not None:
             print("- Recall: ", self.recall)
-        if self.f1score:
+        if self.f1score is not None:
             print("- F1-score: ", self.f1score)
+        if self.rules_score is not None:
+            print("- Rule-score: ", self.rules_score)
         print("#########")
 
 
@@ -115,7 +119,7 @@ class Evaluator(object):
 
     def save_results_on_file(self, file_name):
         file = open(file_name, "w")
-        if self.herbrand_distance:
+        if self.herbrand_distance is not None:
             file.write("Herbrant distance:\t"+str(self.herbrand_distance)+"\n")
             file.write("Herbrant accuracy (classic normalization):\t"+str(self.herbrand_accuracy)+"\n")
             file.write("Hscore (Herbrant score: new normalization):\t"+str(self.herbrand_score)+"\n")
@@ -127,6 +131,8 @@ class Evaluator(object):
             file.write("Recall:\t"+str(self.recall)+"\n")
         if self.f1score is not None:
             file.write("F1score:\t"+str(self.f1score)+"\n")
+        if self.rules_score is not None:
+            file.write("Rule-score:\t"+str(self.rules_score)+"\n")
         if self.fpfntptn:
             file.write("==================================================================\n")
             file.write("TP:\t"+str(self.num_tp)+"\n")
@@ -237,6 +243,39 @@ class Evaluator(object):
         else:
             self.f1score = 0.0
         # f1score_check = (2 * self.num_tp) / ((2 * self.num_tp) + self.num_fn + self.num_fp)
+
+    def compute_rule_distance(self):
+        self.compute_predicate_list()
+        avg_distance = 0.0
+        original_rules = self.original_logic_program.rules
+        induced_rules = self.to_evaluate_logic_program.rules
+        for rule_o in original_rules:
+            count_span_o = 0
+            current_distance = 1.0
+            for rule_i in induced_rules:
+                if rule_i.head.predicate.name == rule_o.head.predicate.name:
+                    count_span_o += 1
+                    distance = rule_o.compute_distance(rule_i)
+                    if distance < current_distance:
+                        current_distance = distance
+            #df_rule_o= #factor different per rule
+            #avg_distance += current_distance *df_rule_o
+            avg_distance += current_distance
+        avg_distance /= len(original_rules)
+        '''
+        length_factor = 0
+        l1 = len(original_rules)
+        l2 = len(induced_rules)
+        if l1 != l2:
+            length_factor = math.exp(-(1/math.fabs(l1-l2)))
+            sigm = ((1 / (1 + math.exp(-(1/math.fabs(l1-l2))))) -0.5)*2
+        self.rules_score = 1-(avg_distance * length_factor)
+        self.rules_score = 1 - (avg_distance * (1-sigm))
+        self.rules_score = (1 - avg_distance) * sigm   
+        '''
+        self.rules_score = 1 - avg_distance
+
+
 
 
     def compute_predicate_list(self):

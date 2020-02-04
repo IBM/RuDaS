@@ -383,6 +383,7 @@ def evaluate_systems():
                 evaluator.compute_precision()
                 evaluator.compute_recall()
                 evaluator.compute_f1score()
+                evaluator.compute_rule_distance()
                 evaluator.save_results_on_file(outputFile)
                 #evaluator.save_log_on_file(logFile)
                 print("done", sys, ds)
@@ -413,16 +414,25 @@ def convert_systems_output():
     print("converting systems outputs...")
     for ds in DATASETS:
         #AMIE PLUS
-        convert_output_amiep(ds)
+        try:
+            convert_output_amiep(ds)
+        except:
+            print('ntp not evaluated on ', ds)
         #NEURAL LP
-        convert_output_neural_lp(ds)
+        try:
+            convert_output_neural_lp(ds)
+        except:
+            print('ntp not evaluated on ', ds)
         #NTP
         try:
             convert_output_ntp(ds)
         except:
             print('ntp not evaluated on ', ds)
         #FOIL
-        convert_output_FOIL(ds)
+        try:
+            convert_output_FOIL(ds)
+        except:
+            print('ntp not evaluated on ', ds)
     print("done converting systems outputs.")
 
 
@@ -545,14 +555,35 @@ def evaluate_specific(experiment, datasets):
     convert_systems_output()
     evaluate_systems()
 
-if __name__ == '__main__'():
+
+def test_measure():
+    global DATASETS_DIR
+    DATASETS_DIR = DATASETS_BASE_DIR + "test/"
+    a= DATASETS_BASE_DIR
+    global DATA_DIR
+    DATA_DIR = DATA_BASE_DIR + "test/"
+    global OUTPUT_DIR
+    OUTPUT_DIR = OUTPUT_BASE_DIR + "test/"
+    global DATASETS
+    DATASETS = []
+    datasets = [str(f) for f in os.listdir(DATASETS_DIR) if
+                not str(f).startswith('datasets') and not str(f).startswith('.') and not str(f).startswith(
+                    'test') and not str(f).startswith('README')]
+    for dd in datasets:
+            DATASETS.append(dd + "/INCOMPLETE_NOISE2")
+    convert_systems_output()
+    evaluate_systems()
+
+
+if __name__ == '__main__':
     #test()
     # converter_test
     # USE this for grid search of optimal parameters
     # grid_search()
     #experiments_evaluation_old()
-    experiments_1_evaluation()
-    experiments_2_evaluation()
+    #test_measure()
     #data = ["CHAIN-XS-2"]
     #evaluate_specific(2, data)
+    experiments_1_evaluation()
+    experiments_2_evaluation()
 
