@@ -242,7 +242,7 @@ class Rule(object):
             current_distance /= (1+max(len(self.body), len(rule2.body)))
             ###################################
             if current_distance < mapping_distance:
-                current_distance = mapping_distance
+                mapping_distance = current_distance
         return mapping_distance
 
 

@@ -66,7 +66,7 @@ Impact of different metrics, each one averaged on 120 datasets with uniformly di
   |  **H-score** | 0.1520 | 0.2321 | 0.1025 | 0.0728 |
  |   **Precision** | 0.5963 | 0.2982 | 0.1687 | 0.1021 | %($s_c$) 
  |   **Recall** | 0.2264  | 0.7311  | 0.2433 | 0.3921 |
-
+ |   **R-score** | 0.2728  | 0.3350  | 0.1906 | 0.1811 |
 
 ## Impact of Missing Consequences and Noise
 Effect of missing consequences and noise on 144 datasets. Each H-score value is averaged on 48 datasets, with uniformly distributed categories in {RDG, DRDG}, sizes in {XS,S}, and graph depths in {2,3}
