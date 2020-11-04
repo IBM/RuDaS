@@ -10,7 +10,7 @@ In this repository there is also the code (see experiments/README) we used to ev
 
 ### Paper:
 
- <https://arxiv.org/abs/1909.07095> (arXiv preprint)
+[arXiv preprint](https://arxiv.org/abs/1909.07095)
 
 ### How to cite:
 
