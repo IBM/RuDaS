@@ -12,8 +12,8 @@ In this repository there is also the code (see experiments/README) we used to ev
 **Rules.**
 ```
 p3(X0,X1) :- p7(X1,X0).
-p7(X1,X0) :- p6(X1,X2),p6(X0,X1).
-p7(X1,X0) :- p9(X3,X1),p9(X1,X0).
+p7(X0,X2) :- p6(X0,X1), p6(X1,X2).
+p7(X1,X0) :- p9(X3,X1), p9(X1,X0).
 ```
 **Facts.**
 ```
