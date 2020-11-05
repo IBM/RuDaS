@@ -8,21 +8,8 @@ Moreover, RuDaS allows for assessing the performance of rule learning systems by
 
 In this repository there is also the code (see experiments/README) we used to evaluate representatives of different types of rule learning systems on our datasets demonstrating the necessity of having a diversified portfolio of datasets to help revealing the variety in the capabilities of the systems and thus also to support and help researchers in developing and optimizing new/existing approaches. 
 
-### Example of data:
-**Rules.**
-```
-p3(X0,X1) :- p7(X1,X0).
-p7(X0,X2) :- p6(X0,X1), p6(X1,X2).
-p7(X1,X0) :- p9(X3,X1), p9(X1,X0).
-```
-**Facts.**
-```
-p9(c127,c381).
-p6(c324,c291).
-p3(c363,c354).
-p7(c61,c96).
-...
-```
+
+
 
 ### Paper:
 
@@ -46,13 +33,31 @@ p7(c61,c96).
 <!--TODO any others check. then create file requirements.txt)-->
 ###  Experiments:
 
-See experiments/README for additional requirements for running the experiments
+See [experiments/README](experiments/README.md) for additional requirements for running the experiments
 
 
 ## Available Datasets Description
 
-<!--add <sub> and </sub> to reduce the font-->
 
+### Example of data
+**Rules.**
+```
+p3(X0,X1) :- p7(X1,X0).
+p7(X0,X2) :- p6(X0,X1), p6(X1,X2).
+p7(X1,X0) :- p9(X3,X1), p9(X1,X0).
+```
+**Facts.**
+```
+p9(c127,c381).
+p6(c324,c291).
+p3(c363,c354).
+p7(c61,c96).
+...
+```
+
+<!--add <sub> and </sub> to reduce the font-->
+### RuDaS.v0
+The datasets described below (see [paper](https://arxiv.org/abs/1909.07095) for more details) can be found here: [dataset1](datasets/exp1/) and [dataset2](datasets/exp2/).
   
 | \#  | type | Size | Depth |\#Rules|\#Rules|\#Rules|\#Facts|\#Facts|\#Facts|\#Pred|\#Pred|\#Pred|\#Const|\#Const|\#Const|
 |--- | ---  | ---  | ---   | --- | ---   | --- | --- | ---   | --- | --- | ---  | --- | ---| ---   | --- |
@@ -105,14 +110,14 @@ See experiments/README for additional requirements for running the experiments
 ## Evaluation Tools for ILP systems
 
 Evaluation tool to compute distances between logic programs:
-* *Herbrand distance:* the traditional distance between Herbrand models; two normalized versions of the Herbrand distance
-* *Herbrand accuracy:* (H-accuracy), Herbrand distance normalized on the Herbrand universe
-* *Herbrand score:* (H- score), a new metric we propose in this paper;
-* *Accuracy*
-* *Precision* (or standard confidence)
-* *Recall*
-* *F1-score*
-* *Rule-score*: a computationally efficient measure that consider only the induced rules and not the grounded atoms.
+* **Herbrand distance:** the traditional distance between Herbrand models; two normalized versions of the Herbrand distance
+* **Herbrand accuracy:** (H-accuracy), Herbrand distance normalized on the Herbrand universe
+* **Herbrand score:** (H-score), a new metric we propose in this paper;
+* **Accuracy**
+* **Precision** (or standard confidence)
+* **Recall**
+* **F1-score**
+* **Rule-score**: a new computationally efficient measure that consider only the induced rules and not the grounded atoms.
 
 Predicate invention is not penalized in the evaluation.
 
