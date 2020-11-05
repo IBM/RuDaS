@@ -8,6 +8,22 @@ Moreover, RuDaS allows for assessing the performance of rule learning systems by
 
 In this repository there is also the code (see experiments/README) we used to evaluate representatives of different types of rule learning systems on our datasets demonstrating the necessity of having a diversified portfolio of datasets to help revealing the variety in the capabilities of the systems and thus also to support and help researchers in developing and optimizing new/existing approaches. 
 
+### Example of data:
+**Rules.**
+```
+p3(X0,X1) :- p7(X1,X0).
+p7(X1,X0) :- p6(X1,X2),p6(X0,X1).
+p7(X1,X0) :- p9(X3,X1),p9(X1,X0).
+```
+**Facts.**
+```
+p9(c127,c381).
+p6(c324,c291).
+p3(c363,c354).
+p7(c61,c96).
+...
+```
+
 ### Paper:
 
 [arXiv preprint](https://arxiv.org/abs/1909.07095)
@@ -84,7 +100,7 @@ See experiments/README for additional requirements for running the experiments
    * *Mixed* -> mix of the above.
    * All of them can have recursion -> h(X):-h(Y),b1(X,Y). b1(X,Y):-b1(Z,Y),b2(X,Z)
 
-<!--TODO: Add figure for categories-->
+![Image](other/categories.png)
 
 ## Evaluation Tools for ILP systems
 
@@ -98,8 +114,7 @@ Evaluation tool to compute distances between logic programs:
 * *F1-score*
 * *Rule-score*: a computationally efficient measure that consider only the induced rules and not the grounded atoms.
 
-
-Predicate invention: we don't penalize it in the evaluation
+Predicate invention is not penalized in the evaluation.
 
 
 ## Future extensions
