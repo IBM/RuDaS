@@ -79,15 +79,15 @@ The datasets described below (see [paper](https://arxiv.org/abs/1909.07095) for 
 ## Dataset generation code
 
 * rules can be arbitrary long and with n-ary predicates
-* anonimous constants and predicates = constants c1 c2 .. , predicates p1 p2 ..
+* anonymous constants and predicates = constants c1 c2 .. , predicates p1 p2 ..
 * format: prolog standard, 2 different files type: one for facts one for rules
 * parameters:
    * number of constants
    * number of predicates
    * min/max arity of predicates
-   * number ofrules
+   * number of rules
    * maximal length of rules
-   * number of reasoning steps (depht of the tree or number of total steps)
+   * number of reasoning steps (depth of the tree or number of total steps)
    * connected components rules category
    * min/max number of connected components
    * maximal depth of rule graphs 
@@ -111,7 +111,7 @@ The datasets described below (see [paper](https://arxiv.org/abs/1909.07095) for 
 
 Evaluation tool to compute distances between logic programs:
 * **Herbrand distance:** the traditional distance between Herbrand models; two normalized versions of the Herbrand distance
-* **Herbrand accuracy:** (H-accuracy), Herbrand distance normalized on the Herbrand universe
+* **Herbrand accuracy:** (H-accuracy), Herbrand distance normalized on the Herbrand base
 * **Herbrand score:** (H-score), a new metric we propose in this paper;
 * **Accuracy**
 * **Precision** (or standard confidence)
