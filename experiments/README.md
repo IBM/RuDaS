@@ -56,7 +56,7 @@ Andres Campero, Aldo Pareja, Tim Klinger, Josh Tenenbaum, and Sebastian Riedel.
 # Experiments results
 
 ## Overall Results in Terms of Different Metrics
-Impact of different metrics, each one averaged on 120 datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
+Impact of different metrics, each one averaged on 120 datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {S,M}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
 
 || FOIL | AMIE+ | Neural-LP | NTP |
 | --- | --- | ---  | --- | --- | 
@@ -69,7 +69,7 @@ Impact of different metrics, each one averaged on 120 datasets with uniformly di
  |   **R-score** | 0.2728  | 0.3350  | 0.1906 | 0.1811 |
 
 ## Impact of Missing Consequences and Noise
-Effect of missing consequences and noise on 144 datasets. Each H-score value is averaged on 48 datasets, with uniformly distributed categories in {RDG, DRDG}, sizes in {XS,S}, and graph depths in {2,3}
+Effect of missing consequences and noise on 144 datasets. Each H-score value is averaged on 48 datasets, with uniformly distributed categories in {RDG, DRDG}, sizes in {S,M}, and graph depths in {2,3}
 The  noise  parameters  are  definesas follows (the  set  memberships  are  intended  to  mean  “uniformly  distributed over"):
 
 |                        |  n_OW       |  nNoise+ |  nNoise-   | 
@@ -88,7 +88,7 @@ Moreover, in order to give an impression  of  some  of  the  datasets  considere
 | **NTP**      | 1.0  | 0.0482  | 0.0617  | 0.0574  |
 
 ## Impact of Dependencies Between Rules
-Impact of dataset category. H-score averaged on 40datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
+Impact of dataset category. H-score averaged on 40datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {S,M}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
 
 ||CHAIN |  RDG | DRDG  |
 | --- | --- | ---  | --- |
@@ -98,18 +98,18 @@ Impact of dataset category. H-score averaged on 40datasets with uniformly distri
 | **NTP**  | 0.1239 | 0.0538 | 0.0368   |
 
 ## Scalability: Impact of Dataset Size
-Impact of dataset size and rule graph depth. H-scoreaveraged on 30 datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {XS,S}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
+Impact of dataset size and rule graph depth. H-scoreaveraged on 30 datasets with uniformly distributed categories CHAIN, RDG, DRDG, sizes in {S,M}, and graph depths in {2,3}; n_OW=0.3, nNoise-=0.2, nNoise+=0.1.
 
-|| XS-2 |  XS-3 | S-2 | S-3  |
+|| S-2 |  S-3 | M-2 | M-3  |
 | --- | --- | ---  | --- | --- | 
 | **FOIL**  | 0.2815 | 0.2074 | 0.0356 | 0.0934 |
 | **AMIE+**  | 0.1449 | 0.1319 | 0.4392 | 0.2124 |
 | **Neural-LP**   | 0.1155 | 0.0673 | 0.1281 | 0.0992 |
 | **NTP** | 0.1512 | 0.0432 | 0.0652 | 0.0374|
 
-Same results aggregated by sizes in {XS,S}:
+Same results aggregated by sizes in {S,M}:
 
-|| XS | S   |
+|| S | M   |
 | --- | --- | --- | 
 | **FOIL**  | 0.2444 | 0.0645 |
 | **AMIE+**  | 0.1384 | 0.3258 |
