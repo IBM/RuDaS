@@ -14,6 +14,7 @@ In this repository there is also the code (see experiments/README) we used to ev
 ### Paper & Slides:
 
 * Slides presented at ILP @ IJCLR 2021 [here](other/RuDaS_slides_ILP.pdf)
+* [ILP publication](http://lr2020.iit.demokritos.gr/online/Cornelio.pdf)
 * [arXiv preprint](https://arxiv.org/abs/1909.07095)
 
 ### How to cite:
