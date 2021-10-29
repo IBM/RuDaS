@@ -11,21 +11,19 @@ In this repository there is also the code (see experiments/README) we used to ev
 
 
 
-### Paper:
+### Paper & Slides:
 
-[arXiv preprint](https://arxiv.org/abs/1909.07095)
+* Slides presented at ILP @ IJCLR 2021 [here](other/RuDaS_slides_ILP.pdf)
+* [arXiv preprint](https://arxiv.org/abs/1909.07095)
 
 ### How to cite:
 
 ```latex
-@misc{cornelio_thost_rudas,
-    title={RuDaS: Synthetic Datasets for Rule Learning and Evaluation Tools},
-    author={Cristina Cornelio and Veronika Thost},
-    year={2019},
-    eprint={1909.07095},
-    archivePrefix={arXiv},
-    primaryClass={cs.AI}
-}
+@inproceedings{cornelio_thost_rudas,
+  author={Cristina Cornelio and Veronika Thost},
+  Booktitle = {Proceedings of the {30th} International Conference on Inductive Logic Programming, ILP2020-21 @ IJCLR},
+  title={Synthetic Datasets and Evaluation Tools for Inductive Neural Reasoning},
+  Year = {2021}}
 ```
 ---
 ### Requirements: 
